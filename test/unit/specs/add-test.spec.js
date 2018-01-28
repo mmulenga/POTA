@@ -1,4 +1,6 @@
 /* Simple Jest test file to test out add() function in main.js */
+/* Comment out this line in main.js first
+  require('../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss');*/
 /* Use command 'npm run unit' */
 const add = require('@/main.js');
 
