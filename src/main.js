@@ -3,7 +3,8 @@
 import Vue from 'vue';
 import App from './App';
 
-require('../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss');
+// Commented this out for the sake of testing add() function
+// require('../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss');
 
 Vue.config.productionTip = false;
 
@@ -13,3 +14,9 @@ new Vue({
   components: { App },
   template: '<App/>',
 });
+
+/* Simple addition function for testing */
+function add(a, b) {
+  return a + b;
+}
+module.exports = add;
