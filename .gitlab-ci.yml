@@ -1,0 +1,25 @@
+stages:
+  - build
+  - test
+  - deploy
+
+building:
+  stage: build
+  script:
+    - rsync -av --exclude=".*" ~/gitfolder/POTA ~/testserver
+    - cd ~/testserver/POTA
+    - docker exec testserver npm run build
+  only:
+    - develop
+    - release
+
+testing:
+  stage: test
+  script:
+    - cd ~/nightwatch
+    - nightwatch --env ios,android,chrome,safari,ie tests/testserver.js
+  only:
+    - develop
+    - release
+
+
