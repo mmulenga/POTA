@@ -1,20 +1,42 @@
 stages:
+  - assemble
+  - unit_test
   - build
-  - test
+  - ui_test
   - deploy
+  - cleanup
+
+assembling:
+  stage: assemble
+  script:
+    - mkdir ~/testserver
+    - cp -R ~/gitfolder/POTA ~/testserver/
+    - docker start testserver
+    - docker exec testserver yarn install
+  only:
+    - develop
+    - release
+
+unit_testing:
+  stage: unit_test
+  script:
+    -
+  only:
+    - develop
+    - release
+
 
 building:
   stage: build
   script:
-    - rsync -av --exclude=".*" ~/gitfolder/POTA ~/testserver
-    - cd ~/testserver/POTA
+#    - docker run --name testserver -p 8080:8080 -d -v /Users/cmpt371/testserver/POTA:/usr/apps/POTA cmpt371:POTA
     - docker exec testserver npm run build
   only:
     - develop
     - release
 
-testing:
-  stage: test
+ui_testing:
+  stage: ui_test
   script:
     - cd ~/nightwatch
     - nightwatch --env ios,android,chrome,safari,ie tests/testserver.js
@@ -23,3 +45,25 @@ testing:
     - release
 
 
+deploying:
+  stage: deploy
+  script:
+    - docker stop deployserver
+    - rm -rf ~/deployserver
+    - mkdir ~/deployserver
+    - cp -R ~/gitfolder/POTA ~/deployserver/
+    - docker start deployserver
+    - docker exec deployserver yaml install
+    - docker exec deployserver npm run build
+  only:
+    - release
+
+
+cleaning:
+  stage: cleanup
+  script:
+    - docker stop testserver
+    - rm -rf ~/testserver
+  only:
+    - develop
+    - release
