@@ -39,7 +39,8 @@ building:
 ui_testing:
   stage: ui_test
   script:
-    - nightwatch --env ios,android,chrome,safari,ie,firefox ~/nightwatch/tests/testserver.js
+    - cd ~/nightwatch
+    - nightwatch --env ios,android,chrome,safari,ie,firefox tests/testserver.js
   only:
     - develop
     - release
@@ -68,3 +69,4 @@ cleaning:
     - develop
     - release
     - nick
+  when: always
