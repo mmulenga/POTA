@@ -1,7 +1,7 @@
 stages:
   - assemble
-  - unit_test
   - build
+  - unit_test
   - ui_test
   - deploy
   - cleanup
@@ -21,6 +21,7 @@ assembling:
 unit_testing:
   stage: unit_test
   script:
+#    - docker exec testserver npm run unit
     - echo test
   only:
     - develop
@@ -54,7 +55,7 @@ deploying:
     - mkdir ~/deployserver
     - cp -R ~/gitfolder/POTA ~/deployserver/
     - docker start deployserver
-    - docker exec deployserver yaml install
+    - docker exec deployserver yarn install
     - docker exec deployserver npm run build
   only:
     - release
