@@ -21,7 +21,7 @@ assembling:
 unit_testing:
   stage: unit_test
   script:
-    - echo test
+    - npm run unit
   only:
     - develop
     - release
