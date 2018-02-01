@@ -54,7 +54,7 @@ deploying:
     - mkdir ~/deployserver
     - cp -R ~/gitfolder/POTA ~/deployserver/
     - docker start deployserver
-    - docker exec deployserver yaml install
+    - docker exec deployserver yarn install
     - docker exec deployserver npm run build
   only:
     - release
