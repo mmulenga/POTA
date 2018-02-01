@@ -4,7 +4,9 @@ import Vue from 'vue';
 import App from './App';
 
 // Comment this out for the sake of testing add() function
-require('../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss');
+// require('../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss');
+// require('bootstrap-sass');
+
 
 Vue.config.productionTip = false;
 
