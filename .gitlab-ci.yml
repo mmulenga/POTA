@@ -41,7 +41,7 @@ ui_testing:
   stage: ui_test
   script:
     - cd ~/nightwatch
-    - nightwatch --env ios,android,chrome,safari,ie,firefox tests/testserver.js
+    - nightwatch --env ios,android,chrome,safari,ie,firefox ~/gitfolder/POTA/tests/testserver.js
   only:
     - develop
     - release
