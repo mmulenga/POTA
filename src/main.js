@@ -3,9 +3,6 @@
 import Vue from 'vue';
 import App from './App';
 
-// Comment this out for the sake of testing add() function
-require('../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss');
-
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
@@ -16,7 +13,13 @@ new Vue({
 });
 
 /* Simple addition function for testing */
-function add(a, b) {
+export function add(a, b) {
   return a + b;
-}
-module.exports = add;
+};
+
+export function assert(condition, message) {
+  if(!condition) {
+    console.log("ASSERT failed: " + message);
+  };
+};
+

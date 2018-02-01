@@ -86,6 +86,6 @@ for (let i = 0; i < 21; i++) {
 }
 // Testing addToCollection() function with visual inspection
 for (let i = 0; i < 21; i++) {
-  console.log(server.getAll());
-  server.addToCollection(comorbidityArr[i]);
+  console.log(getAll());
+  addToCollection(comorbidityArr[i]);
 }
