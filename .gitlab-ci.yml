@@ -29,7 +29,6 @@ unit_testing:
 building:
   stage: build
   script:
-#    - docker run --name testserver -p 8080:8080 -d -v /Users/cmpt371/testserver/POTA:/usr/apps/POTA cmpt371:POTA
     - docker exec testserver npm run build
   only:
     - develop
@@ -38,8 +37,7 @@ building:
 ui_testing:
   stage: ui_test
   script:
-    - cd ~/nightwatch
-    - nightwatch --env ios,android,chrome,safari,ie tests/testserver.js
+    - nightwatch --env ios,android,chrome,safari,ie,firefox ~/nightwatch/tests/testserver.js
   only:
     - develop
     - release
