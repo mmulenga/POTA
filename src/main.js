@@ -13,13 +13,15 @@ new Vue({
 });
 
 /* Simple addition function for testing */
-export function add(a, b) {
+function add(a, b) {
   return a + b;
-};
+}
 
-export function assert(condition, message) {
-  if(!condition) {
-    console.log("ASSERT failed: " + message);
-  };
-};
+function assert(condition, message) {
+  if (!condition) {
+    // eslint-disable-next-line no-console
+    console.log(`ASSERT failed: ${message}`);
+  }
+}
 
+export default { add, assert };
