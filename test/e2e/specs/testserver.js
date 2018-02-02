@@ -1,7 +1,8 @@
 module.exports = {
   'Demo test Google' : function (browser) {
+
     browser
-      .url('http://cmpt371-mac.usask.ca:8080/')
+      .url(browser.globals.devServerURL)
       .waitForElementVisible('body', 1000)
       .assert.containsText('.btn', 'Toggle alert')
       .click('.btn')
