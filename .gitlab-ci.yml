@@ -9,6 +9,7 @@ stages:
 assembling:
   stage: assemble
   script:
+    - echo CI_PROJECT_DIR
     - pwd
     - mkdir ~/testserver
     - cp -R ~/gitfolder/POTA ~/testserver/
