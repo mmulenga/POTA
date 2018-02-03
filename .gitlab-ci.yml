@@ -9,8 +9,7 @@ stages:
 assembling:
   stage: assemble
   script:
-    - cd ~/gitfolder/POTA
-    - git checkout -b temp_branch HEAD~2
+    - pwd
     - mkdir ~/testserver
     - cp -R ~/gitfolder/POTA ~/testserver/
     - docker start testserver
@@ -43,7 +42,6 @@ ui_testing:
   stage: ui_test
   script:
     - cd ~/nightwatch
-    - pwd
     - nightwatch --env ios,android,chrome,safari,ie,firefox ~/gitfolder/POTA/test/e2e/specs/testserver.js
   only:
     - develop
