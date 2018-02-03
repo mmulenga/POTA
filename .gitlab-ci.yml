@@ -9,7 +9,8 @@ stages:
 assembling:
   stage: assemble
   script:
-    - pwd
+    - cd ~/gitfolder/POTA
+    - git checkout -b temp_branch HEAD~2
     - mkdir ~/testserver
     - cp -R ~/gitfolder/POTA ~/testserver/
     - docker start testserver
