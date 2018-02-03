@@ -9,6 +9,7 @@ stages:
 assembling:
   stage: assemble
   script:
+    - pwd
     - mkdir ~/testserver
     - cp -R ~/gitfolder/POTA ~/testserver/
     - docker start testserver
