@@ -1,0 +1,73 @@
+stages:
+  - assemble
+  - build
+  - unit_test
+  - ui_test
+  - deploy
+  - cleanup
+
+assembling:
+  stage: assemble
+  script:
+    - mkdir ~/testserver
+    - cp -R $CI_PROJECT_DIR ~/testserver/
+    - docker start testserver
+    - docker exec testserver yarn install
+  only:
+    - develop
+    - release
+    - nick
+
+unit_testing:
+  stage: unit_test
+  script:
+#    - docker exec testserver npm run unit
+    - echo test
+  only:
+    - develop
+    - release
+    - nick
+
+building:
+  stage: build
+  script:
+    - docker exec testserver npm run build
+  only:
+    - develop
+    - release
+    - nick
+
+ui_testing:
+  stage: ui_test
+  script:
+    - cd ~/nightwatch
+    - nightwatch --env ios,android,chrome,safari,ie,firefox $CI_PROJECT_DIR/test/e2e/specs/testserver.js
+  only:
+    - develop
+    - release
+    - nick
+
+deploying:
+  stage: deploy
+  script:
+    - docker stop deployserver
+    - rm -rf ~/deployserver
+    - mkdir ~/deployserver
+    - cp -R $CI_PROJECT_DIR ~/deployserver/
+    - docker start deployserver
+    - docker exec deployserver yarn install
+    - docker exec deployserver npm run build
+  only:
+    - release
+
+
+cleaning:
+  stage: cleanup
+  script:
+    - docker stop testserver
+    - rm -rf ~/testserver
+  only:
+    - develop
+    - release
+    - nick
+  when: always
