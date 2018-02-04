@@ -10,7 +10,7 @@ assembling:
   stage: assemble
   script:
     - mkdir ~/testserver
-    - cp -R ~/gitfolder/POTA ~/testserver/
+    - cp -R $CI_PROJECT_DIR ~/testserver/
     - docker start testserver
     - docker exec testserver yarn install
   only:
@@ -41,7 +41,7 @@ ui_testing:
   stage: ui_test
   script:
     - cd ~/nightwatch
-    - nightwatch --env ios,android,chrome,safari,ie,firefox ~/gitfolder/POTA/test/e2e/specs/testserver.js
+    - nightwatch --env ios,android,chrome,safari,ie,firefox $CI_PROJECT_DIR/test/e2e/specs/testserver.js
   only:
     - develop
     - release
@@ -53,7 +53,7 @@ deploying:
     - docker stop deployserver
     - rm -rf ~/deployserver
     - mkdir ~/deployserver
-    - cp -R ~/gitfolder/POTA ~/deployserver/
+    - cp -R $CI_PROJECT_DIR ~/deployserver/
     - docker start deployserver
     - docker exec deployserver yarn install
     - docker exec deployserver npm run build
