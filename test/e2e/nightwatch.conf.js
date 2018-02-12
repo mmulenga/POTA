@@ -13,7 +13,9 @@ module.exports = {
     host: '127.0.0.1',
     port: 4444,
     cli_args: {
-      'webdriver.chrome.driver': require('chromedriver').path
+      'webdriver.chrome.driver': require('chromedriver').path,
+      "webdriver.gecko.driver" : require('geckodriver').path,
+      "webdriver.firefox.profile" : "webdriver"
     }
   },
 
@@ -23,7 +25,7 @@ module.exports = {
       selenium_host: 'localhost',
       silent: true,
       globals: {
-        devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
+        devServerURL: 'http://localhost:8080'
       }
     },
 
@@ -38,6 +40,7 @@ module.exports = {
     firefox: {
       desiredCapabilities: {
         browserName: 'firefox',
+        marionette: true,
         javascriptEnabled: true,
         acceptSslCerts: true
       }
