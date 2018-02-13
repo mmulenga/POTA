@@ -7,7 +7,7 @@ import { Condition, Exam } from '@/constants';
  * Define all tags here and they will be loaded into the system on import
  */
 Tag(Condition.HeartFail, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
-
+Tag(Condition.AtrialFib, [Exam.ECG]);
 /**
  * Given a list of patient conditions, return a collection of examinations that should be performed
  * @param {String[]} patientConditions
