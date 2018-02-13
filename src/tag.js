@@ -1,23 +1,22 @@
-import assert from '@/main.js';
+import assert from '@/main';
 
-exam_collection = {};
+const examCollection = {};
 
 
 function Tag(name, tests) {
-    exam_collection[name] = tests;
-};
+  examCollection[name] = tests;
+}
 
 function GetExams(name) {
-    assert(name in exam_collection, `GetExams called with unknown condition ${name}`)
-    if (name in exam_collection) {
-        return exam_collection[name]
-    } else {
-        return []
-    }
+  assert(name in examCollection, `GetExams called with unknown condition ${name}`);
+  if (name in examCollection) {
+    return examCollection[name];
+  }
+  return [];
 }
 
 function GetAllExams() {
-    return exam_collection;
+  return examCollection;
 }
 
 export default { Tag, GetExams, GetAllExams };
