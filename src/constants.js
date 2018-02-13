@@ -7,14 +7,54 @@
 
 /* Conditions */
 const Condition = {
+  /* Cardiovascular Diseases */
+  AtrialFib: 'Atrial fibrillation / History of irregular heart beat',
+  Defib: 'Defibrillator / Pacemaker',
+  CAD: 'Coronary artery disease',
+  CardiacStent: 'Cardiac Stent (< 12 months)',
+  CerebralDisease: 'History of cerebral disease',
+  PulmonaryVascular: 'History of pulmonary vascular disease',
+  TIA: 'Transient Ischemic Attack (TIA)',
+  Stroke: 'Stroke',
+  VHD: 'Valvular heart disease / Valve Replacement',
   HeartFail: 'Heart Failure',
+  PVD: 'Peripheral Vascular disease (PVD)',
+  /* Pulmonary Diseases */
+  PulmDisease: 'Severe COPD, Home Oxygen, Pulmonary HTN',
+  /* Other Diseases */
+  Bleeding: 'Bleeding disorders (hemophiliac | DVT)',
+  Anemia: 'History of anemia',
+  ActiveBleeding: 'History of active bleeding',
+  Renal: 'Renal disease (on dialysis or at risk for Acute Kidney Injury [AKI])',
+  Diabetes: 'Diabetes (on Insulin or 2 oral agents)',
+  Malignancy: 'Present malignancy / surgery for malignancy',
+  Hepatic: 'Hepatic disease',
+  Adrenal: 'History of adrenal disease', 
+  Pituitary: 'History of pituitary disease', 
+  Endocrine: 'History of major systemic endocrine disease',
+  /* Medications */
+  Digoxin: 'Digoxin',
+  Lithium: 'Lithium',
+  Diuretics: 'Diuretics',
+  ACEI: 'ACE-I',
+  ARB: 'ARB',
+  NSAIDS: 'NSAIDS',
+  Anticoagulant: 'Anticoagulants',
+  Antiplatelet: 'Antiplatelet (ASA excluded)',
+  Steroid: 'Systemic steroid use within 6 months',
 };
 
 /* Medical Examinations */
 const Exam = {
+  GnS: 'GnS',
   ECG: 'ECG',
   CBC: 'CBC',
   RenPanel: 'Renal Panel (Creat + Lytes)',
+  PTTINR: 'PTTINR',
+  LFT: 'LFT',
+  Gluc: 'Gluc',
+  HbA1C: 'HbA1C',
+  CXR: 'CXR',  
 };
 
 export default { Condition, Exam };
