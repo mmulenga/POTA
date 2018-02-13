@@ -46,11 +46,11 @@ const Condition = {
 
 /* Medical Examinations */
 const Exam = {
-  GnS: 'GnS',
+  GnS: 'G&S',
   ECG: 'ECG',
   CBC: 'CBC',
   RenPanel: 'Renal Panel (Creat + Lytes)',
-  PTTINR: 'PTTINR',
+  PTTINR: 'PTT/INR',
   LFT: 'LFT',
   Gluc: 'Gluc',
   HbA1C: 'HbA1C',
