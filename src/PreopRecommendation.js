@@ -1,7 +1,6 @@
 // Singleton data, not a class
-import assert from '@/main.js';
-import { Tag, GetExams } from '@/tag.js';
-import { Condition, Exam } from '@/constants.js';
+import { Tag, GetExams } from '@/tag';
+import { Condition, Exam } from '@/constants';
 
 /** Tag definitions
  * These definitions are of the format: Tag(condition, [exams])
@@ -9,19 +8,17 @@ import { Condition, Exam } from '@/constants.js';
  */
 Tag(Condition.HeartFail, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
 
-
-
 /**
  * Given a list of patient conditions, return a collection of examinations that should be performed
- * @param {String[]} patientConditions 
+ * @param {String[]} patientConditions
  */
 function PatientExamsNeeded(patientConditions) {
-    testAggregation = new Set();
-    for (var i = 0; i < patientConditions.length; i++) {
-        exams = GetExams(patientConditions[i])
-        for (var j = 0; j < exams.length; j++) {
-            testAggregation.add(exams[j]);
-        }
+  const testAggregation = new Set();
+  for (let i = 0; i < patientConditions.length; i += 1) {
+    const exams = GetExams(patientConditions[i]);
+    for (let j = 0; j < exams.length; j += 1) {
+      testAggregation.add(exams[j]);
     }
-    return testAggregation
+  }
+  return testAggregation;
 }
