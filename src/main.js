@@ -3,7 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 
-Vue.config.productionTip = false;
+Vue.config.productionTip = process.env.NODE_ENV === 'production';
 
 /* eslint-disable no-new */
 new Vue({
@@ -17,10 +17,17 @@ function add(a, b) {
   return a + b;
 }
 
+
+/**
+ * Asserts a condition is true and prints a message to console otherwise.
+ * Becomes a null operation when in a production deployment
+ * @param {Boolean} condition The condition to be verified
+ * @param {String} message Message to print out on failure
+ */
 function assert(condition, message) {
-  if (!condition) {
+  if (!Vue.config.productionTip && !condition) {
     // eslint-disable-next-line no-console
-    console.log(`ASSERT failed: ${message}`);
+    console.assert(`ASSERT failed: ${message}`);
   }
 }
 
