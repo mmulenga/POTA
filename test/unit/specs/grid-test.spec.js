@@ -61,7 +61,7 @@ const getName = require('@/main.js'); // acquiring getName()
 const addToCollection = require('@/main.js'); // acquiring addToCollection()
 const comorbidityArr = require('@/main.js'); // acquiring array of comorbidity from main.js
 const server = require('@/main.js'); // acquiring server singleton
-const getAll = require('@/main.js'); // acquiring getAll()
+const getAllTests = require('@/main.js'); // acquiring getAll()
 
 // Testing all of the co-morbidities individually with expected set of tests
 // Tags need to contain correct set of tests
@@ -86,6 +86,6 @@ for (let i = 0; i < 21; i++) {
 }
 // Testing addToCollection() function with visual inspection
 for (let i = 0; i < 21; i++) {
-  console.log(getAll());
+  console.log(getAllTests());
   addToCollection(comorbidityArr[i]);
 }
