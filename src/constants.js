@@ -29,8 +29,8 @@ const Condition = {
   Diabetes: 'Diabetes (on Insulin or 2 oral agents)',
   Malignancy: 'Present malignancy / surgery for malignancy',
   Hepatic: 'Hepatic disease',
-  Adrenal: 'History of adrenal disease', 
-  Pituitary: 'History of pituitary disease', 
+  Adrenal: 'History of adrenal disease',
+  Pituitary: 'History of pituitary disease',
   Endocrine: 'History of major systemic endocrine disease',
   /* Medications */
   Digoxin: 'Digoxin',
@@ -54,7 +54,7 @@ const Exam = {
   LFT: 'LFT',
   Gluc: 'Gluc',
   HbA1C: 'HbA1C',
-  CXR: 'CXR',  
+  CXR: 'CXR',
 };
 
 export default { Condition, Exam };
