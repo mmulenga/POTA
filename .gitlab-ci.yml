@@ -2,7 +2,8 @@ stages:
   - assemble
   - build
   - unit_test
-  - ui_test
+  - blocking_ui_test
+  - non_blocking_ui_test
   - deploy
   - cleanup
 
@@ -37,15 +38,28 @@ building:
     - release
     - nick
 
-ui_testing:
+blocking_ui_testing:
   stage: ui_test
   script:
     - cd ~/nightwatch
-    - nightwatch --env ios,android,chrome,safari,ie,firefox $CI_PROJECT_DIR/test/e2e/specs/testserver.js
+    - nightwatch --env ios,android,chrome,safari,ie,firefox $CI_PROJECT_DIR/test/e2e/specs/blocking
+  allow_failure: false
   only:
     - develop
     - release
     - nick
+
+non_blocking_ui_testing:
+  stage: ui_test
+  script:
+    - cd ~/nightwatch
+    - nightwatch --env ios,android,chrome,safari,ie,firefox $CI_PROJECT_DIR/test/e2e/specs/nonblocking
+  allow_failure: true
+  only:
+    - develop
+    - release
+    - nick
+
 
 deploying:
   stage: deploy
