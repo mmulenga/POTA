@@ -2,8 +2,7 @@ stages:
   - assemble
   - build
   - unit_test
-  - blocking_ui_test
-  - non_blocking_ui_test
+  - ui_test
   - deploy
   - cleanup
 
