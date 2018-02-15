@@ -9,7 +9,7 @@ module.exports = {
       .waitForElementPresent('#help_btn', 1000)
       .waitForElementPresent('#glossary_btn', 500)
       .waitForElementPresent('#reset_btn', 500)
-      .waitForElementPresent('#lowrist_btn, 500)
+      .waitForElementPresent('#lowrisk_btn', 500)
       .waitForElementPresent('#medrisk_btn', 500)
       .waitForElementPresent('#highrisk_btn', 500)
       .end();
