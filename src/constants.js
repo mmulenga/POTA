@@ -57,4 +57,4 @@ const Exam = {
   CXR: 'CXR',
 };
 
-export default { Condition, Exam };
+export { Condition, Exam };

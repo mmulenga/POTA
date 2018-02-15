@@ -2,15 +2,10 @@
 /* Use command 'npm run unit' */
 import { add } from '@/main';
 
-describe('add() in main.js', () => {
-  it('should add two numbers', () => {
+describe('Testing add() function in main.js', () => {
+  it('returns correct sum', () => {
     const result = add(1, 2);
     const expected = 3;
     expect(result).toBe(expected);
   });
-
-  test('adds 1 + 2 to equal 3', () => {
-    expect(add(1, 2)).toBe(3);
-  });
 });
-

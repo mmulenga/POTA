@@ -19,4 +19,4 @@ function GetAllExams() {
   return examCollection;
 }
 
-export default { Tag, GetExams, GetAllExams };
+export { Tag, GetExams, GetAllExams };

@@ -1,13 +1,19 @@
-import { Tag, GetExams } from '@/tag';
+// import { Tag, GetExams } from '@/tag';
 import { Condition, Exam } from '@/constants';
 import { PatientExamsNeeded } from '@/PreopRecommendation';
 
-const conditions = Condition.AtrialFib;
+const conditions = [Condition.AtrialFib];
+const requiredExams = new Set();
+requiredExams.add(Exam.ECG);
 
 describe('Testing PatientExamsNeeded() function in PreopRecommendation.js', () => {
-  it('returns correct sum', () => {
+  it('returns correct examinations needed', () => {
     const result = PatientExamsNeeded(conditions);
-    const expected = 3;
-    expect(result).toBe(expected);
+    expect(result).toEqual(requiredExams);
+  });
+
+  it('returns correct examinations needed', () => {
+    const result = PatientExamsNeeded(conditions);
+    expect(result).toEqual(requiredExams);
   });
 });
