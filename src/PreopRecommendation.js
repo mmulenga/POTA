@@ -57,5 +57,3 @@ export function PatientExamsNeeded(patientConditions) {
   }
   return testAggregation;
 }
-
-export default PatientExamsNeeded;
