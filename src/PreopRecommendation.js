@@ -19,7 +19,7 @@ Tag(Condition.VHD, [Exam.ECG, Exam.CBC]);/* TODO: If mechanical */
 Tag(Condition.HeartFail, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
 Tag(Condition.PVD, [Exam.ECG, Exam.RenPanel]);
 /* Pulmonary Diseases */
-Tag(Condition.PulmDisease, [Exam.ECG, Exam.RenPanel, Exam.CXR]);/* TODO: CXR is time qualified */
+Tag(Condition.PulmDisease, [Exam.ECG, Exam.CBC, Exam.CXR]);/* TODO: CXR is time qualified */
 /* Other Diseases */
 Tag(Condition.Bleeding, [Exam.GnS, Exam.CBC, Exam.PTTINR]);
 Tag(Condition.Anemia, [Exam.CBC]);
