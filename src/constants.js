@@ -6,7 +6,7 @@
 
 
 /* Conditions */
-const Condition = {
+export const Condition = {
   /* Cardiovascular Diseases */
   AtrialFib: 'Atrial fibrillation / History of irregular heart beat',
   Defib: 'Defibrillator / Pacemaker',
@@ -45,7 +45,7 @@ const Condition = {
 };
 
 /* Medical Examinations */
-const Exam = {
+export const Exam = {
   GnS: 'G&S',
   ECG: 'ECG',
   CBC: 'CBC',
@@ -56,5 +56,8 @@ const Exam = {
   HbA1C: 'HbA1C',
   CXR: 'CXR',
 };
+<<<<<<< HEAD
 
 export { Condition, Exam };
+=======
+>>>>>>> 61cd46f72d7b8296933c4e94eb3d42ce00fa92a8
