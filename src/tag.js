@@ -19,7 +19,3 @@ export function GetAllExams() {
   return examCollection;
 }
 
-<<<<<<< HEAD
-export { Tag, GetExams, GetAllExams };
-=======
->>>>>>> 61cd46f72d7b8296933c4e94eb3d42ce00fa92a8

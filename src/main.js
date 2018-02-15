@@ -30,8 +30,3 @@ export function assert(condition, message) {
     console.assert(`ASSERT failed: ${message}`);
   }
 }
-
-<<<<<<< HEAD
-export default { assert, add };
-=======
->>>>>>> 61cd46f72d7b8296933c4e94eb3d42ce00fa92a8

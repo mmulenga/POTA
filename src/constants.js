@@ -56,8 +56,3 @@ export const Exam = {
   HbA1C: 'HbA1C',
   CXR: 'CXR',
 };
-<<<<<<< HEAD
-
-export { Condition, Exam };
-=======
->>>>>>> 61cd46f72d7b8296933c4e94eb3d42ce00fa92a8
