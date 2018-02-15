@@ -1,13 +1,13 @@
 <template>
-  <div class="container-fluid">
-    <testcss>
+  <div class="container">
+    <div class="testcss">
       This has component-scoped css!
-    </testcss>
-    <div class="row" id="Test">
+    </div>
+    <div class="row justify-content-md-center" id="Test">
       This is a simple webapp written in {{framework_name}}
     </div>
-    <div class="row">
-      <div class="col-xs-2 col-centered">
+    <div class="row justify-content-md-center">
+      <div class="col-2">
         <button type="button" class="btn" v-on:click="show_alert = !show_alert">
           Toggle alert
         </button>
@@ -16,11 +16,11 @@
         </div>
       </div>
     </div>
-    <row>
+    <div class="row justify-content-md-center">
       Current time is {{current_time[0] | pad2}}:
       {{current_time[1] | pad2}}:
       {{current_time[2] | pad2}}
-    </row>
+    </div>
     <button type="button" class="btn" v-on:click="current_time=time()">
       Reload time
     </button>
@@ -56,7 +56,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-testcss {
+.testcss {
   color: red;
 }
 </style>
