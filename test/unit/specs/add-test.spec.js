@@ -1,6 +1,6 @@
 /* Simple Jest test file to test out add() function in main.js */
 /* Use command 'npm run unit' */
-import { add } from '@/main.js';
+import { add } from '@/main';
 
 describe('add() in main.js', () => {
   it('should add two numbers', () => {

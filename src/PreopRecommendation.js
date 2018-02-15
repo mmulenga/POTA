@@ -47,7 +47,7 @@ Tag(Condition.Steroid, [Exam.RenPanel, Exam.Gluc]);
  * Given a list of patient conditions, return a collection of examinations that should be performed
  * @param {String[]} patientConditions
  */
-function PatientExamsNeeded(patientConditions) {
+export function PatientExamsNeeded(patientConditions) {
   const testAggregation = new Set();
   for (let i = 0; i < patientConditions.length; i += 1) {
     const exams = GetExams(patientConditions[i]);
