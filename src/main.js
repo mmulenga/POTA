@@ -3,10 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 
-// Comment this out for the sake of testing add() function
-require('../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss');
-
-Vue.config.productionTip = false;
+Vue.config.productionTip = process.env.NODE_ENV === 'production';
 
 /* eslint-disable no-new */
 new Vue({
@@ -16,7 +13,21 @@ new Vue({
 });
 
 /* Simple addition function for testing */
-function add(a, b) {
+export function add(a, b) {
   return a + b;
 }
-module.exports = add;
+
+
+/**
+ * Asserts a condition is true and prints a message to console otherwise.
+ * Becomes a null operation when in a production deployment
+ * @param {Boolean} condition The condition to be verified
+ * @param {String} message Message to print out on failure
+ */
+export function assert(condition, message) {
+  if (!Vue.config.productionTip && !condition) {
+    // eslint-disable-next-line no-console
+    console.assert(`ASSERT failed: ${message}`);
+  }
+}
+

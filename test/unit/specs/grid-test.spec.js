@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // Initial Testing Structure for Pre-op Grid
 
 // Cardiovasular Diseases and list of test needed
@@ -86,6 +88,6 @@ for (let i = 0; i < 21; i++) {
 }
 // Testing addToCollection() function with visual inspection
 for (let i = 0; i < 21; i++) {
-  console.log(server.getAll());
-  server.addToCollection(comorbidityArr[i]);
+  console.log(getAll());
+  addToCollection(comorbidityArr[i]);
 }
