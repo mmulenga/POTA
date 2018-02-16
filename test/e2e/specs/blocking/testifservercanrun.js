@@ -1,3 +1,4 @@
+/* eslint-disable */
 module.exports = {
   'Demo test Google' : function (browser) {
     console.log('test');
