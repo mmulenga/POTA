@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <DemoComponent/>
+    <ComoListComponent/>
   </div>
 </template>
 
 <script>
 import DemoComponent from './components/DemoComponent';
+import ComoListComponent from './components/ComoListComponent';
 
 export default {
   name: 'App',
   components: {
     DemoComponent,
+    ComoListComponent,
   },
 };
 </script>
