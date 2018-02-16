@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    <div class="">
         <div class="row">
-            <div class="offset-md-3 col-md-6">
+            <div class="col-md-12">
                 <ul class="list-group half px-auto">
                     <li class="list-group-item list-group-item-dark"> Cardiovascular Diseases</li>
                     <li class="list-group-item list-group-item-action"
