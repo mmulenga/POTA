@@ -71,7 +71,7 @@ import ComoListComponent from '../components/ComoListComponent';
 export default {
   name: 'Prototype',
   components: {
-      ComoListComponent,
+    ComoListComponent,
   },
   data() {
     return {
