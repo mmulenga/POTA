@@ -5,22 +5,30 @@
                 <ul class="list-group half px-auto">
                     <li class="list-group-item list-group-item-dark"> Cardiovascular Diseases</li>
                     <li class="list-group-item list-group-item-action"
-                    v-for="item in cardioDiseases" :key="item.comorbidity">
+                    v-for="item in cardioDiseases"
+                    :key="item.comorbidity"
+                    v-on:click="aggregateConditions">
                         {{ item.comorbidity }}
                     </li>
                     <li class="list-group-item list-group-item-dark"> Pulmonary Diseases</li>
-                    <li class="list-group-item list-group-item-action" v-for="item in pulmoDiseases"
-                    :key="item.comorbidity">
+                    <li class="list-group-item list-group-item-action"
+                    v-for="item in pulmoDiseases"
+                    :key="item.comorbidity"
+                    v-on:click="aggregateConditions">
                         {{ item.comorbidity }}
                     </li>
                     <li class="list-group-item list-group-item-dark"> Other Diseases</li>
-                    <li class="list-group-item list-group-item-action" v-for="item in otherDiseases"
-                    :key="item.comorbidity">
+                    <li class="list-group-item list-group-item-action"
+                    v-for="item in otherDiseases"
+                    :key="item.comorbidity"
+                    v-on:click="aggregateConditions">
                         {{ item.comorbidity }}
                     </li>
                     <li class="list-group-item list-group-item-dark"> Medications </li>
-                    <li class="list-group-item list-group-item-action" v-for="item in medications"
-                    :key="item.comorbidity">
+                    <li class="list-group-item list-group-item-action"
+                    v-for="item in medications"
+                    :key="item.comorbidity"
+                    v-on:click="aggregateConditions">
                         {{ item.comorbidity }}
                     </li>
                 </ul>
@@ -31,6 +39,16 @@
 
 <script>
 import { Condition } from '@/constants';
+
+/**
+ * Creates or removes a comorbidity to a String array to be
+ * passed to the necessary functions. Executed whenever a
+ * comorbidity is clicked in the list.
+ * @returns comoList - List of comorbidities.
+ */
+function aggregateConditions() {
+  console.log('Placeholder.');
+}
 
 export default {
   name: 'ComoListComponent',
@@ -80,6 +98,9 @@ export default {
         { comorbidity: Condition.Steroid },
       ],
     };
+  },
+  methods: {
+    aggregateConditions: () => aggregateConditions(),
   },
 };
 </script>
