@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <DemoComponent/>
+    <Prototype/>
   </div>
 </template>
 
 <script>
-import DemoComponent from './components/DemoComponent';
+import Prototype from './components/Prototype';
 
 export default {
   name: 'App',
   components: {
-    DemoComponent,
+    Prototype,
   },
 };
 </script>
