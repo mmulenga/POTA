@@ -1,3 +1,4 @@
+import { Vue } from 'vue/dist/vue';
 import { Tag, GetExams, GetAllExams } from '@/tag';
 import { Condition, Exam } from '@/constants';
 import { PatientExamsNeeded } from '@/PreopRecommendation';
@@ -470,8 +471,13 @@ describe('Testing GetAllExams() in tag.js', () => {
 });
 
 describe('Testing Tag() in tag.js', () => {
-  it('returns correct tag creation', () => {
+  it('returns correct tag creation using GetAllExams()', () => {
     result = Tag('DaleDisease', [Exam.ECG]);
     expect(GetAllExams().DaleDisease).toEqual([Exam.ECG]);
+  });
+
+  it('returns correct tag creation using GetExams()', () => {
+    result = Tag('DaleDisease', [Exam.ECG]);
+    expect(GetExams('DaleDisease')).toEqual([Exam.ECG]);
   });
 });
