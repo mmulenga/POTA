@@ -1,4 +1,4 @@
-import { Vue } from 'vue/dist/vue';
+// import Vue from 'vue/dist/vue';
 import { Tag, GetExams, GetAllExams } from '@/tag';
 import { Condition, Exam } from '@/constants';
 import { PatientExamsNeeded } from '@/PreopRecommendation';
