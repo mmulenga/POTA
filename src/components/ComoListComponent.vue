@@ -46,9 +46,9 @@ import { Condition } from '@/constants';
  * comorbidity is clicked in the list.
  * @returns comoList - List of comorbidities.
  */
-function aggregateConditions() {
-  // console.log('Placeholder.');
-}
+// function aggregateConditions() {
+//   console.log('Placeholder.');
+// }
 
 export default {
   name: 'ComoListComponent',
