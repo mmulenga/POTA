@@ -1,0 +1,413 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App.test.js has the expected html structure 1`] = `
+<div
+  class="row"
+>
+  <div
+    class="col-3 col-md-3"
+  >
+    <h4
+      class="alert-heading"
+    />
+     
+    <button
+      class="btn btn-primary"
+      id="menu_btn"
+      type="button"
+    >
+      Menu
+    </button>
+     
+    <hr />
+     
+    <div
+      aria-orientation="vertical"
+      class="nav flex-column nav-pills py-5"
+      id="v-pills-tab"
+      role="tablist"
+    >
+      <a
+        aria-controls="v-pills-home"
+        aria-selected="true"
+        class="nav-link active"
+        data-toggle="pill"
+        href="#v-pills-home"
+        id="testing_btn"
+        role="tab"
+      >
+        Testing
+      </a>
+       
+      <a
+        aria-controls="v-pills-profile"
+        aria-selected="false"
+        class="nav-link"
+        data-toggle="pill"
+        href="#v-pills-profile"
+        id="help_btn"
+        role="tab"
+      >
+        Help
+      </a>
+       
+      <a
+        aria-controls="v-pills-settings"
+        aria-selected="false"
+        class="nav-link"
+        data-toggle="pill"
+        href="#v-pills-settings"
+        id="glossary_btn"
+        role="tab"
+      >
+        Glossary
+      </a>
+    </div>
+  </div>
+   
+  <div
+    class="col-6"
+  >
+    <div>
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-12"
+        >
+          <ul
+            class="list-group half px-auto"
+          >
+            <li
+              class="list-group-item list-group-item-dark"
+            >
+               Cardiovascular Diseases
+            </li>
+             
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Atrial fibrillation / History of irregular heart beat
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Defibrillator / Pacemaker
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Coronary artery disease
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Cardiac Stent (&lt; 12 months)
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    History of cerebral disease
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    History of pulmonary vascular disease
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Transient Ischemic Attack (TIA)
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Stroke
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Valvular heart disease / Valve Replacement
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Heart Failure
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Peripheral Vascular disease (PVD)
+                
+            </li>
+             
+            <li
+              class="list-group-item list-group-item-dark"
+            >
+               Pulmonary Diseases
+            </li>
+             
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Severe COPD, Home Oxygen, Pulmonary HTN
+                
+            </li>
+             
+            <li
+              class="list-group-item list-group-item-dark"
+            >
+               Other Diseases
+            </li>
+             
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Bleeding disorders (hemophiliac | DVT)
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    History of anemia
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    History of active bleeding
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Renal disease (on dialysis or at risk for Acute Kidney Injury [AKI])
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Diabetes (on Insulin or 2 oral agents)
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Present malignancy / surgery for malignancy
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Hepatic disease
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    History of adrenal disease
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    History of pituitary disease
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    History of major systemic endocrine disease
+                
+            </li>
+             
+            <li
+              class="list-group-item list-group-item-dark"
+            >
+               Medications 
+            </li>
+             
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Digoxin
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Lithium
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Diuretics
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    ACE-I
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    ARB
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    NSAIDS
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Anticoagulants
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Antiplatelet (ASA excluded)
+                
+            </li>
+            <li
+              class="list-group-item list-group-item-action"
+            >
+              
+                    Systemic steroid use within 6 months
+                
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="col-3 col-md-3"
+  >
+    <div
+      class="alert alert-success"
+      role="alert"
+    >
+      <h4
+        class="alert-heading"
+      >
+        Recommend Test:
+      </h4>
+       
+      <red-text>
+        
+                Showing what test should be done
+            
+      </red-text>
+       
+      <hr />
+       
+      <red-text>
+        
+                Showing what test should be done
+            
+      </red-text>
+       
+      <hr />
+       
+      <red-text>
+        
+                Showing what test should be done
+            
+      </red-text>
+    </div>
+     
+    <br />
+     
+    <br />
+     
+    <br />
+     
+    <br />
+     
+    <br />
+     
+    <br />
+     
+    <br />
+     
+    <br />
+     
+    <div
+      class="alert alert-success"
+      role="alert"
+    >
+      <h4
+        class="alert-heading"
+      >
+        Status of Patient:
+      </h4>
+       
+      <red-text>
+        
+                Showing patient's status
+            
+      </red-text>
+       
+      <br />
+       
+      <hr />
+       
+      <button
+        class="btn btn-primary"
+        id="reset_btn"
+        type="button"
+      >
+        Restore
+      </button>
+    </div>
+  </div>
+</div>
+`;
