@@ -1,6 +1,6 @@
 import Vue from 'vue';
 // import Vue from 'vue/dist/vue';
-import App from '@/App';
+// import App from '@/App';
 import Prototype from '@/components/Prototype';
 import ComoListComponent from '@/components/ComoListComponent';
 import { Condition, Exam } from '@/constants';
