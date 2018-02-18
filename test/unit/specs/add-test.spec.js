@@ -4,8 +4,7 @@ import { add } from '@/main';
 
 describe('Testing add() function in main.js', () => {
   it('returns correct sum', () => {
-    const result = add(1, 2);
-    const expected = 3;
-    expect(result).toBe(expected);
+    const result = add(1, 4);
+    expect(result).toMatchSnapshot();
   });
 });
