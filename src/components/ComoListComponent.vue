@@ -47,7 +47,7 @@ import { Condition } from '@/constants';
  * @returns comoList - List of comorbidities.
  */
 function aggregateConditions() {
-  console.log('Placeholder.');
+  // TODO
 }
 
 export default {
