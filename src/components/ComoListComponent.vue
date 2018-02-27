@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <ul class="list-group half px-auto">
@@ -47,7 +47,6 @@ import { Condition } from '@/constants';
  * @returns comoList - List of comorbidities.
  */
 function aggregateConditions() {
-  console.log('Placeholder.');
 }
 
 export default {
