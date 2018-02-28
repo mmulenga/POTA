@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="offset-md-3 col-md-6">
+      <div class="col-12">
         <ul class="list-group half px-auto">
           <li class="list-group-item list-group-item-dark"> Cardiovascular Diseases</li>
           <li class="list-group-item list-group-item-action"
@@ -56,16 +56,11 @@ import { Condition } from '@/constants';
  * @returns comoList - List of comorbidities.
  */
 function aggregateConditions() {
-  if (vm.$el.isActive === false) {
-    this.como.isActive = true;
-  } else {
-    this.como.isActive = false;
-  }
+
 }
 
 export default {
   name: 'ComoListComponent',
-  el: '#como',
   data() {
     return {
       cardioDiseases: [
@@ -111,7 +106,7 @@ export default {
         { comorbidity: Condition.Antiplatelet },
         { comorbidity: Condition.Steroid },
       ],
-      isActive: false,
+      isActive: true,
     };
   },
   methods: {
