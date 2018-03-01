@@ -1,6 +1,4 @@
-import { Tag, GetExams, GetAllExams } from '@/tag';
-import { Condition, Exam } from '@/constants';
-// import { PatientExamsNeeded } from '@/PreopRecommendation';
+import { Exam } from '@/constants';
 
 function forEach(items, callback) {
   for (let index = 0; index < items.length; index += 1) {

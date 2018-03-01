@@ -181,6 +181,13 @@ describe('Testing PatientExamsNeeded() for other diseases in PreopRecommendation
     requiredExams.add(Exam.RenPanel);
     expect(result).toEqual(requiredExams);
   });
+
+  it('returns correct set of preop exams for thyroid disease or on thyroid supplementation', () => {
+    result = PatientExamsNeeded([Condition.Thyroid]);
+    requiredExams = new Set();
+    requiredExams.add(Exam.TSH);
+    expect(result).toEqual(requiredExams);
+  });
 });
 
 describe('Testing PatientExamsNeeded() for medication use in PreopRecommendation.js', () => {
@@ -396,6 +403,12 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('returns the correct array of preop exams for history of major systemic endocrine disease', () => {
     result = GetExams(Condition.Endocrine);
     requiredExams = ['Renal Panel (Creat + Lytes)'];
+    expect(requiredExams).toEqual(expect.arrayContaining(result));
+  });
+
+  it('returns the correct array of preop exams for thyroid disease or on thyroid supplementation', () => {
+    result = GetExams(Condition.Thyroid);
+    requiredExams = ['TSH'];
     expect(requiredExams).toEqual(expect.arrayContaining(result));
   });
 });
