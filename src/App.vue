@@ -3,7 +3,9 @@
     <template>
     <div class="row">
         <div class="col-3">
-            <StatusComponent/>
+            <StatusComponent
+             :resultArray="resultArray"/>
+             <!-- This is the the bind to the child component-->
         </div>
         <div class="col-md-6">
             <ComoListComponent/>
@@ -17,6 +19,7 @@
 </template>
 
 <script>
+import { Condition } from '@/constants';
 import ComoListComponent from './components/ComoListComponent';
 import OutputComponent from './components/OutputComponent';
 import StatusComponent from './components/StatusComponent';
@@ -31,6 +34,10 @@ export default {
   data() {
     return {
       framework_name: 'VueJS',
+      // this is the data tied to the prop
+      resultArray: [{ comorbidity: Condition.CAD }, { comorbidity: Condition.Defib },
+        { comorbidity: Condition.AtrialFib }],
+      template: '<span>{{ resultArray }}</span>',
     };
   },
 };

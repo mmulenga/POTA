@@ -1,14 +1,10 @@
 <template id="status">
     <div class="status">
-        <button v-on:click="addConditionsReceived()">
-             Add Conditions </button>
-
-        <button v-on:click="removeConditionsReceived()">
-             Remove Conditions </button>
         <h1>Patient Status</h1>
         <div class="list">
-            <ul id="status"
-                v-for="item in conditionsReceived"
+            <!-- this is the other place binding for the props is being used -->
+            <ul v-bind:resultArray="resultArray"
+                v-for="item in resultArray"
                 :key="item.comorbidity">
                 <li> {{item.comorbidity}} </li>
             </ul>
@@ -17,11 +13,13 @@
 </template>
 
 <script>
-// import Vue from 'vue';
-import { Condition } from '@/constants';
 
 export default {
   name: 'StatusComponent',
+  // this is the prop in the child component
+  props: {
+    resultArray: Array,
+  },
   data() {
     return {
       conditionsReceived: [
@@ -32,8 +30,12 @@ export default {
    * the current patient status
    */
   methods: {
-    addConditionsReceived: function addConditionsReceived() {
-      this.conditionsReceived.push({ comorbidity: Condition.CAD });
+    addConditionsReceived: function addConditionsReceived(conditions) {
+      let i;
+      for (i = 0; i <= this.conditionsReceived.length; i += 1) {
+        this.removeConditionsReceived();
+      }
+      this.conditionsReceived = this.conditionsReceived.concat(conditions);
     },
     removeConditionsReceived: function removeConditionsReceived() {
       this.conditionsReceived.pop();
@@ -51,6 +53,7 @@ export default {
     .list{
         overflow: auto;
         text-align: left;
+        font-family:'Comic Sans MS';
     }
 </style>
 
