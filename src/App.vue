@@ -8,7 +8,7 @@
              <!-- This is the the bind to the child component-->
         </div>
         <div class="col-md-6">
-            <ComoListComponent/>
+            <ComoListComponent v-on:updateEvent="updateArray"/>
         </div>
         <div class="col-md-3">
             <OutputComponent/>
@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import { Condition } from '@/constants';
 import ComoListComponent from './components/ComoListComponent';
 import OutputComponent from './components/OutputComponent';
 import StatusComponent from './components/StatusComponent';
@@ -34,11 +33,22 @@ export default {
   data() {
     return {
       framework_name: 'VueJS',
-      // this is the data tied to the prop
-      resultArray: [{ comorbidity: Condition.CAD }, { comorbidity: Condition.Defib },
-        { comorbidity: Condition.AtrialFib }],
-      template: '<span>{{ resultArray }}</span>',
+      resultArray: [],
     };
+  },
+  methods: {
+    /**
+    * Updates the resultArray with data recieved from
+    * child ComoListComponent.
+    */
+    updateArray: function updateArray(comorbidity) {
+      if (this.resultArray.includes(comorbidity.result)) {
+        // Apparently there's no delete by index, so this is the best we can do. :(
+        this.resultArray.splice(this.resultArray.indexOf(comorbidity.result), 1);
+      } else {
+        this.resultArray.push(comorbidity.result);
+      }
+    },
   },
 };
 </script>

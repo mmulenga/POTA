@@ -5,8 +5,8 @@
             <!-- this is the other place binding for the props is being used -->
             <ul v-bind:resultArray="resultArray"
                 v-for="item in resultArray"
-                :key="item.comorbidity">
-                <li> {{item.comorbidity}} </li>
+                :key="item">
+                <li> {{item}} </li>
             </ul>
         </div>
     </div>
@@ -53,7 +53,7 @@ export default {
     .list{
         overflow: auto;
         text-align: left;
-        font-family:'Comic Sans MS';
+        /* font-family:'Comic Sans MS'; */
     }
 </style>
 
