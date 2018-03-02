@@ -80,6 +80,7 @@ export default {
   name: 'ComoListComponent',
   data() {
     return {
+      result: '',
       cardioDiseases: [
         /* Cardiovascular Diseases */
         { comorbidity: Condition.AtrialFib, check: false },
@@ -123,7 +124,6 @@ export default {
         { comorbidity: Condition.Antiplatelet, check: false },
         { comorbidity: Condition.Steroid, check: false },
       ],
-      resultArray: [],
     };
   },
   methods: {
@@ -138,44 +138,44 @@ export default {
       // of the checkbox when, the list item is clicked.
       if (this.cardioDiseases[index].check === false) {
         this.cardioDiseases[index].check = true;
-        this.resultArray.push(this.cardioDiseases[index].comorbidity);
       } else {
         this.cardioDiseases[index].check = false;
-        this.resultArray.pop(this.cardioDiseases[index].comorbidity);
       }
+
+      this.$emit('updateEvent', { result: this.cardioDiseases[index].comorbidity });
     },
     aggregatePulmoConditions: function aggregatePulmoConditions(index) {
       // This method also updates the rendering
       // of the checkbox when, the list item is clicked.
       if (this.pulmoDiseases[index].check === false) {
         this.pulmoDiseases[index].check = true;
-        this.resultArray.push(this.pulmoDiseases[index].comorbidity);
       } else {
         this.pulmoDiseases[index].check = false;
-        this.resultArray.pop(this.pulmoDiseases[index].comorbidity);
       }
+
+      this.$emit('updateEvent', { result: this.pulmoDiseases[index].comorbidity });
     },
     aggregateOtherConditions: function aggregateOtherConditions(index) {
       // This method also updates the rendering
       // of the checkbox when, the list item is clicked.
       if (this.otherDiseases[index].check === false) {
         this.otherDiseases[index].check = true;
-        this.resultArray.push(this.otherDiseases[index].comorbidity);
       } else {
         this.otherDiseases[index].check = false;
-        this.resultArray.pop(this.otherDiseases[index].comorbidity);
       }
+
+      this.$emit('updateEvent', { result: this.otherDiseases[index].comorbidity });
     },
     aggregateMedicConditions: function aggregateMedicConditions(index) {
       // This method also updates the rendering
       // of the checkbox when, the list item is clicked.
       if (this.medications[index].check === false) {
         this.medications[index].check = true;
-        this.resultArray.push(this.medications[index].comorbidity);
       } else {
         this.medications[index].check = false;
-        this.resultArray.pop(this.medications[index].comorbidity);
       }
+
+      this.$emit('updateEvent', { result: this.medications[index].comorbidity });
     },
   },
 };
