@@ -3,7 +3,7 @@ import Vue from 'vue';
 // import App from '@/App';
 import Prototype from '@/components/Prototype';
 import ComoListComponent from '@/components/ComoListComponent';
-import { Condition, Exam } from '@/constants';
+import { Condition } from '@/constants';
 
 describe('Testing all comorbidities in ComoListComponent.vue', () => {
   it('returns correct list of cardiovascular diseases', () => {
@@ -42,7 +42,8 @@ describe('Testing all comorbidities in ComoListComponent.vue', () => {
       { comorbidity: Condition.Hepatic },
       { comorbidity: Condition.Adrenal },
       { comorbidity: Condition.Pituitary },
-      { comorbidity: Condition.Endocrine }];
+      { comorbidity: Condition.Endocrine },
+      { comorbidity: Condition.Thyroid }];
     expect(vm.otherDiseases).toEqual(otherDiseaseList);
   });
 
