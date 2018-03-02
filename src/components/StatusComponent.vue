@@ -1,7 +1,10 @@
 <template id="status">
     <div class="status">
-        <button v-on:click="updateConditionsReceived()">
-             Update Conditions </button>
+        <button v-on:click="addConditionsReceived()">
+             Add Conditions </button>
+
+        <button v-on:click="removeConditionsReceived()">
+             Remove Conditions </button>
         <h1>Patient Status</h1>
         <div class="list">
             <ul id="status"
@@ -22,7 +25,6 @@ export default {
   data() {
     return {
       conditionsReceived: [
-        { comorbidity: Condition.Defib },
       ],
     };
   },
@@ -30,8 +32,11 @@ export default {
    * the current patient status
    */
   methods: {
-    updateConditionsReceived: function updateConditionsReceived() {
+    addConditionsReceived: function addConditionsReceived() {
       this.conditionsReceived.push({ comorbidity: Condition.CAD });
+    },
+    removeConditionsReceived: function removeConditionsReceived() {
+      this.conditionsReceived.pop();
     },
   },
 };
