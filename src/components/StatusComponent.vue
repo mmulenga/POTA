@@ -1,13 +1,13 @@
-<template>
-    <div id="status">
-    <h1>Patient Status</h1>
-    <ol class="list">
-        <status-item
-        v-for="item in conditionsReceived"
-        v-bind:status="item"
-        v-bind:key="item.id">
-        </status-item>
-    </ol>
+<template id="status">
+    <div class="status">
+        <h1>Patient Status</h1>
+        <div class="list">
+            <ul id="status"
+                v-for="item in conditionsReceived"
+                :key="item.comorbidity">
+                <li> {{item.comorbidity}} </li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -25,6 +25,13 @@ Vue.component('status', {
 
 export default {
   name: 'StatusComponent',
+  data() {
+    return {
+      conditionsReceived: [
+        { comorbidity: Condition.CAD },
+      ],
+    };
+  },
 };
 
 </script>
