@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-3">
-            <NavComponent/>
+            <StatusComponent/>
         </div>
         <div class="col-6">
             <ComoListComponent/>
@@ -16,6 +16,8 @@
 import NavComponent from '../components/NavComponent';
 import ComoListComponent from '../components/ComoListComponent';
 import OutputComponent from '../components/OutputComponent';
+import StatusComponent from '../components/StatusComponent';
+
 
 export default {
   name: 'Prototype',
@@ -23,6 +25,7 @@ export default {
     NavComponent,
     ComoListComponent,
     OutputComponent,
+    StatusComponent,
   },
   data() {
     return {
