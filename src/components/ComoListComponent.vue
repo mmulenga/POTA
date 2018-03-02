@@ -5,40 +5,67 @@
         <ul class="list-group half px-auto">
           <li class="list-group-item list-group-item-dark"> Cardiovascular Diseases</li>
           <li class="list-group-item list-group-item-action"
-          v-for="item in cardioDiseases"
+          v-for="(item, index) in cardioDiseases"
           :key="item.comorbidity"
-          v-on:click="aggregateConditions">
+          v-on:click="aggregateCardioConditions(index)">
             <div class="row">
-              <div class="col-10 pl-5 text-left">
-                {{ item.comorbidity }}
-              </div>
               <div class="col-2">
                 <div class="form-check">
-                  <input id="como" class="form-check-input" :checked="isActive" type="checkbox">
+                  <input class="form-check-input" type="checkbox" :checked="item.check">
                 </div>
+              </div>
+              <div class="col-10 text-left">
+                {{ item.comorbidity }}
               </div>
             </div>
           </li>
           <li class="list-group-item list-group-item-dark"> Pulmonary Diseases</li>
           <li class="list-group-item list-group-item-action"
-          v-for="item in pulmoDiseases"
+          v-for="(item, index) in pulmoDiseases"
           :key="item.comorbidity"
-          v-on:click="aggregateConditions">
-            {{ item.comorbidity }}
+          v-on:click="aggregatePulmoConditions(index)">
+            <div class="row">
+              <div class="col-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" :checked="item.check">
+                </div>
+              </div>
+              <div class="col-10 text-left">
+                {{ item.comorbidity }}
+              </div>
+            </div>
           </li>
           <li class="list-group-item list-group-item-dark"> Other Diseases</li>
           <li class="list-group-item list-group-item-action"
-          v-for="item in otherDiseases"
+          v-for="(item, index) in otherDiseases"
           :key="item.comorbidity"
-          v-on:click="aggregateConditions">
-            {{ item.comorbidity }}
+          v-on:click="aggregateOtherConditions(index)">
+            <div class="row">
+              <div class="col-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" :checked="item.check">
+                </div>
+              </div>
+              <div class="col-10 text-left">
+                {{ item.comorbidity }}
+              </div>
+            </div>
           </li>
           <li class="list-group-item list-group-item-dark"> Medications </li>
           <li class="list-group-item list-group-item-action"
-          v-for="item in medications"
+          v-for="(item, index) in medications"
           :key="item.comorbidity"
-          v-on:click="aggregateConditions">
-            {{ item.comorbidity }}
+          v-on:click="aggregateMedicConditions(index)">
+            <div class="row">
+              <div class="col-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" :checked="item.check">
+                </div>
+              </div>
+              <div class="col-10 text-left">
+                {{ item.comorbidity }}
+              </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -49,73 +76,112 @@
 <script>
 import { Condition } from '@/constants';
 
-/**
- * Creates or removes a comorbidity to a String array to be
- * passed to the necessary functions. Executed whenever a
- * comorbidity is clicked in the list.
- * @returns comoList - List of comorbidities.
- */
-function aggregateConditions() {
-
-}
-
 export default {
   name: 'ComoListComponent',
   data() {
     return {
       cardioDiseases: [
         /* Cardiovascular Diseases */
-        { comorbidity: Condition.AtrialFib },
-        { comorbidity: Condition.Defib },
-        { comorbidity: Condition.CAD },
-        { comorbidity: Condition.CardiacStent },
-        { comorbidity: Condition.CerebralDisease },
-        { comorbidity: Condition.PulmonaryVascular },
-        { comorbidity: Condition.TIA },
-        { comorbidity: Condition.Stroke },
-        { comorbidity: Condition.VHD },
-        { comorbidity: Condition.HeartFail },
-        { comorbidity: Condition.PVD },
+        { comorbidity: Condition.AtrialFib, check: false },
+        { comorbidity: Condition.Defib, check: false },
+        { comorbidity: Condition.CAD, check: false },
+        { comorbidity: Condition.CardiacStent, check: false },
+        { comorbidity: Condition.CerebralDisease, check: false },
+        { comorbidity: Condition.PulmonaryVascular, check: false },
+        { comorbidity: Condition.TIA, check: false },
+        { comorbidity: Condition.Stroke, check: false },
+        { comorbidity: Condition.VHD, check: false },
+        { comorbidity: Condition.HeartFail, check: false },
+        { comorbidity: Condition.PVD, check: false },
       ],
       pulmoDiseases: [
         /* Pulmonary Diseases */
-        { comorbidity: Condition.PulmDisease },
+        { comorbidity: Condition.PulmDisease, check: false },
       ],
       otherDiseases: [
         /* Other Diseases */
-        { comorbidity: Condition.Bleeding },
-        { comorbidity: Condition.Anemia },
-        { comorbidity: Condition.ActiveBleeding },
-        { comorbidity: Condition.Renal },
-        { comorbidity: Condition.Diabetes },
-        { comorbidity: Condition.Malignancy },
-        { comorbidity: Condition.Hepatic },
-        { comorbidity: Condition.Adrenal },
-        { comorbidity: Condition.Pituitary },
-        { comorbidity: Condition.Endocrine },
+        { comorbidity: Condition.Bleeding, check: false },
+        { comorbidity: Condition.Anemia, check: false },
+        { comorbidity: Condition.ActiveBleeding, check: false },
+        { comorbidity: Condition.Renal, check: false },
+        { comorbidity: Condition.Diabetes, check: false },
+        { comorbidity: Condition.Malignancy, check: false },
+        { comorbidity: Condition.Hepatic, check: false },
+        { comorbidity: Condition.Adrenal, check: false },
+        { comorbidity: Condition.Pituitary, check: false },
+        { comorbidity: Condition.Endocrine, check: false },
       ],
       medications: [
         /* Medications */
-        { comorbidity: Condition.Digoxin },
-        { comorbidity: Condition.Lithium },
-        { comorbidity: Condition.Diuretics },
-        { comorbidity: Condition.ACEI },
-        { comorbidity: Condition.ARB },
-        { comorbidity: Condition.NSAIDS },
-        { comorbidity: Condition.Anticoagulant },
-        { comorbidity: Condition.Antiplatelet },
-        { comorbidity: Condition.Steroid },
+        { comorbidity: Condition.Digoxin, check: false },
+        { comorbidity: Condition.Lithium, check: false },
+        { comorbidity: Condition.Diuretics, check: false },
+        { comorbidity: Condition.ACEI, check: false },
+        { comorbidity: Condition.ARB, check: false },
+        { comorbidity: Condition.NSAIDS, check: false },
+        { comorbidity: Condition.Anticoagulant, check: false },
+        { comorbidity: Condition.Antiplatelet, check: false },
+        { comorbidity: Condition.Steroid, check: false },
       ],
-      isActive: true,
+      resultArray: [],
     };
   },
   methods: {
-    aggregateConditions: () => aggregateConditions(),
+    /**
+    * Creates or removes a comorbidity to a String array to be
+    * passed to the necessary functions. Executed whenever a
+    * comorbidity is clicked in the list.
+    * @returns comoList - List of comorbidities.
+    */
+    aggregateCardioConditions: function aggregateCardioConditions(index) {
+      // This method also updates the rendering
+      // of the checkbox when, the list item is clicked.
+      if (this.cardioDiseases[index].check === false) {
+        this.cardioDiseases[index].check = true;
+        this.resultArray.push(this.cardioDiseases[index].comorbidity);
+      } else {
+        this.cardioDiseases[index].check = false;
+        this.resultArray.pop(this.cardioDiseases[index].comorbidity);
+      }
+    },
+    aggregatePulmoConditions: function aggregatePulmoConditions(index) {
+      // This method also updates the rendering
+      // of the checkbox when, the list item is clicked.
+      if (this.pulmoDiseases[index].check === false) {
+        this.pulmoDiseases[index].check = true;
+        this.resultArray.push(this.pulmoDiseases[index].comorbidity);
+      } else {
+        this.pulmoDiseases[index].check = false;
+        this.resultArray.pop(this.pulmoDiseases[index].comorbidity);
+      }
+    },
+    aggregateOtherConditions: function aggregateOtherConditions(index) {
+      // This method also updates the rendering
+      // of the checkbox when, the list item is clicked.
+      if (this.otherDiseases[index].check === false) {
+        this.otherDiseases[index].check = true;
+        this.resultArray.push(this.otherDiseases[index].comorbidity);
+      } else {
+        this.otherDiseases[index].check = false;
+        this.resultArray.pop(this.otherDiseases[index].comorbidity);
+      }
+    },
+    aggregateMedicConditions: function aggregateMedicConditions(index) {
+      // This method also updates the rendering
+      // of the checkbox when, the list item is clicked.
+      if (this.medications[index].check === false) {
+        this.medications[index].check = true;
+        this.resultArray.push(this.medications[index].comorbidity);
+      } else {
+        this.medications[index].check = false;
+        this.resultArray.pop(this.medications[index].comorbidity);
+      }
+    },
   },
 };
 </script>
 
-<style>
+<style scoped>
 .half {
   height: 500px;
   overflow: scroll;
