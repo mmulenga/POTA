@@ -1,5 +1,7 @@
 <template id="status">
     <div class="status">
+        <button v-on:click="updateConditionsReceived()">
+             Update Conditions </button>
         <h1>Patient Status</h1>
         <div class="list">
             <ul id="status"
@@ -12,25 +14,25 @@
 </template>
 
 <script>
-import Vue from 'vue';
+// import Vue from 'vue';
 import { Condition } from '@/constants';
-
-Vue.component('status', {
-  props: ['status'],
-  template: '<li>{{ status.item }}</li>',
-  conditionsReceived: [
-    { id: 0, comorbidity: Condition.CAD },
-  ],
-});
 
 export default {
   name: 'StatusComponent',
   data() {
     return {
       conditionsReceived: [
-        { comorbidity: Condition.CAD },
+        { comorbidity: Condition.Defib },
       ],
     };
+  },
+  /** @param Takes in an array of conditions, updates the list view of
+   * the current patient status
+   */
+  methods: {
+    updateConditionsReceived: function updateConditionsReceived() {
+      this.conditionsReceived.push({ comorbidity: Condition.CAD });
+    },
   },
 };
 
