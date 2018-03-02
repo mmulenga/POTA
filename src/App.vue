@@ -1,16 +1,37 @@
 <template>
   <div id="app">
-    <Prototype/>
+    <template>
+    <div class="row">
+        <div class="col-3">
+            <StatusComponent/>
+        </div>
+        <div class="col-md-6">
+            <ComoListComponent/>
+        </div>
+        <div class="col-md-3">
+            <OutputComponent/>
+        </div>
+    </div>
+</template>
   </div>
 </template>
 
 <script>
-import Prototype from './components/Prototype';
+import ComoListComponent from './components/ComoListComponent';
+import OutputComponent from './components/OutputComponent';
+import StatusComponent from './components/StatusComponent';
 
 export default {
   name: 'App',
   components: {
-    Prototype,
+    ComoListComponent,
+    OutputComponent,
+    StatusComponent,
+  },
+  data() {
+    return {
+      framework_name: 'VueJS',
+    };
   },
 };
 </script>
