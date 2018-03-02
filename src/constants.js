@@ -4,7 +4,6 @@
  * HTML and one-time-use messages are an acceptable exception
  */
 
-
 /* Conditions */
 export const Condition = {
   /* Cardiovascular Diseases */

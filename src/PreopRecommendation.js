@@ -15,7 +15,8 @@ Tag(Condition.CerebralDisease, [Exam.ECG]);
 Tag(Condition.PulmonaryVascular, [Exam.ECG]);
 Tag(Condition.TIA, [Exam.ECG]);
 Tag(Condition.Stroke, [Exam.ECG]);
-Tag(Condition.VHD, [Exam.ECG, Exam.CBC]);/* TODO: If mechanical */
+Tag(Condition.VHD, [Exam.ECG],
+  { 'If valve is mechanical': [Exam.CBC] });
 Tag(Condition.HeartFail, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
 Tag(Condition.PVD, [Exam.ECG, Exam.RenPanel]);
 /* Pulmonary Diseases */
