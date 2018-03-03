@@ -7,6 +7,7 @@
         </div>
         <div class="col-md-6">
             <ComoListComponent/>
+            <ModalComponent/>
         </div>
         <div class="col-md-3">
             <OutputComponent/>
@@ -20,6 +21,7 @@
 import ComoListComponent from './components/ComoListComponent';
 import OutputComponent from './components/OutputComponent';
 import StatusComponent from './components/StatusComponent';
+import ModalComponent from './components/ExamsOutputModal';
 
 export default {
   name: 'App',
@@ -27,6 +29,7 @@ export default {
     ComoListComponent,
     OutputComponent,
     StatusComponent,
+    ModalComponent,
   },
   data() {
     return {
