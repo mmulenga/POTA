@@ -31,9 +31,9 @@ Tag(Condition.Diabetes,
 Tag(Condition.Malignancy,
   [Exam.ECG, Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.CXR]);/* TODO chemo qualifications */
 Tag(Condition.Hepatic, [Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.LFT]);
-Tag(Condition.Adrenal, [Exam.RenPanel]);
-Tag(Condition.Pituitary, [Exam.RenPanel]);
-Tag(Condition.Endocrine, [Exam.RenPanel]);
+Tag(Condition.Adrenal, [Exam.RenPanel, Exam.TSH]);
+Tag(Condition.Pituitary, [Exam.RenPanel, Exam.TSH]);
+Tag(Condition.Endocrine, [Exam.RenPanel, Exam.TSH]);
 /* Medications */
 Tag(Condition.Digoxin, [Exam.ECG, Exam.RenPanel]);
 Tag(Condition.Lithium, [Exam.RenPanel]);
