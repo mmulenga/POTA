@@ -9,299 +9,211 @@ Array [
 `;
 
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for cardiac stent (<12 months) to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-  ],
-}
+Array [
+  "ECG",
+]
 `;
 
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for coronary artery disease to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-  ],
-}
+Array [
+  "ECG",
+]
 `;
 
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for difibrillator to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-  ],
-}
+Array [
+  "ECG",
+]
 `;
 
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for history of cerebral disease to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-  ],
-}
+Array [
+  "ECG",
+]
 `;
 
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for history of pulmonary vascular disease disease to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-  ],
-}
+Array [
+  "ECG",
+]
 `;
 
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for peripheral vascular disease (PVD) to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-    "Renal Panel (Creat + Lytes)",
-  ],
-}
+Array [
+  "ECG",
+  "Renal Panel (Creat + Lytes)",
+]
 `;
 
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for transient heart disease (TIA) to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-  ],
-}
+Array [
+  "ECG",
+]
 `;
 
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for transient heart disease to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-  ],
-}
+Array [
+  "ECG",
+]
 `;
 
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for valvular heart disease / valve replacement to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-    "CBC",
-  ],
-}
+Array [
+  "ECG",
+  "CBC",
+]
 `;
 
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for valvular heart failure to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-    "CBC",
-    "Renal Panel (Creat + Lytes)",
-  ],
-}
+Array [
+  "ECG",
+  "CBC",
+  "Renal Panel (Creat + Lytes)",
+]
 `;
 
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of preo exams for atrial fibrillation to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-  ],
-}
+Array [
+  "ECG",
+]
 `;
 
 exports[`Testing GetExams() for all medication use in tag.js correct array of pre op exams for use of ACE-I to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "Renal Panel (Creat + Lytes)",
-  ],
-}
+Array [
+  "Renal Panel (Creat + Lytes)",
+]
 `;
 
 exports[`Testing GetExams() for all medication use in tag.js correct array of pre op exams for use of ARB to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "Renal Panel (Creat + Lytes)",
-  ],
-}
+Array [
+  "Renal Panel (Creat + Lytes)",
+]
 `;
 
 exports[`Testing GetExams() for all medication use in tag.js correct array of pre op exams for use of Anticoagulants to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "CBC",
-    "Renal Panel (Creat + Lytes)",
-    "PTT/INR",
-  ],
-}
+Array [
+  "CBC",
+  "Renal Panel (Creat + Lytes)",
+  "PTT/INR",
+]
 `;
 
 exports[`Testing GetExams() for all medication use in tag.js correct array of pre op exams for use of Antiplatelet (ASA excluded) to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "CBC",
-    "Renal Panel (Creat + Lytes)",
-    "PTT/INR",
-  ],
-}
+Array [
+  "CBC",
+  "Renal Panel (Creat + Lytes)",
+  "PTT/INR",
+]
 `;
 
 exports[`Testing GetExams() for all medication use in tag.js correct array of pre op exams for use of Digoxin to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-    "Renal Panel (Creat + Lytes)",
-  ],
-}
+Array [
+  "ECG",
+  "Renal Panel (Creat + Lytes)",
+]
 `;
 
 exports[`Testing GetExams() for all medication use in tag.js correct array of pre op exams for use of Diuretics to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "Renal Panel (Creat + Lytes)",
-  ],
-}
+Array [
+  "Renal Panel (Creat + Lytes)",
+]
 `;
 
 exports[`Testing GetExams() for all medication use in tag.js correct array of pre op exams for use of Lithium to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "Renal Panel (Creat + Lytes)",
-  ],
-}
+Array [
+  "Renal Panel (Creat + Lytes)",
+]
 `;
 
 exports[`Testing GetExams() for all medication use in tag.js correct array of pre op exams for use of NSAIDS to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "Renal Panel (Creat + Lytes)",
-  ],
-}
+Array [
+  "Renal Panel (Creat + Lytes)",
+]
 `;
 
 exports[`Testing GetExams() for all medication use in tag.js correct array of pre op exams for use of use of systemic steroid used within 6 months to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "Renal Panel (Creat + Lytes)",
-    "Gluc",
-  ],
-}
+Array [
+  "Renal Panel (Creat + Lytes)",
+  "Gluc",
+]
 `;
 
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for bleeding disorders (hemophiliac | DVT) to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "G&S",
-    "CBC",
-    "PTT/INR",
-  ],
-}
+Array [
+  "G&S",
+  "CBC",
+  "PTT/INR",
+]
 `;
 
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for diabetes to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-    "Renal Panel (Creat + Lytes)",
-    "Gluc",
-    "HbA1C",
-  ],
-}
+Array [
+  "ECG",
+  "Renal Panel (Creat + Lytes)",
+  "Gluc",
+  "HbA1C",
+]
 `;
 
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for hepatic disease to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "CBC",
-    "Renal Panel (Creat + Lytes)",
-    "PTT/INR",
-    "LFT",
-  ],
-}
+Array [
+  "CBC",
+  "Renal Panel (Creat + Lytes)",
+  "PTT/INR",
+  "LFT",
+]
 `;
 
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for history of active bleeding to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "CBC",
-  ],
-}
+Array [
+  "CBC",
+]
 `;
 
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for history of adrenal disease to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "Renal Panel (Creat + Lytes)",
-  ],
-}
+Array [
+  "Renal Panel (Creat + Lytes)",
+]
 `;
 
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for history of anemia to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "CBC",
-  ],
-}
+Array [
+  "CBC",
+]
 `;
 
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for history of major systemic endocrine disease to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "Renal Panel (Creat + Lytes)",
-  ],
-}
+Array [
+  "Renal Panel (Creat + Lytes)",
+]
 `;
 
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for present malignancy to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-    "CBC",
-    "Renal Panel (Creat + Lytes)",
-    "PTT/INR",
-    "CXR",
-  ],
-}
+Array [
+  "ECG",
+  "CBC",
+  "Renal Panel (Creat + Lytes)",
+  "PTT/INR",
+  "CXR",
+]
 `;
 
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for renal disease (on dialysis or at risk of Acute Kidney Injury [AKI]) to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-    "CBC",
-    "Renal Panel (Creat + Lytes)",
-  ],
-}
+Array [
+  "ECG",
+  "CBC",
+  "Renal Panel (Creat + Lytes)",
+]
 `;
 
+exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for thyroid disease or on thyroid supplementation to match snapshot 1`] = `Array []`;
+
 exports[`Testing GetExams() for all pulmonary diseases in tag.js correct array of examinations for severe COPD, home oxygen, pulmonary HTN to match snapshot 1`] = `
-ArrayContaining {
-  "$$typeof": Symbol(jest.asymmetricMatcher),
-  "sample": Array [
-    "ECG",
-    "CBC",
-    "CXR",
-  ],
-}
+Array [
+  "ECG",
+  "CBC",
+  "CXR",
+]
 `;
 
 exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Atrial fibrillation pre op exams to match snapshot 1`] = `
@@ -509,6 +421,8 @@ Array [
   "Renal Panel (Creat + Lytes)",
 ]
 `;
+
+exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for thyroid disease or on thyroid supplementation to match snapshot 1`] = `Array []`;
 
 exports[`Testing Tag() in tag.js correct tag creation when using GetAllExams() to match snapshot 1`] = `
 Array [
