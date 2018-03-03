@@ -26,6 +26,17 @@ function addExams(name, exams) {
 }
 
 /**
+ * ConditionalExam is a simple structure containing a condition phrase and the
+ * exams which are required if that phrase is true.
+ */
+export class ConditionalExam {
+  constructor(conditionPhrase, exams) {
+    this.conditionPhrase = conditionPhrase;
+    this.exams = exams;
+  }
+}
+
+/**
  * Adds a new global exam to the system.
  * Not to be called outside this file!
  * @param {String} name The name of the condition
@@ -34,11 +45,16 @@ function addExams(name, exams) {
  *    { requirementName: [examNames] }
  * Preconditons: Name and requirements/exams must all be from the Constants file
  * Postconditions: The global examCollection object will be extended to include
- *                 the new conditional exams
+ *                 the new conditional exams as ConditionalExam objects
  */
 function addConditionalExams(name, conditionalExams) {
   // TODO: Assertions!
-  examCollection.conditionalExams[name] = conditionalExams;
+  const conditionalExamList = [];
+  const iter = Object.entries(conditionalExams);
+  for (let i = 0; i < iter.length; i += 1) {
+    conditionalExamList.push(ConditionalExam(iter[i][0], iter[i][1]));
+  }
+  examCollection.conditionalExams[name] = conditionalExamList;
 }
 
 /**
