@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <template>
     <div class="row">
         <div class="col-3">
             <StatusComponent
@@ -11,23 +10,22 @@
             <ComoListComponent v-on:updateEvent="updateArray"/>
         </div>
         <div class="col-md-3">
-            <OutputComponent/>
+            <GlossaryComponent/>
         </div>
     </div>
-</template>
   </div>
 </template>
 
 <script>
 import ComoListComponent from './components/ComoListComponent';
-import OutputComponent from './components/OutputComponent';
+import GlossaryComponent from './components/OutputComponent';
 import StatusComponent from './components/StatusComponent';
 
 export default {
   name: 'App',
   components: {
     ComoListComponent,
-    OutputComponent,
+    GlossaryComponent,
     StatusComponent,
   },
   data() {
