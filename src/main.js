@@ -18,14 +18,13 @@ export function add(a, b) {
   return a + b;
 }
 
-
 /**
  * Asserts a condition is true and prints a message to console otherwise.
  * Becomes a null operation when in a production deployment
  * @param {Boolean} condition The condition to be verified
  * @param {String} message Message to print out on failure
  */
-export function assert(condition, message) {
+export default function assert(condition, message) {
   if (!Vue.config.productionTip && !condition) {
     // eslint-disable-next-line no-console
     console.assert(`ASSERT failed: ${message}`);
