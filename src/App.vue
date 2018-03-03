@@ -11,7 +11,12 @@
             <ComoListComponent
             v-on:clickEvent="updateArray"
             v-on:hoverEvent="updateDescription"/>
+<<<<<<< HEAD
+            <NavComponent
+            :resultArray="resultArray"/>
+=======
             <ResultModalComponent/>
+>>>>>>> 70d3c2629942e3454a5f03619e95be0609b423f8
         </div>
         <div class="col-md-3">
             <GlossaryComponent
@@ -22,10 +27,17 @@
 </template>
 
 <script>
+<<<<<<< HEAD
+import ComoListComponent from './components/ComoListComponent';
+import GlossaryComponent from './components/GlossaryComponent';
+import StatusComponent from './components/StatusComponent';
+import NavComponent from './components/NavComponent';
+=======
 import ComoListComponent from '@/components/ComoListComponent';
 import GlossaryComponent from '@/components/GlossaryComponent';
 import StatusComponent from '@/components/StatusComponent';
 import ResultModalComponent from '@/components/ResultModalComponent';
+>>>>>>> 70d3c2629942e3454a5f03619e95be0609b423f8
 
 export default {
   name: 'App',
@@ -33,7 +45,11 @@ export default {
     ComoListComponent,
     GlossaryComponent,
     StatusComponent,
+<<<<<<< HEAD
+    NavComponent,
+=======
     ResultModalComponent,
+>>>>>>> 70d3c2629942e3454a5f03619e95be0609b423f8
   },
   data() {
     return {
