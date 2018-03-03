@@ -7,7 +7,8 @@
           <li class="list-group-item list-group-item-action"
           v-for="(item, index) in cardioDiseases"
           :key="item.comorbidity"
-          v-on:click="aggregateConditions(cardioDiseases, index)">
+          v-on:click="aggregateConditions(cardioDiseases, index)"
+          v-on:mouseover="passComorbidityOnHover(cardioDiseases, index)">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -23,7 +24,8 @@
           <li class="list-group-item list-group-item-action"
           v-for="(item, index) in pulmoDiseases"
           :key="item.comorbidity"
-          v-on:click="aggregateConditions(pulmoDiseases, index)">
+          v-on:click="aggregateConditions(pulmoDiseases, index)"
+          v-on:mouseover="passComorbidityOnHover(cardioDiseases, index)">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -39,7 +41,8 @@
           <li class="list-group-item list-group-item-action"
           v-for="(item, index) in otherDiseases"
           :key="item.comorbidity"
-          v-on:click="aggregateConditions(otherDiseases, index)">
+          v-on:click="aggregateConditions(otherDiseases, index)"
+          v-on:mouseover="passComorbidityOnHover(cardioDiseases, index)">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -55,7 +58,8 @@
           <li class="list-group-item list-group-item-action"
           v-for="(item, index) in medications"
           :key="item.comorbidity"
-          v-on:click="aggregateConditions(medications, index)">
+          v-on:click="aggregateConditions(medications, index)"
+          v-on:mouseover="passComorbidityOnHover(cardioDiseases, index)">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -82,7 +86,8 @@ export default {
     return {
       // The array we are going to pass up to the parent component
       // this gets populated with the current selections
-      result: {},
+      currentComorbiditySelection: {},
+      currentComorbidityDescription: '',
       cardioDiseases: [
         /* Cardiovascular Diseases */
         { comorbidity: Condition.AtrialFib, check: false },
@@ -133,7 +138,8 @@ export default {
     * Creates or removes a comorbidity to a String array to be
     * passed to the necessary functions. Executed whenever a
     * comorbidity is clicked in the list.
-    * @returns comoList - List of comorbidities.
+    * @param comorbidityArray - The current comorbidity array being used.
+    * @param index - The index of the comorbidity to be passed.
     */
     aggregateConditions: function aggregateConditions(comorbidityArray, index) {
       const array = comorbidityArray;
@@ -146,7 +152,19 @@ export default {
         array[index].check = false;
       }
 
-      this.$emit('updateEvent', { result: array[index].comorbidity });
+      this.$emit('clickEvent', { currentComorbiditySelection: array[index].comorbidity });
+    },
+    /**
+     * Emits an event, signalling to the parent an update to
+     * the parent's data is needed. Passing a string of the
+     * current comorbidity up.
+     * @param comorbidityArray - The current comorbidity array being used.
+     * @param index - The index of the comorbidity to be passed.
+     */
+    passComorbidityOnHover: function passComorbidityOnHover(comorbidityArray, index) {
+      const array = comorbidityArray;
+
+      this.$emit('hoverEvent', { currentComorbiditySelection: array[index].comorbidity });
     },
   },
 };
