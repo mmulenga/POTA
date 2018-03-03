@@ -22,16 +22,17 @@ Tag(Condition.VHD, [Exam.ECG],
 Tag(Condition.HeartFail, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
 Tag(Condition.PVD, [Exam.ECG, Exam.RenPanel]);
 /* Pulmonary Diseases */
-Tag(Condition.PulmDisease, [Exam.ECG, Exam.RenPanel, Exam.CXR]);/* TODO: CXR is time qualified */
+Tag(Condition.PulmDisease, [Exam.ECG, Exam.RenPanel],
+  { 'Has patient gone at least 6 months since a CXR?': [Exam.CXR] });
 /* Other Diseases */
 Tag(Condition.Bleeding, [Exam.GnS, Exam.CBC, Exam.PTTINR]);
 Tag(Condition.Anemia, [Exam.CBC]);
 Tag(Condition.ActiveBleeding, [Exam.CBC]);
 Tag(Condition.Renal, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
-Tag(Condition.Diabetes,
-  [Exam.ECG, Exam.RenPanel, Exam.Gluc, Exam.HbA1C]);/* TODO HbA1C is qualified */
-Tag(Condition.Malignancy,
-  [Exam.ECG, Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.CXR]);/* TODO chemo qualifications */
+Tag(Condition.Diabetes,[Exam.ECG, Exam.RenPanel, Exam.Gluc],
+  { 'Has patient gone at least 3 months since an Hb1AC?': [Exam.HbA1C]});
+Tag(Condition.Malignancy, [Exam.CBC, Exam.CXR],
+  { 'Is patient on chemo?': [Exam.ECG, Exam.RenPanel, Exam.PTTINR]});
 Tag(Condition.Hepatic, [Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.LFT]);
 Tag(Condition.Adrenal, [Exam.RenPanel, Exam.TSH]);
 Tag(Condition.Pituitary, [Exam.RenPanel, Exam.TSH]);
