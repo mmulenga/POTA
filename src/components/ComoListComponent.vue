@@ -7,7 +7,7 @@
           <li class="list-group-item list-group-item-action"
           v-for="(item, index) in cardioDiseases"
           :key="item.comorbidity"
-          v-on:click="aggregateCardioConditions(index)">
+          v-on:click="aggregateConditions(cardioDiseases, index)">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -23,7 +23,7 @@
           <li class="list-group-item list-group-item-action"
           v-for="(item, index) in pulmoDiseases"
           :key="item.comorbidity"
-          v-on:click="aggregatePulmoConditions(index)">
+          v-on:click="aggregateConditions(pulmoDiseases, index)">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -39,7 +39,7 @@
           <li class="list-group-item list-group-item-action"
           v-for="(item, index) in otherDiseases"
           :key="item.comorbidity"
-          v-on:click="aggregateOtherConditions(index)">
+          v-on:click="aggregateConditions(otherDiseases, index)">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -55,7 +55,7 @@
           <li class="list-group-item list-group-item-action"
           v-for="(item, index) in medications"
           :key="item.comorbidity"
-          v-on:click="aggregateMedicConditions(index)">
+          v-on:click="aggregateConditions(medications, index)">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -80,6 +80,8 @@ export default {
   name: 'ComoListComponent',
   data() {
     return {
+      // The array we are going to pass up to the parent component
+      // this gets populated with the current selections
       result: {},
       cardioDiseases: [
         /* Cardiovascular Diseases */
@@ -133,49 +135,18 @@ export default {
     * comorbidity is clicked in the list.
     * @returns comoList - List of comorbidities.
     */
-    aggregateCardioConditions: function aggregateCardioConditions(index) {
+    aggregateConditions: function aggregateConditions(comorbidityArray, index) {
+      const array = comorbidityArray;
+
       // This method also updates the rendering
       // of the checkbox when, the list item is clicked.
-      if (this.cardioDiseases[index].check === false) {
-        this.cardioDiseases[index].check = true;
+      if (array[index].check === false) {
+        array[index].check = true;
       } else {
-        this.cardioDiseases[index].check = false;
+        array[index].check = false;
       }
 
-      this.$emit('updateEvent', { result: this.cardioDiseases[index].comorbidity });
-    },
-    aggregatePulmoConditions: function aggregatePulmoConditions(index) {
-      // This method also updates the rendering
-      // of the checkbox when, the list item is clicked.
-      if (this.pulmoDiseases[index].check === false) {
-        this.pulmoDiseases[index].check = true;
-      } else {
-        this.pulmoDiseases[index].check = false;
-      }
-
-      this.$emit('updateEvent', { result: this.pulmoDiseases[index].comorbidity });
-    },
-    aggregateOtherConditions: function aggregateOtherConditions(index) {
-      // This method also updates the rendering
-      // of the checkbox when, the list item is clicked.
-      if (this.otherDiseases[index].check === false) {
-        this.otherDiseases[index].check = true;
-      } else {
-        this.otherDiseases[index].check = false;
-      }
-
-      this.$emit('updateEvent', { result: this.otherDiseases[index].comorbidity });
-    },
-    aggregateMedicConditions: function aggregateMedicConditions(index) {
-      // This method also updates the rendering
-      // of the checkbox when, the list item is clicked.
-      if (this.medications[index].check === false) {
-        this.medications[index].check = true;
-      } else {
-        this.medications[index].check = false;
-      }
-
-      this.$emit('updateEvent', { result: this.medications[index].comorbidity });
+      this.$emit('updateEvent', { result: array[index].comorbidity });
     },
   },
 };

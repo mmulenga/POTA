@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <template>
     <div class="row">
         <div class="col-3">
             <StatusComponent
@@ -14,7 +13,6 @@
             <OutputComponent/>
         </div>
     </div>
-</template>
   </div>
 </template>
 

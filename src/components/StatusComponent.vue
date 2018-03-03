@@ -51,6 +51,7 @@ export default {
         font-size: 2em;
     }
     .list{
+        height: 500px;
         overflow: auto;
         text-align: left;
         /* font-family:'Comic Sans MS'; */
