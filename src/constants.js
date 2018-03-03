@@ -56,3 +56,41 @@ export const Exam = {
   HbA1C: 'HbA1C',
   CXR: 'CXR',
 };
+
+/* Glossary Entries */
+export const Glossary = {
+  AtrialFib: 'Glossary entry for: Atrial fibrillation / History of irregular heart beat',
+  Defib: 'Glossary entry for: Defibrillator / Pacemaker',
+  CAD: 'Glossary entry for: Coronary artery disease',
+  CardiacStent: 'Glossary entry for: Cardiac Stent (< 12 months)',
+  CerebralDisease: 'Glossary entry for: History of cerebral disease',
+  PulmonaryVascular: 'Glossary entry for: History of pulmonary vascular disease',
+  TIA: 'Glossary entry for: Transient Ischemic Attack (TIA)',
+  Stroke: 'Glossary entry for: Stroke',
+  VHD: 'Glossary entry for: Valvular heart disease / Valve Replacement',
+  HeartFail: 'Glossary entry for: Heart Failure',
+  PVD: 'Glossary entry for: Peripheral Vascular disease (PVD)',
+  /* Pulmonary Diseases */
+  PulmDisease: 'Glossary entry for: Severe COPD, Home Oxygen, Pulmonary HTN',
+  /* Other Diseases */
+  Bleeding: 'Glossary entry for: Bleeding disorders (hemophiliac | DVT)',
+  Anemia: 'Glossary entry for: History of anemia',
+  ActiveBleeding: 'Glossary entry for: History of active bleeding',
+  Renal: 'Glossary entry for: Renal disease (on dialysis or at risk for Acute Kidney Injury [AKI])',
+  Diabetes: 'Glossary entry for: Diabetes (on Insulin or 2 oral agents)',
+  Malignancy: 'Glossary entry for: Present malignancy / surgery for malignancy',
+  Hepatic: 'Glossary entry for: Hepatic disease',
+  Adrenal: 'Glossary entry for: History of adrenal disease',
+  Pituitary: 'Glossary entry for: History of pituitary disease',
+  Endocrine: 'Glossary entry for: History of major systemic endocrine disease',
+  /* Medications */
+  Digoxin: 'Glossary entry for: Digoxin',
+  Lithium: 'Glossary entry for: Lithium',
+  Diuretics: 'Glossary entry for: Diuretics',
+  ACEI: 'Glossary entry for: ACE-I',
+  ARB: 'Glossary entry for: ARB',
+  NSAIDS: 'Glossary entry for: NSAIDS',
+  Anticoagulant: 'Glossary entry for: Anticoagulants',
+  Antiplatelet: 'Glossary entry for: Antiplatelet (ASA excluded)',
+  Steroid: 'Glossary entry for: Systemic steroid use within 6 months',
+};
