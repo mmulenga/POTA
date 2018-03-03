@@ -78,5 +78,5 @@ export function PatientExamsNeeded(patientConditions) {
       conditionalExamAggregation.add(conditionalExams[j]);
     }
   }
-  return ExamSummary(examAggregation, conditionalExamAggregation);
+  return new ExamSummary(examAggregation, conditionalExamAggregation);
 }
