@@ -79,9 +79,9 @@ export function Tag(name, exams, conditionalExams = {}) {
  * @param {String} name
  */
 export function GetExams(name) {
-  assert(name in examCollection, `GetExams called with unknown condition ${name}`);
-  if (name in examCollection) {
-    return examCollection[name];
+  assert(name in examCollection.exams, `GetExams called with unknown condition ${name}`);
+  if (name in examCollection.exams) {
+    return examCollection.exams[name];
   }
   return [];
 }
@@ -94,3 +94,13 @@ export function GetAllExams() {
   return examCollection;
 }
 
+/**
+ * Returns a list of ConditionalExam objects associated with the given condition name
+ */
+export function GetConditionalExams(name) {
+  assert(name in examCollection.conditionalExams, `GetConditionalExams called with unknown condition ${name}`);
+  if (name in examCollection.conditionalExams) {
+    return examCollection.conditionalExams[name];
+  }
+  return [];
+}

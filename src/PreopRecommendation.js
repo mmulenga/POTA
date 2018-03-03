@@ -1,5 +1,5 @@
 // Singleton data, not a class
-import { Tag, GetExams } from '@/tag';
+import { Tag, GetExams, GetConditionalExams } from '@/tag';
 import { Condition, Exam } from '@/constants';
 
 /** Tag definitions
@@ -44,17 +44,37 @@ Tag(Condition.NSAIDS, [Exam.RenPanel]);
 Tag(Condition.Anticoagulant, [Exam.CBC, Exam.RenPanel, Exam.PTTINR]);
 Tag(Condition.Antiplatelet, [Exam.CBC, Exam.RenPanel, Exam.PTTINR]);
 Tag(Condition.Steroid, [Exam.RenPanel, Exam.Gluc]);
+
+
 /**
- * Given a list of patient conditions, return a collection of examinations that should be performed
+ * ExamSummary is a simple data struct with two properties:
+ * @param exams {String[]}: a list of exams to be performed
+ * @param conditionalExams {ConditionalExam[]} a list of ConditionalExams to be optionally performed
+ */
+export class ExamSummary {
+  constructor(exams, conditionalExams) {
+    this.exams = exams;
+    this.conditionalExams = conditionalExams;
+  }
+}
+
+/**
+ * Given a list of patient conditions, return an ExamSummary object
  * @param {String[]} patientConditions
+ * @returns {ExamSummary} Summary of examinations to be performed
  */
 export function PatientExamsNeeded(patientConditions) {
-  const testAggregation = new Set();
+  const examAggregation = new Set();
+  const conditionalExamAggregation = new Set();
   for (let i = 0; i < patientConditions.length; i += 1) {
     const exams = GetExams(patientConditions[i]);
     for (let j = 0; j < exams.length; j += 1) {
-      testAggregation.add(exams[j]);
+      examAggregation.add(exams[j]);
+    }
+    const conditionalExams = GetConditionalExams(patientConditions[i]);
+    for (let j = 0; j < conditionalExams.length; j += 1) {
+      conditionalExamAggregation.add(conditionalExams[j]);
     }
   }
-  return testAggregation;
+  return ExamSummary(examAggregation, conditionalExamAggregation);
 }
