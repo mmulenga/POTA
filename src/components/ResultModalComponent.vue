@@ -18,15 +18,18 @@
             :key="item" >
               {{ item }}
             </p>
-            <p id="conditional-exams"
+            <div id="conditional-exams" class="text-left"
             v-for="item in conditionalExams"
             :key="item">
+              <br/>
+              <p>
               {{ item.conditionPhrase }}
               If so:
-              <span v-for="examName in item.exams" :key=examName>
+              </p>
+              <p v-for="examName in item.exams" :key=examName>
                 {{ examName }}
-              </span>
-            </p>
+              </p>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" v-on:click="showModal">Okay</button>
