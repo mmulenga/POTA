@@ -26,25 +26,9 @@ export default {
       ],
     };
   },
-  /** @param Takes in an array of conditions, updates the list view of
-   * the current patient status
-   */
-  methods: {
-    addConditionsReceived: function addConditionsReceived(conditions) {
-      let i;
-      for (i = 0; i <= this.conditionsReceived.length; i += 1) {
-        this.removeConditionsReceived();
-      }
-      this.conditionsReceived = this.conditionsReceived.concat(conditions);
-    },
-    removeConditionsReceived: function removeConditionsReceived() {
-      this.conditionsReceived.pop();
-    },
-  },
 };
 
 </script>
-
 
 <style>
     h1{
