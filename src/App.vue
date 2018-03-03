@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <div class="row">
+    <h1> Pre-Opt Testing App </h1>
+      <div class="row">
         <div class="col-3">
             <StatusComponent
              :resultArray="resultArray"/>
@@ -10,7 +11,8 @@
             <ComoListComponent v-on:updateEvent="updateArray"/>
         </div>
         <div class="col-md-3">
-            <OutputComponent/>
+            <GlossaryComponent
+            :glossaryEntry="glossaryEntry"/>
         </div>
     </div>
   </div>
@@ -18,20 +20,21 @@
 
 <script>
 import ComoListComponent from './components/ComoListComponent';
-import OutputComponent from './components/OutputComponent';
+import GlossaryComponent from './components/GlossaryComponent';
 import StatusComponent from './components/StatusComponent';
 
 export default {
   name: 'App',
   components: {
     ComoListComponent,
-    OutputComponent,
+    GlossaryComponent,
     StatusComponent,
   },
   data() {
     return {
       framework_name: 'VueJS',
       resultArray: [],
+      glossaryEntry: [],
     };
   },
   methods: {
