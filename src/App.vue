@@ -11,6 +11,8 @@
             <ComoListComponent
             v-on:clickEvent="updateArray"
             v-on:hoverEvent="updateDescription"/>
+            <NavComponent
+            :resultArray="resultArray"/>
         </div>
         <div class="col-md-3">
             <GlossaryComponent
@@ -24,6 +26,7 @@
 import ComoListComponent from './components/ComoListComponent';
 import GlossaryComponent from './components/GlossaryComponent';
 import StatusComponent from './components/StatusComponent';
+import NavComponent from './components/NavComponent';
 
 export default {
   name: 'App',
@@ -31,6 +34,7 @@ export default {
     ComoListComponent,
     GlossaryComponent,
     StatusComponent,
+    NavComponent,
   },
   data() {
     return {
