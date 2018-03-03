@@ -48,11 +48,16 @@ export class ConditionalExam {
  *                 the new conditional exams as ConditionalExam objects
  */
 function addConditionalExams(name, conditionalExams) {
-  // TODO: Assertions!
   const conditionalExamList = [];
+  // Iterating over keys and values
   const iter = Object.entries(conditionalExams);
   for (let i = 0; i < iter.length; i += 1) {
-    conditionalExamList.push(new ConditionalExam(iter[i][0], iter[i][1]));
+    const conditionPhrase = iter[i][0];
+    const exams = iter[i][1];
+    for (let j = 0; j < exams.length; j += 1) {
+      assert(exams[j] in Exam, `Unknown Exam ${exams[j]} used for tag`);
+    }
+    conditionalExamList.push(new ConditionalExam(conditionPhrase, exams));
   }
   examCollection.conditionalExams[name] = conditionalExamList;
 }
