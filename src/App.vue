@@ -8,12 +8,10 @@
              <!-- This is the the bind to the child component-->
         </div>
         <div class="col-md-6">
-<<<<<<< HEAD
-            <ComoListComponent/>
-            <ModalComponent/>
-=======
-            <ComoListComponent v-on:updateEvent="updateArray"/>
->>>>>>> cef11c470e5da586939b2d760f5289c65ec83a9a
+            <ComoListComponent
+            v-on:clickEvent="updateArray"
+            v-on:hoverEvent="updateDescription"/>
+            <ResultModalComponent/>
         </div>
         <div class="col-md-3">
             <GlossaryComponent
@@ -24,10 +22,10 @@
 </template>
 
 <script>
-import ComoListComponent from './components/ComoListComponent';
-import GlossaryComponent from './components/GlossaryComponent';
-import StatusComponent from './components/StatusComponent';
-import ModalComponent from './components/ExamsOutputModal';
+import ComoListComponent from '@/components/ComoListComponent';
+import GlossaryComponent from '@/components/GlossaryComponent';
+import StatusComponent from '@/components/StatusComponent';
+import ResultModalComponent from '@/components/ResultModalComponent';
 
 export default {
   name: 'App',
@@ -35,13 +33,13 @@ export default {
     ComoListComponent,
     GlossaryComponent,
     StatusComponent,
-    ModalComponent,
+    ResultModalComponent,
   },
   data() {
     return {
       framework_name: 'VueJS',
       resultArray: [],
-      glossaryEntry: [],
+      glossaryEntry: '',
     };
   },
   methods: {
@@ -50,12 +48,19 @@ export default {
     * child ComoListComponent.
     */
     updateArray: function updateArray(comorbidity) {
-      if (this.resultArray.includes(comorbidity.result)) {
+      if (this.resultArray.includes(comorbidity.currentComorbiditySelection)) {
         // Apparently there's no delete by index, so this is the best we can do. :(
-        this.resultArray.splice(this.resultArray.indexOf(comorbidity.result), 1);
+        this.resultArray.splice(this.resultArray.indexOf(comorbidity.currentComorbiditySelection),
+          1);
       } else {
-        this.resultArray.push(comorbidity.result);
+        this.resultArray.push(comorbidity.currentComorbiditySelection);
       }
+    },
+    /**
+     *
+     */
+    updateDescription: function updateDescription(comorbidity) {
+      this.glossaryEntry = comorbidity.currentComorbiditySelection;
     },
   },
 };
