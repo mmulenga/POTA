@@ -52,7 +52,7 @@ function addConditionalExams(name, conditionalExams) {
   const conditionalExamList = [];
   const iter = Object.entries(conditionalExams);
   for (let i = 0; i < iter.length; i += 1) {
-    conditionalExamList.push(ConditionalExam(iter[i][0], iter[i][1]));
+    conditionalExamList.push(new ConditionalExam(iter[i][0], iter[i][1]));
   }
   examCollection.conditionalExams[name] = conditionalExamList;
 }
