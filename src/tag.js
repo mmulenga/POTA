@@ -1,4 +1,4 @@
-import assert from '@/main';
+import { assert } from '@/main';
 import { Condition, Exam } from '@/constants';
 
 /**
