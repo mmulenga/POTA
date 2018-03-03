@@ -1,5 +1,5 @@
 // Singleton data, not a class
-import { Tag, GetExams, GetConditionalExams } from '@/tag';
+import { Tag, GetExams, GetConditionalExams, ConditionalExam } from '@/tag';
 import { Condition, Exam } from '@/constants';
 
 /** Tag definitions
@@ -29,10 +29,10 @@ Tag(Condition.Bleeding, [Exam.GnS, Exam.CBC, Exam.PTTINR]);
 Tag(Condition.Anemia, [Exam.CBC]);
 Tag(Condition.ActiveBleeding, [Exam.CBC]);
 Tag(Condition.Renal, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
-Tag(Condition.Diabetes,[Exam.ECG, Exam.RenPanel, Exam.Gluc],
-  { 'Has patient gone at least 3 months since an Hb1AC?': [Exam.HbA1C]});
+Tag(Condition.Diabetes, [Exam.ECG, Exam.RenPanel, Exam.Gluc],
+  { 'Has patient gone at least 3 months since an Hb1AC?': [Exam.HbA1C] });
 Tag(Condition.Malignancy, [Exam.CBC, Exam.CXR],
-  { 'Is patient on chemo?': [Exam.ECG, Exam.RenPanel, Exam.PTTINR]});
+  { 'Is patient on chemo?': [Exam.ECG, Exam.RenPanel, Exam.PTTINR] });
 Tag(Condition.Hepatic, [Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.LFT]);
 Tag(Condition.Adrenal, [Exam.RenPanel, Exam.TSH]);
 Tag(Condition.Pituitary, [Exam.RenPanel, Exam.TSH]);
@@ -63,21 +63,33 @@ export class ExamSummary {
 
 /**
  * Given a list of patient conditions, return an ExamSummary object
+ * The ConditionalExams returned will be prefiltered so as to not include any
+ * already required exams or any redundant conditional phrases (i.e. no new exams)
  * @param {String[]} patientConditions
  * @returns {ExamSummary} Summary of examinations to be performed
  */
 export function PatientExamsNeeded(patientConditions) {
   const examAggregation = new Set();
-  const conditionalExamAggregation = new Set();
+  const conditionalExamAggregation = [];
   for (let i = 0; i < patientConditions.length; i += 1) {
     const exams = GetExams(patientConditions[i]);
     for (let j = 0; j < exams.length; j += 1) {
       examAggregation.add(exams[j]);
     }
+  }
+  for (let i = 0; i < patientConditions.length; i += 1) {
     const conditionalExams = GetConditionalExams(patientConditions[i]);
     for (let j = 0; j < conditionalExams.length; j += 1) {
-      conditionalExamAggregation.add(conditionalExams[j]);
+      // Make a new copy of the ConditionalExam with any preconsidered exams filtered out
+      const ce = new ConditionalExam(
+        conditionalExams[j].conditionPhrase,
+        conditionalExams[j].exams.filter(e => !(examAggregation.has(e))),
+      );
+      // Only aggregate this conditionalExam if it is not entirely preconsidered
+      if (ce.exams.length > 0) {
+        conditionalExamAggregation.push(ce);
+      }
     }
   }
-  return new ExamSummary(examAggregation, conditionalExamAggregation);
+  return new ExamSummary([...examAggregation], conditionalExamAggregation);
 }
