@@ -139,9 +139,10 @@ export default {
   },
   methods: {
     /**
-    * Creates or removes a comorbidity to a String array to be
-    * passed to the necessary functions. Executed whenever a
-    * comorbidity is clicked in the list.
+    * Emits an event, signalling to the parent an update to the parent's
+    * data is needed. Passes an object containing a string of the comorbidity
+    * clicked, up to the parent.
+    * Executes whenever a list item or checkbox is clicked.
     * @param comorbidityArray - The current comorbidity array being used.
     * @param index - The index of the comorbidity to be passed.
     */
@@ -160,8 +161,9 @@ export default {
     },
     /**
      * Emits an event, signalling to the parent an update to
-     * the parent's data is needed. Passing a string of the
-     * current comorbidity up.
+     * the parent's data is needed. Passes an object containing a glossary entry
+     * string of the current comorbidity being hovered over, up to the parent.
+     * Excutes whenever a list item is hovered over.
      * @param comorbidityArray - The current comorbidity array being used.
      * @param index - The index of the comorbidity to be passed.
      */

@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-3">
             <GlossaryComponent
-            :glossaryEntry="glossaryEntry"/>
+             :glossaryEntry="glossaryEntry"/>
         </div>
     </div>
   </div>
@@ -45,8 +45,9 @@ export default {
   },
   methods: {
     /**
-    * Updates the resultArray with data recieved from
-    * child ComoListComponent.
+    * Updates the resultArray used by the Patient Status window with data
+    * recieved from child ComoListComponent.
+    * @param comorbidity - The data emitted by the child component.
     */
     updateArray: function updateArray(comorbidity) {
       if (this.resultArray.includes(comorbidity.currentComorbiditySelection)) {
@@ -58,7 +59,9 @@ export default {
       }
     },
     /**
-     *
+     * Updates the glossaryEntry used by the Glossary Window with data
+     * recieved from child ComoListComponent.
+     * @param comorbidity - The data emitted by the child component.
      */
     updateDescription: function updateDescription(comorbidity) {
       this.glossaryEntry = comorbidity.currentComorbiditySelection;

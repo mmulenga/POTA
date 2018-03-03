@@ -2,7 +2,6 @@
   <div class="container pt-3">
     <button type="button" class="btn btn-primary"
      v-on:click="getExams(); showModal();"> Submit </button>
-
     <!-- Modal -->
     <div class="modal fade" :class="{ 'show': isVisible, 'd-block': isVisible }">
       <div class="modal-dialog">
@@ -44,6 +43,10 @@ export default {
     };
   },
   methods: {
+    /**
+     * Displays or hides the modal depending on whether or not it is
+     * already hidden.
+     */
     showModal: function showModal() {
       if (this.isVisible === false) {
         this.isVisible = true;
@@ -51,6 +54,11 @@ export default {
         this.isVisible = false;
       }
     },
+    /**
+     * Populates the exams array using the resultArray passed down
+     * from the parent. Clearing the previous exams each time it is called
+     * and then pushing the new values.
+     */
     getExams: function getExams() {
       const exams = PatientExamsNeeded(this.resultArray);
       for (let i = 0; i < this.exams.length; i += 1) {
