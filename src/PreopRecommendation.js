@@ -4,6 +4,8 @@ import { Condition, Exam } from '@/constants';
 
 /** Tag definitions
  * These definitions are of the format: Tag(condition, [exams])
+ * A third, optional argument may be passed to include any conditional exams
+ * The format for this third argument is: { 'ConditionPhrase?': [Exams if True] }
  * Define all tags here and they will be loaded into the system on import
  */
 /* Cardiovascular Diseases */
