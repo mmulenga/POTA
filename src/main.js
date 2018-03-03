@@ -24,7 +24,7 @@ export function add(a, b) {
  * @param {Boolean} condition The condition to be verified
  * @param {String} message Message to print out on failure
  */
-export default function assert(condition, message) {
+export function assert(condition, message) {
   if (!Vue.config.productionTip && !condition) {
     // eslint-disable-next-line no-console
     console.assert(`ASSERT failed: ${message}`);
