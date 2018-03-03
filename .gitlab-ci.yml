@@ -21,8 +21,8 @@ assembling:
 unit_testing:
   stage: unit_test
   script:
-#    - docker exec testserver npm run unit
-    - echo test
+    - docker exec testserver npm run unit
+#    - echo test
   only:
     - develop
     - release
