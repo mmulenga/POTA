@@ -11,6 +11,7 @@
             <ComoListComponent
             v-on:clickEvent="updateArray"
             v-on:hoverEvent="updateDescription"/>
+            <ResultModalComponent/>
         </div>
         <div class="col-md-3">
             <GlossaryComponent
@@ -21,9 +22,10 @@
 </template>
 
 <script>
-import ComoListComponent from './components/ComoListComponent';
-import GlossaryComponent from './components/GlossaryComponent';
-import StatusComponent from './components/StatusComponent';
+import ComoListComponent from '@/components/ComoListComponent';
+import GlossaryComponent from '@/components/GlossaryComponent';
+import StatusComponent from '@/components/StatusComponent';
+import ResultModalComponent from '@/components/ResultModalComponent';
 
 export default {
   name: 'App',
@@ -31,6 +33,7 @@ export default {
     ComoListComponent,
     GlossaryComponent,
     StatusComponent,
+    ResultModalComponent,
   },
   data() {
     return {
@@ -58,9 +61,6 @@ export default {
      */
     updateDescription: function updateDescription(comorbidity) {
       this.glossaryEntry = comorbidity.currentComorbiditySelection;
-
-      // eslint-disable-next-line
-      console.log(this.glossaryEntry);
     },
   },
 };
