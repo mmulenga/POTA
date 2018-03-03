@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <ul class="list-group half px-auto">
+        <ul class="list-group half">
           <li class="list-group-item list-group-item-dark"> Cardiovascular Diseases</li>
           <li class="list-group-item list-group-item-action"
           v-for="(item, index) in cardioDiseases"

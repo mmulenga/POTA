@@ -6,7 +6,7 @@
             <ul v-bind:resultArray="resultArray"
                 v-for="item in resultArray"
                 :key="item">
-                <li> {{item}} </li>
+                <li>{{item}}</li>
             </ul>
         </div>
     </div>
