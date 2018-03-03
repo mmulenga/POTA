@@ -11,7 +11,8 @@
             <ComoListComponent
             v-on:clickEvent="updateArray"
             v-on:hoverEvent="updateDescription"/>
-            <ResultModalComponent/>
+            <ResultModalComponent
+             :resultArray="resultArray"/>
         </div>
         <div class="col-md-3">
             <GlossaryComponent

@@ -1,4 +1,4 @@
-import assert from '@/main';
+// import assert from '@/main';
 
 const examCollection = {};
 
@@ -8,7 +8,7 @@ export function Tag(name, tests) {
 }
 
 export function GetExams(name) {
-  assert(name in examCollection, `GetExams called with unknown condition ${name}`);
+  // assert(name in examCollection, `GetExams called with unknown condition ${name}`);
   if (name in examCollection) {
     return examCollection[name];
   }
