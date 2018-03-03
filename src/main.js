@@ -5,6 +5,7 @@ import App from './App'; // eslint-disable-line
 
 Vue.config.productionTip = process.env.NODE_ENV === 'production';
 
+
 /* eslint-disable no-new */
 // new Vue({
 //   el: '#app',
@@ -16,7 +17,6 @@ Vue.config.productionTip = process.env.NODE_ENV === 'production';
 export function add(a, b) {
   return a + b;
 }
-
 
 /**
  * Asserts a condition is true and prints a message to console otherwise.
