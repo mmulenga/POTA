@@ -1,11 +1,7 @@
 <template>
   <div>
     <h1>Glossary</h1>
-      <p v-bind:glossaryEntry="glossaryEntry"
-        v-for="item in glossaryEntry"
-        :key="item">
-        {{item}}
-      </p>
+      <p> {{ glossaryEntry }} </p>
   </div>
 </template>
 
@@ -21,6 +17,5 @@ export default {
 <style>
 p{
  text-align: left;
- word-wrap: normal;
 }
 </style>

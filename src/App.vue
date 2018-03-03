@@ -8,7 +8,9 @@
              <!-- This is the the bind to the child component-->
         </div>
         <div class="col-md-6">
-            <ComoListComponent v-on:updateEvent="updateArray"/>
+            <ComoListComponent
+            v-on:clickEvent="updateArray"
+            v-on:hoverEvent="updateDescription"/>
         </div>
         <div class="col-md-3">
             <GlossaryComponent
@@ -34,7 +36,7 @@ export default {
     return {
       framework_name: 'VueJS',
       resultArray: [],
-      glossaryEntry: [],
+      glossaryEntry: '',
     };
   },
   methods: {
@@ -43,12 +45,22 @@ export default {
     * child ComoListComponent.
     */
     updateArray: function updateArray(comorbidity) {
-      if (this.resultArray.includes(comorbidity.result)) {
+      if (this.resultArray.includes(comorbidity.currentComorbiditySelection)) {
         // Apparently there's no delete by index, so this is the best we can do. :(
-        this.resultArray.splice(this.resultArray.indexOf(comorbidity.result), 1);
+        this.resultArray.splice(this.resultArray.indexOf(comorbidity.currentComorbiditySelection),
+          1);
       } else {
-        this.resultArray.push(comorbidity.result);
+        this.resultArray.push(comorbidity.currentComorbiditySelection);
       }
+    },
+    /**
+     *
+     */
+    updateDescription: function updateDescription(comorbidity) {
+      this.glossaryEntry = comorbidity.currentComorbiditySelection;
+
+      // eslint-disable-next-line
+      console.log(this.glossaryEntry);
     },
   },
 };
