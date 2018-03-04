@@ -116,7 +116,8 @@ describe('Testing PatientExamsNeeded() with multiple non-conditional comorbiditi
   });
 
   it('returns correct set of preop exams for PulmonaryVascular + Pituitary + Steroid', () => {
-    result = PatientExamsNeeded([Condition.PulmonaryVascular, Condition.Pituitary, Condition.Steroid]);
+    result = PatientExamsNeeded([Condition.PulmonaryVascular,
+      Condition.Pituitary, Condition.Steroid]);
     requiredExams = [Exam.ECG, Exam.RenPanel, Exam.Gluc];
     conditionalExams = [];
     expect(result.exams).toEqual(requiredExams);
@@ -244,7 +245,8 @@ describe('Testing PatientExamsNeeded() with multiple conditional comorbidities',
 
 describe('Testing PatientExamsNeeded() with multiple random comorbidities', () => {
   it('returns correct set of preop exams for CAD + VHD + Hepatic + Thyroid', () => {
-    result = PatientExamsNeeded([Condition.CAD, Condition.VHD, Condition.Hepatic, Condition.Thyroid]);
+    result = PatientExamsNeeded([Condition.CAD, Condition.VHD,
+      Condition.Hepatic, Condition.Thyroid]);
     requiredExams = [Exam.ECG, Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.LFT, Exam.TSH];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual([]);
@@ -255,7 +257,8 @@ describe('Testing PatientExamsNeeded() with multiple random comorbidities', () =
   });
 
   it('returns correct set of preop exams for Defib + Stroke + PulmDisease + Anemia', () => {
-    result = PatientExamsNeeded([Condition.Defib, Condition.Stroke, Condition.PulmDisease, Condition.Anemia]);
+    result = PatientExamsNeeded([Condition.Defib, Condition.Stroke,
+      Condition.PulmDisease, Condition.Anemia]);
     requiredExams = [Exam.ECG, Exam.CBC, Exam.CXR];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual([]);
@@ -266,7 +269,8 @@ describe('Testing PatientExamsNeeded() with multiple random comorbidities', () =
   });
 
   it('returns correct set of preop exams for AtrialFib + PulmonaryVascular + Bleeding + Digoxin', () => {
-    result = PatientExamsNeeded([Condition.AtrialFib, Condition.PulmonaryVascular, Condition.Bleeding, Condition.Digoxin]);
+    result = PatientExamsNeeded([Condition.AtrialFib, Condition.PulmonaryVascular,
+      Condition.Bleeding, Condition.Digoxin]);
     requiredExams = [Exam.ECG, Exam.GnS, Exam.CBC, Exam.PTTINR, Exam.RenPanel];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual([]);
@@ -277,7 +281,8 @@ describe('Testing PatientExamsNeeded() with multiple random comorbidities', () =
   });
 
   it('returns correct set of preop exams for VHD + Malignancy + Adrenal + Endocrine', () => {
-    result = PatientExamsNeeded([Condition.VHD, Condition.Malignancy, Condition.Adrenal, Condition.Endocrine]);
+    result = PatientExamsNeeded([Condition.VHD, Condition.Malignancy,
+      Condition.Adrenal, Condition.Endocrine]);
     requiredExams = [Exam.ECG, Exam.CBC, Exam.CXR, Exam.RenPanel];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams[0].exams).toEqual([Exam.PTTINR]);
@@ -288,7 +293,8 @@ describe('Testing PatientExamsNeeded() with multiple random comorbidities', () =
   });
 
   it('returns correct set of preop exams for Defib + CardiacStent + Hepatic + Anticoagulants', () => {
-    result = PatientExamsNeeded([Condition.Defib, Condition.CardiacStent, Condition.Hepatic, Condition.Anticoagulants]);
+    result = PatientExamsNeeded([Condition.Defib, Condition.CardiacStent,
+      Condition.Hepatic, Condition.Anticoagulants]);
     requiredExams = [Exam.ECG, Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.LFT];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual([]);

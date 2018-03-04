@@ -63,11 +63,3 @@ describe('Testing all comorbidities in ComoListComponent.vue', () => {
   });
 });
 
-describe('Testing framework in Prototype.vue', () => {
-  it('returns correct framework being used', () => {
-    const Component = Vue.extend(Prototype);
-    const vm = new Component().$mount();
-    expect(vm.cardioDiseases).toHaveLength(11);
-  });
-});
-

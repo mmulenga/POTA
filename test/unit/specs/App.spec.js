@@ -1,11 +1,10 @@
 import App from '@/App';
-import { updateArray, updateDiscription } from '@/App';
-import ResultModalComponent from '@/components/ResultModalComponent';
-import ComoListComponent from '@/components/ComoListComponent';
-import GlossaryComponent from '@/components/GlossaryComponent';
-import StatusComponent from '@/components/StatusComponent';
+import ResultModalComponent from '@/components/ResultModalComponent'; // eslint-disable-line 
+import ComoListComponent from '@/components/ComoListComponent'; // eslint-disable-line 
+import GlossaryComponent from '@/components/GlossaryComponent'; // eslint-disable-line 
+import StatusComponent from '@/components/StatusComponent'; // eslint-disable-line 
 import Vue from 'vue';
-import { shallow } from 'vue-test-utils';
+import { shallow } from 'vue-test-utils'; // eslint-disable-line 
 
 const Constructor = Vue.extend(App);
 const vm = new Constructor().$mount();
@@ -15,8 +14,6 @@ describe('App.test.js', () => {
     expect(vm.resultArray).toHaveLength(0);
   });
 });
-
-
 
 // describe('App.test.js', () => {
 //   describe('ResultModalComponent', () => {

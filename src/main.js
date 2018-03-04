@@ -27,6 +27,6 @@ export function add(a, b) {
 export function assert(condition, message) {
   if (!Vue.config.productionTip && !condition) {
     // eslint-disable-next-line no-console
-    // console.log(`ASSERT failed: ${message}`);
+    console.log(`ASSERT failed: ${message}`);
   }
 }
