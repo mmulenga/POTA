@@ -278,7 +278,6 @@ describe('Testing PatientExamsNeeded() for other diseases in PreopRecommendation
     expect(result.exams).toMatchSnapshot();
     expect(result.conditionalExams).toMatchSnapshot();
   });
-  /*
   it('returns correct set of preop exams for thyroid disease or on thyroid supplementation', () => {
     result = PatientExamsNeeded([Condition.Thyroid]);
     requiredExams = [Exam.TSH];
@@ -290,7 +289,6 @@ describe('Testing PatientExamsNeeded() for other diseases in PreopRecommendation
     expect(result.exams).toMatchSnapshot();
     expect(result.conditionalExams).toMatchSnapshot();
   });
-  */
 });
 
 describe('Testing PatientExamsNeeded() for medication use in PreopRecommendation.js', () => {
@@ -620,7 +618,6 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('correct array of pre op exams for history of major systemic endocrine disease to match snapshot', () => {
     expect(result).toMatchSnapshot();
   });
-  /*
   it('returns the correct array of preop exams for thyroid disease or on thyroid supplementation', () => {
     result = GetExams(Condition.Thyroid);
     requiredExams = ['TSH'];
@@ -629,7 +626,6 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('correct array of pre op exams for thyroid disease or on thyroid supplementation to match snapshot', () => {
     expect(result).toMatchSnapshot();
   });
-  */
 });
 
 describe('Testing GetExams() for all medication use in tag.js', () => {
