@@ -203,6 +203,8 @@ Array [
 ]
 `;
 
+exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for thyroid disease or on thyroid supplementation to match snapshot 1`] = `Array []`;
+
 exports[`Testing GetExams() for all pulmonary diseases in tag.js correct array of examinations for severe COPD, home oxygen, pulmonary HTN to match snapshot 1`] = `
 Array [
   "ECG",
@@ -483,6 +485,10 @@ Array [
 `;
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for renal disease (on dialysis or at risk for Acute Kidney Injury [AKI] to match snapshot 2`] = `Array []`;
+
+exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for thyroid disease or on thyroid supplementation to match snapshot 1`] = `Array []`;
+
+exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for thyroid disease or on thyroid supplementation to match snapshot 2`] = `Array []`;
 
 exports[`Testing PatientExamsNeeded() for pulmonary diseases in PreopRecommendation.js set of preop exams for severe COPD, home oxygen, pulmonary HTN to match snapshot 1`] = `
 Array [
