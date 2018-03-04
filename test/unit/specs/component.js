@@ -67,7 +67,7 @@ describe('Testing framework in Prototype.vue', () => {
   it('returns correct framework being used', () => {
     const Component = Vue.extend(Prototype);
     const vm = new Component().$mount();
-    expect(vm.framework_name).toEqual('VueJS');
+    expect(vm.cardioDiseases).toHaveLength(11);
   });
 });
 
