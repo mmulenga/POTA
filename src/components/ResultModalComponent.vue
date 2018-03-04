@@ -18,6 +18,18 @@
             :key="item" >
               {{ item }}
             </p>
+            <div id="conditional-exams" class="text-left"
+            v-for="item in conditionalExams"
+            :key="item">
+              <br/>
+              <p>
+              {{ item.conditionPhrase }}
+              If so:
+              </p>
+              <p v-for="examName in item.exams" :key=examName>
+                {{ examName }}
+              </p>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" v-on:click="showModal">Okay</button>
@@ -40,6 +52,7 @@ export default {
     return {
       isVisible: false,
       exams: [],
+      conditionalExams: [],
     };
   },
   methods: {
@@ -60,11 +73,9 @@ export default {
      * and then pushing the new values.
      */
     getExams: function getExams() {
-      const exams = PatientExamsNeeded(this.resultArray);
-      for (let i = 0; i < this.exams.length; i += 1) {
-        this.exams.pop();
-      }
-      this.exams.push(exams);
+      const examSummary = PatientExamsNeeded(this.resultArray);
+      this.exams = examSummary.exams;
+      this.conditionalExams = examSummary.conditionalExams;
     },
   },
 };
