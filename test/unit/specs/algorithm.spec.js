@@ -277,7 +277,7 @@ describe('Testing PatientExamsNeeded() for other diseases in PreopRecommendation
 
   it('set of preop exams for thyroid disease or on thyroid supplementation to match snapshot', () => {
     expect(result).toMatchSnapshot();
-  });  
+  });
 });
 
 describe('Testing PatientExamsNeeded() for medication use in PreopRecommendation.js', () => {

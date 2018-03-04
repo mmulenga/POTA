@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import App from '../../../src/components/Prototype';
+// import App from '../../../src/components/Prototype';
 
 describe('App.test.js', () => {
   let cmp;
