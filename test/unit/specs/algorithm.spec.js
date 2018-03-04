@@ -1,7 +1,7 @@
 // import Vue from 'vue/dist/vue';
 import { Condition, Exam } from '@/constants';
 import { PatientExamsNeeded } from '@/PreopRecommendation';
-import { GetExams, GetAllExams, Tag, GetConditionalExams } from '@/tag';
+import { GetExams, GetAllExams, Tag } from '@/tag';
 
 let requiredExams;
 let conditionalExams;
@@ -116,7 +116,7 @@ describe('Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecom
   });
   it('Valvular heart disease / valve replacement pre op exams to match snapshot', () => {
     expect(result.exams).toMatchSnapshot();
-    expect(result.conditionalExams).toMatchSnapshot();
+    expect(result.conditionalExams[0].exams).toMatchSnapshot();
   });
 
   it('returns correct set of preop exams for heart failure', () => {
@@ -152,10 +152,10 @@ describe('Testing PatientExamsNeeded() for pulmonary diseases in PreopRecommenda
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual(conditionalExams);
   });
-});
-it('set of preop exams for severe COPD, home oxygen, pulmonary HTN to match snapshot', () => {
-  expect(result.exams).toMatchSnapshot();
-  expect(result.conditionalExams).toMatchSnapshot();
+  it('set of preop exams for severe COPD, home oxygen, pulmonary HTN to match snapshot', () => {
+    expect(result.exams).toMatchSnapshot();
+    expect(result.conditionalExams).toMatchSnapshot();
+  });
 });
 
 describe('Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js', () => {
@@ -216,7 +216,7 @@ describe('Testing PatientExamsNeeded() for other diseases in PreopRecommendation
   });
   it('set of preop exams for diabetes (on Insulin or 2 oral agents) to match snapshot', () => {
     expect(result.exams).toMatchSnapshot();
-    expect(result.conditionalExams).toMatchSnapshot();
+    expect(result.conditionalExams[0].exams).toMatchSnapshot();
   });
 
   it('returns correct set of preop exams for present malignancy / surgery for malignancy', () => {
@@ -228,7 +228,7 @@ describe('Testing PatientExamsNeeded() for other diseases in PreopRecommendation
   });
   it('set of preop exams for diabetes (on Insulin or 2 oral agents) to match snapshot', () => {
     expect(result.exams).toMatchSnapshot();
-    expect(result.conditionalExams).toMatchSnapshot();
+    expect(result.conditionalExams[0].exams).toMatchSnapshot();
   });
 
   it('returns correct set of preop exams for hepatic disease', () => {
@@ -375,7 +375,7 @@ describe('Testing PatientExamsNeeded() for medication use in PreopRecommendation
   });
   it('set of preop exams for use of Anticoagulant to match snapshot', () => {
     expect(result.exams).toMatchSnapshot();
-    expect(result.conditionalExams).toMatchSnapshot();
+    expect(result.conditionalExams[0].exams).toMatchSnapshot();
   });
 
   it('returns correct set of preop exams for use of Antiplatelet (ASA excluded)', () => {
@@ -387,7 +387,7 @@ describe('Testing PatientExamsNeeded() for medication use in PreopRecommendation
   });
   it('set of preop exams for use of Antiplatelet (ASA excluded) to match snapshot', () => {
     expect(result.exams).toMatchSnapshot();
-    expect(result.conditionalExams).toMatchSnapshot();
+    expect(result.conditionalExams[0].exams).toMatchSnapshot();
   });
 
   it('returns correct set of preop exams for use of systemic steroid used within 6 months', () => {

@@ -302,12 +302,7 @@ Array [
 
 exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Valvular heart disease / valve replacement pre op exams to match snapshot 2`] = `
 Array [
-  ConditionalExam {
-    "conditionPhrase": "Is valve mechanical?",
-    "exams": Array [
-      "CBC",
-    ],
-  },
+  "CBC",
 ]
 `;
 
@@ -335,8 +330,6 @@ Array [
 ]
 `;
 
-exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of Anticoagulant to match snapshot 2`] = `Array []`;
-
 exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of Antiplatelet (ASA excluded) to match snapshot 1`] = `
 Array [
   "CBC",
@@ -344,8 +337,6 @@ Array [
   "PTT/INR",
 ]
 `;
-
-exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of Antiplatelet (ASA excluded) to match snapshot 2`] = `Array []`;
 
 exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of Digoxin to match snapshot 1`] = `
 Array [
@@ -413,12 +404,7 @@ Array [
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for diabetes (on Insulin or 2 oral agents) to match snapshot 2`] = `
 Array [
-  ConditionalExam {
-    "conditionPhrase": "Has patient gone at least 3 months since an Hb1AC?",
-    "exams": Array [
-      "HbA1C",
-    ],
-  },
+  "HbA1C",
 ]
 `;
 
@@ -431,14 +417,9 @@ Array [
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for diabetes (on Insulin or 2 oral agents) to match snapshot 4`] = `
 Array [
-  ConditionalExam {
-    "conditionPhrase": "Is patient on chemo?",
-    "exams": Array [
-      "ECG",
-      "Renal Panel (Creat + Lytes)",
-      "PTT/INR",
-    ],
-  },
+  "ECG",
+  "Renal Panel (Creat + Lytes)",
+  "PTT/INR",
 ]
 `;
 
@@ -502,6 +483,16 @@ Array [
 `;
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for renal disease (on dialysis or at risk for Acute Kidney Injury [AKI] to match snapshot 2`] = `Array []`;
+
+exports[`Testing PatientExamsNeeded() for pulmonary diseases in PreopRecommendation.js set of preop exams for severe COPD, home oxygen, pulmonary HTN to match snapshot 1`] = `
+Array [
+  "ECG",
+  "CBC",
+  "CXR",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() for pulmonary diseases in PreopRecommendation.js set of preop exams for severe COPD, home oxygen, pulmonary HTN to match snapshot 2`] = `Array []`;
 
 exports[`Testing Tag() in tag.js correct tag creation when using GetAllExams() to match snapshot 1`] = `undefined`;
 
@@ -703,13 +694,3 @@ Array [
   "ECG",
 ]
 `;
-
-exports[`set of preop exams for severe COPD, home oxygen, pulmonary HTN to match snapshot 1`] = `
-Array [
-  "ECG",
-  "CBC",
-  "CXR",
-]
-`;
-
-exports[`set of preop exams for severe COPD, home oxygen, pulmonary HTN to match snapshot 2`] = `Array []`;
