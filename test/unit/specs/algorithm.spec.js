@@ -1,7 +1,7 @@
 // import Vue from 'vue/dist/vue';
 import { Condition, Exam } from '@/constants';
 import { PatientExamsNeeded } from '@/PreopRecommendation';
-import { GetExams, GetAllExams, Tag } from '@/tag';
+import { GetExams, GetAllExams, Tag, GetConditionalExams } from '@/tag';
 
 let requiredExams;
 let conditionalExams;
@@ -746,6 +746,16 @@ describe('Testing Tag() in tag.js', () => {
   });
   it('correct tag creation when using GetExams() to match snapshot', () => {
     expect(GetExams('DaleDisease')).toMatchSnapshot();
+  });
+
+  it('returns correct tag creation with conditional exams using GetAllExams()', () => {
+    result = Tag('JonDisease', [Exam.CBC, Exam.RenPanel],
+      { 'Maybe you need more tests?': [Exam.TSH] });
+    expect(GetAllExams().exams.JonDisease).toEqual([Exam.CBC, Exam.RenPanel]);
+    expect(GetAllExams().conditionalExams.JonDisease[0].exams).toEqual([Exam.TSH]);
+  });
+  it('correct tag creation when using GetAllExams() to match snapshot', () => {
+    expect(GetAllExams('JonDisease')).toMatchSnapshot();
   });
 });
 
