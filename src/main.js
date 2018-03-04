@@ -7,11 +7,11 @@ Vue.config.productionTip = process.env.NODE_ENV === 'production';
 
 
 /* eslint-disable no-new */
-// new Vue({
-//   el: '#app',
-//   components: { App },
-//   template: '<App/>',
-// });
+new Vue({
+  el: '#app',
+  components: { App },
+  template: '<App/>',
+});
 
 /* Simple addition function for testing */
 export function add(a, b) {
