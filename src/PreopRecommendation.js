@@ -22,8 +22,7 @@ Tag(Condition.VHD, [Exam.ECG],
 Tag(Condition.HeartFail, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
 Tag(Condition.PVD, [Exam.ECG, Exam.RenPanel]);
 /* Pulmonary Diseases */
-Tag(Condition.PulmDisease, [Exam.ECG, Exam.RenPanel],
-  { 'Has patient gone at least 6 months since a CXR?': [Exam.CXR] });
+Tag(Condition.PulmDisease, [Exam.ECG, Exam.CBC, Exam.CXR]);
 /* Other Diseases */
 Tag(Condition.Bleeding, [Exam.GnS, Exam.CBC, Exam.PTTINR]);
 Tag(Condition.Anemia, [Exam.CBC]);
@@ -34,9 +33,9 @@ Tag(Condition.Diabetes, [Exam.ECG, Exam.RenPanel, Exam.Gluc],
 Tag(Condition.Malignancy, [Exam.CBC, Exam.CXR],
   { 'Is patient on chemo?': [Exam.ECG, Exam.RenPanel, Exam.PTTINR] });
 Tag(Condition.Hepatic, [Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.LFT]);
-Tag(Condition.Adrenal, [Exam.RenPanel, Exam.TSH]);
-Tag(Condition.Pituitary, [Exam.RenPanel, Exam.TSH]);
-Tag(Condition.Endocrine, [Exam.RenPanel, Exam.TSH]);
+Tag(Condition.Adrenal, [Exam.RenPanel]);
+Tag(Condition.Pituitary, [Exam.RenPanel]);
+Tag(Condition.Endocrine, [Exam.RenPanel]);
 /* Medications */
 Tag(Condition.Digoxin, [Exam.ECG, Exam.RenPanel]);
 Tag(Condition.Lithium, [Exam.RenPanel]);
