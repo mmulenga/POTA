@@ -4,7 +4,7 @@
       <div class="col-12">
         <ul class="list-group half">
           <li class="list-group-item list-group-item-dark"> Cardiovascular Diseases</li>
-          <li class="list-group-item list-group-item-action"
+          <li class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in cardioDiseases"
           :key="item.comorbidity"
           v-on:click="aggregateConditions(cardioDiseases, index)"
@@ -21,7 +21,7 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-dark"> Pulmonary Diseases</li>
-          <li class="list-group-item list-group-item-action"
+          <li class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in pulmoDiseases"
           :key="item.comorbidity"
           v-on:click="aggregateConditions(pulmoDiseases, index)"
@@ -38,7 +38,7 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-dark"> Other Diseases</li>
-          <li class="list-group-item list-group-item-action"
+          <li class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in otherDiseases"
           :key="item.comorbidity"
           v-on:click="aggregateConditions(otherDiseases, index)"
@@ -55,7 +55,7 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-dark"> Medications </li>
-          <li class="list-group-item list-group-item-action"
+          <li class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in medications"
           :key="item.comorbidity"
           v-on:click="aggregateConditions(medications, index)"
@@ -180,5 +180,13 @@ export default {
 .half {
   height: 500px;
   overflow: scroll;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.lg-item {
+  padding: 2.00rem;
 }
 </style>

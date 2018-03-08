@@ -2,7 +2,7 @@
   <div id="app">
     <h1> Pre-Opt Testing App </h1>
       <div class="row">
-        <div class="col-3">
+        <div class="col-md-3">
             <StatusComponent
              :resultArray="resultArray"/>
              <!-- This is the the bind to the child component-->
