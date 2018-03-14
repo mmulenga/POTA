@@ -3,11 +3,12 @@
     <button type="button" class="btn btn-primary"
      v-on:click="getExams(); showModal();"> Submit </button>
     <!-- Modal -->
-    <div class="modal fade" :class="{ 'show': isVisible, 'd-block': isVisible }">
-      <div class="modal-dialog">
+    <div id="modalBox" class="modal fade" :class="{ 'show': isVisible, 'd-block': isVisible }"
+     tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"> Tests </h5>
+            <h5 class="modal-title"> Tests </h5>
             <button type="button" class="close" v-on:click="showModal()">
               <span> &times; </span>
             </button>
@@ -80,3 +81,9 @@ export default {
   },
 };
 </script>
+
+<style>
+  #modalBox {
+    background: rgba(0,0,0, 0.8);
+  }
+</style>
