@@ -4,7 +4,7 @@
       <div class="col-12">
         <ul class="list-group half">
           <li class="list-group-item list-group-item-dark"> Cardiovascular Diseases</li>
-          <li class="list-group-item list-group-item-action"
+          <li class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in cardioDiseases"
           :key="item.comorbidity"
           v-on:click="aggregateConditions(cardioDiseases, index)"
@@ -21,7 +21,7 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-dark"> Pulmonary Diseases</li>
-          <li class="list-group-item list-group-item-action"
+          <li class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in pulmoDiseases"
           :key="item.comorbidity"
           v-on:click="aggregateConditions(pulmoDiseases, index)"
@@ -38,7 +38,7 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-dark"> Other Diseases</li>
-          <li class="list-group-item list-group-item-action"
+          <li class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in otherDiseases"
           :key="item.comorbidity"
           v-on:click="aggregateConditions(otherDiseases, index)"
@@ -55,7 +55,7 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-dark"> Medications </li>
-          <li class="list-group-item list-group-item-action"
+          <li class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in medications"
           :key="item.comorbidity"
           v-on:click="aggregateConditions(medications, index)"
@@ -139,9 +139,10 @@ export default {
   },
   methods: {
     /**
-    * Creates or removes a comorbidity to a String array to be
-    * passed to the necessary functions. Executed whenever a
-    * comorbidity is clicked in the list.
+    * Emits an event, signalling to the parent an update to the parent's
+    * data is needed. Passes an object containing a string of the comorbidity
+    * clicked, up to the parent.
+    * Executes whenever a list item or checkbox is clicked.
     * @param comorbidityArray - The current comorbidity array being used.
     * @param index - The index of the comorbidity to be passed.
     */
@@ -160,8 +161,9 @@ export default {
     },
     /**
      * Emits an event, signalling to the parent an update to
-     * the parent's data is needed. Passing a string of the
-     * current comorbidity up.
+     * the parent's data is needed. Passes an object containing a glossary entry
+     * string of the current comorbidity being hovered over, up to the parent.
+     * Excutes whenever a list item is hovered over.
      * @param comorbidityArray - The current comorbidity array being used.
      * @param index - The index of the comorbidity to be passed.
      */
@@ -178,5 +180,13 @@ export default {
 .half {
   height: 500px;
   overflow: scroll;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.lg-item {
+  padding: 2.00rem;
 }
 </style>

@@ -2,13 +2,13 @@
   <div class="container pt-3">
     <button type="button" class="btn btn-primary"
      v-on:click="getExams(); showModal();"> Submit </button>
-
     <!-- Modal -->
-    <div class="modal fade" :class="{ 'show': isVisible, 'd-block': isVisible }">
-      <div class="modal-dialog">
+    <div id="modalBox" class="modal fade" :class="{ 'show': isVisible, 'd-block': isVisible }"
+     tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"> Tests </h5>
+            <h5 class="modal-title"> Tests </h5>
             <button type="button" class="close" v-on:click="showModal()">
               <span> &times; </span>
             </button>
@@ -19,6 +19,18 @@
             :key="item" >
               {{ item }}
             </p>
+            <div id="conditional-exams" class="text-left"
+            v-for="item in conditionalExams"
+            :key="item">
+              <br/>
+              <p>
+              {{ item.conditionPhrase }}
+              If so:
+              </p>
+              <p v-for="examName in item.exams" :key=examName>
+                {{ examName }}
+              </p>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" v-on:click="showModal">Okay</button>
@@ -41,9 +53,14 @@ export default {
     return {
       isVisible: false,
       exams: [],
+      conditionalExams: [],
     };
   },
   methods: {
+    /**
+     * Displays or hides the modal depending on whether or not it is
+     * already hidden.
+     */
     showModal: function showModal() {
       if (this.isVisible === false) {
         this.isVisible = true;
@@ -51,13 +68,22 @@ export default {
         this.isVisible = false;
       }
     },
+    /**
+     * Populates the exams array using the resultArray passed down
+     * from the parent. Clearing the previous exams each time it is called
+     * and then pushing the new values.
+     */
     getExams: function getExams() {
-      const exams = PatientExamsNeeded(this.resultArray);
-      for (let i = 0; i < this.exams.length; i += 1) {
-        this.exams.pop();
-      }
-      this.exams.push(exams);
+      const examSummary = PatientExamsNeeded(this.resultArray);
+      this.exams = examSummary.exams;
+      this.conditionalExams = examSummary.conditionalExams;
     },
   },
 };
 </script>
+
+<style>
+  #modalBox {
+    background: rgba(0,0,0, 0.8);
+  }
+</style>

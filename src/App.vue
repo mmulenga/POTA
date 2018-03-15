@@ -2,7 +2,7 @@
   <div id="app">
     <h1> Pre-Opt Testing App </h1>
       <div class="row">
-        <div class="col-3">
+        <div class="col-md-3">
             <StatusComponent
              :resultArray="resultArray"/>
              <!-- This is the the bind to the child component-->
@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-3">
             <GlossaryComponent
-            :glossaryEntry="glossaryEntry"/>
+             :glossaryEntry="glossaryEntry"/>
         </div>
     </div>
   </div>
@@ -45,8 +45,9 @@ export default {
   },
   methods: {
     /**
-    * Updates the resultArray with data recieved from
-    * child ComoListComponent.
+    * Updates the resultArray used by the Patient Status window with data
+    * recieved from child ComoListComponent.
+    * @param comorbidity - The data emitted by the child component.
     */
     updateArray: function updateArray(comorbidity) {
       if (this.resultArray.includes(comorbidity.currentComorbiditySelection)) {
@@ -58,7 +59,9 @@ export default {
       }
     },
     /**
-     *
+     * Updates the glossaryEntry used by the Glossary Window with data
+     * recieved from child ComoListComponent.
+     * @param comorbidity - The data emitted by the child component.
      */
     updateDescription: function updateDescription(comorbidity) {
       this.glossaryEntry = comorbidity.currentComorbiditySelection;
@@ -76,6 +79,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+<<<<<<< HEAD
 
 /* This will center any column, even if they don't add up to 12 */
 .col-centered{
@@ -83,4 +87,6 @@ export default {
     margin: 0 auto;
 }
 
+=======
+>>>>>>> 436eec034b1e35d2812b01bb71276c593b4e94b6
 </style>
