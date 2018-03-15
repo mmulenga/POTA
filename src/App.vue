@@ -79,7 +79,6 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-<<<<<<< HEAD
 
 /* This will center any column, even if they don't add up to 12 */
 .col-centered{
@@ -87,6 +86,4 @@ export default {
     margin: 0 auto;
 }
 
-=======
->>>>>>> 436eec034b1e35d2812b01bb71276c593b4e94b6
 </style>
