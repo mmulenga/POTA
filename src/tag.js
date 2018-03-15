@@ -1,5 +1,4 @@
 import { assert } from '@/main';
-import { Condition, Exam } from '@/constants';
 
 /**
  * This is the internal collection where all exam information will be saved to.
