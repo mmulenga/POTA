@@ -71,41 +71,41 @@ export const Glossary = {
   HeartFail: 'Glossary entry for: Heart Failure',
   PVD: 'Glossary entry for: Peripheral Vascular disease (PVD)',
   /* Pulmonary Diseases */
-  PulmDisease: '- Spirometric values AND symptomatic assessment should be sought. \n' +
-               '- Post Bronchodilator FEV1: 30 - 50% of predicted; FEV1/FVC < 0.70 \n' +
-               '- History of exacerbations (including prior hospitalizations) should be recorded.\n' +
-               '- Worsening air flow limitation, greater SOB, reduced exercise capacity, having an ' +
-               'impact on quality of life, and ability to complete activities of daily living should be present.',
+  PulmDisease: '• Spirometric values AND symptomatic assessment should be sought. \n' +
+               '• Post Bronchodilator FEV1: 30 - 50% of predicted; FEV1/FVC < 0.70 \n' +
+               '• History of exacerbations (including prior hospitalizations) should be recorded.\n' +
+               '• Worsening air flow limitation, greater SOB, reduced exercise capacity, having an ' +
+               'impact on quality of life, and ability to complete activities of daily living should be present. \n',
   /* Other Diseases */
-  Bleeding: '- History of extensive investigation due to a bleeding episode. ' +
-            '- History of extensive bleeding needing transfusion in previous surgeries. ' +
-            '- Bruising easily more than usual. \n',
+  Bleeding: '• History of extensive investigation due to a bleeding episode. \n' +
+            '• History of extensive bleeding needing transfusion in previous surgeries. \n' +
+            '• Bruising easily more than usual. \n',
   Anemia: 'Glossary entry for: History of anemia',
   ActiveBleeding: 'Glossary entry for: History of active bleeding',
   Renal: '(AKI). \n' +
-         '- Chronic kidney disease (eGFR < 60ml/min/1.73m2. \n' +
-         '- Diabetes. \n' +
-         '- Heart failure. \n' +
-         '- Age ≥ 65. \n' +
-         '- Liver disease. \n' +
-         '- Use of drugs with nephrotoxic potential in the perioperative period (in particular NSAIDs after surgery). \n',
+         '• Chronic kidney disease (eGFR < 60ml/min/1.73m2. \n' +
+         '• Diabetes. \n' +
+         '• Heart failure. \n' +
+         '• Age ≥ 65. \n' +
+         '• Liver disease. \n' +
+         '• Use of drugs with nephrotoxic potential in the perioperative period (in particular NSAIDs after surgery). \n',
   Diabetes: 'Glossary entry for: Diabetes (on Insulin or 2 oral agents)',
   Malignancy: 'Glossary entry for: Present malignancy / surgery for malignancy',
-  Hepatic: '- Alcohol abuse (i.e., female: 14 drinks / week; male: 21 drinks / week). \n' +
-           '- Jaundice due to liver disease. \n' +
-           '- All forms of hepatitis. \n' +
-           '- Cirrhosis; Hepatic cancer. \n',
+  Hepatic: '• Alcohol abuse (i.e., female: 14 drinks / week; male: 21 drinks / week). \n' +
+           '• Jaundice due to liver disease. \n' +
+           '• All forms of hepatitis. \n' +
+           '• Cirrhosis; Hepatic cancer. \n',
   Adrenal: 'Glossary entry for: History of adrenal disease',
-  Pituitary: '- Acromegaly. \n' +
-             '- Cushing’s disease. \n' +
-             '- Sheehan syndrome. \n' +
-             '- Growth hormone deficiency. \n' +
-             '- Hyper/hypo pituitarism. \n',
-  Endocrine: '(Excluding Diabeties)' +
-             '- Parathyroid disease' +
-             '- Addison’s disease' +
-             '- Cushing’s syndrome' +
-             '- Graves’ disease',
+  Pituitary: '• Acromegaly. \n' +
+             '• Cushing’s disease. \n' +
+             '• Sheehan syndrome. \n' +
+             '• Growth hormone deficiency. \n' +
+             '• Hyper/hypo pituitarism. \n',
+  Endocrine: '(Excluding Diabeties) \n' +
+             '• Parathyroid disease \n' +
+             '• Addison’s disease \n' +
+             '• Cushing’s syndrome \n' +
+             '• Graves’ disease \n',
   /* Medications */
   Digoxin: 'Glossary entry for: Digoxin',
   Lithium: 'Glossary entry for: Lithium',
