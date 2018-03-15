@@ -34,9 +34,9 @@ Tag(Condition.Malignancy, [Exam.CBC, Exam.CXR],
   { 'Is patient on chemo?': [Exam.ECG, Exam.RenPanel, Exam.PTTINR] });
 Tag(Condition.Hepatic, [Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.LFT]);
 Tag(Condition.Adrenal, [Exam.RenPanel]);
-Tag(Condition.Thyroid, [Exam.TSH]);
 Tag(Condition.Pituitary, [Exam.RenPanel]);
 Tag(Condition.Endocrine, [Exam.RenPanel]);
+Tag(Condition.Thyroid, [Exam.TSH]);
 /* Medications */
 Tag(Condition.Digoxin, [Exam.ECG, Exam.RenPanel]);
 Tag(Condition.Lithium, [Exam.RenPanel]);

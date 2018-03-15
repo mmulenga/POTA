@@ -138,7 +138,8 @@ describe('Testing mock function for GetExams() and GetConditionalExams() for Pat
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams[0].exams).toEqual([Exam.PTTINR]);
     expect(result.conditionalExams[1].exams).toEqual([Exam.HbA1C]);
-    expect(result.conditionalExams[2].exams).toEqual([Exam.RenPanel]);
+    expect(result.conditionalExams[2].exams).toEqual([Exam.RenPanel, Exam.PTTINR]);
+    // expect(result.conditionalExams[3].exams).toEqual([Exam.PTTINR]);
   });
 
   it('returns correct array of list of exams for test 6 of mockGetExams() and mockGetConditionalExams()', () => {

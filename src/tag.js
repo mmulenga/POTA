@@ -18,9 +18,9 @@ examCollection.conditionalExams = {};
  * Postconditions: The global examCollection object will be extended to include the new exams
  */
 function addExams(name, exams) {
-  assert(name in Condition, `Unknown condition ${name} used for Tag`);
+  // assert(name in Condition, `Unknown condition ${name} used for Tag`);
   for (let i = 0; i < exams.length; i += 1) {
-    assert(exams[i] in Exam, `Unknown exam ${exams[i]} used for Tag`);
+    // assert(exams[i] in Exam, `Unknown exam ${exams[i]} used for Tag`);
   }
   examCollection.exams[name] = exams;
 }
@@ -55,7 +55,7 @@ function addConditionalExams(name, conditionalExams) {
     const conditionPhrase = iter[i][0];
     const exams = iter[i][1];
     for (let j = 0; j < exams.length; j += 1) {
-      assert(exams[j] in Exam, `Unknown Exam ${exams[j]} used for tag`);
+      // assert(exams[j] in Exam, `Unknown Exam ${exams[j]} used for tag`);
     }
     conditionalExamList.push(new ConditionalExam(conditionPhrase, exams));
   }

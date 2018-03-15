@@ -6,13 +6,18 @@ Array [
   "Renal Panel (Creat + Lytes)",
   "Gluc",
   "CBC",
-  "PTT/INR",
 ]
 `;
 
 exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for Diabetes + Anticoagulant to match snapshot 2`] = `
 Array [
   "HbA1C",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for Diabetes + Anticoagulant to match snapshot 3`] = `
+Array [
+  "PTT/INR",
 ]
 `;
 
@@ -44,13 +49,18 @@ Array [
   "Renal Panel (Creat + Lytes)",
   "Gluc",
   "CBC",
-  "PTT/INR",
 ]
 `;
 
 exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for VHD + Diabetes + Antiplatelet to match snapshot 2`] = `
 Array [
   "HbA1C",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for VHD + Diabetes + Antiplatelet to match snapshot 3`] = `
+Array [
+  "PTT/INR",
 ]
 `;
 
@@ -162,6 +172,7 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for Endocrine + Thyroid + NSAIDS 1`] = `
 Array [
   "Renal Panel (Creat + Lytes)",
+  "TSH",
 ]
 `;
 
@@ -252,6 +263,7 @@ Array [
   "Renal Panel (Creat + Lytes)",
   "PTT/INR",
   "LFT",
+  "TSH",
 ]
 `;
 
