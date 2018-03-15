@@ -716,14 +716,14 @@ describe('Testing GetAllExams() in tag.js', () => {
     expect(GetAllExams().exams.Stroke).toEqual([Exam.ECG]);
   });
   it('correct tag creation when accessing valid name parameter to match snapshot', () => {
-    expect(GetAllExams().Stroke).toMatchSnapshot();
+    expect(GetAllExams().exams.Stroke).toMatchSnapshot();
   });
 
   it('returns correct tag creation when accessing invalid name parameter', () => {
     expect(GetAllExams().exams.DaleDisease).toEqual(undefined);
   });
   it('correct tag creation when accessing invalid name parameter to match snapshot', () => {
-    expect(GetAllExams().DaleDisease).toMatchSnapshot();
+    expect(GetAllExams().exams.DaleDisease).toMatchSnapshot();
   });
 });
 
@@ -733,7 +733,7 @@ describe('Testing Tag() in tag.js', () => {
     expect(GetAllExams().exams.DaleDisease).toEqual([Exam.ECG]);
   });
   it('correct tag creation when using GetAllExams() to match snapshot', () => {
-    expect(GetAllExams().DaleDisease).toMatchSnapshot();
+    expect(GetAllExams().exams.DaleDisease).toMatchSnapshot();
   });
 
   it('returns correct tag creation using GetExams()', () => {
@@ -751,7 +751,8 @@ describe('Testing Tag() in tag.js', () => {
     expect(GetAllExams().conditionalExams.JonDisease[0].exams).toEqual([Exam.TSH]);
   });
   it('correct tag creation when using GetAllExams() to match snapshot', () => {
-    expect(GetAllExams('JonDisease')).toMatchSnapshot();
+    expect(GetAllExams().exams.JonDisease).toMatchSnapshot();
+    expect(GetAllExams().conditionalExams.JonDisease[0].exams).toMatchSnapshot();
   });
 });
 
