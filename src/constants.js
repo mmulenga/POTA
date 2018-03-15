@@ -20,8 +20,6 @@ export const Condition = {
   PVD: 'Peripheral Vascular disease (PVD)',
   /* Pulmonary Diseases */
   PulmDisease: 'Severe COPD, Home Oxygen, Pulmonary HTN',
-  // Asthma: 'ER | Hospital admission within 12m',
-  // Apnea: 'Confirmed sleep apnea not using CPAP/STOP-Bang > 5',
   /* Other Diseases */
   Bleeding: 'Bleeding disorders (hemophiliac | DVT)',
   Anemia: 'History of anemia',
@@ -34,13 +32,6 @@ export const Condition = {
   Pituitary: 'History of pituitary disease',
   Endocrine: 'History of major systemic endocrine disease',
   Thyroid: 'Thyroid disease or on thyroid supplementation',
-  // NeuroMuscular: 'Neuromuscular disorder',
-  // SpinalLesion: 'Spinal cord lesion',
-  // MyastheniaGravis: 'Myasthenia Gravis',
-  // Intubation: 'Difficult intubaton',
-  // CAThroat: 'CA of throat',
-  // NeckRad: 'Radiation of neck',
-  /* Medications */
   Digoxin: 'Digoxin',
   Lithium: 'Lithium',
   Diuretics: 'Diuretics',
