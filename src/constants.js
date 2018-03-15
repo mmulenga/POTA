@@ -33,6 +33,7 @@ export const Condition = {
   Adrenal: 'History of adrenal disease',
   Pituitary: 'History of pituitary disease',
   Endocrine: 'History of major systemic endocrine disease',
+  Thyroid: 'Thyroid disease or on thyroid supplementation',
   // NeuroMuscular: 'Neuromuscular disorder',
   // SpinalLesion: 'Spinal cord lesion',
   // MyastheniaGravis: 'Myasthenia Gravis',
@@ -114,6 +115,7 @@ export const Glossary = {
              '- Addison’s disease' +
              '- Cushing’s syndrome' +
              '- Graves’ disease',
+  Thyroid: 'Glossary entry for: Thyroid disease or on thyroid supplementation',
   /* Medications */
   Digoxin: 'Glossary entry for: Digoxin',
   Lithium: 'Glossary entry for: Lithium',
