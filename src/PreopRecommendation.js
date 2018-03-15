@@ -43,8 +43,10 @@ Tag(Condition.Diuretics, [Exam.RenPanel]);
 Tag(Condition.ACEI, [Exam.RenPanel]);
 Tag(Condition.ARB, [Exam.RenPanel]);
 Tag(Condition.NSAIDS, [Exam.RenPanel]);
-Tag(Condition.Anticoagulant, [Exam.CBC, Exam.RenPanel, Exam.PTTINR]);
-Tag(Condition.Antiplatelet, [Exam.CBC, Exam.RenPanel, Exam.PTTINR]);
+Tag(Condition.Anticoagulant, [Exam.CBC, Exam.RenPanel],
+  { 'Is patient on Wafarin/Heparins?': [Exam.PTTINR] });
+Tag(Condition.Antiplatelet, [Exam.CBC, Exam.RenPanel],
+  { 'Is patient on Wafarin/Heparins?': [Exam.PTTINR] });
 Tag(Condition.Steroid, [Exam.RenPanel, Exam.Gluc]);
 
 
