@@ -5,6 +5,8 @@ import ResultModalComponent from '@/components/ResultModalComponent';
 describe('resultsModal.test.js', () => {
   const Component = Vue.extend(ResultModalComponent);
   const vm = new Component().$mount();
+  const wrapper = mount(ResultModalComponent);
+
   describe('testing showModal()', () => {
     it('isVisable is false at the start', () => {
       expect(vm.isVisible).toBe(false);
@@ -21,16 +23,36 @@ describe('resultsModal.test.js', () => {
       expect(vm.exams).toHaveLength(0);
       expect(vm.conditionalExams).toHaveLength(0);
     });
-    it('resultArray to be filled in', () => {
+    it('exams array to be filled in', () => {
+      // Mocking data to be used for getExam() method
       const cmp = mount(ResultModalComponent, {
-      // Beware that props is overriden using `propsData`
         propsData: {
           resultArray: ['Atrial fibrillation / History of irregular heart beat'],
         },
       });
       expect(cmp.vm.resultArray).toEqual(['Atrial fibrillation / History of irregular heart beat']);
-      cmp.vm.getExams();
-      expect(cmp.vm.resultArray).toEqual(['ECG']);
+      // Find the "submit" button
+      const button = cmp.findAll('button').at(0);
+      // Clicking button should run getExams() method.
+      button.trigger('click');
+      // After getExams() is called, exam array should be filled
+      expect(cmp.vm.exams).toEqual(['ECG']);
+    });
+    it('ConditionalExams array to be filled in', () => {
+      // Mocking data to be used for getExam() method
+      const cmp = mount(ResultModalComponent, {
+        propsData: {
+          resultArray: ['Valvular heart disease / Valve Replacement'],
+        },
+      });
+      // Find the "submit" button
+      const button = cmp.findAll('button').at(0);
+      // Clicking button should run getExams() method.
+      button.trigger('click');
+      // After getExams() is called, exam array should be filled
+      expect(cmp.vm.exams).toEqual(['ECG']);
+      expect(cmp.vm.conditionalExams[0].conditionPhrase).toBe('Is valve mechanical?');
+      expect(cmp.vm.conditionalExams[0].exams).toEqual(['CBC']);
     });
   });
 });
