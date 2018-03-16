@@ -4,7 +4,8 @@
       <div class="col-12">
         <ul class="list-group half">
           <li class="list-group-item list-group-item-dark"> Cardiovascular Diseases</li>
-          <li class="list-group-item list-group-item-action lg-item"
+          <li :id="generateID('li', 'cv', index)"
+          class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in cardioDiseases"
           :key="item.comorbidity"
           v-on:click="aggregateConditions(cardioDiseases, index)"
@@ -12,7 +13,8 @@
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" :checked="item.check">
+                  <input :id="generateID('cb', 'cv', index)"
+                  class="form-check-input" type="checkbox" :checked="item.check">
                 </div>
               </div>
               <div class="col-10 text-left">
@@ -21,7 +23,8 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-dark"> Pulmonary Diseases</li>
-          <li class="list-group-item list-group-item-action lg-item"
+          <li :id="generateID('li', 'pd', index)"
+          class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in pulmoDiseases"
           :key="item.comorbidity"
           v-on:click="aggregateConditions(pulmoDiseases, index)"
@@ -29,7 +32,8 @@
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" :checked="item.check">
+                  <input :id="generateID('cb', 'pd', index)"
+                  class="form-check-input" type="checkbox" :checked="item.check">
                 </div>
               </div>
               <div class="col-10 text-left">
@@ -38,7 +42,8 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-dark"> Other Diseases</li>
-          <li class="list-group-item list-group-item-action lg-item"
+          <li :id="generateID('li', 'other', index)"
+          class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in otherDiseases"
           :key="item.comorbidity"
           v-on:click="aggregateConditions(otherDiseases, index)"
@@ -46,7 +51,8 @@
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" :checked="item.check">
+                  <input :id="generateID('cb', 'other', index)"
+                  class="form-check-input" type="checkbox" :checked="item.check">
                 </div>
               </div>
               <div class="col-10 text-left">
@@ -55,7 +61,8 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-dark"> Medications </li>
-          <li class="list-group-item list-group-item-action lg-item"
+          <li :id="generateID('li', 'med', index)"
+          class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in medications"
           :key="item.comorbidity"
           v-on:click="aggregateConditions(medications, index)"
@@ -63,7 +70,8 @@
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" :checked="item.check">
+                  <input :id="generateID('cb', 'med', index)"
+                  class="form-check-input" type="checkbox" :checked="item.check">
                 </div>
               </div>
               <div class="col-10 text-left">
@@ -171,6 +179,50 @@ export default {
       const array = comorbidityArray;
 
       this.$emit('hoverEvent', { currentComorbiditySelection: array[index].glossary });
+    },
+    /**
+     * Generates an id based on the type of element and current index of the
+     * element calling it.
+     * @param element - The type of element that the ID is being generated for.
+     * @param comorbidityArray - The current comorbidity array being used.
+     * @param index - The index of the comorbidity to be passed.
+     * @returns A string containing the generated id.
+     */
+    generateID: function generateID(element, comorbidityArray, index) {
+      const conditionNameArray = Object.keys(Condition);
+      const pdIndex = this.cardioDiseases.length;
+      const otherIndex = this.pulmoDiseases.length + pdIndex;
+      const medIndex = this.otherDiseases.length + otherIndex;
+
+      switch (comorbidityArray) {
+        case 'cv':
+          if (element === 'li') {
+            return `cv_${conditionNameArray[index]}`;
+          }
+
+          return `cv_checkbox_${conditionNameArray[index]}`;
+
+        case 'pd':
+          if (element === 'li') {
+            return `pd_${conditionNameArray[index + pdIndex]}`;
+          }
+
+          return `pd_checkbox_${conditionNameArray[index + pdIndex]}`;
+
+        case 'other':
+          if (element === 'li') {
+            return `other_${conditionNameArray[index + otherIndex]}`;
+          }
+
+          return `other_checkbox_${conditionNameArray[index + otherIndex]}`;
+
+        default:
+          if (element === 'li') {
+            return `med_${conditionNameArray[index + medIndex]}`;
+          }
+
+          return `med_checkbox_${conditionNameArray[index + medIndex]}`;
+      }
     },
   },
 };
