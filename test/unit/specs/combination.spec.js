@@ -1,6 +1,5 @@
 import { Condition, Exam } from '@/constants';
 import { PatientExamsNeeded } from '@/PreopRecommendation';
-// import { GetExams, GetAllExams, Tag } from '@/tag';
 
 let requiredExams;
 let conditionalExams;
@@ -177,7 +176,6 @@ describe('Testing PatientExamsNeeded() with multiple non-conditional comorbiditi
   });
 });
 
-
 describe('Testing PatientExamsNeeded() with multiple conditional comorbidities', () => {
   it('returns correct set of preop exams for VHD + Diabetes', () => {
     result = PatientExamsNeeded([Condition.VHD, Condition.Diabetes]);
@@ -294,7 +292,7 @@ describe('Testing PatientExamsNeeded() with multiple random comorbidities', () =
 
   it('returns correct set of preop exams for Defib + CardiacStent + Hepatic + Anticoagulants', () => {
     result = PatientExamsNeeded([Condition.Defib, Condition.CardiacStent,
-      Condition.Hepatic, Condition.Anticoagulants]);
+      Condition.Hepatic, Condition.Anticoagulant]);
     requiredExams = [Exam.ECG, Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.LFT];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual([]);
