@@ -62,13 +62,13 @@ const mockGetConditionalExams = jest
   .mockReturnValueOnce(GetConditionalExams(Condition.Malignancy))
   .mockReturnValueOnce(GetConditionalExams(Condition.Diabetes))
   .mockReturnValueOnce(GetConditionalExams(Condition.VHD))
-  .mockReturnValueOnce(GetConditionalExams(Condition.AntiCoagulants))
+  .mockReturnValueOnce(GetConditionalExams(Condition.Anticoagulant))
   // Test 5
   .mockReturnValueOnce(GetConditionalExams(Condition.Antiplatelet))
   .mockReturnValueOnce(GetConditionalExams(Condition.VHD))
   .mockReturnValueOnce(GetConditionalExams(Condition.Diabetes))
   .mockReturnValueOnce(GetConditionalExams(Condition.Malignancy))
-  .mockReturnValueOnce(GetConditionalExams(Condition.AntiCoagulants));
+  .mockReturnValueOnce(GetConditionalExams(Condition.Anticoagulant));
 
 
 function PatientExamsNeeded(patientConditions) {

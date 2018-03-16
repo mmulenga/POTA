@@ -1,7 +1,7 @@
 // import Vue from 'vue/dist/vue';
 import { Condition, Exam } from '@/constants';
 import { PatientExamsNeeded } from '@/PreopRecommendation';
-import { GetExams, GetAllExams, Tag } from '@/tag';
+import { GetExams, GetAllExams, GetConditionalExams, Tag } from '@/tag';
 
 let requiredExams;
 let conditionalExams;
@@ -756,3 +756,22 @@ describe('Testing Tag() in tag.js', () => {
   });
 });
 
+describe('Testing GetExams() and GetConditionalExams() with invalid parameters', () => {
+  it('returns the correct output if given invalid preopt exam', () => {
+    result = GetExams(Condition.DaleDisease);
+    requiredExams = [];
+    expect(requiredExams).toEqual(result);
+  });
+  it('correct array of examinations for invalid condition to match snapshot', () => {
+    expect(result).toMatchSnapshot();
+  });
+
+  it('returns the correct output if given invalid conditional preopt exam', () => {
+    result = GetConditionalExams(Condition.JonDisease);
+    requiredExams = [];
+    expect(requiredExams).toEqual(result);
+  });
+  it('correct array of examinations for invalid condition to match snapshot', () => {
+    expect(result).toMatchSnapshot();
+  });
+});
