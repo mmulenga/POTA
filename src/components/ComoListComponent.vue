@@ -122,6 +122,7 @@ export default {
         { comorbidity: Condition.Adrenal, glossary: Glossary.Adrenal, check: false },
         { comorbidity: Condition.Pituitary, glossary: Glossary.Pituitary, check: false },
         { comorbidity: Condition.Endocrine, glossary: Glossary.Endocrine, check: false },
+        { comorbidity: Condition.Thyroid, glossary: Glossary.Thyroid, check: false },
       ],
       medications: [
         /* Medications */

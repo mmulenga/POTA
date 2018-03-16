@@ -30,7 +30,7 @@ describe('resultsModal.test.js', () => {
       });
       expect(cmp.vm.resultArray).toEqual(['Atrial fibrillation / History of irregular heart beat']);
       cmp.vm.getExams();
-      expect(cmp.vm.resultArray).toEqual(['ECG']);
+      expect(cmp.vm.exams).toEqual(['ECG']);
     });
   });
 });
