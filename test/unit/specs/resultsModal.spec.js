@@ -5,7 +5,6 @@ import ResultModalComponent from '@/components/ResultModalComponent';
 describe('resultsModal.test.js', () => {
   const Component = Vue.extend(ResultModalComponent);
   const vm = new Component().$mount();
-  const wrapper = mount(ResultModalComponent);
 
   describe('testing showModal()', () => {
     it('isVisable is false at the start', () => {
