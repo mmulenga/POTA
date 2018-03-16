@@ -30,7 +30,6 @@ describe('resultsModal.test.js', () => {
         },
       });
       expect(cmp.vm.resultArray).toEqual(['Atrial fibrillation / History of irregular heart beat']);
-<<<<<<< HEAD
       // Find the "submit" button
       const button = cmp.findAll('button').at(0);
       // Clicking button should run getExams() method.
@@ -53,10 +52,6 @@ describe('resultsModal.test.js', () => {
       expect(cmp.vm.exams).toEqual(['ECG']);
       expect(cmp.vm.conditionalExams[0].conditionPhrase).toBe('Is valve mechanical?');
       expect(cmp.vm.conditionalExams[0].exams).toEqual(['CBC']);
-=======
-      cmp.vm.getExams();
-      expect(cmp.vm.exams).toEqual(['ECG']);
->>>>>>> origin/develop
     });
   });
 });
