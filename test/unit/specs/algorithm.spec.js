@@ -685,7 +685,7 @@ describe('Testing GetExams() for all medication use in tag.js', () => {
 
   it('returns the correct array of preop exams for use of Anticoagulants', () => {
     result = GetExams(Condition.Anticoagulant);
-    requiredExams = ['CBC', 'Renal Panel (Creat + Lytes)', 'PTT/INR'];
+    requiredExams = ['CBC', 'Renal Panel (Creat + Lytes)'];
     expect(requiredExams).toEqual(result);
   });
   it('correct array of pre op exams for use of Anticoagulants to match snapshot', () => {
@@ -694,7 +694,7 @@ describe('Testing GetExams() for all medication use in tag.js', () => {
 
   it('returns the correct array of preop exams for use of Antiplatelet (ASA excluded)', () => {
     result = GetExams(Condition.Antiplatelet);
-    requiredExams = ['CBC', 'Renal Panel (Creat + Lytes)', 'PTT/INR'];
+    requiredExams = ['CBC', 'Renal Panel (Creat + Lytes)'];
     expect(requiredExams).toEqual(result);
   });
   it('correct array of pre op exams for use of Antiplatelet (ASA excluded) to match snapshot', () => {
