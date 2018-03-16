@@ -1,22 +1,45 @@
 <template>
   <div id="app">
-    <h1> Pre-Opt Testing App </h1>
+    <h1> Pre-Op Testing App </h1>
       <div class="row">
-        <div class="col-md-3">
+        <!-- hide the status component when screen is smaller than md-->
+        <div class="col-md-3 d-none d-md-block">
             <StatusComponent
              :resultArray="resultArray"/>
              <!-- This is the the bind to the child component-->
         </div>
-        <div class="col-md-6">
+        <!-- hide desktop como list when screen is smaller than md-->
+        <div class="col-md-6 d-none d-md-block">
             <ComoListComponent
             v-on:clickEvent="updateArray"
             v-on:hoverEvent="updateDescription"/>
             <ResultModalComponent
              :resultArray="resultArray"/>
         </div>
-        <div class="col-md-3">
+        <!-- hide desktop glossary when screen is smaller than md-->
+        <div class="col-md-3 d-none d-md-block">
             <GlossaryComponent
              :glossaryEntry="glossaryEntry"/>
+        </div>
+    </div>
+    <!-- visible-sm and down  (or hidden-md and up) -->
+    <div class="d-md-none d-lg-none d-xl-none">
+      <div class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="btn btn-primary float-right"
+              type="button" data-toggle="collapse" data-target="#collapseExample"
+              aria-expanded="false" aria-controls="collapseExample">
+              Glossary</button>
+            <button class="btn btn-primary float-left"
+              type="button" data-toggle="collapse" data-target="#collapseExample"
+              aria-expanded="false" aria-controls="collapseExample">
+              Patient Status</button>
+      </div>
+      <div class="col-md-12">
+            <ComoListComponent
+            v-on:clickEvent="updateArray"
+            v-on:hoverEvent="updateDescription"/>
+            <ResultModalComponent
+             :resultArray="resultArray"/>
         </div>
     </div>
   </div>
