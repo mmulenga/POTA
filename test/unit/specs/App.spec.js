@@ -17,7 +17,7 @@ describe('App.spec.js', () => {
     wrapper.vm.updateArray({ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' });
     expect(wrapper.vm.resultArray).toEqual(['Atrial fibrillation / History of irregular heart beat']);
   });
-  it('updateArray() displays the correct list for resultArray', () => {
+  it('updateArray() displays the correct list for resultArray when selection is delselected', () => {
     wrapper.vm.updateArray({ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' });
     expect(wrapper.vm.resultArray).toEqual([]);
   });
