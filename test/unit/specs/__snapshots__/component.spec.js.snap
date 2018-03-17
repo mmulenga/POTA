@@ -114,6 +114,16 @@ exports[`Testing all comorbidities in ComoListComponent.vue List of other diseas
 Array [
   Object {
     "check": false,
+    "comorbidity": "Age > 69 years old",
+    "glossary": "Glossary entry for: Age > 69 years old",
+  },
+  Object {
+    "check": false,
+    "comorbidity": ">= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40",
+    "glossary": "Glossary entry for: >= 2 risk factors",
+  },
+  Object {
+    "check": false,
     "comorbidity": "Bleeding disorders (hemophiliac | DVT)",
     "glossary": "- History of extensive investigation due to a bleeding episode. - History of extensive bleeding needing transfusion in previous surgeries. - Bruising easily more than usual. 
 ",
@@ -130,15 +140,8 @@ Array [
   },
   Object {
     "check": false,
-    "comorbidity": "Renal disease (on dialysis or at risk for Acute Kidney Injury [AKI])",
-    "glossary": "(AKI). 
-- Chronic kidney disease (eGFR < 60ml/min/1.73m2. 
-- Diabetes. 
-- Heart failure. 
-- Age ≥ 65. 
-- Liver disease. 
-- Use of drugs with nephrotoxic potential in the perioperative period (in particular NSAIDs after surgery). 
-",
+    "comorbidity": "Chronic kidney disease (eGF < 60ml/min/1.73m^2)",
+    "glossary": "Glossary entry for: Chronic kidney disease",
   },
   Object {
     "check": false,

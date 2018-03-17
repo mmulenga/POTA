@@ -200,7 +200,7 @@ Array [
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for PVD + Anemia to match snapshot 2`] = `Array []`;
 
-exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for PulmDisease + Renal + Steroid to match snapshot 1`] = `
+exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for PulmDisease + KidneyDisease + Steroid to match snapshot 1`] = `
 Array [
   "ECG",
   "CBC",
@@ -210,7 +210,7 @@ Array [
 ]
 `;
 
-exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for PulmDisease + Renal + Steroid to match snapshot 2`] = `Array []`;
+exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for PulmDisease + KidneyDisease + Steroid to match snapshot 2`] = `Array []`;
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for PulmonaryVascular + Pituitary + Steroid to match snapshot 1`] = `
 Array [

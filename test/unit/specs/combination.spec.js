@@ -102,14 +102,14 @@ describe('Testing PatientExamsNeeded() with multiple non-conditional comorbiditi
     expect(result.conditionalExams).toMatchSnapshot();
   });
 
-  it('returns correct set of preop exams for PulmDisease + Renal + Steroid', () => {
-    result = PatientExamsNeeded([Condition.PulmDisease, Condition.Renal, Condition.Steroid]);
+  it('returns correct set of preop exams for PulmDisease + KidneyDisease + Steroid', () => {
+    result = PatientExamsNeeded([Condition.PulmDisease, Condition.KidneyDisease, Condition.Steroid]);
     requiredExams = [Exam.ECG, Exam.CBC, Exam.CXR, Exam.RenPanel, Exam.Gluc];
     conditionalExams = [];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual(conditionalExams);
   });
-  it('set of preop exams for PulmDisease + Renal + Steroid to match snapshot', () => {
+  it('set of preop exams for PulmDisease + KidneyDisease + Steroid to match snapshot', () => {
     expect(result.exams).toMatchSnapshot();
     expect(result.conditionalExams).toMatchSnapshot();
   });

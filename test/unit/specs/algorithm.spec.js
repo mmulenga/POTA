@@ -195,14 +195,14 @@ describe('Testing PatientExamsNeeded() for other diseases in PreopRecommendation
     expect(result.conditionalExams).toMatchSnapshot();
   });
 
-  it('returns correct set of preop exams for renal disease (on dialysis or at risk for Acute Kidney Injury [AKI])', () => {
-    result = PatientExamsNeeded([Condition.Renal]);
+  it('returns correct set of preop exams for kidney disease (on dialysis or at risk for Acute Kidney Injury [AKI])', () => {
+    result = PatientExamsNeeded([Condition.KidneyDisease]);
     requiredExams = [Exam.ECG, Exam.CBC, Exam.RenPanel];
     conditionalExams = [];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual(conditionalExams);
   });
-  it('set of preop exams for renal disease (on dialysis or at risk for Acute Kidney Injury [AKI] to match snapshot', () => {
+  it('set of preop exams for kidney disease (on dialysis or at risk for Acute Kidney Injury [AKI] to match snapshot', () => {
     expect(result.exams).toMatchSnapshot();
     expect(result.conditionalExams).toMatchSnapshot();
   });
@@ -556,12 +556,12 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct array of preop exams for renal disease (on dialysis or at risk of Acute Kidney Injury [AKI])', () => {
-    result = GetExams(Condition.Renal);
+  it('returns the correct array of preop exams for kidney disease (on dialysis or at risk of Acute Kidney Injury [AKI])', () => {
+    result = GetExams(Condition.KidneyDisease);
     requiredExams = ['ECG', 'CBC', 'Renal Panel (Creat + Lytes)'];
     expect(requiredExams).toEqual(result);
   });
-  it('correct array of pre op exams for renal disease (on dialysis or at risk of Acute Kidney Injury [AKI]) to match snapshot', () => {
+  it('correct array of pre op exams for kidney disease (on dialysis or at risk of Acute Kidney Injury [AKI]) to match snapshot', () => {
     expect(result).toMatchSnapshot();
   });
 
