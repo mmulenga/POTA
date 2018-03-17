@@ -21,10 +21,13 @@ export const Condition = {
   /* Pulmonary Diseases */
   PulmDisease: 'Severe COPD, Home Oxygen, Pulmonary HTN',
   /* Other Diseases */
+  Age: 'Age > 69 years old',
+  Risk: '>= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40',
   Bleeding: 'Bleeding disorders (hemophiliac | DVT)',
   Anemia: 'History of anemia',
   ActiveBleeding: 'History of active bleeding',
   Renal: 'Renal disease (on dialysis or at risk for Acute Kidney Injury [AKI])',
+  KidneyDisease: 'Chronic kidney disease (eGF < 60ml/min/1.73m^2)',
   Diabetes: 'Diabetes (on Insulin or 2 oral agents)',
   Malignancy: 'Present malignancy / surgery for malignancy',
   Hepatic: 'Hepatic disease',
@@ -77,18 +80,23 @@ export const Glossary = {
                '- Worsening air flow limitation, greater SOB, reduced exercise capacity, having an ' +
                'impact on quality of life, and ability to complete activities of daily living should be present.',
   /* Other Diseases */
+  Age: 'Glossary entry for: Age > 69 years old',
+  Risk: 'Glossary entry for: >= 2 risk factors',
   Bleeding: '- History of extensive investigation due to a bleeding episode. ' +
             '- History of extensive bleeding needing transfusion in previous surgeries. ' +
             '- Bruising easily more than usual. \n',
   Anemia: 'Glossary entry for: History of anemia',
   ActiveBleeding: 'Glossary entry for: History of active bleeding',
-  Renal: '(AKI). \n' +
+  KidneyDisease: 'Glossary entry for: Chronic kidney disease',
+  /* Renal: '(AKI). \n' +
          '- Chronic kidney disease (eGFR < 60ml/min/1.73m2. \n' +
          '- Diabetes. \n' +
          '- Heart failure. \n' +
          '- Age ≥ 65. \n' +
          '- Liver disease. \n' +
-         '- Use of drugs with nephrotoxic potential in the perioperative period (in particular NSAIDs after surgery). \n',
+         '- Use of drugs with nephrotoxic potential in the perioperative period ' +
+         '(in particular NSAIDs after surgery). \n',
+         */
   Diabetes: 'Glossary entry for: Diabetes (on Insulin or 2 oral agents)',
   Malignancy: 'Glossary entry for: Present malignancy / surgery for malignancy',
   Hepatic: '- Alcohol abuse (i.e., female: 14 drinks / week; male: 21 drinks / week). \n' +
