@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing all comorbidities in ComoListComponent.vue List of cardiovascular diseases matches snapshot 1`] = `
+Array [
+  Object {
+    "check": false,
+    "comorbidity": "Atrial fibrillation / History of irregular heart beat",
+    "glossary": "Glossary entry for: Atrial fibrillation / History of irregular heart beat",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Defibrillator / Pacemaker",
+    "glossary": "Glossary entry for: Defibrillator / Pacemaker",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Coronary artery disease",
+    "glossary": "Glossary entry for: Coronary artery disease",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Cardiac Stent (< 12 months)",
+    "glossary": "Glossary entry for: Cardiac Stent (< 12 months)",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "History of cerebral disease",
+    "glossary": "Glossary entry for: History of cerebral disease",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "History of pulmonary vascular disease",
+    "glossary": "Glossary entry for: History of pulmonary vascular disease",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Transient Ischemic Attack (TIA)",
+    "glossary": "Glossary entry for: Transient Ischemic Attack (TIA)",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Stroke",
+    "glossary": "Glossary entry for: Stroke",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Valvular heart disease / Valve Replacement",
+    "glossary": "Glossary entry for: Valvular heart disease / Valve Replacement",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Heart Failure",
+    "glossary": "Glossary entry for: Heart Failure",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Peripheral Vascular disease (PVD)",
+    "glossary": "Glossary entry for: Peripheral Vascular disease (PVD)",
+  },
+]
+`;
+
+exports[`Testing all comorbidities in ComoListComponent.vue List of medications matches snapshot 1`] = `
+Array [
+  Object {
+    "check": false,
+    "comorbidity": "Digoxin",
+    "glossary": "Glossary entry for: Digoxin",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Lithium",
+    "glossary": "Glossary entry for: Lithium",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Diuretics",
+    "glossary": "Glossary entry for: Diuretics",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "ACE-I",
+    "glossary": "Glossary entry for: ACE-I",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "ARB",
+    "glossary": "Glossary entry for: ARB",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "NSAIDS",
+    "glossary": "Glossary entry for: NSAIDS",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Anticoagulants",
+    "glossary": "Glossary entry for: Anticoagulants",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Antiplatelet (ASA excluded)",
+    "glossary": "Glossary entry for: Antiplatelet (ASA excluded)",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Systemic steroid use within 6 months",
+    "glossary": "Glossary entry for: Systemic steroid use within 6 months",
+  },
+]
+`;
+
+exports[`Testing all comorbidities in ComoListComponent.vue List of other diseases matches snapshot 1`] = `
+Array [
+  Object {
+    "check": false,
+    "comorbidity": "Bleeding disorders (hemophiliac | DVT)",
+    "glossary": "- History of extensive investigation due to a bleeding episode. - History of extensive bleeding needing transfusion in previous surgeries. - Bruising easily more than usual. 
+",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "History of anemia",
+    "glossary": "Glossary entry for: History of anemia",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "History of active bleeding",
+    "glossary": "Glossary entry for: History of active bleeding",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Renal disease (on dialysis or at risk for Acute Kidney Injury [AKI])",
+    "glossary": "(AKI). 
+- Chronic kidney disease (eGFR < 60ml/min/1.73m2. 
+- Diabetes. 
+- Heart failure. 
+- Age ≥ 65. 
+- Liver disease. 
+- Use of drugs with nephrotoxic potential in the perioperative period (in particular NSAIDs after surgery). 
+",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Diabetes (on Insulin or 2 oral agents)",
+    "glossary": "Glossary entry for: Diabetes (on Insulin or 2 oral agents)",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Present malignancy / surgery for malignancy",
+    "glossary": "Glossary entry for: Present malignancy / surgery for malignancy",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Hepatic disease",
+    "glossary": "- Alcohol abuse (i.e., female: 14 drinks / week; male: 21 drinks / week). 
+- Jaundice due to liver disease. 
+- All forms of hepatitis. 
+- Cirrhosis; Hepatic cancer. 
+",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "History of adrenal disease",
+    "glossary": "Glossary entry for: History of adrenal disease",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "History of pituitary disease",
+    "glossary": "- Acromegaly. 
+- Cushing’s disease. 
+- Sheehan syndrome. 
+- Growth hormone deficiency. 
+- Hyper/hypo pituitarism. 
+",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "History of major systemic endocrine disease",
+    "glossary": "(Excluding Diabeties)- Parathyroid disease- Addison’s disease- Cushing’s syndrome- Graves’ disease",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Thyroid disease or on thyroid supplementation",
+    "glossary": "Glossary entry for: Thyroid disease or on thyroid supplementation",
+  },
+]
+`;
+
+exports[`Testing all comorbidities in ComoListComponent.vue List of pulmonary diseases matches snapshot 1`] = `
+Array [
+  Object {
+    "check": false,
+    "comorbidity": "Severe COPD, Home Oxygen, Pulmonary HTN",
+    "glossary": "- Spirometric values AND symptomatic assessment should be sought. 
+- Post Bronchodilator FEV1: 30 - 50% of predicted; FEV1/FVC < 0.70 
+- History of exacerbations (including prior hospitalizations) should be recorded.
+- Worsening air flow limitation, greater SOB, reduced exercise capacity, having an impact on quality of life, and ability to complete activities of daily living should be present.",
+  },
+]
+`;
