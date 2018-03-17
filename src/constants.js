@@ -23,11 +23,10 @@ export const Condition = {
   /* Other Diseases */
   Age: 'Age > 69 years old',
   Risk: '>= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40',
-  Bleeding: 'Bleeding disorders (hemophiliac | DVT)',
+  Bleeding: 'Bleeding disorders',
   Anemia: 'History of anemia',
   ActiveBleeding: 'History of active bleeding',
-  Renal: 'Renal disease (on dialysis or at risk for Acute Kidney Injury [AKI])',
-  KidneyDisease: 'Chronic kidney disease (eGF < 60ml/min/1.73m^2)',
+  KidneyDisease: 'Chronic kidney disease (eGFR < 60ml/min/1.73m^2)',
   Diabetes: 'Diabetes (on Insulin or 2 oral agents)',
   Malignancy: 'Present malignancy / surgery for malignancy',
   Hepatic: 'Hepatic disease',

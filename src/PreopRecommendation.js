@@ -30,7 +30,6 @@ Tag(Condition.Bleeding, [Exam.GnS, Exam.CBC, Exam.PTTINR]);
 Tag(Condition.Anemia, [Exam.CBC]);
 Tag(Condition.ActiveBleeding, [Exam.CBC]);
 Tag(Condition.KidneyDisease, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
-// Tag(Condition.Renal, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
 Tag(Condition.Diabetes, [Exam.ECG, Exam.RenPanel, Exam.Gluc],
   { 'Has patient gone at least 3 months since an Hb1AC?': [Exam.HbA1C] });
 Tag(Condition.Malignancy, [Exam.CBC, Exam.CXR],

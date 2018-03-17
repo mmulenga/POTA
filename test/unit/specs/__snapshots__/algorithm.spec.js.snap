@@ -194,18 +194,18 @@ Array [
 ]
 `;
 
-exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for present malignancy to match snapshot 1`] = `
-Array [
-  "CBC",
-  "CXR",
-]
-`;
-
-exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for renal disease (on dialysis or at risk of Acute Kidney Injury [AKI]) to match snapshot 1`] = `
+exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for kidney disease (on dialysis or at risk of Acute Kidney Injury [AKI]) to match snapshot 1`] = `
 Array [
   "ECG",
   "CBC",
   "Renal Panel (Creat + Lytes)",
+]
+`;
+
+exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for present malignancy to match snapshot 1`] = `
+Array [
+  "CBC",
+  "CXR",
 ]
 `;
 
@@ -496,7 +496,7 @@ Array [
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for history of systemic endocrine disease to match snapshot 2`] = `Array []`;
 
-exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for renal disease (on dialysis or at risk for Acute Kidney Injury [AKI] to match snapshot 1`] = `
+exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for kidney disease (on dialysis or at risk for Acute Kidney Injury [AKI] to match snapshot 1`] = `
 Array [
   "ECG",
   "CBC",
@@ -504,7 +504,7 @@ Array [
 ]
 `;
 
-exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for renal disease (on dialysis or at risk for Acute Kidney Injury [AKI] to match snapshot 2`] = `Array []`;
+exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for kidney disease (on dialysis or at risk for Acute Kidney Injury [AKI] to match snapshot 2`] = `Array []`;
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for thyroid disease or on thyroid supplementation to match snapshot 1`] = `
 Array [
