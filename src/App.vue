@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <h1> Pre-Opt Testing App </h1>
+    <DisclaimerModalComponent></DisclaimerModalComponent>
+    <h1 class="my-4"> Pre-Opt Testing App </h1>
       <div class="row">
         <div class="col-md-3">
             <StatusComponent
@@ -23,6 +24,7 @@
 </template>
 
 <script>
+import DisclaimerModalComponent from '@/components/DisclaimerModalComponent';
 import ComoListComponent from '@/components/ComoListComponent';
 import GlossaryComponent from '@/components/GlossaryComponent';
 import StatusComponent from '@/components/StatusComponent';
@@ -31,6 +33,7 @@ import ResultModalComponent from '@/components/ResultModalComponent';
 export default {
   name: 'App',
   components: {
+    DisclaimerModalComponent,
     ComoListComponent,
     GlossaryComponent,
     StatusComponent,
@@ -77,13 +80,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /*margin-top: 60px;*/
 }
-
-/* This will center any column, even if they don't add up to 12 */
-.col-centered{
-    float: none;
-    margin: 0 auto;
-}
-
 </style>

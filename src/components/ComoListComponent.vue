@@ -17,8 +17,11 @@
                   class="form-check-input" type="checkbox" :checked="item.check">
                 </div>
               </div>
-              <div class="col-10 text-left">
+              <div class="col-9 text-left">
                 {{ item.comorbidity }}
+              </div>
+              <div v-if="hasEntry(item)" class="col-1">
+                <span class="badge badge-pill badge-secondary">i</span>
               </div>
             </div>
           </li>
@@ -36,8 +39,11 @@
                   class="form-check-input" type="checkbox" :checked="item.check">
                 </div>
               </div>
-              <div class="col-10 text-left">
+              <div class="col-9 text-left">
                 {{ item.comorbidity }}
+              </div>
+              <div v-if="hasEntry(item)" class="col-1">
+                <span class="badge badge-pill badge-secondary">i</span>
               </div>
             </div>
           </li>
@@ -55,8 +61,11 @@
                   class="form-check-input" type="checkbox" :checked="item.check">
                 </div>
               </div>
-              <div class="col-10 text-left">
+              <div class="col-9 text-left">
                 {{ item.comorbidity }}
+              </div>
+              <div v-if="hasEntry(item)" class="col-1">
+                <span class="badge badge-pill badge-secondary">i</span>
               </div>
             </div>
           </li>
@@ -74,8 +83,11 @@
                   class="form-check-input" type="checkbox" :checked="item.check">
                 </div>
               </div>
-              <div class="col-10 text-left">
+              <div class="col-9 text-left">
                 {{ item.comorbidity }}
+              </div>
+              <div v-if="hasEntry(item)" class="col-1">
+                <span class="badge badge-pill badge-secondary">i</span>
               </div>
             </div>
           </li>
@@ -184,17 +196,17 @@ export default {
      * Generates an id based on the type of element and current index of the
      * element calling it.
      * @param element - The type of element that the ID is being generated for.
-     * @param comorbidityArray - The current comorbidity array being used.
+     * @param prefix - The prefix of the comorbidity.
      * @param index - The index of the comorbidity to be passed.
      * @returns A string containing the generated id.
      */
-    generateID: function generateID(element, comorbidityArray, index) {
+    generateID: function generateID(element, prefix, index) {
       const conditionNameArray = Object.keys(Condition);
       const pdIndex = this.cardioDiseases.length;
       const otherIndex = this.pulmoDiseases.length + pdIndex;
       const medIndex = this.otherDiseases.length + otherIndex;
 
-      switch (comorbidityArray) {
+      switch (prefix) {
         case 'cv':
           if (element === 'li') {
             return `cv_${conditionNameArray[index]}`;
@@ -223,6 +235,17 @@ export default {
 
           return `med_checkbox_${conditionNameArray[index + medIndex]}`;
       }
+    },
+    /**
+     * Checks to see if the comorbidity has a glossary entry.
+     * @returns True, if it does. False, otherwise.
+     */
+    hasEntry: function hasEntry(item) {
+      if (item.glossary === 'No extra information.') {
+        return false;
+      }
+
+      return true;
     },
   },
 };

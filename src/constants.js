@@ -67,17 +67,17 @@ export const Exam = {
 
 /* Glossary Entries */
 export const Glossary = {
-  AtrialFib: 'Glossary entry for: Atrial fibrillation / History of irregular heart beat',
-  Defib: 'Glossary entry for: Defibrillator / Pacemaker',
-  CAD: 'Glossary entry for: Coronary artery disease',
-  CardiacStent: 'Glossary entry for: Cardiac Stent (< 12 months)',
-  CerebralDisease: 'Glossary entry for: History of cerebral disease',
-  PulmonaryVascular: 'Glossary entry for: History of pulmonary vascular disease',
-  TIA: 'Glossary entry for: Transient Ischemic Attack (TIA)',
-  Stroke: 'Glossary entry for: Stroke',
-  VHD: 'Glossary entry for: Valvular heart disease / Valve Replacement',
-  HeartFail: 'Glossary entry for: Heart Failure',
-  PVD: 'Glossary entry for: Peripheral Vascular disease (PVD)',
+  AtrialFib: 'No extra information.',
+  Defib: 'No extra information.',
+  CAD: 'No extra information.',
+  CardiacStent: 'No extra information.',
+  CerebralDisease: 'No extra information.',
+  PulmonaryVascular: 'No extra information.',
+  TIA: 'No extra information.',
+  Stroke: 'No extra information.',
+  VHD: 'No extra information.',
+  HeartFail: 'No extra information.',
+  PVD: 'No extra information.',
   /* Pulmonary Diseases */
   PulmDisease: '• Spirometric values AND symptomatic assessment should be sought. \n' +
                '• Post Bronchodilator FEV1: 30 - 50% of predicted; FEV1/FVC < 0.70 \n' +
@@ -88,8 +88,8 @@ export const Glossary = {
   Bleeding: '• History of extensive investigation due to a bleeding episode. \n' +
             '• History of extensive bleeding needing transfusion in previous surgeries. \n' +
             '• Bruising easily more than usual. \n',
-  Anemia: 'Glossary entry for: History of anemia',
-  ActiveBleeding: 'Glossary entry for: History of active bleeding',
+  Anemia: 'No extra information.',
+  ActiveBleeding: 'No extra information.',
   Renal: '(AKI). \n' +
          '• Chronic kidney disease (eGFR < 60ml/min/1.73m2. \n' +
          '• Diabetes. \n' +
@@ -97,13 +97,13 @@ export const Glossary = {
          '• Age ≥ 65. \n' +
          '• Liver disease. \n' +
          '• Use of drugs with nephrotoxic potential in the perioperative period (in particular NSAIDs after surgery). \n',
-  Diabetes: 'Glossary entry for: Diabetes (on Insulin or 2 oral agents)',
-  Malignancy: 'Glossary entry for: Present malignancy / surgery for malignancy',
+  Diabetes: 'No extra information.',
+  Malignancy: 'No extra information.',
   Hepatic: '• Alcohol abuse (i.e., female: 14 drinks / week; male: 21 drinks / week). \n' +
            '• Jaundice due to liver disease. \n' +
            '• All forms of hepatitis. \n' +
            '• Cirrhosis; Hepatic cancer. \n',
-  Adrenal: 'Glossary entry for: History of adrenal disease',
+  Adrenal: 'No extra information.',
   Pituitary: '• Acromegaly. \n' +
              '• Cushing’s disease. \n' +
              '• Sheehan syndrome. \n' +
@@ -115,13 +115,13 @@ export const Glossary = {
              '• Cushing’s syndrome \n' +
              '• Graves’ disease \n',
   /* Medications */
-  Digoxin: 'Glossary entry for: Digoxin',
-  Lithium: 'Glossary entry for: Lithium',
-  Diuretics: 'Glossary entry for: Diuretics',
-  ACEI: 'Glossary entry for: ACE-I',
-  ARB: 'Glossary entry for: ARB',
-  NSAIDS: 'Glossary entry for: NSAIDS',
-  Anticoagulant: 'Glossary entry for: Anticoagulants',
-  Antiplatelet: 'Glossary entry for: Antiplatelet (ASA excluded)',
-  Steroid: 'Glossary entry for: Systemic steroid use within 6 months',
+  Digoxin: 'No extra information.',
+  Lithium: 'No extra information.',
+  Diuretics: 'No extra information.',
+  ACEI: 'No extra information.',
+  ARB: 'No extra information.',
+  NSAIDS: 'No extra information.',
+  Anticoagulant: 'No extra information.',
+  Antiplatelet: 'No extra information.',
+  Steroid: 'No extra information.',
 };

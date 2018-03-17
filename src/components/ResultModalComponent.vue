@@ -3,8 +3,8 @@
     <button id="modal_submit" type="button" class="btn btn-primary"
      v-on:click="getExams(); showModal();"> Submit </button>
     <!-- Modal -->
-    <div id="modalBox" class="modal fade" :class="{ 'show': isVisible, 'd-block': isVisible }"
-     tabindex="-1" role="dialog">
+    <div id="modal_box" class="modal fade" :class="{ 'show': isVisible, 'd-block': isVisible }"
+     tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
@@ -84,8 +84,8 @@ export default {
 };
 </script>
 
-<style>
-  #modalBox {
+<style scoped>
+  #modal_box {
     background: rgba(0,0,0, 0.8);
   }
 </style>
