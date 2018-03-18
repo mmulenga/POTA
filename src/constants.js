@@ -79,11 +79,14 @@ export const Glossary = {
                '• Worsening air flow limitation, greater SOB, reduced exercise capacity, having an ' +
                'impact on quality of life, and ability to complete activities of daily living should be present. \n',
   /* Other Diseases */
+  Age: 'No extra information.',
+  Risk: 'No extra information.',
   Bleeding: '• History of extensive investigation due to a bleeding episode. \n' +
             '• History of extensive bleeding needing transfusion in previous surgeries. \n' +
             '• Bruising easily more than usual. \n',
   Anemia: 'No extra information.',
   ActiveBleeding: 'No extra information.',
+  KidneyDisease: 'No extra information.',
   Renal: '(AKI). \n' +
          '• Chronic kidney disease (eGFR < 60ml/min/1.73m2. \n' +
          '• Diabetes. \n' +
@@ -108,6 +111,7 @@ export const Glossary = {
              '• Addison’s disease \n' +
              '• Cushing’s syndrome \n' +
              '• Graves’ disease \n',
+  Thyroid: 'No extra information.',
   /* Medications */
   Digoxin: 'No extra information.',
   Lithium: 'No extra information.',
