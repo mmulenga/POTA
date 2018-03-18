@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing branching for PatientExamsNeeded() set of preop exams for AtrialFib to match snapshot 1`] = `
+Array [
+  "ECG",
+]
+`;
+
+exports[`Testing branching for PatientExamsNeeded() set of preop exams for AtrialFib to match snapshot 2`] = `Array []`;
+
+exports[`Testing branching for PatientExamsNeeded() set of preop exams for Diabetes + Malignancy to match snapshot 1`] = `
+Array [
+  "ECG",
+  "Renal Panel (Creat + Lytes)",
+  "Gluc",
+  "CBC",
+  "CXR",
+]
+`;
+
+exports[`Testing branching for PatientExamsNeeded() set of preop exams for Diabetes + Malignancy to match snapshot 2`] = `
+Array [
+  "HbA1C",
+]
+`;
+
+exports[`Testing branching for PatientExamsNeeded() set of preop exams for Diabetes + Malignancy to match snapshot 3`] = `
+Array [
+  "PTT/INR",
+]
+`;
+
+exports[`Testing branching for PatientExamsNeeded() set of preop exams for PVD to match snapshot 1`] = `
+Array [
+  "ECG",
+  "Renal Panel (Creat + Lytes)",
+]
+`;
+
+exports[`Testing branching for PatientExamsNeeded() set of preop exams for PVD to match snapshot 2`] = `Array []`;
+
+exports[`Testing branching for PatientExamsNeeded() set of preop exams for PVD to match snapshot 3`] = `
+Array [
+  "ECG",
+]
+`;
+
+exports[`Testing branching for PatientExamsNeeded() set of preop exams for PVD to match snapshot 4`] = `
+Array [
+  "CBC",
+]
+`;
+
+exports[`Testing branching for PatientExamsNeeded() set of preop exams for VHD + HeartFail to match snapshot 1`] = `
+Array [
+  "ECG",
+  "CBC",
+  "Renal Panel (Creat + Lytes)",
+]
+`;
+
+exports[`Testing branching for PatientExamsNeeded() set of preop exams for VHD + HeartFail to match snapshot 2`] = `Array []`;
+
+exports[`Testing branching for PatientExamsNeeded() set of preop exams for no conditions to match snapshot 1`] = `Array []`;
+
+exports[`Testing branching for PatientExamsNeeded() set of preop exams for no conditions to match snapshot 2`] = `Array []`;
