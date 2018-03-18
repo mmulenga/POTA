@@ -115,12 +115,12 @@ Array [
   Object {
     "check": false,
     "comorbidity": "Age > 69 years old",
-    "glossary": undefined,
+    "glossary": "No extra information.",
   },
   Object {
     "check": false,
     "comorbidity": ">= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40",
-    "glossary": undefined,
+    "glossary": "No extra information.",
   },
   Object {
     "check": false,
@@ -143,7 +143,7 @@ Array [
   Object {
     "check": false,
     "comorbidity": "Chronic kidney disease (eGFR < 60ml/min/1.73m^2)",
-    "glossary": undefined,
+    "glossary": "No extra information.",
   },
   Object {
     "check": false,
@@ -192,7 +192,7 @@ Array [
   Object {
     "check": false,
     "comorbidity": "Thyroid disease or on thyroid supplementation",
-    "glossary": undefined,
+    "glossary": "No extra information.",
   },
 ]
 `;
