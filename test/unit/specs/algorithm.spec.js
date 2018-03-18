@@ -159,14 +159,26 @@ describe('Testing PatientExamsNeeded() for pulmonary diseases in PreopRecommenda
 });
 
 describe('Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js', () => {
-  it('returns correct set of preop exams for bleeding disorders (hemophiliac | DVT)', () => {
-    result = PatientExamsNeeded([Condition.Bleeding]);
-    requiredExams = [Exam.GnS, Exam.CBC, Exam.PTTINR];
+  it('returns correct set of preop exams for Age > 69 years old', () => {
+    result = PatientExamsNeeded([Condition.Age]);
+    requiredExams = [Exam.ECG];
     conditionalExams = [];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual(conditionalExams);
   });
-  it('set of preop exams for bleeding disorders (hemophiliac | DVT) to match snapshot', () => {
+  it('set of preop exams for Age > 69 years old to match snapshot', () => {
+    expect(result.exams).toMatchSnapshot();
+    expect(result.conditionalExams).toMatchSnapshot();
+  });
+
+  it('returns correct set of preop exams for >= 2 risk factors', () => {
+    result = PatientExamsNeeded([Condition.Risk]);
+    requiredExams = [Exam.ECG];
+    conditionalExams = [];
+    expect(result.exams).toEqual(requiredExams);
+    expect(result.conditionalExams).toEqual(conditionalExams);
+  });
+  it('set of preop exams for >= 2 risk factors to match snapshot', () => {
     expect(result.exams).toMatchSnapshot();
     expect(result.conditionalExams).toMatchSnapshot();
   });
@@ -529,6 +541,24 @@ describe('Testing GetExams() for all pulmonary diseases in tag.js', () => {
 });
 
 describe('Testing GetExams() for all other diseases in tag.js', () => {
+  it('returns the correct array of preop exams for Age > 69 years old', () => {
+    result = GetExams(Condition.Age);
+    requiredExams = ['ECG'];
+    expect(requiredExams).toEqual(result);
+  });
+  it('correct array of pre op exams for Age > 69 years old to match snapshot', () => {
+    expect(result).toMatchSnapshot();
+  });
+
+  it('returns the correct array of preop exams for >= 2 risk factors', () => {
+    result = GetExams(Condition.Risk);
+    requiredExams = ['ECG'];
+    expect(requiredExams).toEqual(result);
+  });
+  it('correct array of pre op exams for >= 2 risk factors to match snapshot', () => {
+    expect(result).toMatchSnapshot();
+  });
+
   it('returns the correct array of preop exams for bleeding disorders (hemophiliac | DVT)', () => {
     result = GetExams(Condition.Bleeding);
     requiredExams = ['G&S', 'CBC', 'PTT/INR'];

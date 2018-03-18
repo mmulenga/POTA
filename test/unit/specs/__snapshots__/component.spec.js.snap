@@ -125,13 +125,9 @@ Array [
   Object {
     "check": false,
     "comorbidity": "Bleeding disorders",
-<<<<<<< HEAD
     "glossary": "• History of extensive investigation due to a bleeding episode. 
 • History of extensive bleeding needing transfusion in previous surgeries. 
 • Bruising easily more than usual. 
-=======
-    "glossary": "- History of extensive investigation due to a bleeding episode. - History of extensive bleeding needing transfusion in previous surgeries. - Bruising easily more than usual. 
->>>>>>> 65d0ebf7e4602a365893530169c8a4d3604797a7
 ",
   },
   Object {
@@ -147,11 +143,7 @@ Array [
   Object {
     "check": false,
     "comorbidity": "Chronic kidney disease (eGFR < 60ml/min/1.73m^2)",
-<<<<<<< HEAD
     "glossary": undefined,
-=======
-    "glossary": "Glossary entry for: Chronic kidney disease",
->>>>>>> 65d0ebf7e4602a365893530169c8a4d3604797a7
   },
   Object {
     "check": false,

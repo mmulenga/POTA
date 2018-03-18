@@ -139,6 +139,18 @@ Array [
 ]
 `;
 
+exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for >= 2 risk factors to match snapshot 1`] = `
+Array [
+  "ECG",
+]
+`;
+
+exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for Age > 69 years old to match snapshot 1`] = `
+Array [
+  "ECG",
+]
+`;
+
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for bleeding disorders (hemophiliac | DVT) to match snapshot 1`] = `
 Array [
   "G&S",
@@ -406,15 +418,21 @@ exports[`Testing PatientExamsNeeded() for no inputs in PreopRecommendation.js se
 
 exports[`Testing PatientExamsNeeded() for no inputs in PreopRecommendation.js set of preop exams for no diseases or medication to match snapshot 2`] = `Array []`;
 
-exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for bleeding disorders (hemophiliac | DVT) to match snapshot 1`] = `
+exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for >= 2 risk factors to match snapshot 1`] = `
 Array [
-  "G&S",
-  "CBC",
-  "PTT/INR",
+  "ECG",
 ]
 `;
 
-exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for bleeding disorders (hemophiliac | DVT) to match snapshot 2`] = `Array []`;
+exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for >= 2 risk factors to match snapshot 2`] = `Array []`;
+
+exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for Age > 69 years old to match snapshot 1`] = `
+Array [
+  "ECG",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for Age > 69 years old to match snapshot 2`] = `Array []`;
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for diabetes (on Insulin or 2 oral agents) to match snapshot 1`] = `
 Array [
