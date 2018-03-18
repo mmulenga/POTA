@@ -103,7 +103,8 @@ describe('Testing PatientExamsNeeded() with multiple non-conditional comorbiditi
   });
 
   it('returns correct set of preop exams for PulmDisease + KidneyDisease + Steroid', () => {
-    result = PatientExamsNeeded([Condition.PulmDisease, Condition.KidneyDisease, Condition.Steroid]);
+    result = PatientExamsNeeded([Condition.PulmDisease, Condition.KidneyDisease,
+      Condition.Steroid]);
     requiredExams = [Exam.ECG, Exam.CBC, Exam.CXR, Exam.RenPanel, Exam.Gluc];
     conditionalExams = [];
     expect(result.exams).toEqual(requiredExams);
