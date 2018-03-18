@@ -2,26 +2,97 @@ import { mount } from 'vue-test-utils'; // eslint-disable-line
 import ComoListComponent from '@/components/ComoListComponent';
 
 describe('ComoList.spec.js', () => {
-  const wrapper = mount(ComoListComponent);
-  const list = wrapper.findAll('li');
-  it('Click event on Atrial fibrillation emitted and check should be true', () => {
-    list.at(1).trigger('click');
-    expect(wrapper.emitted().clickEvent).toBeTruthy();
-    expect(wrapper.vm.cardioDiseases[0].check).toBe(true);
-    expect(wrapper.emitted().clickEvent[0]).toEqual([{ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' }]);
-    expect(wrapper.vm.currentComorbiditySelection.length).toBe(1);
-  });
-  it('Another click event on Atrial fibrillation emitted but check should be now false', () => {
-    list.at(1).trigger('click');
-    expect(wrapper.emitted().clickEvent).toBeTruthy();
-    expect(wrapper.vm.cardioDiseases[0].check).toBe(false);
-    expect(wrapper.emitted().clickEvent[0]).toEqual([{ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' }]);
-    expect(wrapper.vm.currentComorbiditySelection.length).toBe(1);
+  let wrapper;
+  let list;
+
+  beforeEach(() => {
+    wrapper = mount(ComoListComponent);
+    list = wrapper.findAll('li');
   });
 
-  it('Hover event on Atrial fibrillation emitted', () => {
-    list.at(1).trigger('mouseover');
-    expect(wrapper.emitted().hoverEvent).toBeTruthy();
-    expect(wrapper.emitted().hoverEvent[0]).toEqual([{ currentComorbiditySelection: 'Glossary entry for: Atrial fibrillation / History of irregular heart beat' }]);
+  describe('Testing out Click and Hover events for aggregateConditions() and passComorbidityOnHover()', () => {
+    it('Click event on Atrial fibrillation emitted but check should be now true', () => {
+      list.at(1).trigger('click');
+      expect(wrapper.emitted().clickEvent).toBeTruthy();
+      expect(wrapper.vm.cardioDiseases[0].check).toBe(true);
+      expect(wrapper.emitted().clickEvent[0]).toEqual([{ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' }]);
+      expect(wrapper.vm.currentComorbiditySelection.length).toBe(1);
+    });
+
+    it('Atrial fibrillation should be unchecked when clicked twice', () => {
+      list.at(1).trigger('click');
+      list.at(1).trigger('click');
+      expect(wrapper.emitted().clickEvent).toBeTruthy();
+      expect(wrapper.vm.cardioDiseases[0].check).toBe(false);
+    });
+
+    it('Hover event on Atrial fibrillation emitted', () => {
+      list.at(1).trigger('mouseover');
+      expect(wrapper.emitted().hoverEvent).toBeTruthy();
+      expect(wrapper.emitted().hoverEvent[0]).toEqual([{ currentComorbiditySelection: 'No extra information.' }]);
+    });
+
+    it('Hover event on Severe COPD emitted', () => {
+      list.at(13).trigger('mouseover');
+      expect(wrapper.emitted().hoverEvent).toBeTruthy();
+      expect(wrapper.emitted().hoverEvent[0]).toEqual([{ currentComorbiditySelection: '• Spirometric values AND symptomatic assessment should be sought. \n' +
+      '• Post Bronchodilator FEV1: 30 - 50% of predicted; FEV1/FVC < 0.70 \n' +
+      '• History of exacerbations (including prior hospitalizations) should be recorded.\n' +
+      '• Worsening air flow limitation, greater SOB, reduced exercise capacity, having an ' +
+      'impact on quality of life, and ability to complete activities of daily living should be present. \n',
+      }]);
+    });
+  });
+
+  describe('Testing out generating IDs', () => {
+    it('Generate ID for list item for CV Atrial Fibrillation', () => {
+      const liCV = wrapper.vm.generateID('li', 'cv', 0);
+      expect(liCV).toBe('cv_AtrialFib');
+    });
+
+    it('Generate ID for checkbox for CV Atrial Fibrillation', () => {
+      const cbCV = wrapper.vm.generateID('cb', 'cv', 0);
+      expect(cbCV).toBe('cv_checkbox_AtrialFib');
+    });
+
+    it('Generate ID for list item for PD Severe COPD', () => {
+      const liPD = wrapper.vm.generateID('li', 'pd', 0);
+      expect(liPD).toBe('pd_PulmDisease');
+    });
+
+    it('Generate ID for checkbox for PD Severe COPD', () => {
+      const cbPD = wrapper.vm.generateID('cb', 'pd', 0);
+      expect(cbPD).toBe('pd_checkbox_PulmDisease');
+    });
+
+    it('Generate ID for list item for Other Age > 69', () => {
+      const liOther = wrapper.vm.generateID('li', 'other', 0);
+      expect(liOther).toBe('other_Age');
+    });
+
+    it('Generate ID for checkbox for Other Age > 69', () => {
+      const cbOther = wrapper.vm.generateID('cb', 'other', 0);
+      expect(cbOther).toBe('other_checkbox_Age');
+    });
+
+    it('Generate ID for list item for Other Age > 69', () => {
+      const liMed = wrapper.vm.generateID('li', 'med', 0);
+      expect(liMed).toBe('med_Digoxin');
+    });
+
+    it('Generate ID for checkbox for Other Age > 69', () => {
+      const cbMed = wrapper.vm.generateID('cb', 'med', 0);
+      expect(cbMed).toBe('med_checkbox_Digoxin');
+    });
+  });
+
+  describe('Testing out hasEntry()', () => {
+    it('Atrial fibrillation should have no glossary and return false', () => {
+      expect(wrapper.vm.hasEntry(wrapper.vm.cardioDiseases[0])).toBe(false);
+    });
+
+    it('Severe COPD should have glossary and return true', () => {
+      expect(wrapper.vm.hasEntry(wrapper.vm.pulmoDiseases[0])).toBe(true);
+    });
   });
 });
