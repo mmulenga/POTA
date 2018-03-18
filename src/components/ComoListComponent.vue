@@ -8,8 +8,7 @@
           class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in cardioDiseases"
           :key="item.comorbidity"
-          v-on:click="aggregateConditions(cardioDiseases, index)"
-          v-on:mouseover="passComorbidityOnHover(cardioDiseases, index)">
+          v-on:click="aggregateConditions(cardioDiseases, index)">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -21,7 +20,9 @@
                 {{ item.comorbidity }}
               </div>
               <div v-if="hasEntry(item)" class="col-1">
-                <span class="badge badge-pill badge-secondary">i</span>
+                <span class="badge badge-pill badge-secondary"
+                v-on:mouseover="passComorbidityOnHover(cardioDiseases, index)"
+                v-on:mouseleave="clearComorbidityOnHover()">i</span>
               </div>
             </div>
           </li>
@@ -30,8 +31,7 @@
           class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in pulmoDiseases"
           :key="item.comorbidity"
-          v-on:click="aggregateConditions(pulmoDiseases, index)"
-          v-on:mouseover="passComorbidityOnHover(pulmoDiseases, index)">
+          v-on:click="aggregateConditions(pulmoDiseases, index)">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -43,7 +43,9 @@
                 {{ item.comorbidity }}
               </div>
               <div v-if="hasEntry(item)" class="col-1">
-                <span class="badge badge-pill badge-secondary">i</span>
+                <span class="badge badge-pill badge-secondary"
+                v-on:mouseover="passComorbidityOnHover(pulmoDiseases, index)"
+                v-on:mouseleave="clearComorbidityOnHover()">i</span>
               </div>
             </div>
           </li>
@@ -52,8 +54,7 @@
           class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in otherDiseases"
           :key="item.comorbidity"
-          v-on:click="aggregateConditions(otherDiseases, index)"
-          v-on:mouseover="passComorbidityOnHover(otherDiseases, index)">
+          v-on:click="aggregateConditions(otherDiseases, index)">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -65,7 +66,9 @@
                 {{ item.comorbidity }}
               </div>
               <div v-if="hasEntry(item)" class="col-1">
-                <span class="badge badge-pill badge-secondary">i</span>
+                <span class="badge badge-pill badge-secondary"
+                v-on:mouseover="passComorbidityOnHover(otherDiseases, index)"
+                v-on:mouseleave="clearComorbidityOnHover()">i</span>
               </div>
             </div>
           </li>
@@ -74,8 +77,7 @@
           class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in medications"
           :key="item.comorbidity"
-          v-on:click="aggregateConditions(medications, index)"
-          v-on:mouseover="passComorbidityOnHover(medications, index)">
+          v-on:click="aggregateConditions(medications, index)">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -87,7 +89,9 @@
                 {{ item.comorbidity }}
               </div>
               <div v-if="hasEntry(item)" class="col-1">
-                <span class="badge badge-pill badge-secondary">i</span>
+                <span class="badge badge-pill badge-secondary"
+                v-on:mouseover="passComorbidityOnHover(medications, index)"
+                v-on:mouseleave="clearComorbidityOnHover()">i</span>
               </div>
             </div>
           </li>
@@ -196,6 +200,11 @@ export default {
 
       this.$emit('hoverEvent', { currentComorbiditySelection: array[index].glossary });
     },
+
+    clearComorbidityOnHover: function clearComorbidityOnHover() {
+      this.$emit('hoverEvent', { currentComorbiditySelection: '' });
+    },
+
     /**
      * Generates an id based on the type of element and current index of the
      * element calling it.
