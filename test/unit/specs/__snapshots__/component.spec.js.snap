@@ -124,7 +124,7 @@ Array [
   },
   Object {
     "check": false,
-    "comorbidity": "Bleeding disorders (hemophiliac | DVT)",
+    "comorbidity": "Bleeding disorders",
     "glossary": "- History of extensive investigation due to a bleeding episode. - History of extensive bleeding needing transfusion in previous surgeries. - Bruising easily more than usual. 
 ",
   },
@@ -140,7 +140,7 @@ Array [
   },
   Object {
     "check": false,
-    "comorbidity": "Chronic kidney disease (eGF < 60ml/min/1.73m^2)",
+    "comorbidity": "Chronic kidney disease (eGFR < 60ml/min/1.73m^2)",
     "glossary": "Glossary entry for: Chronic kidney disease",
   },
   Object {
