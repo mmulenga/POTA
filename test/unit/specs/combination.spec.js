@@ -152,26 +152,28 @@ describe('Testing PatientExamsNeeded() with multiple non-conditional comorbiditi
     expect(result.conditionalExams).toMatchSnapshot();
   });
 
-  it('returns correct set of preop exams for Bleeding + Digoxin + ACEI', () => {
-    result = PatientExamsNeeded([Condition.Bleeding, Condition.Digoxin, Condition.ACEI]);
-    requiredExams = [Exam.GnS, Exam.CBC, Exam.PTTINR, Exam.ECG, Exam.RenPanel];
+  it('returns correct set of preop exams for Risk + Bleeding + Digoxin + ACEI', () => {
+    result = PatientExamsNeeded([Condition.Age, Condition.Bleeding,
+      Condition.Digoxin, Condition.ACEI]);
+    requiredExams = [Exam.ECG, Exam.GnS, Exam.CBC, Exam.PTTINR, Exam.RenPanel];
     conditionalExams = [];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual(conditionalExams);
   });
-  it('set of preop exams for Bleeding + Digoxin + ACEI', () => {
+  it('set of preop exams for Risk + Bleeding + Digoxin + ACEI', () => {
     expect(result.exams).toMatchSnapshot();
     expect(result.conditionalExams).toMatchSnapshot();
   });
 
-  it('returns correct set of preop exams for Endocrine + Thyroid + NSAIDS', () => {
-    result = PatientExamsNeeded([Condition.Endocrine, Condition.Thyroid, Condition.NSAIDS]);
-    requiredExams = [Exam.RenPanel, Exam.TSH];
+  it('returns correct set of preop exams for Risk + Endocrine + Thyroid + NSAIDS', () => {
+    result = PatientExamsNeeded([Condition.Risk, Condition.Endocrine,
+      Condition.Thyroid, Condition.NSAIDS]);
+    requiredExams = [Exam.ECG, Exam.RenPanel, Exam.TSH];
     conditionalExams = [];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual(conditionalExams);
   });
-  it('set of preop exams for Endocrine + Thyroid + NSAIDS', () => {
+  it('set of preop exams for Risk + Endocrine + Thyroid + NSAIDS', () => {
     expect(result.exams).toMatchSnapshot();
     expect(result.conditionalExams).toMatchSnapshot();
   });
@@ -301,5 +303,17 @@ describe('Testing PatientExamsNeeded() with multiple random comorbidities', () =
   it('set of preop exams for Defib + CardiacStent + Hepatic + Anticoagulants to match snapshot', () => {
     expect(result.exams).toMatchSnapshot();
     expect(result.conditionalExams).toMatchSnapshot();
+  });
+
+  it('returns correct set of preop exams for Age + Risk + Bleeding + Malignancy', () => {
+    result = PatientExamsNeeded([Condition.Age, Condition.Risk,
+      Condition.Bleeding, Condition.Malignancy]);
+    requiredExams = [Exam.ECG, Exam.GnS, Exam.CBC, Exam.PTTINR, Exam.CXR];
+    expect(result.exams).toEqual(requiredExams);
+    expect(result.conditionalExams[0].exams).toEqual([Exam.RenPanel]);
+  });
+  it('set of preop exams for Age + Risk + Bleeding + Malignancy to match snapshot', () => {
+    expect(result.exams).toMatchSnapshot();
+    expect(result.conditionalExams[0].exams).toMatchSnapshot();
   });
 });
