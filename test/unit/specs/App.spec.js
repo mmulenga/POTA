@@ -1,56 +1,24 @@
+import { mount } from 'vue-test-utils';
 import App from '@/App';
-import ResultModalComponent from '@/components/ResultModalComponent'; // eslint-disable-line 
-import ComoListComponent from '@/components/ComoListComponent'; // eslint-disable-line 
-import GlossaryComponent from '@/components/GlossaryComponent'; // eslint-disable-line 
-import StatusComponent from '@/components/StatusComponent'; // eslint-disable-line 
-import Vue from 'vue';
-import { shallow } from 'vue-test-utils'; // eslint-disable-line 
 
-const Constructor = Vue.extend(App);
-const vm = new Constructor().$mount();
-
-describe('App.test.js', () => {
+describe('App.spec.js', () => {
+  const wrapper = mount(App);
   it('resultArray is empty at the start', () => {
-    expect(vm.resultArray).toHaveLength(0);
+    expect(wrapper.vm.resultArray).toHaveLength(0);
+  });
+  it('glossaryEntry is empty at the start', () => {
+    expect(wrapper.vm.glossaryEntry).toHaveLength(0);
+  });
+  it('updateDescription() displays the correct glossary for AF', () => {
+    wrapper.vm.updateDescription({ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' });
+    expect(wrapper.vm.glossaryEntry).toEqual('Atrial fibrillation / History of irregular heart beat');
+  });
+  it('updateArray() displays the correct list for resultArray', () => {
+    wrapper.vm.updateArray({ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' });
+    expect(wrapper.vm.resultArray).toEqual(['Atrial fibrillation / History of irregular heart beat']);
+  });
+  it('updateArray() displays the correct list for resultArray when selection is delselected', () => {
+    wrapper.vm.updateArray({ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' });
+    expect(wrapper.vm.resultArray).toEqual([]);
   });
 });
-
-// describe('App.test.js', () => {
-//   describe('ResultModalComponent', () => {
-//     const wrapper = shallow(ResultModalComponent);
-//     it('wrapper exists', () => {
-//       expect(wrapper.isVueInstance()).toBe(true);
-//     });
-//     it('button exists', () => {
-//       const button = wrapper.find('button');
-//       expect(button.exists()).toBe(true);
-//     });
-//   });
-
-//   describe('ComoListComponent', () => {
-//     const Component = Vue.extend(ComoListComponent);
-//     const vm = new Component().$mount();
-//     describe('Check if data exists', () => {
-//       it('Check if cardioDiseases exists', () => {
-//         expect(vm.cardioDiseases).toHaveLength(11);
-//       });
-//       it('Check if medications exists', () => {
-//         expect(vm.medications).toHaveLength(9);
-//       });
-//       it('Check if otherDiseases exists', () => {
-//         expect(vm.otherDiseases).toHaveLength(10);
-//       });
-//       it('Check if pulmoDiseases exists', () => {
-//         expect(vm.pulmoDiseases).toHaveLength(1);
-//       });
-//     });
-//     describe('Check if hover', () => {
-//       it('cardioDiseases', () => {
-//         vm.$emit('hoverEvent');
-//         const como = vm.cardioDiseases[0];
-//         expect(como.comorbidity.check).toBe(false);
-//       });
-//     });
-//   });
-// });
-

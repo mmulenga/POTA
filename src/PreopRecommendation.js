@@ -24,10 +24,12 @@ Tag(Condition.PVD, [Exam.ECG, Exam.RenPanel]);
 /* Pulmonary Diseases */
 Tag(Condition.PulmDisease, [Exam.ECG, Exam.CBC, Exam.CXR]);
 /* Other Diseases */
+Tag(Condition.Age, [Exam.ECG]);
+Tag(Condition.Risk, [Exam.ECG]);
 Tag(Condition.Bleeding, [Exam.GnS, Exam.CBC, Exam.PTTINR]);
 Tag(Condition.Anemia, [Exam.CBC]);
 Tag(Condition.ActiveBleeding, [Exam.CBC]);
-Tag(Condition.Renal, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
+Tag(Condition.KidneyDisease, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
 Tag(Condition.Diabetes, [Exam.ECG, Exam.RenPanel, Exam.Gluc],
   { 'Has patient gone at least 3 months since an Hb1AC?': [Exam.HbA1C] });
 Tag(Condition.Malignancy, [Exam.CBC, Exam.CXR],
@@ -36,6 +38,7 @@ Tag(Condition.Hepatic, [Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.LFT]);
 Tag(Condition.Adrenal, [Exam.RenPanel]);
 Tag(Condition.Pituitary, [Exam.RenPanel]);
 Tag(Condition.Endocrine, [Exam.RenPanel]);
+Tag(Condition.Thyroid, [Exam.TSH]);
 /* Medications */
 Tag(Condition.Digoxin, [Exam.ECG, Exam.RenPanel]);
 Tag(Condition.Lithium, [Exam.RenPanel]);
@@ -43,8 +46,10 @@ Tag(Condition.Diuretics, [Exam.RenPanel]);
 Tag(Condition.ACEI, [Exam.RenPanel]);
 Tag(Condition.ARB, [Exam.RenPanel]);
 Tag(Condition.NSAIDS, [Exam.RenPanel]);
-Tag(Condition.Anticoagulant, [Exam.CBC, Exam.RenPanel, Exam.PTTINR]);
-Tag(Condition.Antiplatelet, [Exam.CBC, Exam.RenPanel, Exam.PTTINR]);
+Tag(Condition.Anticoagulant, [Exam.CBC, Exam.RenPanel],
+  { 'Is patient on Wafarin/Heparins?': [Exam.PTTINR] });
+Tag(Condition.Antiplatelet, [Exam.CBC, Exam.RenPanel],
+  { 'Is patient on Wafarin/Heparins?': [Exam.PTTINR] });
 Tag(Condition.Steroid, [Exam.RenPanel, Exam.Gluc]);
 
 

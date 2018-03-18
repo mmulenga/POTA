@@ -2,7 +2,15 @@
 
 exports[`Testing GetAllExams() in tag.js correct tag creation when accessing invalid name parameter to match snapshot 1`] = `undefined`;
 
-exports[`Testing GetAllExams() in tag.js correct tag creation when accessing valid name parameter to match snapshot 1`] = `undefined`;
+exports[`Testing GetAllExams() in tag.js correct tag creation when accessing valid name parameter to match snapshot 1`] = `
+Array [
+  "ECG",
+]
+`;
+
+exports[`Testing GetExams() and GetConditionalExams() with invalid parameters correct array of examinations for invalid condition to match snapshot 1`] = `Array []`;
+
+exports[`Testing GetExams() and GetConditionalExams() with invalid parameters correct array of examinations for invalid condition to match snapshot 2`] = `Array []`;
 
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for atrial fibrillation to match snapshot 1`] = `
 Array [
@@ -89,7 +97,6 @@ exports[`Testing GetExams() for all medication use in tag.js correct array of pr
 Array [
   "CBC",
   "Renal Panel (Creat + Lytes)",
-  "PTT/INR",
 ]
 `;
 
@@ -97,7 +104,6 @@ exports[`Testing GetExams() for all medication use in tag.js correct array of pr
 Array [
   "CBC",
   "Renal Panel (Creat + Lytes)",
-  "PTT/INR",
 ]
 `;
 
@@ -188,14 +194,7 @@ Array [
 ]
 `;
 
-exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for present malignancy to match snapshot 1`] = `
-Array [
-  "CBC",
-  "CXR",
-]
-`;
-
-exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for renal disease (on dialysis or at risk of Acute Kidney Injury [AKI]) to match snapshot 1`] = `
+exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for kidney disease (on dialysis or at risk of Acute Kidney Injury [AKI]) to match snapshot 1`] = `
 Array [
   "ECG",
   "CBC",
@@ -203,7 +202,18 @@ Array [
 ]
 `;
 
-exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for thyroid disease or on thyroid supplementation to match snapshot 1`] = `Array []`;
+exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for present malignancy to match snapshot 1`] = `
+Array [
+  "CBC",
+  "CXR",
+]
+`;
+
+exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for thyroid disease or on thyroid supplementation to match snapshot 1`] = `
+Array [
+  "TSH",
+]
+`;
 
 exports[`Testing GetExams() for all pulmonary diseases in tag.js correct array of examinations for severe COPD, home oxygen, pulmonary HTN to match snapshot 1`] = `
 Array [
@@ -328,6 +338,11 @@ exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.
 Array [
   "CBC",
   "Renal Panel (Creat + Lytes)",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of Anticoagulant to match snapshot 2`] = `
+Array [
   "PTT/INR",
 ]
 `;
@@ -336,6 +351,11 @@ exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.
 Array [
   "CBC",
   "Renal Panel (Creat + Lytes)",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of Antiplatelet (ASA excluded) to match snapshot 2`] = `
+Array [
   "PTT/INR",
 ]
 `;
@@ -476,7 +496,7 @@ Array [
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for history of systemic endocrine disease to match snapshot 2`] = `Array []`;
 
-exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for renal disease (on dialysis or at risk for Acute Kidney Injury [AKI] to match snapshot 1`] = `
+exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for kidney disease (on dialysis or at risk for Acute Kidney Injury [AKI] to match snapshot 1`] = `
 Array [
   "ECG",
   "CBC",
@@ -484,9 +504,13 @@ Array [
 ]
 `;
 
-exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for renal disease (on dialysis or at risk for Acute Kidney Injury [AKI] to match snapshot 2`] = `Array []`;
+exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for kidney disease (on dialysis or at risk for Acute Kidney Injury [AKI] to match snapshot 2`] = `Array []`;
 
-exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for thyroid disease or on thyroid supplementation to match snapshot 1`] = `Array []`;
+exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for thyroid disease or on thyroid supplementation to match snapshot 1`] = `
+Array [
+  "TSH",
+]
+`;
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for thyroid disease or on thyroid supplementation to match snapshot 2`] = `Array []`;
 
@@ -500,199 +524,23 @@ Array [
 
 exports[`Testing PatientExamsNeeded() for pulmonary diseases in PreopRecommendation.js set of preop exams for severe COPD, home oxygen, pulmonary HTN to match snapshot 2`] = `Array []`;
 
-exports[`Testing Tag() in tag.js correct tag creation when using GetAllExams() to match snapshot 1`] = `undefined`;
+exports[`Testing Tag() in tag.js correct tag creation when using GetAllExams() to match snapshot 1`] = `
+Array [
+  "ECG",
+]
+`;
 
 exports[`Testing Tag() in tag.js correct tag creation when using GetAllExams() to match snapshot 2`] = `
-Object {
-  "conditionalExams": Object {
-    "ACE-I": Array [],
-    "ARB": Array [],
-    "Anticoagulants": Array [],
-    "Antiplatelet (ASA excluded)": Array [],
-    "Atrial fibrillation / History of irregular heart beat": Array [],
-    "Bleeding disorders (hemophiliac | DVT)": Array [],
-    "Cardiac Stent (< 12 months)": Array [],
-    "Coronary artery disease": Array [],
-    "DaleDisease": Array [],
-    "Defibrillator / Pacemaker": Array [],
-    "Diabetes (on Insulin or 2 oral agents)": Array [
-      ConditionalExam {
-        "conditionPhrase": "Has patient gone at least 3 months since an Hb1AC?",
-        "exams": Array [
-          "HbA1C",
-        ],
-      },
-    ],
-    "Digoxin": Array [],
-    "Diuretics": Array [],
-    "Heart Failure": Array [],
-    "Hepatic disease": Array [],
-    "History of active bleeding": Array [],
-    "History of adrenal disease": Array [],
-    "History of anemia": Array [],
-    "History of cerebral disease": Array [],
-    "History of major systemic endocrine disease": Array [],
-    "History of pituitary disease": Array [],
-    "History of pulmonary vascular disease": Array [],
-    "JonDisease": Array [
-      ConditionalExam {
-        "conditionPhrase": "Maybe you need more tests?",
-        "exams": Array [
-          "TSH",
-        ],
-      },
-    ],
-    "Lithium": Array [],
-    "NSAIDS": Array [],
-    "Peripheral Vascular disease (PVD)": Array [],
-    "Present malignancy / surgery for malignancy": Array [
-      ConditionalExam {
-        "conditionPhrase": "Is patient on chemo?",
-        "exams": Array [
-          "ECG",
-          "Renal Panel (Creat + Lytes)",
-          "PTT/INR",
-        ],
-      },
-    ],
-    "Renal disease (on dialysis or at risk for Acute Kidney Injury [AKI])": Array [],
-    "Severe COPD, Home Oxygen, Pulmonary HTN": Array [],
-    "Stroke": Array [],
-    "Systemic steroid use within 6 months": Array [],
-    "Transient Ischemic Attack (TIA)": Array [],
-    "Valvular heart disease / Valve Replacement": Array [
-      ConditionalExam {
-        "conditionPhrase": "Is valve mechanical?",
-        "exams": Array [
-          "CBC",
-        ],
-      },
-    ],
-  },
-  "exams": Object {
-    "ACE-I": Array [
-      "Renal Panel (Creat + Lytes)",
-    ],
-    "ARB": Array [
-      "Renal Panel (Creat + Lytes)",
-    ],
-    "Anticoagulants": Array [
-      "CBC",
-      "Renal Panel (Creat + Lytes)",
-      "PTT/INR",
-    ],
-    "Antiplatelet (ASA excluded)": Array [
-      "CBC",
-      "Renal Panel (Creat + Lytes)",
-      "PTT/INR",
-    ],
-    "Atrial fibrillation / History of irregular heart beat": Array [
-      "ECG",
-    ],
-    "Bleeding disorders (hemophiliac | DVT)": Array [
-      "G&S",
-      "CBC",
-      "PTT/INR",
-    ],
-    "Cardiac Stent (< 12 months)": Array [
-      "ECG",
-    ],
-    "Coronary artery disease": Array [
-      "ECG",
-    ],
-    "DaleDisease": Array [
-      "ECG",
-    ],
-    "Defibrillator / Pacemaker": Array [
-      "ECG",
-    ],
-    "Diabetes (on Insulin or 2 oral agents)": Array [
-      "ECG",
-      "Renal Panel (Creat + Lytes)",
-      "Gluc",
-    ],
-    "Digoxin": Array [
-      "ECG",
-      "Renal Panel (Creat + Lytes)",
-    ],
-    "Diuretics": Array [
-      "Renal Panel (Creat + Lytes)",
-    ],
-    "Heart Failure": Array [
-      "ECG",
-      "CBC",
-      "Renal Panel (Creat + Lytes)",
-    ],
-    "Hepatic disease": Array [
-      "CBC",
-      "Renal Panel (Creat + Lytes)",
-      "PTT/INR",
-      "LFT",
-    ],
-    "History of active bleeding": Array [
-      "CBC",
-    ],
-    "History of adrenal disease": Array [
-      "Renal Panel (Creat + Lytes)",
-    ],
-    "History of anemia": Array [
-      "CBC",
-    ],
-    "History of cerebral disease": Array [
-      "ECG",
-    ],
-    "History of major systemic endocrine disease": Array [
-      "Renal Panel (Creat + Lytes)",
-    ],
-    "History of pituitary disease": Array [
-      "Renal Panel (Creat + Lytes)",
-    ],
-    "History of pulmonary vascular disease": Array [
-      "ECG",
-    ],
-    "JonDisease": Array [
-      "CBC",
-      "Renal Panel (Creat + Lytes)",
-    ],
-    "Lithium": Array [
-      "Renal Panel (Creat + Lytes)",
-    ],
-    "NSAIDS": Array [
-      "Renal Panel (Creat + Lytes)",
-    ],
-    "Peripheral Vascular disease (PVD)": Array [
-      "ECG",
-      "Renal Panel (Creat + Lytes)",
-    ],
-    "Present malignancy / surgery for malignancy": Array [
-      "CBC",
-      "CXR",
-    ],
-    "Renal disease (on dialysis or at risk for Acute Kidney Injury [AKI])": Array [
-      "ECG",
-      "CBC",
-      "Renal Panel (Creat + Lytes)",
-    ],
-    "Severe COPD, Home Oxygen, Pulmonary HTN": Array [
-      "ECG",
-      "CBC",
-      "CXR",
-    ],
-    "Stroke": Array [
-      "ECG",
-    ],
-    "Systemic steroid use within 6 months": Array [
-      "Renal Panel (Creat + Lytes)",
-      "Gluc",
-    ],
-    "Transient Ischemic Attack (TIA)": Array [
-      "ECG",
-    ],
-    "Valvular heart disease / Valve Replacement": Array [
-      "ECG",
-    ],
-  },
-}
+Array [
+  "CBC",
+  "Renal Panel (Creat + Lytes)",
+]
+`;
+
+exports[`Testing Tag() in tag.js correct tag creation when using GetAllExams() to match snapshot 3`] = `
+Array [
+  "TSH",
+]
 `;
 
 exports[`Testing Tag() in tag.js correct tag creation when using GetExams() to match snapshot 1`] = `

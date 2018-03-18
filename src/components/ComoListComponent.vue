@@ -132,16 +132,20 @@ export default {
       ],
       otherDiseases: [
         /* Other Diseases */
+        { comorbidity: Condition.Age, glossary: Glossary.Age, check: false },
+        { comorbidity: Condition.Risk, glossary: Glossary.Risk, check: false },
         { comorbidity: Condition.Bleeding, glossary: Glossary.Bleeding, check: false },
         { comorbidity: Condition.Anemia, glossary: Glossary.Anemia, check: false },
         { comorbidity: Condition.ActiveBleeding, glossary: Glossary.ActiveBleeding, check: false },
-        { comorbidity: Condition.Renal, glossary: Glossary.Renal, check: false },
+        // { comorbidity: Condition.Renal, glossary: Glossary.Renal, check: false },
+        { comorbidity: Condition.KidneyDisease, glossary: Glossary.KidneyDisease, check: false },
         { comorbidity: Condition.Diabetes, glossary: Glossary.Diabetes, check: false },
         { comorbidity: Condition.Malignancy, glossary: Glossary.Malignancy, check: false },
         { comorbidity: Condition.Hepatic, glossary: Glossary.Hepatic, check: false },
         { comorbidity: Condition.Adrenal, glossary: Glossary.Adrenal, check: false },
         { comorbidity: Condition.Pituitary, glossary: Glossary.Pituitary, check: false },
         { comorbidity: Condition.Endocrine, glossary: Glossary.Endocrine, check: false },
+        { comorbidity: Condition.Thyroid, glossary: Glossary.Thyroid, check: false },
       ],
       medications: [
         /* Medications */
