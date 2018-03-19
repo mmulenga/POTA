@@ -9,6 +9,7 @@ module.exports = {
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^vue$': 'vue/dist/vue',
   },
   transform: {
     '^.+\\.js$': '<rootDir>/node_modules/babel-jest',

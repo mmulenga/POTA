@@ -2,8 +2,11 @@ import Vue from 'vue';
 import { mount } from 'vue-test-utils';
 import ResultModalComponent from '@/components/ResultModalComponent';
 
+Vue.component('ResultModalComponent', ResultModalComponent);
+
 describe('resultsModal.test.js', () => {
   const Component = Vue.extend(ResultModalComponent);
+  Vue.use(ResultModalComponent);
   const vm = new Component().$mount();
 
   describe('testing showModal()', () => {
