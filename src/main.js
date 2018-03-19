@@ -30,4 +30,3 @@ export function assert(condition, message) {
     console.log(`ASSERT failed: ${message}`);
   }
 }
-

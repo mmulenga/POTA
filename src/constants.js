@@ -20,26 +20,20 @@ export const Condition = {
   PVD: 'Peripheral Vascular disease (PVD)',
   /* Pulmonary Diseases */
   PulmDisease: 'Severe COPD, Home Oxygen, Pulmonary HTN',
-  Asthma: 'ER | Hospital admission within 12m',
-  Apnea: 'Confirmed sleep apnea not using CPAP/STOP-Bang > 5',
   /* Other Diseases */
-  Bleeding: 'Bleeding disorders (hemophiliac | DVT)',
+  Age: 'Age > 69 years old',
+  Risk: '>= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40',
+  Bleeding: 'Bleeding disorders',
   Anemia: 'History of anemia',
   ActiveBleeding: 'History of active bleeding',
-  Renal: 'Renal disease (on dialysis or at risk for Acute Kidney Injury [AKI])',
+  KidneyDisease: 'Chronic kidney disease (eGFR < 60ml/min/1.73m^2)',
   Diabetes: 'Diabetes (on Insulin or 2 oral agents)',
   Malignancy: 'Present malignancy / surgery for malignancy',
   Hepatic: 'Hepatic disease',
   Adrenal: 'History of adrenal disease',
   Pituitary: 'History of pituitary disease',
   Endocrine: 'History of major systemic endocrine disease',
-  NeuroMuscular: 'Neuromuscular disorder',
-  SpinalLesion: 'Spinal cord lesion',
-  MyastheniaGravis: 'Myasthenia Gravis',
-  Intubation: 'Difficult intubaton',
-  CAThroat: 'CA of throat',
-  NeckRad: 'Radiation of neck',
-  /* Medications */
+  Thyroid: 'Thyroid disease or on thyroid supplementation',
   Digoxin: 'Digoxin',
   Lithium: 'Lithium',
   Diuretics: 'Diuretics',
@@ -67,61 +61,65 @@ export const Exam = {
 
 /* Glossary Entries */
 export const Glossary = {
-  AtrialFib: 'Glossary entry for: Atrial fibrillation / History of irregular heart beat',
-  Defib: 'Glossary entry for: Defibrillator / Pacemaker',
-  CAD: 'Glossary entry for: Coronary artery disease',
-  CardiacStent: 'Glossary entry for: Cardiac Stent (< 12 months)',
-  CerebralDisease: 'Glossary entry for: History of cerebral disease',
-  PulmonaryVascular: 'Glossary entry for: History of pulmonary vascular disease',
-  TIA: 'Glossary entry for: Transient Ischemic Attack (TIA)',
-  Stroke: 'Glossary entry for: Stroke',
-  VHD: 'Glossary entry for: Valvular heart disease / Valve Replacement',
-  HeartFail: 'Glossary entry for: Heart Failure',
-  PVD: 'Glossary entry for: Peripheral Vascular disease (PVD)',
+  AtrialFib: 'No extra information.',
+  Defib: 'No extra information.',
+  CAD: 'No extra information.',
+  CardiacStent: 'No extra information.',
+  CerebralDisease: 'No extra information.',
+  PulmonaryVascular: 'No extra information.',
+  TIA: 'No extra information.',
+  Stroke: 'No extra information.',
+  VHD: 'No extra information.',
+  HeartFail: 'No extra information.',
+  PVD: 'No extra information.',
   /* Pulmonary Diseases */
-  PulmDisease: '- Spirometric values AND symptomatic assessment should be sought. \n' +
-               '- Post Bronchodilator FEV1: 30 - 50% of predicted; FEV1/FVC < 0.70 \n' +
-               '- History of exacerbations (including prior hospitalizations) should be recorded.\n' +
-               '- Worsening air flow limitation, greater SOB, reduced exercise capacity, having an ' +
-               'impact on quality of life, and ability to complete activities of daily living should be present.',
+  PulmDisease: '• Spirometric values AND symptomatic assessment should be sought. \n' +
+               '• Post Bronchodilator FEV1: 30 - 50% of predicted; FEV1/FVC < 0.70 \n' +
+               '• History of exacerbations (including prior hospitalizations) should be recorded.\n' +
+               '• Worsening air flow limitation, greater SOB, reduced exercise capacity, having an ' +
+               'impact on quality of life, and ability to complete activities of daily living should be present. \n',
   /* Other Diseases */
-  Bleeding: '- History of extensive investigation due to a bleeding episode. ' +
-            '- History of extensive bleeding needing transfusion in previous surgeries. ' +
-            '- Bruising easily more than usual. \n',
-  Anemia: 'Glossary entry for: History of anemia',
-  ActiveBleeding: 'Glossary entry for: History of active bleeding',
+  Age: 'No extra information.',
+  Risk: 'No extra information.',
+  Bleeding: '• History of extensive investigation due to a bleeding episode. \n' +
+            '• History of extensive bleeding needing transfusion in previous surgeries. \n' +
+            '• Bruising easily more than usual. \n',
+  Anemia: 'No extra information.',
+  ActiveBleeding: 'No extra information.',
+  KidneyDisease: 'No extra information.',
   Renal: '(AKI). \n' +
-         '- Chronic kidney disease (eGFR < 60ml/min/1.73m2. \n' +
-         '- Diabetes. \n' +
-         '- Heart failure. \n' +
-         '- Age ≥ 65. \n' +
-         '- Liver disease. \n' +
-         '- Use of drugs with nephrotoxic potential in the perioperative period (in particular NSAIDs after surgery). \n',
-  Diabetes: 'Glossary entry for: Diabetes (on Insulin or 2 oral agents)',
-  Malignancy: 'Glossary entry for: Present malignancy / surgery for malignancy',
-  Hepatic: '- Alcohol abuse (i.e., female: 14 drinks / week; male: 21 drinks / week). \n' +
-           '- Jaundice due to liver disease. \n' +
-           '- All forms of hepatitis. \n' +
-           '- Cirrhosis; Hepatic cancer. \n',
-  Adrenal: 'Glossary entry for: History of adrenal disease',
-  Pituitary: '- Acromegaly. \n' +
-             '- Cushing’s disease. \n' +
-             '- Sheehan syndrome. \n' +
-             '- Growth hormone deficiency. \n' +
-             '- Hyper/hypo pituitarism. \n',
-  Endocrine: '(Excluding Diabeties)' +
-             '- Parathyroid disease' +
-             '- Addison’s disease' +
-             '- Cushing’s syndrome' +
-             '- Graves’ disease',
+         '• Chronic kidney disease (eGFR < 60ml/min/1.73m2. \n' +
+         '• Diabetes. \n' +
+         '• Heart failure. \n' +
+         '• Age ≥ 65. \n' +
+         '• Liver disease. \n' +
+         '• Use of drugs with nephrotoxic potential in the perioperative period (in particular NSAIDs after surgery). \n',
+  Diabetes: 'No extra information.',
+  Malignancy: 'No extra information.',
+  Hepatic: '• Alcohol abuse (i.e., female: 14 drinks / week; male: 21 drinks / week). \n' +
+           '• Jaundice due to liver disease. \n' +
+           '• All forms of hepatitis. \n' +
+           '• Cirrhosis; Hepatic cancer. \n',
+  Adrenal: 'No extra information.',
+  Pituitary: '• Acromegaly. \n' +
+             '• Cushing’s disease. \n' +
+             '• Sheehan syndrome. \n' +
+             '• Growth hormone deficiency. \n' +
+             '• Hyper/hypo pituitarism. \n',
+  Endocrine: '(Excluding Diabeties) \n' +
+             '• Parathyroid disease \n' +
+             '• Addison’s disease \n' +
+             '• Cushing’s syndrome \n' +
+             '• Graves’ disease \n',
+  Thyroid: 'No extra information.',
   /* Medications */
-  Digoxin: 'Glossary entry for: Digoxin',
-  Lithium: 'Glossary entry for: Lithium',
-  Diuretics: 'Glossary entry for: Diuretics',
-  ACEI: 'Glossary entry for: ACE-I',
-  ARB: 'Glossary entry for: ARB',
-  NSAIDS: 'Glossary entry for: NSAIDS',
-  Anticoagulant: 'Glossary entry for: Anticoagulants',
-  Antiplatelet: 'Glossary entry for: Antiplatelet (ASA excluded)',
-  Steroid: 'Glossary entry for: Systemic steroid use within 6 months',
+  Digoxin: 'No extra information.',
+  Lithium: 'No extra information.',
+  Diuretics: 'No extra information.',
+  ACEI: 'No extra information.',
+  ARB: 'No extra information.',
+  NSAIDS: 'No extra information.',
+  Anticoagulant: 'No extra information.',
+  Antiplatelet: 'No extra information.',
+  Steroid: 'No extra information.',
 };
