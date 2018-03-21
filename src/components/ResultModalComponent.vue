@@ -1,14 +1,15 @@
 <template>
   <div class="container pt-3">
-    <button type="button" class="btn btn-primary"
+    <button id="modal_submit" type="button" class="btn btn-primary"
      v-on:click="getExams(); showModal();"> Submit </button>
     <!-- Modal -->
-    <div class="modal fade" :class="{ 'show': isVisible, 'd-block': isVisible }">
-      <div class="modal-dialog">
+    <div id="modal_box" class="modal fade" :class="{ 'show': isVisible, 'd-block': isVisible }"
+     tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"> Tests </h5>
-            <button type="button" class="close" v-on:click="showModal()">
+            <h5 class="modal-title"> Tests </h5>
+            <button id="modal_close" type="button" class="close" v-on:click="showModal()">
               <span> &times; </span>
             </button>
           </div>
@@ -32,7 +33,9 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" v-on:click="showModal">Okay</button>
+            <button id="modal_okay" type="button" class="btn btn-primary" v-on:click="showModal">
+              Okay
+            </button>
           </div>
         </div>
       </div>
@@ -80,3 +83,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  #modal_box {
+    background: rgba(0,0,0, 0.8);
+  }
+</style>
