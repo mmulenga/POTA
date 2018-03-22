@@ -48,10 +48,11 @@ module.exports = {
       .waitForElementPresent('#med_Antiplatelet', 500)
       .waitForElementPresent('#med_Steroid', 500)
 
-      .waitForElementPresent('#app div div div #modal_submit', 1000)
-      .click('#app div div div #modal_submit')
+      .assert.hidden('#modal_okay')
 
-      .waitForElementPresent('#modal-body',1000)
+      .waitForElementPresent('#modal_submit', 1000)
+      .click('#modal_submit')
+
       .waitForElementPresent('#modal_okay',500)
       .click('#modal_okay')
 
