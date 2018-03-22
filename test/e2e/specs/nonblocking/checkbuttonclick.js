@@ -52,9 +52,10 @@ module.exports = {
 
       .waitForElementPresent('#modal_submit', 1000)
       .click('#modal_submit')
+      
+      .screenshot()
 
-      .waitForElementPresent('#modal_okay',500)
-      .waitForElementVisible('#modal_okay',500)
+      .waitForElementVisible('#modal_okay',1000)
       .click('#modal_okay')
 
       .end();
