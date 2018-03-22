@@ -43,7 +43,7 @@ module.exports = {
       .waitForElementPresent('#med_ACEI', 500)
       .waitForElementPresent('#med_ARB', 500)
       .waitForElementPresent('#med_NSAIDS', 500)
-      .waitForElementPresent('#med_Anticoagulants', 500)
+      .waitForElementPresent('#med_Anticoagulant', 500)
       .waitForElementPresent('#med_Antiplatelet', 500)
       .waitForElementPresent('#med_Steroid', 500)
 
