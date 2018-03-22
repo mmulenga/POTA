@@ -6,9 +6,14 @@ module.exports = {
       .url(browser.globals.devServerURL)
       .waitForElementVisible('body', 1000)
 
+      .waitForElementVisible('#understanding', 1000)
+      .click('#understanting')
+      .waitForElementNotVisible('#understanding',500)
+      
       .waitForElementPresent('#modal_submit', 1000)
 
       .waitForElementPresent('#cv_AtrialFib', 500)
+      .click('#cv_AtrialFib')
       .waitForElementPresent('#cv_Defib', 500)
       .waitForElementPresent('#cv_CAD', 500)
       .waitForElementPresent('#cv_CardiacStent', 500)
@@ -21,7 +26,7 @@ module.exports = {
       .waitForElementPresent('#cv_PVD', 500)
 
       .waitForElementPresent('#pd_PulmDisease', 500)
-
+      .click('#pd_PulmDisease')
       .waitForElementPresent('#other_Age', 500)
       .waitForElementPresent('#other_Risk', 500)
       .waitForElementPresent('#other_Bleeding', 500)
@@ -37,6 +42,7 @@ module.exports = {
       .waitForElementPresent('#other_Thyroid', 500)
 
       .waitForElementPresent('#med_Digoxin', 500)
+      .click('#med_Digoxin')
       .waitForElementPresent('#med_Lithium', 500)
       .waitForElementPresent('#med_Diuretics', 500)
       .waitForElementPresent('#med_ACEI', 500)
@@ -45,6 +51,14 @@ module.exports = {
       .waitForElementPresent('#med_Anticoagulant', 500)
       .waitForElementPresent('#med_Antiplatelet', 500)
       .waitForElementPresent('#med_Steroid', 500)
+
+      .assert.hidden('#modal_okay', 'modal_okay was hidden')
+
+      .waitForElementPresent('#modal_submit', 1000)
+      .click('#modal_submit')
+
+      .waitForElementVisible('#modal_okay',1000)
+      .click('#modal_okay')
 
       .end();
   }
