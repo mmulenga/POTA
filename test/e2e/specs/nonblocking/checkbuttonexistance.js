@@ -47,4 +47,5 @@ module.exports = {
     browser.url.waitForElementPresent('#med_Steroid', 500);
 
     browser.url.end();
-}
+  }
+};
