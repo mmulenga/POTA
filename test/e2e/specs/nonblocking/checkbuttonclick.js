@@ -54,7 +54,7 @@ module.exports = {
       .click('#modal_submit')
 
       .waitForElementPresent('#modal_okay',500)
-      .assert.waitForElementVisible('#modal_okay',500)
+      .waitForElementVisible('#modal_okay',500)
       .click('#modal_okay')
 
       .end();
