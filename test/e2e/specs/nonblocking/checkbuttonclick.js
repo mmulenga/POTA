@@ -48,7 +48,7 @@ module.exports = {
       .waitForElementPresent('#med_Antiplatelet', 500)
       .waitForElementPresent('#med_Steroid', 500)
 
-      .assert.hidden('#modal_okay')
+      .assert.hidden('#modal_okay','It was hidden')
 
       .waitForElementPresent('#modal_submit', 1000)
       .click('#modal_submit')
