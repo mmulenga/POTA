@@ -53,7 +53,7 @@ module.exports = {
       .waitForElementPresent('#modal_submit', 1000)
       .click('#modal_submit')
       
-      .screenshot()
+      .saveScreenshot('/Users/cmpt371/Pictures/test.png')
 
       .waitForElementVisible('#modal_okay',1000)
       .click('#modal_okay')
