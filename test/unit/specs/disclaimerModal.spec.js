@@ -1,4 +1,4 @@
-import { mount } from 'vue-test-utils'; // eslint-disable-line 
+import { mount } from 'vue-test-utils';
 import DisclaimerModalComponent from '@/components/DisclaimerModalComponent';
 
 describe('disclaimerModal.spec.js', () => {

@@ -1,4 +1,4 @@
-import { mount } from 'vue-test-utils'; // eslint-disable-line 
+import { mount } from 'vue-test-utils';
 import ComoListComponent from '@/components/ComoListComponent';
 
 describe('ComoList.spec.js', () => {
@@ -26,21 +26,16 @@ describe('ComoList.spec.js', () => {
       expect(wrapper.vm.cardioDiseases[0].check).toBe(false);
     });
 
-    it('Hover event on Atrial fibrillation emitted', () => {
-      list.at(1).trigger('mouseover');
-      expect(wrapper.emitted().hoverEvent).toBeTruthy();
-      expect(wrapper.emitted().hoverEvent[0]).toEqual([{ currentComorbiditySelection: 'No extra information.' }]);
-    });
-
-    it('Hover event on Severe COPD emitted', () => {
-      list.at(13).trigger('mouseover');
-      expect(wrapper.emitted().hoverEvent).toBeTruthy();
+    it('MouseEnter and MouseLeave event on Severe COPD emitted', () => {
+      wrapper.vm.passComorbidityOnHover(wrapper.vm.pulmoDiseases, 0);
       expect(wrapper.emitted().hoverEvent[0]).toEqual([{ currentComorbiditySelection: '• Spirometric values AND symptomatic assessment should be sought. \n' +
       '• Post Bronchodilator FEV1: 30 - 50% of predicted; FEV1/FVC < 0.70 \n' +
       '• History of exacerbations (including prior hospitalizations) should be recorded.\n' +
       '• Worsening air flow limitation, greater SOB, reduced exercise capacity, having an ' +
       'impact on quality of life, and ability to complete activities of daily living should be present. \n',
       }]);
+      wrapper.vm.clearComorbidityOnHover();
+      expect(wrapper.emitted().hoverEvent[1]).toEqual([{ currentComorbiditySelection: '' }]);
     });
   });
 
