@@ -48,12 +48,13 @@ module.exports = {
       .waitForElementPresent('#med_Antiplatelet', 500)
       .waitForElementPresent('#med_Steroid', 500)
 
-      .assert.hidden('#modal_okay','It was hidden')
+      .assert.hidden('#modal_okay','modal_okay was hidden')
 
       .waitForElementPresent('#modal_submit', 1000)
       .click('#modal_submit')
 
       .waitForElementPresent('#modal_okay',500)
+      .assert.visible('#modal_okay','modal_okay was visible')
       .click('#modal_okay')
 
       .end();
