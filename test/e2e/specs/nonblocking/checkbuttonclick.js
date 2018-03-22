@@ -6,6 +6,10 @@ module.exports = {
       .url(browser.globals.devServerURL)
       .waitForElementVisible('body', 1000)
 
+      .waitForElementVisible('#understanding', 1000)
+      .click('#understanting')
+      .waitForElementNotVisible('#understanding',500)
+      
       .waitForElementPresent('#modal_submit', 1000)
 
       .waitForElementPresent('#cv_AtrialFib', 500)
@@ -48,12 +52,10 @@ module.exports = {
       .waitForElementPresent('#med_Antiplatelet', 500)
       .waitForElementPresent('#med_Steroid', 500)
 
-      .assert.hidden('#modal_okay','modal_okay was hidden')
+      .assert.hidden('#modal_okay', 'modal_okay was hidden')
 
       .waitForElementPresent('#modal_submit', 1000)
       .click('#modal_submit')
-      
-      .saveScreenshot('/Users/cmpt371/Pictures/test.png')
 
       .waitForElementVisible('#modal_okay',1000)
       .click('#modal_okay')
