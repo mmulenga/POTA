@@ -7,7 +7,7 @@ module.exports = {
       .url(browser.globals.devServerURL)
       .waitForElementVisible('body', 1000)
 
-      .waitForElementPresent('#submit', 1000)
+      .waitForElementPresent('#modal_submit', 1000)
 
       .waitForElementPresent('#cv_AtrialFib', 500)
       .waitForElementPresent('#cv_Defib', 500)
