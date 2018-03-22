@@ -14,7 +14,7 @@
           * For patients with complex or uncommon surgical or medical conditions,
           tests beyond what is suggested in this grid may be appropriate based on the
           clinical judgement of the health care provider.</p>
-        <button type="button" class="btn btn-primary" v-on:click="hideModal()">
+        <button type="button" class="btn btn-primary" id="understanding" v-on:click="hideModal()">
           I Understand
         </button>
       </div>
