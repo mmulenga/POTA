@@ -6,9 +6,9 @@ module.exports = {
       .url(browser.globals.devServerURL)
       .waitForElementVisible('body', 1000)
 
-      .waitForElementVisible('#understand', 1000)
-      .click('#understand')
-      .waitForElementNotVisible('#understand',500)
+      .waitForElementVisible('#understanding', 1000)
+      .click('#understanding')
+      .waitForElementNotVisible('#understanding',500)
       
       .waitForElementPresent('#modal_submit', 1000)
 
