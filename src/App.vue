@@ -29,10 +29,6 @@
             <button class="btn btn-primary float-right"
               type="button" data-toggle="collapse" data-target="#collapseExample"
               aria-expanded="false" aria-controls="collapseExample">
-              Glossary</button>
-            <button class="btn btn-primary float-left"
-              type="button" data-toggle="collapse" data-target="#collapseExample"
-              aria-expanded="false" aria-controls="collapseExample">
               Patient Status</button>
       </div>
       <div class="col-md-12">
