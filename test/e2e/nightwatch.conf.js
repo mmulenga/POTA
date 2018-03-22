@@ -26,6 +26,10 @@ module.exports = {
       silent: true,
       globals: {
         devServerURL: 'http://localhost:8080'
+      },
+      screenshots: {
+        enabled: true,
+        path: "test/"
       }
     },
 
