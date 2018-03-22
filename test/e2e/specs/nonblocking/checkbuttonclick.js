@@ -8,7 +8,7 @@ module.exports = {
 
       .waitForElementVisible('#understand', 1000)
       .click('#understand')
-      .waitForElementNotVisible('#understand',500)
+      .waitForElementNotPresent('#understand',500)
       
       .waitForElementPresent('#modal_submit', 1000)
 
