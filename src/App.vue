@@ -26,13 +26,16 @@
     <!-- visible-sm and down  (or hidden-md and up) -->
     <div class="d-md-none d-lg-none d-xl-none">
       <div class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="btn btn-primary float-right"
-              type="button" data-toggle="collapse" data-target="#collapseExample"
-              aria-expanded="false" aria-controls="collapseExample">
-              Patient Status</button>
+            <button class="btn btn-primary" data-toggle="collapse"
+              data-targer="#patientStatus" v-on:click="toggleCollapsation()">
+              Patient Status
+            </button>
+            <div class="collapse" id="patientStatus">
+              Content goes here
+            </div>
       </div>
       <div class="col-md-12">
-            <ComoListComponent
+            <MobileComoListComponent
             v-on:clickEvent="updateArray"
             v-on:hoverEvent="updateDescription"/>
             <ResultModalComponent
@@ -45,6 +48,7 @@
 <script>
 import DisclaimerModalComponent from '@/components/DisclaimerModalComponent';
 import ComoListComponent from '@/components/ComoListComponent';
+import MobileComoListComponent from '@/components/MobileComoListComponent';
 import GlossaryComponent from '@/components/GlossaryComponent';
 import StatusComponent from '@/components/StatusComponent';
 import ResultModalComponent from '@/components/ResultModalComponent';
@@ -54,6 +58,7 @@ export default {
   components: {
     DisclaimerModalComponent,
     ComoListComponent,
+    MobileComoListComponent,
     GlossaryComponent,
     StatusComponent,
     ResultModalComponent,
