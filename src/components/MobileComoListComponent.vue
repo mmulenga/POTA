@@ -119,7 +119,9 @@
           </div>
           <div class="modal-body">
             <!-- when i is clicked, get the definition to go into modal body-->
-            {{this.$parent.glossaryEntry}}
+            <pre>
+            <p>{{this.$parent.glossaryEntry}}</p>
+            </pre>
           </div>
           <div class="modal-footer">
             <button id="modal_okay text-center" type="button" class="btn btn-primary"
@@ -321,5 +323,18 @@ export default {
 
 .lg-item {
   padding: 2.00rem;
+}
+
+pre{
+  -webkit-padding-start: 0;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  text-align: left;
+  font-size: 16px;
+  margin-right: 12px;
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 </style>
