@@ -315,6 +315,10 @@ export default {
   cursor: pointer;
 }
 
+.badge-pill {
+    font-size: medium;
+}
+
 .lg-item {
   padding: 2.00rem;
 }

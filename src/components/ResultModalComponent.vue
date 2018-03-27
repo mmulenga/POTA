@@ -2,6 +2,8 @@
   <div class="container pt-3">
     <button id="modal_submit" type="button" class="btn btn-primary"
      v-on:click="getExams(); showModal();"> Submit </button>
+    <button id="reset" type="button" class="btn btn-danger"
+     v-on:click="clearResultArray();"> Reset </button>
     <!-- Modal -->
     <div id="modal_box" class="modal fade" :class="{ 'show': isVisible, 'd-block': isVisible }"
      tabindex="-1">
@@ -79,6 +81,14 @@ export default {
       const examSummary = PatientExamsNeeded(this.resultArray);
       this.exams = examSummary.exams;
       this.conditionalExams = examSummary.conditionalExams;
+    },
+    /**
+      * Clears the result array in App.vue
+      * TODO: should also uncheck all the checkboxed
+      * when method is called
+     */
+    clearResultArray: function clearResultArray() {
+      this.$parent.resultArray = [];
     },
   },
 };
