@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <DisclaimerModalComponent></DisclaimerModalComponent>
-    <h1 class="my-4"> Pre-Opt Testing App </h1>
+    <h1 class="my-4"> Pre-Op Testing App </h1>
       <div class="row">
         <!-- hide the status component when screen is smaller than md-->
         <div class="col-md-3 d-none d-md-block">
@@ -29,13 +29,16 @@
       <drawer :show="drawerShow"
       @on-hide="hideDrawer">
         <div class="layout" slot="drawer" >
+          <button id="drawer_close" type="button" class="close" v-on:click="hideDrawer">
+              <span> &times; </span>
+            </button>
           <!-- list component -->
           <StatusComponent
              :resultArray="resultArray"/>
         </div>
-        <h1 class="my-4"> Pre-Opt Testing App </h1>
+        <h1 class="my-4"> Pre-Op Testing App </h1>
         <div class="navbar navbar-expand-lg navbar-light bg-light">
-          <button type="button" class="btn btn-primary" v-on:click="drawerToggle">
+          <button type="button" class="btn btn-primary status" v-on:click="drawerToggle">
             Patient Status</button>
         </div>
         <div class="col-md-12">
@@ -43,9 +46,9 @@
           v-on:clickEvent="updateArray"
           v-on:update-glossary="updateDescription"
           v-on:clear-glossary="clearDescription"/>
-          <ResultModalComponent
-          :resultArray="resultArray"/>
         </div>
+        <ResultModalComponent class="results navbar navbar-expand-lg navbar-light bg-light"
+          :resultArray="resultArray"/>
         </drawer>
     </div>
   </div>
@@ -138,4 +141,12 @@ export default {
 .layout{
     width: 300px;
   }
+.results {
+  position: fixed;
+}
+
+button.close {
+  padding-right: 10px;
+  font-size: 50px;
+}
 </style>

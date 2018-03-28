@@ -33,6 +33,7 @@ export default {
 <style>
     h1{
         font-size: 2em;
+        padding: 8.4px;
     }
     .list{
         height: 500px;

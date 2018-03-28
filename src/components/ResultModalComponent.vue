@@ -98,4 +98,12 @@ export default {
   #modal_box {
     background: rgba(0,0,0, 0.8);
   }
+
+  .pt-3 {
+    background: rgba(0, 0, 0, 0);
+    bottom: 1px;
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
 </style>

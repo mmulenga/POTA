@@ -7,13 +7,13 @@
           <li :id="generateID('li', 'cv', index)"
           class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in cardioDiseases"
+          v-on:click="aggregateConditions(cardioDiseases, index)"
           :key="item.comorbidity">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
                   <input :id="generateID('cb', 'cv', index)"
-                  class="form-check-input" type="checkbox" :checked="item.check"
-                  v-on:click="aggregateConditions(cardioDiseases, index)">
+                  class="form-check-input" type="checkbox" :checked="item.check">
                 </div>
               </div>
               <div class="col-9 text-left">
@@ -22,8 +22,7 @@
               <div v-if="hasEntry(item)" class="col-1">
                 <span class="badge badge-pill badge-secondary"
                 v-on:mouseover="passComorbidityOnHover(cardioDiseases, index)"
-                v-on:mouseleave="clearComorbidityOnHover()"
-                v-on:click="showModal();"
+                v-on:click="showModal(), aggregateConditions(cardioDiseases, index);"
                 >i</span>
               </div>
             </div>
@@ -32,13 +31,13 @@
           <li :id="generateID('li', 'pd', index)"
           class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in pulmoDiseases"
+          v-on:click="aggregateConditions(pulmoDiseases, index);"
           :key="item.comorbidity">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
                   <input :id="generateID('cb', 'pd', index)"
-                  class="form-check-input" type="checkbox" :checked="item.check"
-                  v-on:click="aggregateConditions(pulmoDiseases, index);">
+                  class="form-check-input" type="checkbox" :checked="item.check">
                 </div>
               </div>
               <div class="col-9 text-left">
@@ -47,8 +46,7 @@
               <div v-if="hasEntry(item)" class="col-1">
                 <span class="badge badge-pill badge-secondary"
                 v-on:mouseover="passComorbidityOnHover(pulmoDiseases, index)"
-                v-on:mouseleave="clearComorbidityOnHover()"
-                v-on:click="showModal();"
+                v-on:click="showModal(), aggregateConditions(pulmoDiseases, index);"
                 >i</span>
               </div>
             </div>
@@ -57,13 +55,13 @@
           <li :id="generateID('li', 'other', index)"
           class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in otherDiseases"
+          v-on:click="aggregateConditions(otherDiseases, index)"
           :key="item.comorbidity">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
                   <input :id="generateID('cb', 'other', index)"
-                  class="form-check-input" type="checkbox" :checked="item.check"
-                  v-on:click="aggregateConditions(otherDiseases, index)">
+                  class="form-check-input" type="checkbox" :checked="item.check">
                 </div>
               </div>
               <div class="col-9 text-left">
@@ -72,8 +70,7 @@
               <div v-if="hasEntry(item)" class="col-1">
                 <span class="badge badge-pill badge-secondary"
                 v-on:mouseover="passComorbidityOnHover(otherDiseases, index)"
-                v-on:mouseleave="clearComorbidityOnHover()"
-                v-on:click="showModal();"
+                v-on:click="showModal(), aggregateConditions(otherDiseases, index);"
                 >i</span>
               </div>
             </div>
@@ -82,13 +79,13 @@
           <li :id="generateID('li', 'med', index)"
           class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in medications"
+          v-on:click="aggregateConditions(medications, index)"
           :key="item.comorbidity">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
                   <input :id="generateID('cb', 'med', index)"
-                  class="form-check-input" type="checkbox" :checked="item.check"
-                  v-on:click="aggregateConditions(medications, index)">
+                  class="form-check-input" type="checkbox" :checked="item.check">
                 </div>
               </div>
               <div class="col-9 text-left">
@@ -97,8 +94,7 @@
               <div v-if="hasEntry(item)" class="col-1">
                 <span class="badge badge-pill badge-secondary"
                 v-on:mouseover="passComorbidityOnHover(medications, index)"
-                v-on:mouseleave="clearComorbidityOnHover()"
-                v-on:click="showModal();"
+                v-on:click="showModal(), aggregateConditions(medications, index);"
                 >i</span>
               </div>
             </div>
@@ -113,7 +109,8 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title"> Glossary </h5>
-            <button id="modal_close" type="button" class="close" v-on:click="showModal()">
+            <button id="modal_close" type="button" class="close" v-on:click="showModal(),
+             clearComorbidityOnHover()">
               <span> &times; </span>
             </button>
           </div>
@@ -310,9 +307,82 @@ export default {
 </script>
 
 <style scoped>
-.half {
-  height: 500px;
-  overflow: scroll;
+
+/* iPhone 5 */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .half {
+      height: 10.7%;
+      overflow: scroll;
+  }
+}
+
+/* iPhone 6/7/8 */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .half {
+      height: 15%;
+      overflow: scroll;
+    }
+}
+
+/* iPhone 6/7/8 + */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .half {
+      height: 17.8%;
+      overflow: scroll;
+    }
+}
+
+/* iPhone X */
+@media only screen
+  and (min-device-width: 375px)
+  and (min-device-height: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .half {
+      height: 19.7%;
+      overflow: scroll;
+    }
+}
+
+/* Pixel 2 */
+@media only screen
+  and (min-device-width: 411px)
+  and (max-device-height: 731px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .half {
+      height: 17.61%;
+      overflow: scroll;
+    }
+}
+
+/* Pixel 2XL */
+@media only screen
+  and (min-device-width: 411px)
+  and (max-device-height: 731px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .half {
+      height: 20.7%;
+      overflow: scroll;
+    }
+}
+
+/* Galaxy S5 */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3) {
+    .half {
+      height: 13.7%;
+      overflow: scroll;
+    }
 }
 
 .pointer {
@@ -323,8 +393,22 @@ export default {
     font-size: medium;
 }
 
+.col-1 {
+  padding-left: 0px;
+}
+
+.col-0 {
+  padding-left: 0px;
+}
+
 .lg-item {
-  padding: 2.00rem;
+  padding: 1.50rem;
+}
+
+.form-check-input {
+  width: 15px;
+  height: 15px;
+
 }
 
 pre{
