@@ -120,12 +120,14 @@
           <div class="modal-body">
             <!-- when i is clicked, get the definition to go into modal body-->
             <pre>
-            <p>{{this.$parent.glossaryEntry}}</p>
+            <!-- This is because App is the parent of Drawer -->
+            <p>{{this.$parent.$parent.glossaryEntry}}</p>
             </pre>
           </div>
           <div class="modal-footer">
+            <!-- closes glossary modal and clears current glossary -->
             <button id="modal_okay text-center" type="button" class="btn btn-primary"
-            v-on:click="showModal();">
+            v-on:click="showModal(), clearComorbidityOnHover();">
               Okay
             </button>
           </div>
@@ -234,11 +236,11 @@ export default {
     passComorbidityOnHover: function passComorbidityOnHover(comorbidityArray, index) {
       const array = comorbidityArray;
 
-      this.$emit('hoverEvent', { currentComorbiditySelection: array[index].glossary });
+      this.$emit('update-glossary', { currentComorbiditySelection: array[index].glossary });
     },
 
     clearComorbidityOnHover: function clearComorbidityOnHover() {
-      this.$emit('hoverEvent', { currentComorbiditySelection: '' });
+      this.$emit('clear-glossary', { currentComorbiditySelection: '' });
     },
 
     /**

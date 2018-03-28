@@ -25,22 +25,28 @@
     </div>
     <!-- visible-sm and down  (or hidden-md and up) -->
     <div class="d-md-none d-lg-none d-xl-none">
-      <div class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="btn btn-primary" data-toggle="collapse"
-              data-targer="#patientStatus" v-on:click="toggleCollapsation()">
-              Patient Status
-            </button>
-            <div class="collapse" id="patientStatus">
-              Content goes here
-            </div>
-      </div>
-      <div class="col-md-12">
-            <MobileComoListComponent
-            v-on:clickEvent="updateArray"
-            v-on:hoverEvent="updateDescription"/>
-            <ResultModalComponent
+      <!-- side drawer that contains the list of comos selected -->
+      <drawer :show="drawerShow"
+      @on-hide="hideDrawer">
+        <div class="layout" slot="drawer" >
+          <!-- list component -->
+          <StatusComponent
              :resultArray="resultArray"/>
         </div>
+        <h1 class="my-4"> Pre-Opt Testing App </h1>
+        <div class="navbar navbar-expand-lg navbar-light bg-light">
+          <button type="button" class="btn btn-primary" v-on:click="drawerToggle">
+            Patient Status</button>
+        </div>
+        <div class="col-md-12">
+          <MobileComoListComponent
+          v-on:clickEvent="updateArray"
+          v-on:update-glossary="updateDescription"
+          v-on:clear-glossary="clearDescription"/>
+          <ResultModalComponent
+          :resultArray="resultArray"/>
+        </div>
+        </drawer>
     </div>
   </div>
 </template>
@@ -52,6 +58,7 @@ import MobileComoListComponent from '@/components/MobileComoListComponent';
 import GlossaryComponent from '@/components/GlossaryComponent';
 import StatusComponent from '@/components/StatusComponent';
 import ResultModalComponent from '@/components/ResultModalComponent';
+import Drawer from '@/components/Drawer';
 
 export default {
   name: 'App',
@@ -62,12 +69,14 @@ export default {
     GlossaryComponent,
     StatusComponent,
     ResultModalComponent,
+    Drawer,
   },
   data() {
     return {
       framework_name: 'VueJS',
       resultArray: [],
       glossaryEntry: '',
+      drawerShow: false,
     };
   },
   methods: {
@@ -93,6 +102,27 @@ export default {
     updateDescription: function updateDescription(comorbidity) {
       this.glossaryEntry = comorbidity.currentComorbiditySelection;
     },
+    /**
+    * Clears the glossaryEntry used by the Glossary Window data
+    * received from child ComoListComponent.
+    */
+    clearDescription: function clearDescription() {
+      this.glossaryEntry = '';
+    },
+
+    /**
+     * displays the drawer.
+     */
+    drawerToggle: function drawerToggle() {
+      this.drawerShow = !this.drawerShow;
+    },
+
+    /**
+     * hides the drawer.
+     */
+    hideDrawer: function hideDrawer() {
+      this.drawerShow = false;
+    },
   },
 };
 </script>
@@ -105,4 +135,7 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+.layout{
+    width: 300px;
+  }
 </style>
