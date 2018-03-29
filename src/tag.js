@@ -132,5 +132,5 @@ export function Validity(exam, validityString) {
  */
 export function GetExamValidity(exam) {
   assert(Object.values(Exam).indexOf(exam), `GetExamValidity called with unknown exam: ${exam}`);
-  return examCollection[exam];
+  return examCollection.validityPeriods[exam];
 }
