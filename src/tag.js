@@ -8,6 +8,7 @@ import { Condition, Exam } from '@/constants';
 const examCollection = {};
 examCollection.exams = {};
 examCollection.conditionalExams = {};
+examCollection.validityPeriods = {};
 
 /**
  * Adds a new global exam to the system.
@@ -110,3 +111,26 @@ export function GetConditionalExams(name) {
   return [];
 }
 
+
+/**
+ * Sets the validity period for a given exam
+ * Validity period is the time window before surgery in which an exam must be performed
+ * @param {String} exam The name of the exam
+ * @param {String} validityString A string of the format "x months" or "x days"
+ * Preconditions: 'exam' must be from the constants file
+ * Postconditions: examCollection.validityPeriods will contain the new validity period
+ */
+export function Validity(exam, validityString) {
+  assert(Object.values(Exam).indexOf(exam) >= 0, `Unknown exam "${exam}" used in Validity`);
+  examCollection.validityPeriods[exam] = validityString;
+}
+
+/**
+ * Get the validity period for a given exam
+ * @param {String} exam The name of the exam in question
+ * Preconditions: exam must be known and must have a registered validity period
+ */
+export function GetExamValidity(exam) {
+  assert(Object.values(Exam).indexOf(exam) >= 0, `GetExamValidity called with unknown exam: ${exam}`);
+  return examCollection.validityPeriods[exam];
+}
