@@ -121,7 +121,7 @@ export function GetConditionalExams(name) {
  * Postconditions: examCollection.validityPeriods will contain the new validity period
  */
 export function Validity(exam, validityString) {
-  assert(exam in examCollection.exams, `Unknown exam "${exam}" used in Validity`);
+  assert(Object.values(Exam).indexOf(exam), `Unknown exam "${exam}" used in Validity`);
   examCollection.validityPeriods[exam] = validityString;
 }
 
@@ -131,6 +131,6 @@ export function Validity(exam, validityString) {
  * Preconditions: exam must be known and must have a registered validity period
  */
 export function GetExamValidity(exam) {
-  assert(exam in examCollection.exams, `GetExamValidity called with unknown exam: ${exam}`);
+  assert(Object.values(Exam).indexOf(exam), `GetExamValidity called with unknown exam: ${exam}`);
   return examCollection[exam];
 }
