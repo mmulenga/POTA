@@ -805,3 +805,14 @@ describe('Testing GetExams() and GetConditionalExams() with invalid parameters',
     expect(result).toMatchSnapshot();
   });
 });
+
+// describe('Testing GetConditionalExams() with all conditional comorbidities', () => {
+//   it('returns the correct conditional exams for VHD', () => {
+//     result = GetConditionalExams(Condition.VHD);
+//     expect(result.exams).toEqual([Exam.CBC]);
+//     console.log(result.exams);
+//   });
+//   it('correct array of conditional exams for VHD to match snapshot', () => {
+//     expect(result).toMatchSnapshot();
+//   });
+// });

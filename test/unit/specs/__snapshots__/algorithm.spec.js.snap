@@ -8,6 +8,17 @@ Array [
 ]
 `;
 
+exports[`Testing GetConditionalExams() with all conditional comorbidities correct array of conditional exams for VHD to match snapshot 1`] = `
+Array [
+  ConditionalExam {
+    "conditionPhrase": "Is valve mechanical?",
+    "exams": Array [
+      "CBC",
+    ],
+  },
+]
+`;
+
 exports[`Testing GetExams() and GetConditionalExams() with invalid parameters correct array of examinations for invalid condition to match snapshot 1`] = `Array []`;
 
 exports[`Testing GetExams() and GetConditionalExams() with invalid parameters correct array of examinations for invalid condition to match snapshot 2`] = `Array []`;
