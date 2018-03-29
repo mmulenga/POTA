@@ -1,5 +1,5 @@
 // Singleton data, not a class
-import { Tag, GetExams, GetConditionalExams, ConditionalExam } from '@/tag';
+import { Tag, GetExams, GetConditionalExams, ConditionalExam, Validity, GetExamValidity } from '@/tag';
 import { Condition, Exam } from '@/constants';
 
 /** Tag definitions
@@ -53,6 +53,19 @@ Tag(Condition.Antiplatelet, [Exam.CBC, Exam.RenPanel],
 Tag(Condition.Steroid, [Exam.RenPanel, Exam.Gluc]);
 
 
+/** Validity periods for exams */
+Validity(Condition.GnS, '1 month (or local lab/surgical policy)');
+Validity(Condition.ECG, '3 months');
+Validity(Condition.CBC, '3 months');
+Validity(Condition.RenPanel, '3 months');
+Validity(Condition.PTTINR, '3 months');
+Validity(Condition.LFT, '3 months');
+Validity(Condition.Gluc, '3 months');
+Validity(Condition.HbA1C, '3 months');
+Validity(Condition.CXR, '6 months');
+Validity(Condition.TSH, '6 months');
+
+
 /**
  * ExamSummary is a simple data struct with two properties:
  * @param exams {String[]}: a list of exams to be performed
@@ -96,4 +109,12 @@ export function PatientExamsNeeded(patientConditions) {
     }
   }
   return new ExamSummary([...examAggregation], conditionalExamAggregation);
+}
+
+/**
+ * Get the validity period for a given exam
+ * @param {String} exam The name of the exam in question
+ */
+export function ExamValidity(exam) {
+  return GetExamValidity(exam);
 }
