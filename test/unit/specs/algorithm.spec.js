@@ -432,7 +432,7 @@ describe('Testing GetExams() for all cardiovascular diseases in tag.js', () => {
   it('returns the correct array of preop exams for atrial fibrillation', () => {
     result = GetExams(Condition.AtrialFib);
     requiredExams = ['ECG'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for atrial fibrillation to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -441,7 +441,7 @@ describe('Testing GetExams() for all cardiovascular diseases in tag.js', () => {
   it('returns the correct array of examinations for defibrillator', () => {
     result = GetExams(Condition.Defib);
     requiredExams = ['ECG'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for difibrillator to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -450,7 +450,7 @@ describe('Testing GetExams() for all cardiovascular diseases in tag.js', () => {
   it('returns the correct array of examinations for coronary artery disease', () => {
     result = GetExams(Condition.CAD);
     requiredExams = ['ECG'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for coronary artery disease to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -459,7 +459,7 @@ describe('Testing GetExams() for all cardiovascular diseases in tag.js', () => {
   it('returns the correct array of examinations for cardiac stent (< 12 months)', () => {
     result = GetExams(Condition.CardiacStent);
     requiredExams = ['ECG'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for cardiac stent (<12 months) to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -468,7 +468,7 @@ describe('Testing GetExams() for all cardiovascular diseases in tag.js', () => {
   it('returns the correct array of examinations for history of cerebral disease', () => {
     result = GetExams(Condition.CerebralDisease);
     requiredExams = ['ECG'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for history of cerebral disease to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -477,7 +477,7 @@ describe('Testing GetExams() for all cardiovascular diseases in tag.js', () => {
   it('returns the correct array of examinations for history of pulmonary vascular disease', () => {
     result = GetExams(Condition.PulmonaryVascular);
     requiredExams = ['ECG'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for history of pulmonary vascular disease disease to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -486,7 +486,7 @@ describe('Testing GetExams() for all cardiovascular diseases in tag.js', () => {
   it('returns the correct array of examinations for transient heart disease', () => {
     result = GetExams(Condition.Stroke);
     requiredExams = ['ECG'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for transient heart disease to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -495,7 +495,7 @@ describe('Testing GetExams() for all cardiovascular diseases in tag.js', () => {
   it('returns the correct array of examinations for transient heart disease (TIA)', () => {
     result = GetExams(Condition.TIA);
     requiredExams = ['ECG'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for transient heart disease (TIA) to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -504,7 +504,7 @@ describe('Testing GetExams() for all cardiovascular diseases in tag.js', () => {
   it('returns the correct array of examinations for valvular heart disease / valve replacement', () => {
     result = GetExams(Condition.VHD);
     requiredExams = ['ECG'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for valvular heart disease / valve replacement to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -513,7 +513,7 @@ describe('Testing GetExams() for all cardiovascular diseases in tag.js', () => {
   it('returns the correct array of examinations for heart failure', () => {
     result = GetExams(Condition.HeartFail);
     requiredExams = ['ECG', 'CBC', 'Renal Panel (Creat + Lytes)'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for valvular heart failure to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -522,7 +522,7 @@ describe('Testing GetExams() for all cardiovascular diseases in tag.js', () => {
   it('returns the correct array of examinations for peripheral vascular disease (PVD)', () => {
     result = GetExams(Condition.PVD);
     requiredExams = ['ECG', 'Renal Panel (Creat + Lytes)'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for peripheral vascular disease (PVD) to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -533,7 +533,7 @@ describe('Testing GetExams() for all pulmonary diseases in tag.js', () => {
   it('returns the correct array of preop exams for severe COPD, home oxygen, pulmonary HTN', () => {
     result = GetExams(Condition.PulmDisease);
     requiredExams = ['ECG', 'CBC', 'CXR'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for severe COPD, home oxygen, pulmonary HTN to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -544,7 +544,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('returns the correct array of preop exams for Age > 69 years old', () => {
     result = GetExams(Condition.Age);
     requiredExams = ['ECG'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for Age > 69 years old to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -553,7 +553,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('returns the correct array of preop exams for >= 2 risk factors', () => {
     result = GetExams(Condition.Risk);
     requiredExams = ['ECG'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for >= 2 risk factors to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -562,7 +562,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('returns the correct array of preop exams for bleeding disorders (hemophiliac | DVT)', () => {
     result = GetExams(Condition.Bleeding);
     requiredExams = ['G&S', 'CBC', 'PTT/INR'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for bleeding disorders (hemophiliac | DVT) to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -571,7 +571,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('returns the correct array of preop exams for history of anemia', () => {
     result = GetExams(Condition.Anemia);
     requiredExams = ['CBC'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for history of anemia to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -580,7 +580,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('returns the correct array of preop exams for history of active bleeding', () => {
     result = GetExams(Condition.ActiveBleeding);
     requiredExams = ['CBC'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for history of active bleeding to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -589,7 +589,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('returns the correct array of preop exams for kidney disease (on dialysis or at risk of Acute Kidney Injury [AKI])', () => {
     result = GetExams(Condition.KidneyDisease);
     requiredExams = ['ECG', 'CBC', 'Renal Panel (Creat + Lytes)'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for kidney disease (on dialysis or at risk of Acute Kidney Injury [AKI]) to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -598,7 +598,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('returns the correct array of preop exams for diabetes', () => {
     result = GetExams(Condition.Diabetes);
     requiredExams = ['ECG', 'Renal Panel (Creat + Lytes)', 'Gluc'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for diabetes to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -607,7 +607,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('returns the correct array of preop exams for present malignancy / surgery for malignancy', () => {
     result = GetExams(Condition.Malignancy);
     requiredExams = ['CBC', 'CXR'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for present malignancy to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -616,7 +616,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('returns the correct array of preop exams for hepatic disease', () => {
     result = GetExams(Condition.Hepatic);
     requiredExams = ['CBC', 'Renal Panel (Creat + Lytes)', 'PTT/INR', 'LFT'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for hepatic disease to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -625,7 +625,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('returns the correct array of preop exams for history of adrenal disease', () => {
     result = GetExams(Condition.Adrenal);
     requiredExams = ['Renal Panel (Creat + Lytes)'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for history of adrenal disease to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -634,7 +634,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('returns the correct array of preop exams for history of pituitary disease', () => {
     result = GetExams(Condition.Pituitary);
     requiredExams = ['Renal Panel (Creat + Lytes)'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for history of pituitary disease to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -643,7 +643,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('returns the correct array of preop exams for history of major systemic endocrine disease', () => {
     result = GetExams(Condition.Endocrine);
     requiredExams = ['Renal Panel (Creat + Lytes)'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for history of major systemic endocrine disease to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -651,7 +651,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
   it('returns the correct array of preop exams for thyroid disease or on thyroid supplementation', () => {
     result = GetExams(Condition.Thyroid);
     requiredExams = ['TSH'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for thyroid disease or on thyroid supplementation to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -662,7 +662,7 @@ describe('Testing GetExams() for all medication use in tag.js', () => {
   it('returns the correct array of preop exams for use of Digoxin', () => {
     result = GetExams(Condition.Digoxin);
     requiredExams = ['ECG', 'Renal Panel (Creat + Lytes)'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for use of Digoxin to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -671,7 +671,7 @@ describe('Testing GetExams() for all medication use in tag.js', () => {
   it('returns the correct array of preop exams for use of Lithium', () => {
     result = GetExams(Condition.Lithium);
     requiredExams = ['Renal Panel (Creat + Lytes)'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for use of Lithium to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -680,7 +680,7 @@ describe('Testing GetExams() for all medication use in tag.js', () => {
   it('returns the correct array of preop exams for use of Diuretics', () => {
     result = GetExams(Condition.Diuretics);
     requiredExams = ['Renal Panel (Creat + Lytes)'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for use of Diuretics to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -689,7 +689,7 @@ describe('Testing GetExams() for all medication use in tag.js', () => {
   it('returns the correct array of preop exams for use of ACE-I', () => {
     result = GetExams(Condition.ACEI);
     requiredExams = ['Renal Panel (Creat + Lytes)'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for use of ACE-I to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -698,7 +698,7 @@ describe('Testing GetExams() for all medication use in tag.js', () => {
   it('returns the correct array of preop exams for use of ARB', () => {
     result = GetExams(Condition.ARB);
     requiredExams = ['Renal Panel (Creat + Lytes)'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for use of ARB to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -707,7 +707,7 @@ describe('Testing GetExams() for all medication use in tag.js', () => {
   it('returns the correct array of preop exams for use of NSAIDS', () => {
     result = GetExams(Condition.NSAIDS);
     requiredExams = ['Renal Panel (Creat + Lytes)'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for use of NSAIDS to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -716,7 +716,7 @@ describe('Testing GetExams() for all medication use in tag.js', () => {
   it('returns the correct array of preop exams for use of Anticoagulants', () => {
     result = GetExams(Condition.Anticoagulant);
     requiredExams = ['CBC', 'Renal Panel (Creat + Lytes)'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for use of Anticoagulants to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -725,7 +725,7 @@ describe('Testing GetExams() for all medication use in tag.js', () => {
   it('returns the correct array of preop exams for use of Antiplatelet (ASA excluded)', () => {
     result = GetExams(Condition.Antiplatelet);
     requiredExams = ['CBC', 'Renal Panel (Creat + Lytes)'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for use of Antiplatelet (ASA excluded) to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -734,7 +734,7 @@ describe('Testing GetExams() for all medication use in tag.js', () => {
   it('returns the correct array of preop exams for use of systemic steroid used within 6 months', () => {
     result = GetExams(Condition.Steroid);
     requiredExams = ['Renal Panel (Creat + Lytes)', 'Gluc'];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for use of use of systemic steroid used within 6 months to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -790,7 +790,7 @@ describe('Testing GetExams() and GetConditionalExams() with invalid parameters',
   it('returns the correct output if given invalid preopt exam', () => {
     result = GetExams(Condition.DaleDisease);
     requiredExams = [];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for invalid condition to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -799,20 +799,51 @@ describe('Testing GetExams() and GetConditionalExams() with invalid parameters',
   it('returns the correct output if given invalid conditional preopt exam', () => {
     result = GetConditionalExams(Condition.JonDisease);
     requiredExams = [];
-    expect(requiredExams).toEqual(result);
+    expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for invalid condition to match snapshot', () => {
     expect(result).toMatchSnapshot();
   });
 });
 
-// describe('Testing GetConditionalExams() with all conditional comorbidities', () => {
-//   it('returns the correct conditional exams for VHD', () => {
-//     result = GetConditionalExams(Condition.VHD);
-//     expect(result.exams).toEqual([Exam.CBC]);
-//     console.log(result.exams);
-//   });
-//   it('correct array of conditional exams for VHD to match snapshot', () => {
-//     expect(result).toMatchSnapshot();
-//   });
-// });
+describe('Testing GetConditionalExams() with all conditional comorbidities', () => {
+  it('returns the correct conditional exams for VHD', () => {
+    result = GetConditionalExams(Condition.VHD);
+    expect(result[0].exams).toEqual([Exam.CBC]);
+  });
+  it('correct array of conditional exams for VHD to match snapshot', () => {
+    expect(result[0].exams).toMatchSnapshot();
+  });
+
+  it('returns the correct conditional exams for Diabetes', () => {
+    result = GetConditionalExams(Condition.Diabetes);
+    expect(result[0].exams).toEqual([Exam.HbA1C]);
+  });
+  it('correct array of conditional exams for Diabetes to match snapshot', () => {
+    expect(result[0].exams).toMatchSnapshot();
+  });
+
+  it('returns the correct conditional exams for Malignancy', () => {
+    result = GetConditionalExams(Condition.Malignancy);
+    expect(result[0].exams).toEqual([Exam.ECG, Exam.RenPanel, Exam.PTTINR]);
+  });
+  it('correct array of conditional exams for Malignanc to match snapshot', () => {
+    expect(result[0].exams).toMatchSnapshot();
+  });
+
+  it('returns the correct conditional exams for Anticoagulant', () => {
+    result = GetConditionalExams(Condition.Anticoagulant);
+    expect(result[0].exams).toEqual([Exam.PTTINR]);
+  });
+  it('correct array of conditional exams for Anticoagulant to match snapshot', () => {
+    expect(result[0].exams).toMatchSnapshot();
+  });
+
+  it('returns the correct conditional exams for Antiplatelet', () => {
+    result = GetConditionalExams(Condition.Anticoagulant);
+    expect(result[0].exams).toEqual([Exam.PTTINR]);
+  });
+  it('correct array of conditional exams for Antiplatelet to match snapshot', () => {
+    expect(result[0].exams).toMatchSnapshot();
+  });
+});

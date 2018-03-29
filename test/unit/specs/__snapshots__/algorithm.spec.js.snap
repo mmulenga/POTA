@@ -8,14 +8,35 @@ Array [
 ]
 `;
 
+exports[`Testing GetConditionalExams() with all conditional comorbidities correct array of conditional exams for Anticoagulant to match snapshot 1`] = `
+Array [
+  "PTT/INR",
+]
+`;
+
+exports[`Testing GetConditionalExams() with all conditional comorbidities correct array of conditional exams for Antiplatelet to match snapshot 1`] = `
+Array [
+  "PTT/INR",
+]
+`;
+
+exports[`Testing GetConditionalExams() with all conditional comorbidities correct array of conditional exams for Diabetes to match snapshot 1`] = `
+Array [
+  "HbA1C",
+]
+`;
+
+exports[`Testing GetConditionalExams() with all conditional comorbidities correct array of conditional exams for Malignanc to match snapshot 1`] = `
+Array [
+  "ECG",
+  "Renal Panel (Creat + Lytes)",
+  "PTT/INR",
+]
+`;
+
 exports[`Testing GetConditionalExams() with all conditional comorbidities correct array of conditional exams for VHD to match snapshot 1`] = `
 Array [
-  ConditionalExam {
-    "conditionPhrase": "Is valve mechanical?",
-    "exams": Array [
-      "CBC",
-    ],
-  },
+  "CBC",
 ]
 `;
 
