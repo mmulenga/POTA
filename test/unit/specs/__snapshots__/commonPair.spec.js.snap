@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for 2 >= risks + ACEI to match snapshot 1`] = `
+Array [
+  "ECG",
+  "Renal Panel (Creat + Lytes)",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for 2 >= risks + ACEI to match snapshot 2`] = `Array []`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Adrenal + Steroid to match snapshot 1`] = `
+Array [
+  "Renal Panel (Creat + Lytes)",
+  "Gluc",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Adrenal + Steroid to match snapshot 2`] = `Array []`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Atrial Fibrillation + Anticoagulants to match snapshot 1`] = `
+Array [
+  "ECG",
+  "CBC",
+  "Renal Panel (Creat + Lytes)",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Atrial Fibrillation + Anticoagulants to match snapshot 2`] = `
+Array [
+  "PTT/INR",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for AtrialFib + Age > 69 to match snapshot 1`] = `
+Array [
+  "ECG",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for AtrialFib + Age > 69 to match snapshot 2`] = `Array []`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for AtrialFib + VHD to match snapshot 1`] = `
+Array [
+  "ECG",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for AtrialFib + VHD to match snapshot 2`] = `
+Array [
+  "CBC",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Bleeding + Anemia to match snapshot 1`] = `
+Array [
+  "G&S",
+  "CBC",
+  "PTT/INR",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Bleeding + Anemia to match snapshot 2`] = `Array []`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for CAD + CardiacStent to match snapshot 1`] = `
+Array [
+  "ECG",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for CAD + CardiacStent to match snapshot 2`] = `Array []`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for CAD + Diabetes to match snapshot 1`] = `
+Array [
+  "ECG",
+  "Renal Panel (Creat + Lytes)",
+  "Gluc",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for CAD + Diabetes to match snapshot 2`] = `
+Array [
+  "HbA1C",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Defib + Digoxin to match snapshot 1`] = `
+Array [
+  "ECG",
+  "Renal Panel (Creat + Lytes)",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Defib + Digoxin to match snapshot 2`] = `Array []`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Defibrillator + Use of Digoxin to match snapshot 1`] = `
+Array [
+  "ECG",
+  "Renal Panel (Creat + Lytes)",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Defibrillator + Use of Digoxin to match snapshot 2`] = `Array []`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Diabetes + Malignancy to match snapshot 1`] = `
+Array [
+  "ECG",
+  "Renal Panel (Creat + Lytes)",
+  "Gluc",
+  "CBC",
+  "CXR",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Diabetes + Malignancy to match snapshot 2`] = `
+Array [
+  "HbA1C",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Diabetes + Malignancy to match snapshot 3`] = `
+Array [
+  "PTT/INR",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for HeartFail + VHD to match snapshot 1`] = `
+Array [
+  "ECG",
+  "CBC",
+  "Renal Panel (Creat + Lytes)",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for HeartFail + VHD to match snapshot 2`] = `Array []`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for KidneyDisease + Diabetes to match snapshot 1`] = `
+Array [
+  "ECG",
+  "CBC",
+  "Renal Panel (Creat + Lytes)",
+  "Gluc",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for KidneyDisease + Diabetes to match snapshot 2`] = `
+Array [
+  "HbA1C",
+]
+`;
