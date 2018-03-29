@@ -54,16 +54,16 @@ Tag(Condition.Steroid, [Exam.RenPanel, Exam.Gluc]);
 
 
 /** Validity periods for exams */
-Validity(Condition.GnS, '1 month (or local lab/surgical policy)');
-Validity(Condition.ECG, '3 months');
-Validity(Condition.CBC, '3 months');
-Validity(Condition.RenPanel, '3 months');
-Validity(Condition.PTTINR, '3 months');
-Validity(Condition.LFT, '3 months');
-Validity(Condition.Gluc, '3 months');
-Validity(Condition.HbA1C, '3 months');
-Validity(Condition.CXR, '6 months');
-Validity(Condition.TSH, '6 months');
+Validity(Exam.GnS, 'should be done within 1 month of surgery (or by local lab/surgical policy)');
+Validity(Exam.ECG, 'should be done within 3 months of surgery');
+Validity(Exam.CBC, 'should be done within 3 months of surgery');
+Validity(Exam.RenPanel, 'should be done within 3 months of surgery');
+Validity(Exam.PTTINR, 'should be done within 3 months of surgery');
+Validity(Exam.LFT, 'should be done within 3 months of surgery');
+Validity(Exam.Gluc, 'should be done within 3 months of surgery');
+Validity(Exam.HbA1C, 'should be done within 3 months of surgery');
+Validity(Exam.CXR, 'should be done within 6 months of surgery');
+Validity(Exam.TSH, 'should be done within 6 months of surgery');
 
 
 /**
