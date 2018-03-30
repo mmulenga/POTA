@@ -85,7 +85,7 @@ export default {
    visibility: hidden;
    opacity: 0;
    transition: opacity ease-in-out 0.38s, visibility ease-in-out 0.38s;
-   background-color: rgba(0, 0, 0, 0.5);
+   background-color: rgba(0, 0, 0, 0.678);
  }
 
  .vue-drawer > .main > .active {
@@ -115,4 +115,5 @@ export default {
    visibility: visible;
    transform: translateX(0%);
  }
+
 </style>

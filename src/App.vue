@@ -36,20 +36,17 @@
           <StatusComponent
              :resultArray="resultArray"/>
         </div>
-        <h1 class="my-4"> Pre-Op Testing App </h1>
-        <div class="navbar navbar-expand-lg navbar-light bg-light">
-          <button type="button" class="btn btn-primary status" v-on:click="drawerToggle">
-            Patient Status</button>
-        </div>
+        <h1 class="my-4 bg-light"> Pre-Op Testing App </h1>
         <div class="col-md-12">
           <MobileComoListComponent
           v-on:clickEvent="updateArray"
           v-on:update-glossary="updateDescription"
           v-on:clear-glossary="clearDescription"/>
         </div>
-        <ResultModalComponent class="results navbar navbar-expand-lg navbar-light bg-light"
-          :resultArray="resultArray"/>
         </drawer>
+        <ResultModalComponent class="navbar navbar-expand-lg navbar-light bg-light results"
+          :resultArray="resultArray"
+          @drawer-toggle="drawerToggle"/>
     </div>
   </div>
 </template>
@@ -138,9 +135,14 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-.layout{
-    width: 300px;
-  }
+
+.my-4 {
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+.layout {
+  width: 300px;
+}
 .results {
   position: fixed;
 }
@@ -149,4 +151,5 @@ button.close {
   padding-right: 10px;
   font-size: 50px;
 }
+
 </style>

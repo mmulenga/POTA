@@ -2,6 +2,11 @@
   <div class="container pt-3">
     <button id="modal_submit" type="button" class="btn btn-primary"
      v-on:click="getExams(); showModal();"> Submit </button>
+     <!-- For Mobile -->
+     <div class="d-md-none d-lg-none d-xl-none">
+      <button type="button" class="btn btn-success" v-on:click="drawerToggle">
+      Patient Status</button>
+     </div>
     <button id="reset" type="button" class="btn btn-danger"
      v-on:click="clearResultArray();"> Reset </button>
     <!-- Modal -->
@@ -90,6 +95,10 @@ export default {
     clearResultArray: function clearResultArray() {
       this.$parent.resultArray = [];
     },
+
+    drawerToggle: function drawerToggle() {
+      this.$emit('drawer-toggle');
+    },
   },
 };
 </script>
@@ -101,9 +110,10 @@ export default {
 
   .pt-3 {
     background: rgba(0, 0, 0, 0);
-    bottom: 1px;
+    bottom: 0px;
     width: 100%;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
   }
+
 
 </style>

@@ -265,6 +265,7 @@ export default {
 </script>
 
 <style scoped>
+
 .half {
   height: 500px;
   overflow: scroll;
