@@ -8,7 +8,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title"> Tests </h5>
+            <h5 class="modal-title"> Required Tests </h5>
             <button id="modal_close" type="button" class="close" v-on:click="showModal()">
               <span> &times; </span>
             </button>
@@ -17,7 +17,7 @@
             <p id="exams"
             v-for="item in exams"
             :key="item" >
-              {{ item }}
+              <b>{{ item }}</b>
               {{ getValidity(item)}}
             </p>
             <div id="conditional-exams" class="text-left"
@@ -25,11 +25,11 @@
             :key="item">
               <br/>
               <p>
-              {{ item.conditionPhrase }}
-              If so:
+              <b>{{ item.conditionPhrase }}</b>
+              <b>If so:</b>
               </p>
               <p v-for="examName in item.exams" :key=examName>
-                {{ examName }}
+                <b>{{ examName }}</b>
                 {{ getValidity(examName) }}
               </p>
             </div>
