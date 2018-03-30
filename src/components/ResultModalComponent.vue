@@ -1,10 +1,10 @@
 <template>
   <div class="container pt-3">
-    <button id="modal_submit" type="button" class="btn btn-primary"
+    <button id="modal_submit" type="button" class="btn btn-success"
      v-on:click="getExams(); showModal();"> Submit </button>
      <!-- For Mobile -->
      <div class="d-md-none d-lg-none d-xl-none">
-      <button type="button" class="btn btn-success" v-on:click="drawerToggle">
+      <button type="button" class="btn btn-primary" v-on:click="drawerToggle">
       Patient Status</button>
      </div>
     <button id="reset" type="button" class="btn btn-danger"
