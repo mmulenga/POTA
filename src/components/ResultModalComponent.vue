@@ -17,7 +17,8 @@
             <p id="exams"
             v-for="item in exams"
             :key="item" >
-              {{ item + " -" + getValidity(item)}}
+              {{ item }}
+              <b>{{" -" + getValidity(item)}}</b>
             </p>
             <div id="conditional-exams" class="text-left"
             v-for="item in conditionalExams"
@@ -28,7 +29,8 @@
               If so:
               </p>
               <p v-for="examName in item.exams" :key=examName>
-                {{ examName + " -" + getValidity(examName)}}
+                {{ examName }}
+                <b>{{" -" + getValidity(item)}}</b>
               </p>
             </div>
           </div>
