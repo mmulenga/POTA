@@ -8,7 +8,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title"> Tests </h5>
+            <h5 class="modal-title"> Required Tests </h5>
             <button id="modal_close" type="button" class="close" v-on:click="showModal()">
               <span> &times; </span>
             </button>
@@ -17,18 +17,20 @@
             <p id="exams"
             v-for="item in exams"
             :key="item" >
-              {{ item }}
+              <b>{{ item }}</b>
+              {{ getValidity(item)}}
             </p>
             <div id="conditional-exams" class="text-left"
             v-for="item in conditionalExams"
             :key="item">
               <br/>
               <p>
-              {{ item.conditionPhrase }}
-              If so:
+              <b>{{ item.conditionPhrase }}</b>
+              <b>If so:</b>
               </p>
               <p v-for="examName in item.exams" :key=examName>
-                {{ examName }}
+                <b>{{ examName }}</b>
+                {{ getValidity(examName) }}
               </p>
             </div>
           </div>
@@ -44,7 +46,7 @@
 </template>
 
 <script>
-import { PatientExamsNeeded } from '@/PreopRecommendation';
+import { PatientExamsNeeded, ExamValidity } from '@/PreopRecommendation';
 
 export default {
   name: 'ResultModalComponent',
@@ -79,6 +81,15 @@ export default {
       const examSummary = PatientExamsNeeded(this.resultArray);
       this.exams = examSummary.exams;
       this.conditionalExams = examSummary.conditionalExams;
+    },
+
+    /**
+     * Gets a validity period
+     * @param String exam
+     * @returns validity period for that exam
+     */
+    getValidity: function getValidity(exam) {
+      return ExamValidity(exam);
     },
   },
 };
