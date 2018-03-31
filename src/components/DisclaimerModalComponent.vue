@@ -46,10 +46,7 @@ export default {
   #modal_box {
     background: rgba(0,0,0, 0.9);
     overflow: scroll;
-<<<<<<< HEAD
-    padding: 10px;
-=======
     font-size: 19px;
->>>>>>> 2ed55cd93225854dcdb1a99e3a6787ff0a992dae
+    padding: 10px;
   }
 </style>
