@@ -11,11 +11,12 @@
         </div>
         <!-- hide desktop como list when screen is smaller than md-->
         <div class="col-md-6 d-none d-md-block">
-            <ComoListComponent
+            <ComoListComponent ref="ComoListComponent"
             v-on:clickEvent="updateArray"
             v-on:hoverEvent="updateDescription"/>
             <ResultModalComponent
-             :resultArray="resultArray"/>
+             :resultArray="resultArray"
+             v-on:reset-toggle="resetComoList"/>
         </div>
         <!-- hide desktop glossary when screen is smaller than md-->
         <div class="col-md-3 d-none d-md-block">
@@ -40,7 +41,7 @@
           </div>
           <h1 class="my-4 bg-light"> Pre-Op Testing App </h1>
           <div class="col-md-12">
-            <MobileComoListComponent
+            <MobileComoListComponent ref="MobileComoListComponent"
             v-on:clickEvent="updateArray"
             v-on:update-glossary="updateDescription"
             v-on:clear-glossary="clearDescription"
@@ -51,7 +52,8 @@
           :hiddenButtons="buttonsHidden"
           :resultArray="resultArray"
           v-on:drawer-toggle="drawerToggle"
-          v-on:hide-buttons="buttonsToggle"/>
+          v-on:hide-buttons="buttonsToggle"
+          v-on:reset-toggle="resetComoList"/>
       </div>
     </div>
   </div>
@@ -132,6 +134,11 @@ export default {
 
     buttonsToggle: function buttonsToggle() {
       this.buttonsHidden = !this.buttonsHidden;
+    },
+
+    resetComoList: function resetComoList() {
+      this.$refs.MobileComoListComponent.resetData();
+      this.$refs.ComoListComponent.resetData();
     },
   },
 };

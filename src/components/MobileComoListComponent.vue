@@ -304,7 +304,13 @@ export default {
         this.isVisible = false;
       }
     },
+
+    resetData: function resetData() {
+      Object.assign(this.$data, this.$options.data.call(this));
+      this.$emit('Test');
+    },
   },
+
 };
 </script>
 

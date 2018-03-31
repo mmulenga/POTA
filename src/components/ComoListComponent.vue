@@ -257,8 +257,11 @@ export default {
       if (item.glossary === 'No extra information.') {
         return false;
       }
-
       return true;
+    },
+    resetData: function resetData() {
+      Object.assign(this.$data, this.$options.data.call(this));
+      this.$emit('Test');
     },
   },
 };

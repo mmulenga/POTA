@@ -10,7 +10,7 @@
         </button>
      </div>
     <button id="reset" type="button" class="btn btn-danger"
-     v-on:click="clearResultArray();"> Reset </button>
+     v-on:click="clearResultArray(), toggleReset() ;"> Reset </button>
     <!-- Modal -->
     <div id="modal_box" class="modal fade" :class="{ 'show': isVisible, 'd-block': isVisible }"
      tabindex="-1">
@@ -107,6 +107,10 @@ export default {
 
     drawerToggle: function drawerToggle() {
       this.$emit('drawer-toggle');
+    },
+
+    toggleReset: function toggleReset() {
+      this.$emit('reset-toggle');
     },
   },
 };
