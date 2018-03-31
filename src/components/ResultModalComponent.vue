@@ -1,11 +1,13 @@
 <template>
-  <div class="container pt-3">
+  <div class="container pt-3" :class="hiddenButtons ? 'inactive' : ''">
     <button id="modal_submit" type="button" class="btn btn-success"
      v-on:click="getExams(); showModal();"> Submit </button>
      <!-- For Mobile -->
      <div class="d-md-none d-lg-none d-xl-none">
-      <button type="button" class="btn btn-primary" v-on:click="drawerToggle">
-      Patient Status</button>
+      <button type="button" class="btn btn-primary"
+        v-on:click="drawerToggle(), hideButtons()">
+        Patient Status
+        </button>
      </div>
     <button id="reset" type="button" class="btn btn-danger"
      v-on:click="clearResultArray();"> Reset </button>
@@ -57,6 +59,10 @@ export default {
   name: 'ResultModalComponent',
   props: {
     resultArray: Array,
+    hiddenButtons: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -76,6 +82,9 @@ export default {
       } else {
         this.isVisible = false;
       }
+    },
+    hideButtons: function hideButtons() {
+      this.$emit('hide-buttons');
     },
     /**
      * Populates the exams array using the resultArray passed down
@@ -101,6 +110,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style scoped>
@@ -115,5 +125,8 @@ export default {
     padding-bottom: 15px;
   }
 
+  .inactive {
+    visibility: hidden;
+  }
 
 </style>

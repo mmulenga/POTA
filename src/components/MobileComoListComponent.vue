@@ -234,10 +234,12 @@ export default {
       const array = comorbidityArray;
 
       this.$emit('update-glossary', { currentComorbiditySelection: array[index].glossary });
+      this.$emit('toggle-buttons');
     },
 
     clearComorbidityOnHover: function clearComorbidityOnHover() {
       this.$emit('clear-glossary', { currentComorbiditySelection: '' });
+      this.$emit('toggle-buttons');
     },
 
     /**
@@ -310,9 +312,90 @@ export default {
 
 .half {
   overflow: scroll;
-  height: 30%;
-  padding-top: 10px;
+  height: 20%;
 }
+
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+/* Portrait and Landscape */
+@media screen
+  and (min-device-width: 320px)
+  and (max-device-height: 640px) {
+    .half {
+      overflow: scroll;
+      height: 15%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-height: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .half {
+      overflow: scroll;
+      height: 12.5%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-height: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .half {
+      overflow: scroll;
+      height: 17%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+}
+
+/* ----------- Pixel 2 XL ----------- */
+/* Portrait and Landscape */
+@media screen
+  and (min-device-width: 411px)
+  and (max-device-height: 823px) {
+    .half {
+      overflow: scroll;
+      height: 23%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+}
+
+/* ----------- Pixel 2 ----------- */
+/* Portrait and Landscape */
+@media screen
+  and (min-device-width: 411px)
+  and (max-device-height: 731px) {
+    .half {
+      overflow: scroll;
+      height: 20%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+}
+
+/* ----------- iPhone 6+, 6S+, 7+ and 8 ----------- */
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-height: 736px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .half {
+      overflow: scroll;
+      height: 20%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -344,6 +427,7 @@ pre{
   text-align: left;
   font-size: 16px;
   margin-right: 12px;
+  display: inline;
   white-space: pre-wrap;       /* Since CSS 2.1 */
   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
   white-space: -pre-wrap;      /* Opera 4-6 */

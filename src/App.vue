@@ -25,28 +25,34 @@
     </div>
     <!-- visible-sm and down  (or hidden-md and up) -->
     <div class="d-md-none d-lg-none d-xl-none">
+      <div @ontouch="prevent">
       <!-- side drawer that contains the list of comos selected -->
-      <drawer :show="drawerShow"
-      @on-hide="hideDrawer">
-        <div class="layout" slot="drawer" >
-          <button id="drawer_close" type="button" class="close" v-on:click="hideDrawer">
-              <span> &times; </span>
-            </button>
-          <!-- list component -->
-          <StatusComponent
-             :resultArray="resultArray"/>
-        </div>
-        <h1 class="my-4 bg-light"> Pre-Op Testing App </h1>
-        <div class="col-md-12">
-          <MobileComoListComponent
-          v-on:clickEvent="updateArray"
-          v-on:update-glossary="updateDescription"
-          v-on:clear-glossary="clearDescription"/>
-        </div>
-        </drawer>
+        <drawer :show="drawerShow"
+        @on-hide="drawerToggle(), buttonsToggle()">
+          <div class="layout" slot="drawer" >
+            <button id="drawer_close" type="button" class="close"
+            v-on:click="drawerToggle(), buttonsToggle() ">
+                <span> &times; </span>
+              </button>
+            <!-- list component -->
+            <StatusComponent
+              :resultArray="resultArray"/>
+          </div>
+          <h1 class="my-4 bg-light"> Pre-Op Testing App </h1>
+          <div class="col-md-12">
+            <MobileComoListComponent
+            v-on:clickEvent="updateArray"
+            v-on:update-glossary="updateDescription"
+            v-on:clear-glossary="clearDescription"
+            v-on:toggle-buttons="buttonsToggle"/>
+          </div>
+          </drawer>
         <ResultModalComponent class="navbar navbar-expand-lg navbar-light bg-light results"
+          :hiddenButtons="buttonsHidden"
           :resultArray="resultArray"
-          @drawer-toggle="drawerToggle"/>
+          v-on:drawer-toggle="drawerToggle"
+          v-on:hide-buttons="buttonsToggle"/>
+      </div>
     </div>
   </div>
 </template>
@@ -77,9 +83,16 @@ export default {
       resultArray: [],
       glossaryEntry: '',
       drawerShow: false,
+      buttonsHidden: false,
     };
   },
   methods: {
+
+    prevent: function prevent(event) {
+      event.preventDefault();
+      event.stopPropagation();
+    },
+
     /**
     * Updates the resultArray used by the Patient Status window with data
     * recieved from child ComoListComponent.
@@ -111,17 +124,14 @@ export default {
     },
 
     /**
-     * displays the drawer.
+     * Displays and hides the drawer.
      */
     drawerToggle: function drawerToggle() {
       this.drawerShow = !this.drawerShow;
     },
 
-    /**
-     * hides the drawer.
-     */
-    hideDrawer: function hideDrawer() {
-      this.drawerShow = false;
+    buttonsToggle: function buttonsToggle() {
+      this.buttonsHidden = !this.buttonsHidden;
     },
   },
 };
