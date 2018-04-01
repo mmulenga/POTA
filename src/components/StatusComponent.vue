@@ -1,6 +1,6 @@
 <template id="status">
     <div class="status">
-        <h1>Patient Status</h1>
+        <h1>Patient Status:</h1>
         <div class="list">
             <!-- this is the other place binding for the props is being used -->
             <ul v-bind:resultArray="resultArray"
@@ -33,6 +33,7 @@ export default {
 <style>
     h1{
         font-size: 2em;
+        padding: 15px;
     }
     .list{
         height: 500px;

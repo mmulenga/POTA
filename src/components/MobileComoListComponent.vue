@@ -7,8 +7,8 @@
           <li :id="generateID('li', 'cv', index)"
           class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in cardioDiseases"
-          :key="item.comorbidity"
-          v-on:click="aggregateConditions(cardioDiseases, index)">
+          v-on:click="aggregateConditions(cardioDiseases, index)"
+          :key="item.comorbidity">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -22,7 +22,8 @@
               <div v-if="hasEntry(item)" class="col-1">
                 <span class="badge badge-pill badge-secondary"
                 v-on:mouseover="passComorbidityOnHover(cardioDiseases, index)"
-                v-on:mouseleave="clearComorbidityOnHover()">i</span>
+                v-on:click="showModal(), aggregateConditions(cardioDiseases, index);"
+                >i</span>
               </div>
             </div>
           </li>
@@ -30,8 +31,8 @@
           <li :id="generateID('li', 'pd', index)"
           class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in pulmoDiseases"
-          :key="item.comorbidity"
-          v-on:click="aggregateConditions(pulmoDiseases, index)">
+          v-on:click="aggregateConditions(pulmoDiseases, index);"
+          :key="item.comorbidity">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -45,7 +46,8 @@
               <div v-if="hasEntry(item)" class="col-1">
                 <span class="badge badge-pill badge-secondary"
                 v-on:mouseover="passComorbidityOnHover(pulmoDiseases, index)"
-                v-on:mouseleave="clearComorbidityOnHover()">i</span>
+                v-on:click="showModal(), aggregateConditions(pulmoDiseases, index);"
+                >i</span>
               </div>
             </div>
           </li>
@@ -53,8 +55,8 @@
           <li :id="generateID('li', 'other', index)"
           class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in otherDiseases"
-          :key="item.comorbidity"
-          v-on:click="aggregateConditions(otherDiseases, index)">
+          v-on:click="aggregateConditions(otherDiseases, index)"
+          :key="item.comorbidity">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -68,7 +70,8 @@
               <div v-if="hasEntry(item)" class="col-1">
                 <span class="badge badge-pill badge-secondary"
                 v-on:mouseover="passComorbidityOnHover(otherDiseases, index)"
-                v-on:mouseleave="clearComorbidityOnHover()">i</span>
+                v-on:click="showModal(), aggregateConditions(otherDiseases, index);"
+                >i</span>
               </div>
             </div>
           </li>
@@ -76,8 +79,8 @@
           <li :id="generateID('li', 'med', index)"
           class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in medications"
-          :key="item.comorbidity"
-          v-on:click="aggregateConditions(medications, index)">
+          v-on:click="aggregateConditions(medications, index)"
+          :key="item.comorbidity">
             <div class="row">
               <div class="col-2">
                 <div class="form-check">
@@ -91,12 +94,43 @@
               <div v-if="hasEntry(item)" class="col-1">
                 <span class="badge badge-pill badge-secondary"
                 v-on:mouseover="passComorbidityOnHover(medications, index)"
-                v-on:mouseleave="clearComorbidityOnHover()">i</span>
+                v-on:click="showModal(), aggregateConditions(medications, index);"
+                >i</span>
               </div>
             </div>
           </li>
         </ul>
       </div>
+
+    <!-- Modal -->
+    <div id="modal_box" class="modal fade" :class="{ 'show': isVisible, 'd-block': isVisible }"
+     tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"> Glossary </h5>
+            <button id="modal_close" type="button" class="close" v-on:click="showModal(),
+             clearComorbidityOnHover()">
+              <span> &times; </span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- when i is clicked, get the definition to go into modal body-->
+            <pre>
+            <!-- This is because App is the parent of Drawer -->
+            <p>{{this.$parent.$parent.glossaryEntry}}</p>
+            </pre>
+          </div>
+          <div class="modal-footer">
+            <!-- closes glossary modal and clears current glossary -->
+            <button id="modal_okay text-center" type="button" class="btn btn-primary"
+            v-on:click="showModal(), clearComorbidityOnHover();">
+              Okay
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </template>
@@ -105,9 +139,10 @@
 import { Condition, Glossary } from '@/constants';
 
 export default {
-  name: 'ComoListComponent',
+  name: 'MobileComoListComponent',
   data() {
     return {
+      isVisible: false,
       // The array we are going to pass up to the parent component
       // this gets populated with the current selections
       currentComorbiditySelection: Object,
@@ -198,11 +233,17 @@ export default {
     passComorbidityOnHover: function passComorbidityOnHover(comorbidityArray, index) {
       const array = comorbidityArray;
 
-      this.$emit('hoverEvent', { currentComorbiditySelection: array[index].glossary });
+      this.$emit('update-glossary', { currentComorbiditySelection: array[index].glossary });
+      this.$emit('toggle-buttons');
     },
-
+    /**
+     * Emits an event, signalling to the parent an update to
+     * the parent's data is needed. Clears the currentComorbiditySelection
+     * and toggle the resultsModalComponent buttons.
+     */
     clearComorbidityOnHover: function clearComorbidityOnHover() {
-      this.$emit('hoverEvent', { currentComorbiditySelection: '' });
+      this.$emit('clear-glossary', { currentComorbiditySelection: '' });
+      this.$emit('toggle-buttons');
     },
 
     /**
@@ -257,25 +298,116 @@ export default {
       if (item.glossary === 'No extra information.') {
         return false;
       }
+
       return true;
     },
-
     /**
-     * Resets the data component of ComoListComponent.
-
+     * Displays the required preoperative tests modal
+     */
+    showModal: function showModal() {
+      if (this.isVisible === false) {
+        this.isVisible = true;
+      } else {
+        this.isVisible = false;
+      }
+    },
+    /**
+     * Resets the data component of MobileComoListComponent.
      */
     resetData: function resetData() {
       Object.assign(this.$data, this.$options.data.call(this));
     },
   },
+
 };
 </script>
 
 <style scoped>
 
 .half {
-  height: 500px;
   overflow: scroll;
+  height: 20%;
+}
+
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+/* Portrait and Landscape */
+@media screen
+  and (min-device-width: 320px)
+  and (max-device-height: 640px) {
+    .half {
+      overflow: scroll;
+      height: 15%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-height: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .half {
+      overflow: scroll;
+      height: 12.5%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-height: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .half {
+      overflow: scroll;
+      height: 17%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+}
+
+/* ----------- Pixel 2 XL ----------- */
+/* Portrait and Landscape */
+@media screen
+  and (min-device-width: 411px)
+  and (max-device-height: 823px) {
+    .half {
+      overflow: scroll;
+      height: 23%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+}
+
+/* ----------- Pixel 2 ----------- */
+/* Portrait and Landscape */
+@media screen
+  and (min-device-width: 411px)
+  and (max-device-height: 731px) {
+    .half {
+      overflow: scroll;
+      height: 20%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+}
+
+/* ----------- iPhone 6+, 6S+, 7+ and 8 ----------- */
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-height: 736px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .half {
+      overflow: scroll;
+      height: 20%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
 }
 
 .pointer {
@@ -283,10 +415,37 @@ export default {
 }
 
 .badge-pill {
-  font-size: large;
+    font-size: medium;
+}
+
+.col-1 {
+  padding-left: 0px;
+}
+
+.col-0 {
+  padding-left: 0px;
 }
 
 .lg-item {
-  padding: 2.00rem;
+  padding: 1.50rem;
+}
+
+.form-check-input {
+  width: 15px;
+  height: 15px;
+}
+
+pre{
+  -webkit-padding-start: 0;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  text-align: left;
+  font-size: 16px;
+  margin-right: 12px;
+  display: inline;
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 </style>

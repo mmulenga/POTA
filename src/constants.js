@@ -115,11 +115,11 @@ export const Glossary = {
   /* Medications */
   Digoxin: 'No extra information.',
   Lithium: 'No extra information.',
-  Diuretics: 'No extra information.',
-  ACEI: 'No extra information.',
-  ARB: 'No extra information.',
+  Diuretics: 'Furosemide; Hydrochlorothiazide; Acetazolamide; Spironolactone; Chlorthalidone',
+  ACEI: 'Captopril; Enalapril; Ramipril; Trandolapril; Perindopril',
+  ARB: 'Valsartan; Candesartan; Irbesartan; Telmisartan; Losartan; Olmesartan',
   NSAIDS: 'No extra information.',
-  Anticoagulant: 'No extra information.',
-  Antiplatelet: 'No extra information.',
-  Steroid: 'No extra information.',
+  Anticoagulant: 'Warfarin; Heparins; Dabigatran; Apixaban; Rivaroxaban',
+  Antiplatelet: 'Clopidogrel; Ticagrelor; Prasugrel; Aspirin/Dipyridamole (Aggrenox)',
+  Steroid: 'Prednisone; Prednisolone; Methylprednisolone; Hydrocortisone; Dexamethasone; Oral Budesonide',
 };

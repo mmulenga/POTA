@@ -45,5 +45,8 @@ export default {
 <style>
   #modal_box {
     background: rgba(0,0,0, 0.9);
+    overflow: scroll;
+    font-size: 19px;
+    padding: 10px;
   }
 </style>

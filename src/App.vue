@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <DisclaimerModalComponent></DisclaimerModalComponent>
-    <h1 class="my-4"> Pre-Opt Testing App </h1>
+    <h1 class="my-4"> Pre-Op Testing App </h1>
       <div class="row">
         <!-- hide the status component when screen is smaller than md-->
         <div class="col-md-3 d-none d-md-block">
@@ -11,11 +11,12 @@
         </div>
         <!-- hide desktop como list when screen is smaller than md-->
         <div class="col-md-6 d-none d-md-block">
-            <ComoListComponent
+            <ComoListComponent ref="ComoListComponent"
             v-on:clickEvent="updateArray"
             v-on:hoverEvent="updateDescription"/>
             <ResultModalComponent
-             :resultArray="resultArray"/>
+             :resultArray="resultArray"
+             v-on:reset-toggle="resetComoList"/>
         </div>
         <!-- hide desktop glossary when screen is smaller than md-->
         <div class="col-md-3 d-none d-md-block">
@@ -25,23 +26,35 @@
     </div>
     <!-- visible-sm and down  (or hidden-md and up) -->
     <div class="d-md-none d-lg-none d-xl-none">
-      <div class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="btn btn-primary float-right"
-              type="button" data-toggle="collapse" data-target="#collapseExample"
-              aria-expanded="false" aria-controls="collapseExample">
-              Glossary</button>
-            <button class="btn btn-primary float-left"
-              type="button" data-toggle="collapse" data-target="#collapseExample"
-              aria-expanded="false" aria-controls="collapseExample">
-              Patient Status</button>
-      </div>
-      <div class="col-md-12">
-            <ComoListComponent
+      <div @ontouch="prevent">
+      <!-- side drawer that contains the list of comos selected -->
+        <drawer :show="drawerShow"
+        @on-hide="drawerToggle(), buttonsToggle()">
+          <div class="layout" slot="drawer" >
+            <button id="drawer_close" type="button" class="close"
+            v-on:click="drawerToggle(), buttonsToggle() ">
+                <span> &times; </span>
+              </button>
+            <!-- list component -->
+            <StatusComponent
+              :resultArray="resultArray"/>
+          </div>
+          <h1 class="my-4 bg-light"> Pre-Op Testing App </h1>
+          <div class="col-md-12">
+            <MobileComoListComponent ref="MobileComoListComponent"
             v-on:clickEvent="updateArray"
-            v-on:hoverEvent="updateDescription"/>
-            <ResultModalComponent
-             :resultArray="resultArray"/>
-        </div>
+            v-on:update-glossary="updateDescription"
+            v-on:clear-glossary="clearDescription"
+            v-on:toggle-buttons="buttonsToggle"/>
+          </div>
+          </drawer>
+        <ResultModalComponent class="navbar navbar-expand-lg navbar-light bg-light results"
+          :hiddenButtons="buttonsHidden"
+          :resultArray="resultArray"
+          v-on:drawer-toggle="drawerToggle"
+          v-on:hide-buttons="buttonsToggle"
+          v-on:reset-toggle="resetComoList"/>
+      </div>
     </div>
   </div>
 </template>
@@ -49,27 +62,42 @@
 <script>
 import DisclaimerModalComponent from '@/components/DisclaimerModalComponent';
 import ComoListComponent from '@/components/ComoListComponent';
+import MobileComoListComponent from '@/components/MobileComoListComponent';
 import GlossaryComponent from '@/components/GlossaryComponent';
 import StatusComponent from '@/components/StatusComponent';
 import ResultModalComponent from '@/components/ResultModalComponent';
+import Drawer from '@/components/Drawer';
 
 export default {
   name: 'App',
   components: {
     DisclaimerModalComponent,
     ComoListComponent,
+    MobileComoListComponent,
     GlossaryComponent,
     StatusComponent,
     ResultModalComponent,
+    Drawer,
   },
   data() {
     return {
       framework_name: 'VueJS',
       resultArray: [],
       glossaryEntry: '',
+      drawerShow: false,
+      buttonsHidden: false,
     };
   },
   methods: {
+    /**
+     * This should prevent scrolling for App component.
+     *
+     */
+    prevent: function prevent(event) {
+      event.preventDefault();
+      event.stopPropagation();
+    },
+
     /**
     * Updates the resultArray used by the Patient Status window with data
     * recieved from child ComoListComponent.
@@ -92,6 +120,37 @@ export default {
     updateDescription: function updateDescription(comorbidity) {
       this.glossaryEntry = comorbidity.currentComorbiditySelection;
     },
+    /**
+    * Clears the glossaryEntry used by the Glossary Window data
+    * received from child ComoListComponent.
+    */
+    clearDescription: function clearDescription() {
+      this.glossaryEntry = '';
+    },
+
+    /**
+     * Displays and hides the drawer.
+     */
+    drawerToggle: function drawerToggle() {
+      this.drawerShow = !this.drawerShow;
+    },
+
+    /**
+     * Displays and hides the ResultsModalComponent
+     * when the drawer or glossary is displayed.
+     */
+    buttonsToggle: function buttonsToggle() {
+      this.buttonsHidden = !this.buttonsHidden;
+    },
+
+    /**
+     * Resets the data of MobileComoListComponent and
+     * ComoListComponent.
+     */
+    resetComoList: function resetComoList() {
+      this.$refs.MobileComoListComponent.resetData();
+      this.$refs.ComoListComponent.resetData();
+    },
   },
 };
 </script>
@@ -104,4 +163,21 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
+.my-4 {
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+.layout {
+  width: 300px;
+}
+.results {
+  position: fixed;
+}
+
+button.close {
+  padding-right: 10px;
+  font-size: 50px;
+}
+
 </style>
