@@ -75,17 +75,17 @@ Array [
   Object {
     "check": false,
     "comorbidity": "Diuretics",
-    "glossary": "No extra information.",
+    "glossary": "Furosemide; Hydrochlorothiazide; Acetazolamide; Spironolactone; Chlorthalidone",
   },
   Object {
     "check": false,
     "comorbidity": "ACE-I",
-    "glossary": "No extra information.",
+    "glossary": "Captopril; Enalapril; Ramipril; Trandolapril; Perindopril",
   },
   Object {
     "check": false,
     "comorbidity": "ARB",
-    "glossary": "No extra information.",
+    "glossary": "Valsartan; Candesartan; Irbesartan; Telmisartan; Losartan; Olmesartan",
   },
   Object {
     "check": false,
@@ -95,17 +95,17 @@ Array [
   Object {
     "check": false,
     "comorbidity": "Anticoagulants",
-    "glossary": "No extra information.",
+    "glossary": "Warfarin; Heparins; Dabigatran; Apixaban; Rivaroxaban",
   },
   Object {
     "check": false,
     "comorbidity": "Antiplatelet (ASA excluded)",
-    "glossary": "No extra information.",
+    "glossary": "Clopidogrel; Ticagrelor; Prasugrel; Aspirin/Dipyridamole (Aggrenox)",
   },
   Object {
     "check": false,
     "comorbidity": "Systemic steroid use within 6 months",
-    "glossary": "No extra information.",
+    "glossary": "Prednisone; Prednisolone; Methylprednisolone; Hydrocortisone; Dexamethasone; Oral Budesonide",
   },
 ]
 `;
