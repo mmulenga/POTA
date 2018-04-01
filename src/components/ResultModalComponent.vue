@@ -83,8 +83,8 @@ export default {
         this.isVisible = false;
       }
     },
-    /** 
-     * Emits a "hide-buttons" event to the parent component. 
+    /**
+     * Emits a "hide-buttons" event to the parent component.
      */
     hideButtons: function hideButtons() {
       this.$emit('hide-buttons');
@@ -108,13 +108,13 @@ export default {
       this.$parent.resultArray = [];
     },
     /**
-     * Emits a "drawer-toggle" event to the parent component. 
+     * Emits a "drawer-toggle" event to the parent component.
      */
     drawerToggle: function drawerToggle() {
       this.$emit('drawer-toggle');
     },
     /**
-     * Emits a "reset-toggle" event to the parent component. 
+     * Emits a "reset-toggle" event to the parent component.
      */
     toggleReset: function toggleReset() {
       this.$emit('reset-toggle');

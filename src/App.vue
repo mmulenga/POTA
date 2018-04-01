@@ -91,7 +91,7 @@ export default {
   methods: {
     /**
      * This should prevent scrolling for App component.
-     * 
+     *
      */
     prevent: function prevent(event) {
       event.preventDefault();
@@ -143,7 +143,7 @@ export default {
       this.buttonsHidden = !this.buttonsHidden;
     },
 
-    /** 
+    /**
      * Resets the data of MobileComoListComponent and
      * ComoListComponent.
      */
