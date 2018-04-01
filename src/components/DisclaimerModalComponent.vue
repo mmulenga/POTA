@@ -4,7 +4,7 @@
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"> <b>Disclaimer</b> </h5>
+        <h5 class="modal-title"> Disclaimer </h5>
       </div>
       <div class="modal-body">
         <p>* For patients having ultra-low risk surgery (i.e., GI endoscopy and cataracts
