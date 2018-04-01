@@ -4,7 +4,7 @@
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"> Disclaimer </h5>
+        <h5 class="modal-title"> <b>Disclaimer</b> </h5>
       </div>
       <div class="modal-body">
         <p>* For patients having ultra-low risk surgery (i.e., GI endoscopy and cataracts
@@ -46,7 +46,7 @@ export default {
   #modal_box {
     background: rgba(0,0,0, 0.9);
     overflow: scroll;
-    font-size: 19px;
+    font-size: 18px;
     padding: 10px;
   }
 </style>
