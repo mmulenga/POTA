@@ -259,9 +259,13 @@ export default {
       }
       return true;
     },
+
+    /**
+     * Resets the data component of ComoListComponent.
+
+     */
     resetData: function resetData() {
       Object.assign(this.$data, this.$options.data.call(this));
-      this.$emit('Test');
     },
   },
 };

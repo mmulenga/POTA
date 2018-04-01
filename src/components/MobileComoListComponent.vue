@@ -236,7 +236,11 @@ export default {
       this.$emit('update-glossary', { currentComorbiditySelection: array[index].glossary });
       this.$emit('toggle-buttons');
     },
-
+    /**
+     * Emits an event, signalling to the parent an update to
+     * the parent's data is needed. Clears the currentComorbiditySelection
+     * and toggle the resultsModalComponent buttons.
+     */
     clearComorbidityOnHover: function clearComorbidityOnHover() {
       this.$emit('clear-glossary', { currentComorbiditySelection: '' });
       this.$emit('toggle-buttons');
@@ -297,6 +301,9 @@ export default {
 
       return true;
     },
+    /**
+     * Displays the required preoperative tests modal
+     */
     showModal: function showModal() {
       if (this.isVisible === false) {
         this.isVisible = true;
@@ -304,10 +311,11 @@ export default {
         this.isVisible = false;
       }
     },
-
+    /**
+     * Resets the data component of MobileComoListComponent.
+     */
     resetData: function resetData() {
       Object.assign(this.$data, this.$options.data.call(this));
-      this.$emit('Test');
     },
   },
 

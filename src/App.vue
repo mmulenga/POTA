@@ -89,7 +89,10 @@ export default {
     };
   },
   methods: {
-
+    /**
+     * This should prevent scrolling for App component.
+     * 
+     */
     prevent: function prevent(event) {
       event.preventDefault();
       event.stopPropagation();
@@ -132,10 +135,18 @@ export default {
       this.drawerShow = !this.drawerShow;
     },
 
+    /**
+     * Displays and hides the ResultsModalComponent
+     * when the drawer or glossary is displayed.
+     */
     buttonsToggle: function buttonsToggle() {
       this.buttonsHidden = !this.buttonsHidden;
     },
 
+    /** 
+     * Resets the data of MobileComoListComponent and
+     * ComoListComponent.
+     */
     resetComoList: function resetComoList() {
       this.$refs.MobileComoListComponent.resetData();
       this.$refs.ComoListComponent.resetData();
