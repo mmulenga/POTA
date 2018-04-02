@@ -5,7 +5,7 @@ module.exports = {
     browser
       .url(browser.globals.devServerURL)
       .waitForElementVisible('body', 1000)
-
+      
       .waitForElementPresent('#modal_submit', 1000)
 
       .waitForElementPresent('#cv_AtrialFib', 500)
@@ -45,7 +45,7 @@ module.exports = {
       .waitForElementPresent('#med_Anticoagulant', 500)
       .waitForElementPresent('#med_Antiplatelet', 500)
       .waitForElementPresent('#med_Steroid', 500)
-
+    
       .end();
   }
 };

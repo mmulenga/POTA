@@ -1,15 +1,15 @@
 /* eslint-disable */
 
 module.exports = {
-  'Demo test Google' : function (browser) {
+  'Demo test Google': function (browser) {
     browser
       .url(browser.globals.devServerURL)
       .waitForElementVisible('body', 1000)
-
+      
       .waitForElementVisible('#understanding', 1000)
       .click('#understanding')
-      .waitForElementNotVisible('#understanding',500)
-      
+      .waitForElementNotVisible('#understanding', 500)
+
       .waitForElementPresent('#modal_submit', 1000)
 
       .waitForElementPresent('#cv_AtrialFib', 500)
@@ -27,6 +27,7 @@ module.exports = {
 
       .waitForElementPresent('#pd_PulmDisease', 500)
       .click('#pd_PulmDisease')
+
       .waitForElementPresent('#other_Age', 500)
       .waitForElementPresent('#other_Risk', 500)
       .waitForElementPresent('#other_Bleeding', 500)
@@ -57,9 +58,9 @@ module.exports = {
       .waitForElementPresent('#modal_submit', 1000)
       .click('#modal_submit')
 
-      .waitForElementVisible('#modal_okay',1000)
+      .waitForElementVisible('#modal_okay', 1000)
       .click('#modal_okay')
-
+      
       .end();
-  }
+  },
 };
