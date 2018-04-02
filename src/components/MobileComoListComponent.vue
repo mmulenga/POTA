@@ -325,8 +325,9 @@ export default {
 <style scoped>
 
 .half {
-  overflow: scroll;
-  height: 20%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  height: 16%;
 }
 
 /* ----------- Galaxy S4, S5 and Note 3 ----------- */
@@ -335,8 +336,9 @@ export default {
   and (min-device-width: 320px)
   and (max-device-height: 640px) {
     .half {
-      overflow: scroll;
-      height: 15%;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      height: 11.8%;
       padding-top: 10px;
       padding-bottom: 10px;
     }
@@ -349,8 +351,9 @@ export default {
   and (max-device-height: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
     .half {
-      overflow: scroll;
-      height: 12.5%;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      height: 10.5%;
       padding-top: 10px;
       padding-bottom: 10px;
     }
@@ -363,8 +366,9 @@ export default {
   and (max-device-height: 667px)
   and (-webkit-min-device-pixel-ratio: 2) {
     .half {
-      overflow: scroll;
-      height: 17%;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      height: 15%;
       padding-top: 10px;
       padding-bottom: 10px;
     }
@@ -376,8 +380,9 @@ export default {
   and (min-device-width: 411px)
   and (max-device-height: 823px) {
     .half {
-      overflow: scroll;
-      height: 23%;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      height: 20%;
       padding-top: 10px;
       padding-bottom: 10px;
     }
@@ -389,8 +394,9 @@ export default {
   and (min-device-width: 411px)
   and (max-device-height: 731px) {
     .half {
-      overflow: scroll;
-      height: 20%;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      height: 18%;
       padding-top: 10px;
       padding-bottom: 10px;
     }
@@ -403,8 +409,9 @@ export default {
   and (max-device-height: 736px)
   and (-webkit-min-device-pixel-ratio: 2) {
     .half {
-      overflow: scroll;
-      height: 20%;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      height: 16%;
       padding-top: 10px;
       padding-bottom: 10px;
     }
@@ -448,4 +455,5 @@ pre{
   white-space: -o-pre-wrap;    /* Opera 7 */
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
+
 </style>

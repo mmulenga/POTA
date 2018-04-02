@@ -45,7 +45,8 @@ export default {
 <style>
   #modal_box {
     background: rgba(0,0,0, 0.9);
-    overflow: scroll;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     font-size: 18px;
     padding: 10px;
   }

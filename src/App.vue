@@ -15,8 +15,8 @@
             v-on:clickEvent="updateArray"
             v-on:hoverEvent="updateDescription"/>
             <ResultModalComponent
-             :resultArray="resultArray"
-             v-on:reset-toggle="resetComoList"/>
+            :resultArray="resultArray"
+            v-on:reset-toggle="resetComoList"/>
         </div>
         <!-- hide desktop glossary when screen is smaller than md-->
         <div class="col-md-3 d-none d-md-block">
@@ -26,13 +26,14 @@
     </div>
     <!-- visible-sm and down  (or hidden-md and up) -->
     <div class="d-md-none d-lg-none d-xl-none">
-      <div @ontouch="prevent">
+      <div>
       <!-- side drawer that contains the list of comos selected -->
-        <drawer :show="drawerShow"
-        @on-hide="drawerToggle(), buttonsToggle()">
+        <drawer :show="drawerShow "
+        v-on:on-hide="drawerToggle(), buttonsToggle(), resetScrollPosition()"
+        v-on:submit-exams="submitExams">
           <div class="layout" slot="drawer" >
             <button id="drawer_close" type="button" class="close"
-            v-on:click="drawerToggle(), buttonsToggle() ">
+            v-on:click="drawerToggle(), buttonsToggle()">
                 <span> &times; </span>
               </button>
             <!-- list component -->
@@ -40,7 +41,7 @@
               :resultArray="resultArray"/>
           </div>
           <h1 class="my-4 bg-light"> Pre-Op Testing App </h1>
-          <div class="col-md-12">
+          <div class="col-md-12" style="overflow: auto">
             <MobileComoListComponent ref="MobileComoListComponent"
             v-on:clickEvent="updateArray"
             v-on:update-glossary="updateDescription"
@@ -48,15 +49,17 @@
             v-on:toggle-buttons="buttonsToggle"/>
           </div>
           </drawer>
-        <ResultModalComponent class="navbar navbar-expand-lg navbar-light bg-light results"
-          :hiddenButtons="buttonsHidden"
-          :resultArray="resultArray"
-          v-on:drawer-toggle="drawerToggle"
-          v-on:hide-buttons="buttonsToggle"
-          v-on:reset-toggle="resetComoList"/>
       </div>
-    </div>
+      <ResultModalComponent ref="ResultModalComponent"
+      class="navbar navbar-expand-lg navbar-light bg-light results"
+      :hiddenButtons="buttonsHidden"
+      :resultArray="resultArray"
+      v-on:drawer-toggle="drawerToggle"
+      v-on:hide-buttons="buttonsToggle"
+      v-on:reset-toggle="resetComoList"
+      v-on:reset-scroll-position="resetScrollPosition"/>
   </div>
+    </div>
 </template>
 
 <script>
@@ -89,15 +92,6 @@ export default {
     };
   },
   methods: {
-    /**
-     * This should prevent scrolling for App component.
-     *
-     */
-    prevent: function prevent(event) {
-      event.preventDefault();
-      event.stopPropagation();
-    },
-
     /**
     * Updates the resultArray used by the Patient Status window with data
     * recieved from child ComoListComponent.
@@ -150,6 +144,28 @@ export default {
     resetComoList: function resetComoList() {
       this.$refs.MobileComoListComponent.resetData();
       this.$refs.ComoListComponent.resetData();
+    },
+    /**
+     * Sets the scroll position of the exam modal to 0,
+     * which resets it to the top if user previously
+     * scrolled down.
+     */
+    resetScrollPosition: function resetScrollPosition() {
+      const tests = this.$el.querySelector('.show');
+      if (tests !== null) {
+        tests.scrollTop = 0;
+      }
+    },
+    /**
+    * This function is for the patient status drawer's submit button.
+    * After recieving a "submit-exams" from the child, exams modal will
+    * pop up showing all the required exams.
+    */
+    submitExams: function submitExams() {
+      this.drawerToggle();
+      this.buttonsToggle();
+      this.$refs.ResultModalComponent.getExams();
+      this.$refs.ResultModalComponent.showModal();
     },
   },
 };

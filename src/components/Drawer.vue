@@ -6,12 +6,17 @@
     <!-- main body -->
     <slot></slot>
     <!-- mask -->
-    <div class="mask" :class="show ? 'active' : ''" @click="hideMask"></div>
+    <div class="mask" :class="show ? 'active' : ''" @click="hideMask(),
+    resetScrollPosition()"></div>
   </div>
   <div class="drawer"
   :class="['drawer-left', show ? 'active' : '']" >
     <!-- drawer -->
     <slot name="drawer"></slot>
+    <div class="submit">
+      <button id="modal_submit" type="button" class="btn btn-success"
+      @click="submitExams"> Submit </button>
+    </div>
   </div>
 </div>
 </template>
@@ -51,6 +56,9 @@ export default {
      */
     hideMask() {
       this.$emit('on-hide');
+    },
+    submitExams: function submitExams() {
+      this.$emit('submit-exams');
     },
   },
 };
@@ -116,4 +124,12 @@ export default {
    transform: translateX(0%);
  }
 
+  .submit {
+    position: fixed;
+    left: 0;
+    bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+  }
 </style>

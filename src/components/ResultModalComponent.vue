@@ -18,9 +18,6 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title"> Required Tests </h5>
-            <button id="modal_close" type="button" class="close" v-on:click="showModal()">
-              <span> &times; </span>
-            </button>
           </div>
           <div class="modal-body">
             <p id="exams"
@@ -44,7 +41,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button id="modal_okay" type="button" class="btn btn-primary" v-on:click="showModal">
+            <button id="modal_okay" type="button" class="btn btn-primary"
+            v-on:click="showModal(), resetScrollPosition()">
               Okay
             </button>
           </div>
@@ -119,16 +117,25 @@ export default {
       this.$parent.resultArray = [];
     },
     /**
-     * Emits a "drawer-toggle" event to the parent component.
+     * Emits a "drawer-toggle" event to the parent component to
+     * toggle the patient status drawer.
      */
     drawerToggle: function drawerToggle() {
       this.$emit('drawer-toggle');
     },
     /**
-     * Emits a "reset-toggle" event to the parent component.
+     * Emits a "reset-toggle" event to the parent component to reset
+     * the ComoListComponent's data
      */
     toggleReset: function toggleReset() {
       this.$emit('reset-toggle');
+    },
+    /**
+    * Emits a "reset-scroll-position" event to the parent component to reset
+    * the scroll position of the exam modal.
+    */
+    resetScrollPosition: function resetScrollPosition() {
+      this.$emit('reset-scroll-position');
     },
   },
 };
