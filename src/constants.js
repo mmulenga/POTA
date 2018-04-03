@@ -106,7 +106,7 @@ export const Glossary = {
              '• Sheehan syndrome. \n' +
              '• Growth hormone deficiency. \n' +
              '• Hyper/hypo pituitarism. \n',
-  Endocrine: '(Excluding Diabeties) \n' +
+  Endocrine: '(Excluding Diabetes) \n' +
              '• Parathyroid disease \n' +
              '• Addison’s disease \n' +
              '• Cushing’s syndrome \n' +

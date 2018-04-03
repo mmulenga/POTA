@@ -17,10 +17,50 @@ module.exports = {
       .assert.hidden('#understanding')
       .assert.hidden('#modal_box')
 
+      // Checking if hover glossary works
+      .moveToElement('#pd_PulmDisease > div.row > div.col-1', 40, 0)
+      .assert.containsText('pre.pt-0', 'Spirometric',
+        'Checking if hover glossary works for <#pd_PulmDisease>')
 
-      // .moveToElement('span.badge.badge-pill.badge-secondary')
-      // .assert.containsText('pre.pt-0', 'Spirometric')
+      .moveToElement('#other_Bleeding > div.row > div.col-1', 40, 0)
+      .assert.containsText('pre.pt-0', 'bleeding',
+        'Checking if hover glossary works for <#other_Bleeding>')
 
+      .moveToElement('#other_Hepatic > div.row > div.col-1', 40, 0)
+      .assert.containsText('pre.pt-0', 'Alcohol',
+        'Checking if hover glossary works for <#other_Hepatic>')
+
+      .moveToElement('#other_Pituitary > div.row > div.col-1', 40, 0)
+      .assert.containsText('pre.pt-0', 'Acromegaly',
+        'Checking if hover glossary works for <#other_Pituitary>')
+
+      .moveToElement('#other_Endocrine > div.row > div.col-1', 40, 0)
+      .assert.containsText('pre.pt-0', 'Parathyroid',
+        'Checking if hover glossary works for <#other_Endocrine>')
+
+      .moveToElement('#med_Diuretics > div.row > div.col-1', 40, 0)
+      .assert.containsText('pre.pt-0', 'Furosemide',
+        'Checking if hover glossary works for <#med_Diuretics>')
+
+      .moveToElement('#med_ACEI > div.row > div.col-1', 40, 0)
+      .assert.containsText('pre.pt-0', 'Captopril',
+        'Checking if hover glossary works for <#med_ACEI>')
+
+      .moveToElement('#med_ARB > div.row > div.col-1', 40, 0)
+      .assert.containsText('pre.pt-0', 'Valsartan',
+        'Checking if hover glossary works for <#med_ARB>')
+
+      .moveToElement('#med_Anticoagulant > div.row > div.col-1', 40, 0)
+      .assert.containsText('pre.pt-0', 'Warfarin',
+        'Checking if hover glossary works for <#med_Anticoagulant>')
+
+      .moveToElement('#med_Antiplatelet > div.row > div.col-1', 40, 0)
+      .assert.containsText('pre.pt-0', 'Clopidogrel',
+        'Checking if hover glossary works for <#med_Antiplatelet>')
+
+      .moveToElement('#med_Steroid > div.row > div.col-1', 40, 0)
+      .assert.containsText('pre.pt-0', 'Prednisone',
+        'Checking if hover glossary works for <#med_Steroid>')
 
       // Test Case 1
 
@@ -186,7 +226,7 @@ module.exports = {
 
       // .click('#cv_checkbox_AtrialFib')
 
-      .pause(5000)
+      // .pause(5000)
 
 
       // .assert.visible('#modal_submit')
