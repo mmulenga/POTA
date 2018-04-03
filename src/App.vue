@@ -6,29 +6,35 @@
         <!-- hide the status component when screen is smaller than md-->
         <div class="col-md-3 d-none d-md-block">
             <StatusComponent
-             :resultArray="resultArray"/>
+            v-if="isMobile()"
+            :resultArray="resultArray"/>
              <!-- This is the the bind to the child component-->
         </div>
         <!-- hide desktop como list when screen is smaller than md-->
         <div class="col-md-6 d-none d-md-block">
-            <ComoListComponent ref="ComoListComponent"
+            <ComoListComponent
+            v-if="isMobile()"
+            ref="ComoListComponent"
             v-on:clickEvent="updateArray"
             v-on:hoverEvent="updateDescription"/>
             <ResultModalComponent
+            v-if="isMobile()"
             :resultArray="resultArray"
             v-on:reset-toggle="resetComoList"/>
         </div>
         <!-- hide desktop glossary when screen is smaller than md-->
         <div class="col-md-3 d-none d-md-block">
             <GlossaryComponent
-             :glossaryEntry="glossaryEntry"/>
+            v-if="isMobile()"
+            :glossaryEntry="glossaryEntry"/>
         </div>
     </div>
     <!-- visible-sm and down  (or hidden-md and up) -->
     <div class="d-md-none d-lg-none d-xl-none">
       <div>
       <!-- side drawer that contains the list of comos selected -->
-        <drawer :show="drawerShow "
+        <drawer v-if="!isMobile()"
+        :show="drawerShow "
         v-on:on-hide="drawerToggle(), buttonsToggle(), resetScrollPosition()"
         v-on:submit-exams="submitExams">
           <div class="layout" slot="drawer" >
@@ -50,7 +56,9 @@
           </div>
           </drawer>
       </div>
-      <ResultModalComponent ref="ResultModalComponent"
+      <ResultModalComponent
+      v-if="!isMobile()"
+      ref="ResultModalComponent"
       class="navbar navbar-expand-lg navbar-light bg-light results"
       :hiddenButtons="buttonsHidden"
       :resultArray="resultArray"
@@ -166,6 +174,9 @@ export default {
       this.buttonsToggle();
       this.$refs.ResultModalComponent.getExams();
       this.$refs.ResultModalComponent.showModal();
+    },
+    isMobile: function isMobile() {
+      return !(navigator.userAgent.indexOf('Mobile') !== -1);
     },
   },
 };
