@@ -1,6 +1,4 @@
-// Singleton data, not a class
-<<<<<<< HEAD
-import { Tag, GetExams, GetConditionalExams, ConditionalExam, Validity, GetExamValidity } from '@/tag';
+import { Tag, Validity } from '@/tag';
 import { Condition, Exam } from '@/constants';
 
 /** Tag definitions
@@ -8,7 +6,12 @@ import { Condition, Exam } from '@/constants';
  * A third, optional argument may be passed to include any conditional exams
  * The format for this third argument is: { 'ConditionPhrase?': [Exams if True] }
  * Define all tags here and they will be loaded into the system on import
+ *
+ * Format:
+ * Tag(Condition.NAME, [Exam.NAME],
+  { 'Is this requirement met?': [Exam.NAME] });
  */
+
 /* Cardiovascular Diseases */
 Tag(Condition.AtrialFib, [Exam.ECG]);
 Tag(Condition.Defib, [Exam.ECG]);
@@ -32,7 +35,7 @@ Tag(Condition.Anemia, [Exam.CBC]);
 Tag(Condition.ActiveBleeding, [Exam.CBC]);
 Tag(Condition.KidneyDisease, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
 Tag(Condition.Diabetes, [Exam.ECG, Exam.RenPanel, Exam.Gluc],
-  { 'Is patient diabetic?': [Exam.HbA1C] });
+  { 'Has patient gone at least 3 months since an Hb1AC?': [Exam.HbA1C] });
 Tag(Condition.Malignancy, [Exam.CBC, Exam.CXR],
   { 'Is patient on chemo?': [Exam.ECG, Exam.RenPanel, Exam.PTTINR] });
 Tag(Condition.Hepatic, [Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.LFT]);
@@ -54,7 +57,9 @@ Tag(Condition.Antiplatelet, [Exam.CBC, Exam.RenPanel],
 Tag(Condition.Steroid, [Exam.RenPanel, Exam.Gluc]);
 
 
-/** Validity periods for exams */
+/** Defining the validity periods for exams before surgery
+ * The format is Validity(Exam.NAME, 'explanation of validity period');
+ */
 Validity(Exam.GnS, 'should be done within 1 month of surgery (or by local lab/surgical policy)');
 Validity(Exam.ECG, 'should be done within 3 months of surgery');
 Validity(Exam.CBC, 'should be done within 3 months of surgery');
@@ -65,61 +70,3 @@ Validity(Exam.Gluc, 'should be done within 3 months of surgery');
 Validity(Exam.HbA1C, 'should be done within 3 months of surgery');
 Validity(Exam.CXR, 'should be done within 6 months of surgery');
 Validity(Exam.TSH, 'should be done within 6 months of surgery');
-
-=======
-import '@/configuration';
-import { GetExams, GetConditionalExams, ConditionalExam, GetExamValidity } from '@/tag';
->>>>>>> origin/develop
-
-/**
- * ExamSummary is a simple data struct with two properties:
- * @param exams {String[]}: a list of exams to be performed
- * @param conditionalExams {ConditionalExam[]} a list of ConditionalExams to be optionally performed
- */
-export class ExamSummary {
-  constructor(exams, conditionalExams) {
-    this.exams = exams;
-    this.conditionalExams = conditionalExams;
-  }
-}
-
-/**
- * Given a list of patient conditions, return an ExamSummary object
- * The ConditionalExams returned will be prefiltered so as to not include any
- * already required exams or any redundant conditional phrases (i.e. no new exams)
- * @param {String[]} patientConditions
- * @returns {ExamSummary} Summary of examinations to be performed
- */
-export function PatientExamsNeeded(patientConditions) {
-  const examAggregation = new Set();
-  const conditionalExamAggregation = [];
-  for (let i = 0; i < patientConditions.length; i += 1) {
-    const exams = GetExams(patientConditions[i]);
-    for (let j = 0; j < exams.length; j += 1) {
-      examAggregation.add(exams[j]);
-    }
-  }
-  for (let i = 0; i < patientConditions.length; i += 1) {
-    const conditionalExams = GetConditionalExams(patientConditions[i]);
-    for (let j = 0; j < conditionalExams.length; j += 1) {
-      // Make a new copy of the ConditionalExam with any preconsidered exams filtered out
-      const ce = new ConditionalExam(
-        conditionalExams[j].conditionPhrase,
-        conditionalExams[j].exams.filter(e => !(examAggregation.has(e))),
-      );
-      // Only aggregate this conditionalExam if it is not entirely preconsidered
-      if (ce.exams.length > 0) {
-        conditionalExamAggregation.push(ce);
-      }
-    }
-  }
-  return new ExamSummary([...examAggregation], conditionalExamAggregation);
-}
-
-/**
- * Get the validity period for a given exam
- * @param {String} exam The name of the exam in question
- */
-export function ExamValidity(exam) {
-  return GetExamValidity(exam);
-}
