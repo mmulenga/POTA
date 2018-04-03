@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing ExamValidity() with all preop examinations correct validity period for CBC to match snapshot 1`] = `"should be done within 3 months of surgery"`;
+
+exports[`Testing ExamValidity() with all preop examinations correct validity period for CXR to match snapshot 1`] = `"should be done within 6 months of surgery"`;
+
+exports[`Testing ExamValidity() with all preop examinations correct validity period for ECG to match snapshot 1`] = `"should be done within 3 months of surgery"`;
+
+exports[`Testing ExamValidity() with all preop examinations correct validity period for Gluc to match snapshot 1`] = `"should be done within 3 months of surgery"`;
+
+exports[`Testing ExamValidity() with all preop examinations correct validity period for GnS to match snapshot 1`] = `"should be done within 1 month of surgery (or by local lab/surgical policy)"`;
+
+exports[`Testing ExamValidity() with all preop examinations correct validity period for HbA1C to match snapshot 1`] = `"should be done within 3 months of surgery"`;
+
+exports[`Testing ExamValidity() with all preop examinations correct validity period for LFT to match snapshot 1`] = `"should be done within 3 months of surgery"`;
+
+exports[`Testing ExamValidity() with all preop examinations correct validity period for PTTINR to match snapshot 1`] = `"should be done within 3 months of surgery"`;
+
+exports[`Testing ExamValidity() with all preop examinations correct validity period for RenPanel to match snapshot 1`] = `"should be done within 3 months of surgery"`;
+
+exports[`Testing ExamValidity() with all preop examinations correct validity period for TSH to match snapshot 1`] = `"should be done within 6 months of surgery"`;
+
+exports[`Testing GetExamValidity() with all preop examinations correct validity period for CBC to match snapshot 1`] = `"should be done within 3 months of surgery"`;
+
+exports[`Testing GetExamValidity() with all preop examinations correct validity period for CXR to match snapshot 1`] = `"should be done within 6 months of surgery"`;
+
+exports[`Testing GetExamValidity() with all preop examinations correct validity period for ECG to match snapshot 1`] = `"should be done within 3 months of surgery"`;
+
+exports[`Testing GetExamValidity() with all preop examinations correct validity period for Gluc to match snapshot 1`] = `"should be done within 3 months of surgery"`;
+
+exports[`Testing GetExamValidity() with all preop examinations correct validity period for GnS to match snapshot 1`] = `"should be done within 1 month of surgery (or by local lab/surgical policy)"`;
+
+exports[`Testing GetExamValidity() with all preop examinations correct validity period for HbA1C to match snapshot 1`] = `"should be done within 3 months of surgery"`;
+
+exports[`Testing GetExamValidity() with all preop examinations correct validity period for LFT to match snapshot 1`] = `"should be done within 3 months of surgery"`;
+
+exports[`Testing GetExamValidity() with all preop examinations correct validity period for PTTINR to match snapshot 1`] = `"should be done within 3 months of surgery"`;
+
+exports[`Testing GetExamValidity() with all preop examinations correct validity period for RenPanel to match snapshot 1`] = `"should be done within 3 months of surgery"`;
+
+exports[`Testing GetExamValidity() with all preop examinations correct validity period for TSH to match snapshot 1`] = `"should be done within 6 months of surgery"`;
