@@ -6,34 +6,34 @@
         <!-- hide the status component when screen is smaller than md-->
         <div class="col-md-3 d-none d-md-block">
             <StatusComponent
-            v-if="isMobile()"
+            v-if="!isMobile()"
             :resultArray="resultArray"/>
              <!-- This is the the bind to the child component-->
         </div>
         <!-- hide desktop como list when screen is smaller than md-->
         <div class="col-md-6 d-none d-md-block">
             <ComoListComponent
-            v-if="isMobile()"
+            v-if="!isMobile()"
             ref="ComoListComponent"
             v-on:clickEvent="updateArray"
             v-on:hoverEvent="updateDescription"/>
             <ResultModalComponent
-            v-if="isMobile()"
+            v-if="!isMobile()"
             :resultArray="resultArray"
             v-on:reset-toggle="resetComoList"/>
         </div>
         <!-- hide desktop glossary when screen is smaller than md-->
         <div class="col-md-3 d-none d-md-block">
             <GlossaryComponent
-            v-if="isMobile()"
+            v-if="!isMobile()"
             :glossaryEntry="glossaryEntry"/>
         </div>
     </div>
     <!-- visible-sm and down  (or hidden-md and up) -->
-    <div class="d-md-none d-lg-none d-xl-none">
+    <div v-if="isMobile">
       <div>
       <!-- side drawer that contains the list of comos selected -->
-        <drawer v-if="!isMobile()"
+        <drawer v-if="isMobile()"
         :show="drawerShow "
         v-on:on-hide="drawerToggle(), buttonsToggle(), resetScrollPosition()"
         v-on:submit-exams="submitExams">
@@ -57,7 +57,7 @@
           </drawer>
       </div>
       <ResultModalComponent
-      v-if="!isMobile()"
+      v-if="isMobile()"
       ref="ResultModalComponent"
       class="navbar navbar-expand-lg navbar-light bg-light results"
       :hiddenButtons="buttonsHidden"
@@ -176,7 +176,7 @@ export default {
       this.$refs.ResultModalComponent.showModal();
     },
     isMobile: function isMobile() {
-      return !(navigator.userAgent.indexOf('Mobile') !== -1);
+      return (navigator.userAgent.indexOf('Mobile') !== -1);
     },
   },
 };

@@ -3,7 +3,7 @@
     <button id="modal_submit" type="button" class="btn btn-success"
      v-on:click="getExams(); showModal();"> Submit </button>
      <!-- For Mobile -->
-     <div class="d-md-none d-lg-none d-xl-none">
+     <div v-if="isMobile()">
       <button type="button" class="btn btn-primary"
         v-on:click="drawerToggle(), hideButtons()">
         Patient Status
@@ -136,6 +136,9 @@ export default {
     */
     resetScrollPosition: function resetScrollPosition() {
       this.$emit('reset-scroll-position');
+    },
+    isMobile: function isMobile() {
+      return (navigator.userAgent.indexOf('Mobile') !== -1);
     },
   },
 };
