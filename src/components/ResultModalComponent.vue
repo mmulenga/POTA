@@ -10,7 +10,7 @@
         </button>
      </div>
     <button id="reset" type="button" class="btn btn-danger"
-     v-on:click="clearResultArray(), toggleReset() ;"> Reset </button>
+     v-on:click="clearResultArray(), toggleReset()"> Reset </button>
     <!-- Modal -->
     <div id="modal_box" class="modal fade" :class="{ 'show': isVisible, 'd-block': isVisible }"
      tabindex="-1">
@@ -129,13 +129,6 @@ export default {
      */
     toggleReset: function toggleReset() {
       this.$emit('reset-toggle');
-    },
-    /**
-    * Emits a "reset-scroll-position" event to the parent component to reset
-    * the scroll position of the exam modal.
-    */
-    resetScrollPosition: function resetScrollPosition() {
-      this.$emit('reset-scroll-position');
     },
     isMobile: function isMobile() {
       return (navigator.userAgent.indexOf('Mobile') !== -1);

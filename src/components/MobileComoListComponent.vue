@@ -124,7 +124,7 @@
           <div class="modal-footer">
             <!-- closes glossary modal and clears current glossary -->
             <button id="modal_okay text-center" type="button" class="btn btn-primary"
-            v-on:click="showModal(), clearComorbidityOnHover();">
+            v-on:click="showModal(), clearComorbidityOnHover(), resetScrollPosition()">
               Okay
             </button>
           </div>
@@ -316,6 +316,13 @@ export default {
      */
     resetData: function resetData() {
       Object.assign(this.$data, this.$options.data.call(this));
+    },
+    /**
+    * Emits a "reset-scroll-position" event to the parent component to reset
+    * the scroll position of the exam modal.
+    */
+    resetScrollPosition: function resetScrollPosition() {
+      this.$emit('reset-scroll-position');
     },
   },
 

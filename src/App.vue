@@ -52,7 +52,8 @@
             v-on:clickEvent="updateArray"
             v-on:update-glossary="updateDescription"
             v-on:clear-glossary="clearDescription"
-            v-on:toggle-buttons="buttonsToggle"/>
+            v-on:toggle-buttons="buttonsToggle"
+            v-on:reset-scroll-position="resetScrollPosition"/>
           </div>
           </drawer>
       </div>
@@ -64,8 +65,7 @@
       :resultArray="resultArray"
       v-on:drawer-toggle="drawerToggle"
       v-on:hide-buttons="buttonsToggle"
-      v-on:reset-toggle="resetComoList"
-      v-on:reset-scroll-position="resetScrollPosition"/>
+      v-on:reset-toggle="resetMobileComoList"/>
   </div>
     </div>
 </template>
@@ -146,12 +146,16 @@ export default {
     },
 
     /**
-     * Resets the data of MobileComoListComponent and
-     * ComoListComponent.
+     * Resets the data of ComoListComponent.
      */
     resetComoList: function resetComoList() {
-      this.$refs.MobileComoListComponent.resetData();
       this.$refs.ComoListComponent.resetData();
+    },
+    /**
+     * Resets the data of MobileComoListComponent.
+     */
+    resetMobileComoList: function resetMobileComoList() {
+      this.$refs.MobileComoListComponent.resetData();
     },
     /**
      * Sets the scroll position of the exam modal to 0,
