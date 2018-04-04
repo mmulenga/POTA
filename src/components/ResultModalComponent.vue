@@ -1,6 +1,6 @@
 <template>
   <div class="pt-3" :class="hiddenButtons ? 'inactive' : ''">
-    <button id="modal_submit" type="button" class="btn btn-success"
+    <button :id="generateSubmitID()" type="button" class="btn btn-success"
      v-on:click="getExams(); showModal();"> Submit </button>
      <!-- For Mobile -->
      <div v-if="isMobile()">
@@ -9,7 +9,7 @@
         Patient Status
         </button>
      </div>
-    <button id="reset" type="button" class="btn btn-danger"
+    <button :id="generateResetID()" type="button" class="btn btn-danger"
      v-on:click="clearResultArray(), toggleReset()"> Reset </button>
     <!-- Modal -->
     <div id="modal_box" class="modal fade" :class="{ 'show': isVisible, 'd-block': isVisible }"
@@ -131,6 +131,20 @@ export default {
     },
     isMobile: function isMobile() {
       return (navigator.userAgent.indexOf('Mobile') !== -1);
+    },
+    generateSubmitID: function generateSubmitID() {
+      if (this.isMobile()) {
+        return 'mobile_submit_button';
+      }
+
+      return 'submit_button';
+    },
+    generateResetID: function generateResetID() {
+      if (this.isMobile()) {
+        return 'mobile_reset_button';
+      }
+
+      return 'reset_button';
     },
   },
 };

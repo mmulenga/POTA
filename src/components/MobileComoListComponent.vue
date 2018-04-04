@@ -263,31 +263,31 @@ export default {
       switch (prefix) {
         case 'cv':
           if (element === 'li') {
-            return `cv_${conditionNameArray[index]}`;
+            return `mobile_cv_${conditionNameArray[index]}`;
           }
 
-          return `cv_checkbox_${conditionNameArray[index]}`;
+          return `mobile_cv_checkbox_${conditionNameArray[index]}`;
 
         case 'pd':
           if (element === 'li') {
-            return `pd_${conditionNameArray[index + pdIndex]}`;
+            return `mobile_pd_${conditionNameArray[index + pdIndex]}`;
           }
 
-          return `pd_checkbox_${conditionNameArray[index + pdIndex]}`;
+          return `mobile_pd_checkbox_${conditionNameArray[index + pdIndex]}`;
 
         case 'other':
           if (element === 'li') {
-            return `other_${conditionNameArray[index + otherIndex]}`;
+            return `mobile_other_${conditionNameArray[index + otherIndex]}`;
           }
 
-          return `other_checkbox_${conditionNameArray[index + otherIndex]}`;
+          return `mobile_other_checkbox_${conditionNameArray[index + otherIndex]}`;
 
         default:
           if (element === 'li') {
-            return `med_${conditionNameArray[index + medIndex]}`;
+            return `mobile_med_${conditionNameArray[index + medIndex]}`;
           }
 
-          return `med_checkbox_${conditionNameArray[index + medIndex]}`;
+          return `mobile_med_checkbox_${conditionNameArray[index + medIndex]}`;
       }
     },
     /**
