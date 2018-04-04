@@ -4,14 +4,14 @@
     <h1 class="my-4"> Pre-Op Testing App </h1>
       <div class="row">
         <!-- hide the status component when screen is smaller than md-->
-        <div class="col-md-3 d-none d-md-block">
+        <div class="col-md-3 d-block">
             <StatusComponent
             v-if="!isMobile()"
             :resultArray="resultArray"/>
              <!-- This is the the bind to the child component-->
         </div>
         <!-- hide desktop como list when screen is smaller than md-->
-        <div class="col-md-6 d-none d-md-block">
+        <div class="col-md-6 d-block">
             <ComoListComponent
             v-if="!isMobile()"
             ref="ComoListComponent"
@@ -25,7 +25,7 @@
             v-on:clear-results="clearResults"/>
         </div>
         <!-- hide desktop glossary when screen is smaller than md-->
-        <div class="col-md-3 d-none d-md-block">
+        <div class="col-md-3 d-block">
             <GlossaryComponent
             v-if="!isMobile()"
             :glossaryEntry="glossaryEntry"/>
