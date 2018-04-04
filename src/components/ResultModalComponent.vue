@@ -42,7 +42,7 @@
           </div>
           <div class="modal-footer">
             <button id="modal_okay" type="button" class="btn btn-primary"
-            v-on:click="showModal(), resetScrollPosition()">
+            v-on:click="showModal()">
               Okay
             </button>
           </div>
