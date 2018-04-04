@@ -124,8 +124,10 @@ export default {
      */
     updateDescription: function updateDescription(comorbidity) {
       this.glossaryEntry = comorbidity.currentComorbiditySelection;
-      this.$refs.MobileComoListComponent.currentComorbidityDescription
+      if (this.$refs.MobileComoListComponent !== undefined) {
+        this.$refs.MobileComoListComponent.currentComorbidityDescription
        = comorbidity.currentComorbiditySelection;
+      }
     },
     /**
     * Clears the glossaryEntry used by the Glossary Window data
