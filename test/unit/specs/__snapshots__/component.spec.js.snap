@@ -19,7 +19,7 @@ Array [
   },
   Object {
     "check": false,
-    "comorbidity": "Cardiac Stent (< 12 months)",
+    "comorbidity": "Cardiac stent (< 12 months)",
     "glossary": "No extra information.",
   },
   Object {
@@ -49,7 +49,7 @@ Array [
   },
   Object {
     "check": false,
-    "comorbidity": "Heart Failure",
+    "comorbidity": "Heart failure",
     "glossary": "No extra information.",
   },
   Object {
@@ -182,7 +182,7 @@ Array [
   Object {
     "check": false,
     "comorbidity": "History of major systemic endocrine disease",
-    "glossary": "(Excluding Diabeties) 
+    "glossary": "(Excluding Diabetes) 
 • Parathyroid disease 
 • Addison’s disease 
 • Cushing’s syndrome 
