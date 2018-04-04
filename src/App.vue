@@ -46,7 +46,7 @@
             <StatusComponent
               :resultArray="resultArray"/>
           </div>
-          <h1 class="my-4 bg-light"> Pre-Op Testing App </h1>
+          <h1 class="my-4 bg-light" style="width: 100%"> Pre-Op Testing App </h1>
           <div class="col-md-12" style="overflow: auto">
             <MobileComoListComponent ref="MobileComoListComponent"
             v-on:clickEvent="updateArray"

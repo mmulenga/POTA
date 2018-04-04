@@ -6,8 +6,7 @@
     <!-- main body -->
     <slot></slot>
     <!-- mask -->
-    <div class="mask" :class="show ? 'active' : ''" @click="hideMask(),
-    resetScrollPosition()"></div>
+    <div class="mask" :class="show ? 'active' : ''" @click="hideMask()"></div>
   </div>
   <div class="drawer"
   :class="['drawer-left', show ? 'active' : '']" >

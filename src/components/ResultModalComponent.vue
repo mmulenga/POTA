@@ -1,5 +1,5 @@
 <template>
-  <div class="container pt-3" :class="hiddenButtons ? 'inactive' : ''">
+  <div class="pt-3" :class="hiddenButtons ? 'inactive' : ''">
     <button id="modal_submit" type="button" class="btn btn-success"
      v-on:click="getExams(); showModal();"> Submit </button>
      <!-- For Mobile -->
