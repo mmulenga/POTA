@@ -4,7 +4,7 @@
      v-on:click="getExams(); showModal();"> Submit </button>
      <!-- For Mobile -->
      <div v-if="isMobile()">
-      <button type="button" class="btn btn-primary"
+      <button id="mobile_status_button" type="button" class="btn btn-primary"
         v-on:click="drawerToggle(), hideButtons()">
         Patient Status
         </button>
@@ -129,16 +129,26 @@ export default {
     toggleReset: function toggleReset() {
       this.$emit('reset-toggle');
     },
+    /**
+     * Determines if the user is viewing from a mobile device.
+     */
     isMobile: function isMobile() {
       return (navigator.userAgent.indexOf('Mobile') !== -1);
     },
+    /**
+    * Generates a unique ID for a submit button if the
+    * user is viewing from a mobile device.
+    */
     generateSubmitID: function generateSubmitID() {
       if (this.isMobile()) {
         return 'mobile_submit_button';
       }
-
       return 'submit_button';
     },
+    /**
+    * Generates a unique ID for a rest button if the
+    * user is viewing from a mobile device.
+    */
     generateResetID: function generateResetID() {
       if (this.isMobile()) {
         return 'mobile_reset_button';
