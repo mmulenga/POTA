@@ -118,7 +118,7 @@
             <!-- when i is clicked, get the definition to go into modal body-->
             <pre>
             <!-- This is because App is the parent of Drawer -->
-            <p>{{this.$parent.$parent.glossaryEntry}}</p>
+            <p>{{this.currentComorbidityDescription}}</p>
             </pre>
           </div>
           <div class="modal-footer">
@@ -302,20 +302,16 @@ export default {
       return true;
     },
     /**
-     * Displays the required preoperative tests modal
-     */
-    showModal: function showModal() {
-      if (this.isVisible === false) {
-        this.isVisible = true;
-      } else {
-        this.isVisible = false;
-      }
-    },
-    /**
      * Resets the data component of MobileComoListComponent.
      */
     resetData: function resetData() {
       Object.assign(this.$data, this.$options.data.call(this));
+    },
+    /**
+     * Displays the required preoperative tests modal
+     */
+    showModal: function showModal() {
+      this.isVisible = !this.isVisible;
     },
     /**
     * Emits a "reset-scroll-position" event to the parent component to reset
@@ -325,7 +321,6 @@ export default {
       this.$emit('reset-scroll-position');
     },
   },
-
 };
 </script>
 

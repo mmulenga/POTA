@@ -109,12 +109,11 @@ export default {
       return ExamValidity(exam);
     },
     /**
-      * Clears the result array in App.vue
-      * TODO: should also uncheck all the checkboxed
-      * when method is called
+     * Emits a "clear-results" event to the parent component to
+     * clear the resultsArray.
      */
     clearResultArray: function clearResultArray() {
-      this.$parent.resultArray = [];
+      this.$emit('clear-results');
     },
     /**
      * Emits a "drawer-toggle" event to the parent component to

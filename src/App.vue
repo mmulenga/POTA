@@ -19,8 +19,10 @@
             v-on:hoverEvent="updateDescription"/>
             <ResultModalComponent
             v-if="!isMobile()"
+            ref="ResultModalComponent"
             :resultArray="resultArray"
-            v-on:reset-toggle="resetComoList"/>
+            v-on:reset-toggle="resetComoList"
+            v-on:clear-results="clearResults"/>
         </div>
         <!-- hide desktop glossary when screen is smaller than md-->
         <div class="col-md-3 d-none d-md-block">
@@ -65,7 +67,8 @@
       :resultArray="resultArray"
       v-on:drawer-toggle="drawerToggle"
       v-on:hide-buttons="buttonsToggle"
-      v-on:reset-toggle="resetMobileComoList"/>
+      v-on:reset-toggle="resetMobileComoList"
+      v-on:clear-results="clearResults"/>
   </div>
     </div>
 </template>
@@ -121,6 +124,8 @@ export default {
      */
     updateDescription: function updateDescription(comorbidity) {
       this.glossaryEntry = comorbidity.currentComorbiditySelection;
+      this.$refs.MobileComoListComponent.currentComorbidityDescription
+       = comorbidity.currentComorbiditySelection;
     },
     /**
     * Clears the glossaryEntry used by the Glossary Window data
@@ -178,6 +183,9 @@ export default {
       this.buttonsToggle();
       this.$refs.ResultModalComponent.getExams();
       this.$refs.ResultModalComponent.showModal();
+    },
+    clearResults: function clearResults() {
+      this.resultArray = [];
     },
     isMobile: function isMobile() {
       return (navigator.userAgent.indexOf('Mobile') !== -1);
