@@ -65,8 +65,8 @@ module.exports = {
       // Test Case 1
 
       // Checking if submit and reset btn are visible
-      .assert.visible('#modal_submit')
-      .assert.visible('#reset')
+      .assert.visible('#submit_button')
+      .assert.visible('#reset_button')
       // Checking if certain checkboxes are unchecked
       .assert.visible('#cv_checkbox_AtrialFib:not(:checked)', 
         'Testing if element <#cv_checkbox_AtrialFib> is unchecked')
@@ -85,7 +85,7 @@ module.exports = {
       .assert.containsText('div.list', 'Age')  
         
       // Checking if result modal is visible after clicking
-      .click('#modal_submit')
+      .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
       .assert.containsText('#exams', 'ECG')
@@ -126,7 +126,7 @@ module.exports = {
         'Testing if element <#other_checkbox_Malignancy> is checked')
  
       // Checking results are correct
-      .click('#modal_submit')
+      .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
       .assert.containsText('#exams', 'ECG')
@@ -138,9 +138,12 @@ module.exports = {
       .assert.containsText('div[id=conditional-exams]:nth-of-type(2)', 'PTT/INR')
 
       .click('#modal_okay')
+      .assert.hidden('#modal_okay')
+      .assert.hidden('#exams')
+
 
       // Click Reset 
-      .click('#reset')
+      .click('#reset_button')
       .assert.containsText('div.list', '')
       .assert.visible('#other_checkbox_Diabetes:not(:checked)', 
         'Testing if element <#other_Diabetes> is unchecked')
@@ -164,7 +167,7 @@ module.exports = {
       .assert.containsText('div.list', 'Valvular heart disease')
       .assert.containsText('div.list', 'Heart failure')  
 
-      .click('#modal_submit')
+      .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
       .assert.containsText('#exams', 'ECG')
@@ -172,7 +175,10 @@ module.exports = {
       .assert.containsText('p:nth-of-type(3)', 'Renal Panel')
       .click('#modal_okay')
 
-      .click('#reset')
+      .assert.hidden('#modal_okay')
+      .assert.hidden('#exams')
+
+      .click('#reset_button')
       .assert.containsText('div.list', '')
       .assert.visible('#cv_checkbox_VHD:not(:checked)', 
         'Testing if element <#cv_checkbox_VHD> is unchecked')
@@ -196,7 +202,7 @@ module.exports = {
       .assert.containsText('div.list', 'Atrial fibrillation')
       .assert.containsText('div.list', 'Anticoagulants')  
 
-      .click('#modal_submit')
+      .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
       .assert.containsText('#exams', 'ECG')
@@ -205,9 +211,40 @@ module.exports = {
       .assert.containsText('#conditional-exams', 'PTT/INR')
 
       .click('#modal_okay')
+      
+      // Test Case 3 
+      .assert.visible('#med_checkbox_Anticoagulant:checked',
+        'Testing if element <#med_checkbox_Anticoagulant> is checked')   
+      .click('#med_checkbox_Anticoagulant')
+      .assert.visible('#med_checkbox_Anticoagulant:not(:checked)',
+        'Testing if element <#med_checkbox_Anticoagulant> is unchecked')
+
+      .assert.visible('#cv_checkbox_VHD:not(:checked)', 
+        'Testing if element <#cv_checkbox_VHD> is unchecked')
+      .click('#cv_checkbox_VHD')      
+      .assert.visible('#cv_checkbox_VHD:checked',
+        'Testing if element <#cv_checkbox_VHD> is checked')   
+
+      .assert.containsText('div.list', 'Atrial')  
+      .assert.containsText('div.list', 'Valvular')  
+
+      .click('#submit_button')
+
+      .assert.visible('#modal_okay')
+      .assert.visible('#exams')
+      .assert.containsText('#exams', 'ECG')
+      .assert.containsText('#conditional-exams', 'CBC')
+
+      
+      .click('#modal_okay')
+      .assert.hidden('#modal_okay')
+      .assert.hidden('#exams')
 
 
-      .pause(2000)
+      .click('#reset_button')
+      .assert.containsText('div.list', '')  
+
+  
 
 
       
@@ -224,51 +261,51 @@ module.exports = {
       .assert.hidden('#understanding')
       .assert.hidden('#modal_box')
 
-      // .click('#cv_checkbox_AtrialFib')
-
-      // .pause(5000)
-
-
-      // .assert.visible('#modal_submit')
-      // .assert.visible('#reset')
-
-      // .assert.visible('#cv_AtrialFib')
-      // .assert.visible('#cv_Defib')
-      // .assert.visible('#cv_CAD')
-      // .assert.visible('#cv_CardiacStent')
-      // .assert.visible('#cv_CerebralDisease')
-      // .assert.visible('#cv_PulmonaryVascular')
-      // .assert.visible('#cv_TIA')
-      // .assert.visible('#cv_Stroke')
-      // .assert.visible('#cv_VHD')
-      // .assert.visible('#cv_HeartFail')
-      // .assert.visible('#cv_PVD')
-
-      // .assert.visible('#pd_PulmDisease')
       
-      // .assert.visible('#other_Age')
-      // .assert.visible('#other_Risk')
-      // .assert.visible('#other_Bleeding')
-      // .assert.visible('#other_Anemia')
-      // .assert.visible('#other_ActiveBleeding')
-      // .assert.visible('#other_KidneyDisease')
-      // .assert.visible('#other_Diabetes')
-      // .assert.visible('#other_Malignancy')
-      // .assert.visible('#other_Hepatic')
-      // .assert.visible('#other_Adrenal')
-      // .assert.visible('#other_Pituitary')
-      // .assert.visible('#other_Endocrine')
-      // .assert.visible('#other_Thyroid')
 
-      // .assert.visible('#med_Digoxin')
-      // .assert.visible('#med_Lithium')
-      // .assert.visible('#med_Diuretics')
-      // .assert.visible('#med_ACEI')
-      // .assert.visible('#med_ARB')
-      // .assert.visible('#med_NSAIDS')
-      // .assert.visible('#med_Anticoagulant')
-      // .assert.visible('#med_Antiplatelet')
-      // .assert.visible('#med_Steroid')
+      .pause(5000)
+
+
+      // .assert.visible('#mobile_submit_button')
+      // .assert.visible('#mobile_reset_button')
+
+      // .assert.visible('#mobile_cv_AtrialFib')
+      // .assert.visible('#mobile_cv_Defib')
+      // .assert.visible('#mobile_cv_CAD')
+      // .assert.visible('#mobile_cv_CardiacStent')
+      // .assert.visible('#mobile_cv_CerebralDisease')
+      // .assert.visible('#mobile_cv_PulmonaryVascular')
+      // .assert.visible('#mobile_cv_TIA')
+      // .assert.visible('#mobile_cv_Stroke')
+      // .assert.visible('#mobile_cv_VHD')
+      // .assert.visible('#mobile_cv_HeartFail')
+      // .assert.visible('#mobile_cv_PVD')
+
+      // .assert.visible('#mobile_pd_PulmDisease')
+      
+      // .assert.visible('#mobile_other_Age')
+      // .assert.visible('#mobile_other_Risk')
+      // .assert.visible('#mobile_other_Bleeding')
+      // .assert.visible('#mobile_other_Anemia')
+      // .assert.visible('#mobile_other_ActiveBleeding')
+      // .assert.visible('#mobile_other_KidneyDisease')
+      // .assert.visible('#mobile_other_Diabetes')
+      // .assert.visible('#mobile_other_Malignancy')
+      // .assert.visible('#mobile_other_Hepatic')
+      // .assert.visible('#mobile_other_Adrenal')
+      // .assert.visible('#mobile_other_Pituitary')
+      // .assert.visible('#mobile_other_Endocrine')
+      // .assert.visible('#mobile_other_Thyroid')
+
+      // .assert.visible('#mobile_med_Digoxin')
+      // .assert.visible('#mobile_med_Lithium')
+      // .assert.visible('#mobile_med_Diuretics')
+      // .assert.visible('#mobile_med_ACEI')
+      // .assert.visible('#mobile_med_ARB')
+      // .assert.visible('#mobile_med_NSAIDS')
+      // .assert.visible('#mobile_med_Anticoagulant')
+      // .assert.visible('#mobile_med_Antiplatelet')
+      // .assert.visible('#mobile_med_Steroid')
 
 
 
@@ -278,8 +315,8 @@ module.exports = {
 
       // .assert.hidden('#modal_okay', 'modal_okay was hidden')
 
-      // .assert.visible('#modal_submit', 1000)
-      // .click('#modal_submit')
+      // .assert.visible('#submit_button', 1000)
+      // .click('#submit_button')
 
       // .waitForElementVisible('#modal_okay', 1000)
       // .click('#modal_okay')

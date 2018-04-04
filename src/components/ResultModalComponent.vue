@@ -77,11 +77,7 @@ export default {
      * already hidden.
      */
     showModal: function showModal() {
-      if (this.isVisible === false) {
-        this.isVisible = true;
-      } else {
-        this.isVisible = false;
-      }
+      this.isVisible = !this.isVisible;
     },
     /**
      * Emits a "hide-buttons" event to the parent component.
