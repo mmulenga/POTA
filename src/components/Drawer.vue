@@ -1,19 +1,19 @@
 <template>
   <!-- container -->
-  <div class="vue-drawer">
+  <div id="drawer" class="vue-drawer">
     <div :style="{'transform': 'translate3d('+translateX+'px,0,0)'}"
     class="main">
     <!-- main body -->
     <slot></slot>
     <!-- mask -->
-    <div class="mask" :class="show ? 'active' : ''" @click="hideMask()"></div>
+    <div id="mask" class="mask" :class="show ? 'active' : ''" @click="hideMask()"></div>
   </div>
-  <div class="drawer"
+  <div id="drawer-panel" class="drawer"
   :class="['drawer-left', show ? 'active' : '']" >
     <!-- drawer -->
     <slot name="drawer"></slot>
     <div class="submit">
-      <button id="modal_submit" type="button" class="btn btn-success"
+      <button id="drawer_submit" type="button" class="btn btn-success"
       @click="submitExams"> Submit </button>
     </div>
   </div>
@@ -39,7 +39,7 @@ export default {
    */
   watch: {
     /**
-     * Emits a "on-show" event when the mask is clicked.
+     * Emits a "on-show" event when the "show" prop has changed.
      * This will display the drawer.
      */
     show: function show() {
@@ -128,7 +128,7 @@ export default {
     left: 0;
     bottom: 0px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     width: 100%;
   }
 </style>
