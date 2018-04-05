@@ -5,6 +5,11 @@ let requiredExams;
 let conditionalExams;
 let result;
 
+/**
+ * Testing PatientExamsNeeded() with combinations of only non-conditional comorbidities,
+ * only conditional comorbidities and mixes of conditional and non-conditional comordities.
+ * These test cases are all in the test matrix.
+ */
 describe('Testing PatientExamsNeeded() with multiple non-conditional comorbidities', () => {
   it('returns correct set of preop exams for AtrialFib + Defib', () => {
     result = PatientExamsNeeded([Condition.AtrialFib, Condition.Defib]);

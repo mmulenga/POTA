@@ -1,20 +1,21 @@
 /* eslint-disable */
 
 module.exports = {
-  'Demo preopt app test (desktop)' : function (browser) {
+  'Demo preopt app test (desktop)': function (browser) {
     browser
       .url(browser.globals.devServerURL)
       .waitForElementVisible('body', 1000)
 
       .maximizeWindow()
-
-      .waitForElementPresent('#understanding', 1000)
-      .click('#understanding')
       
-      .waitForElementPresent('#submit_button', 1000)
-      .waitForElementPresent('#reset_button', 1000)
+      .waitForElementVisible('#understanding', 1000)
+      .click('#understanding')
+      .waitForElementNotVisible('#understanding', 500)
 
-      .waitForElementPresent('#cv_AtrialFib', 1000)
+      .waitForElementPresent('#submit_button', 1000)
+
+      .waitForElementPresent('#cv_AtrialFib', 500)
+      .click('#cv_AtrialFib')
       .waitForElementPresent('#cv_Defib', 500)
       .waitForElementPresent('#cv_CAD', 500)
       .waitForElementPresent('#cv_CardiacStent', 500)
@@ -27,6 +28,7 @@ module.exports = {
       .waitForElementPresent('#cv_PVD', 500)
 
       .waitForElementPresent('#pd_PulmDisease', 500)
+      .click('#pd_PulmDisease')
 
       .waitForElementPresent('#other_Age', 500)
       .waitForElementPresent('#other_Risk', 500)
@@ -43,6 +45,7 @@ module.exports = {
       .waitForElementPresent('#other_Thyroid', 500)
 
       .waitForElementPresent('#med_Digoxin', 500)
+      .click('#med_Digoxin')
       .waitForElementPresent('#med_Lithium', 500)
       .waitForElementPresent('#med_Diuretics', 500)
       .waitForElementPresent('#med_ACEI', 500)
@@ -51,7 +54,18 @@ module.exports = {
       .waitForElementPresent('#med_Anticoagulant', 500)
       .waitForElementPresent('#med_Antiplatelet', 500)
       .waitForElementPresent('#med_Steroid', 500)
-    
+
+      .assert.hidden('#modal_okay', 'modal_okay was hidden')
+
+      .waitForElementPresent('#reset_button', 1000)
+      .click('#reset_button')
+
+      .waitForElementPresent('#submit_button', 1000)
+      .click('#submit_button')
+
+      .waitForElementVisible('#modal_okay', 1000)
+      .click('#modal_okay')
+      
       .end();
-  }
+  },
 };
