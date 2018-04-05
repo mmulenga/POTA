@@ -186,9 +186,15 @@ export default {
       this.$refs.ResultModalComponent.getExams();
       this.$refs.ResultModalComponent.showModal();
     },
+    /**
+     * Clears the resultArray when the reset button is pressed.
+     */
     clearResults: function clearResults() {
       this.resultArray = [];
     },
+    /**
+     * Checks to see if the user is viewing on a mobile device.
+     */
     isMobile: function isMobile() {
       return (navigator.userAgent.indexOf('Mobile') !== -1);
     },

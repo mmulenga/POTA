@@ -44,42 +44,42 @@ describe('ComoList.spec.js', () => {
   describe('Testing out generating IDs', () => {
     it('Generate ID for list item for CV Atrial Fibrillation', () => {
       const liCV = wrapper.vm.generateID('li', 'cv', 0);
-      expect(liCV).toBe('cv_AtrialFib');
+      expect(liCV).toBe('mobile_cv_AtrialFib');
     });
 
     it('Generate ID for checkbox for CV Atrial Fibrillation', () => {
       const cbCV = wrapper.vm.generateID('cb', 'cv', 0);
-      expect(cbCV).toBe('cv_checkbox_AtrialFib');
+      expect(cbCV).toBe('mobile_cv_checkbox_AtrialFib');
     });
 
     it('Generate ID for list item for PD Severe COPD', () => {
       const liPD = wrapper.vm.generateID('li', 'pd', 0);
-      expect(liPD).toBe('pd_PulmDisease');
+      expect(liPD).toBe('mobile_pd_PulmDisease');
     });
 
     it('Generate ID for checkbox for PD Severe COPD', () => {
       const cbPD = wrapper.vm.generateID('cb', 'pd', 0);
-      expect(cbPD).toBe('pd_checkbox_PulmDisease');
+      expect(cbPD).toBe('mobile_pd_checkbox_PulmDisease');
     });
 
     it('Generate ID for list item for Other Age > 69', () => {
       const liOther = wrapper.vm.generateID('li', 'other', 0);
-      expect(liOther).toBe('other_Age');
+      expect(liOther).toBe('mobile_other_Age');
     });
 
     it('Generate ID for checkbox for Other Age > 69', () => {
       const cbOther = wrapper.vm.generateID('cb', 'other', 0);
-      expect(cbOther).toBe('other_checkbox_Age');
+      expect(cbOther).toBe('mobile_other_checkbox_Age');
     });
 
     it('Generate ID for list item for Other Age > 69', () => {
       const liMed = wrapper.vm.generateID('li', 'med', 0);
-      expect(liMed).toBe('med_Digoxin');
+      expect(liMed).toBe('mobile_med_Digoxin');
     });
 
     it('Generate ID for checkbox for Other Age > 69', () => {
       const cbMed = wrapper.vm.generateID('cb', 'med', 0);
-      expect(cbMed).toBe('med_checkbox_Digoxin');
+      expect(cbMed).toBe('mobile_med_checkbox_Digoxin');
     });
   });
 
