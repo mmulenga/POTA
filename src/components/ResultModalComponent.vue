@@ -3,7 +3,7 @@
     <button :id="generateSubmitID()" type="button" class="btn btn-success"
      v-on:click="getExams(); showModal();"> Submit </button>
      <!-- For Mobile -->
-     <div v-if="isMobile()">
+     <div v-if="isMobile() || (this.windowWidth < 768)">
       <button id="mobile_status_button" type="button" class="btn btn-primary"
         v-on:click="drawerToggle(), hideButtons()">
         Patient Status
@@ -69,6 +69,7 @@ export default {
       isVisible: false,
       exams: [],
       conditionalExams: [],
+      windowWidth: 0,
     };
   },
   methods: {

@@ -21,8 +21,8 @@
               </div>
               <div v-if="hasEntry(item)" class="col-1">
                 <span class="badge badge-pill badge-secondary"
-                v-on:mouseover="passComorbidityOnHover(cardioDiseases, index)"
-                v-on:click="showModal(), aggregateConditions(cardioDiseases, index);"
+                v-on:click="passComorbidityOnHover(cardioDiseases, index),
+                showModal(), aggregateConditions(cardioDiseases, index);"
                 >i</span>
               </div>
             </div>
@@ -45,8 +45,8 @@
               </div>
               <div v-if="hasEntry(item)" class="col-1">
                 <span class="badge badge-pill badge-secondary"
-                v-on:mouseover="passComorbidityOnHover(pulmoDiseases, index)"
-                v-on:click="showModal(), aggregateConditions(pulmoDiseases, index);"
+                v-on:click="passComorbidityOnHover(pulmoDiseases, index),
+                showModal(), aggregateConditions(pulmoDiseases, index);"
                 >i</span>
               </div>
             </div>
@@ -69,8 +69,8 @@
               </div>
               <div v-if="hasEntry(item)" class="col-1">
                 <span class="badge badge-pill badge-secondary"
-                v-on:mouseover="passComorbidityOnHover(otherDiseases, index)"
-                v-on:click="showModal(), aggregateConditions(otherDiseases, index);"
+                v-on:click="passComorbidityOnHover(otherDiseases, index),
+                showModal(), aggregateConditions(otherDiseases, index);"
                 >i</span>
               </div>
             </div>
@@ -93,8 +93,8 @@
               </div>
               <div v-if="hasEntry(item)" class="col-1">
                 <span class="badge badge-pill badge-secondary"
-                v-on:mouseover="passComorbidityOnHover(medications, index)"
-                v-on:click="showModal(), aggregateConditions(medications, index);"
+                v-on:click="passComorbidityOnHover(medications, index),
+                showModal(), aggregateConditions(medications, index);"
                 >i</span>
               </div>
             </div>
