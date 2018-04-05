@@ -11,7 +11,7 @@ let result;
  * Called Validity() and tested if it properly creates tag.
  */
 describe('Testing GetExamValidity() with all preop examinations', () => {
-  it('returns the correct validity period exams for GnS', () => {
+  it('returns the correct validity period for GnS', () => {
     result = GetExamValidity(Exam.GnS);
     expect(result).toEqual(expect.stringContaining('1 month'));
   });
@@ -19,7 +19,7 @@ describe('Testing GetExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for ECG', () => {
+  it('returns the correct validity period for ECG', () => {
     result = GetExamValidity(Exam.ECG);
     expect(result).toEqual(expect.stringContaining('3 months'));
   });
@@ -27,7 +27,7 @@ describe('Testing GetExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for CBC', () => {
+  it('returns the correct validity period for CBC', () => {
     result = GetExamValidity(Exam.CBC);
     expect(result).toEqual(expect.stringContaining('3 months'));
   });
@@ -35,7 +35,7 @@ describe('Testing GetExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for RenPanel', () => {
+  it('returns the correct validity period for RenPanel', () => {
     result = GetExamValidity(Exam.RenPanel);
     expect(result).toEqual(expect.stringContaining('3 months'));
   });
@@ -43,7 +43,7 @@ describe('Testing GetExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for PTTINR', () => {
+  it('returns the correct validity period for PTTINR', () => {
     result = GetExamValidity(Exam.PTTINR);
     expect(result).toEqual(expect.stringContaining('3 months'));
   });
@@ -51,7 +51,7 @@ describe('Testing GetExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for LFT', () => {
+  it('returns the correct validity period for LFT', () => {
     result = GetExamValidity(Exam.LFT);
     expect(result).toEqual(expect.stringContaining('3 months'));
   });
@@ -59,7 +59,7 @@ describe('Testing GetExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for Gluc', () => {
+  it('returns the correct validity period for Gluc', () => {
     result = GetExamValidity(Exam.Gluc);
     expect(result).toEqual(expect.stringContaining('3 months'));
   });
@@ -67,7 +67,7 @@ describe('Testing GetExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for HbA1C', () => {
+  it('returns the correct validity period for HbA1C', () => {
     result = GetExamValidity(Exam.HbA1C);
     expect(result).toEqual(expect.stringContaining('3 months'));
   });
@@ -75,7 +75,7 @@ describe('Testing GetExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for CXR', () => {
+  it('returns the correct validity period for CXR', () => {
     result = GetExamValidity(Exam.CXR);
     expect(result).toEqual(expect.stringContaining('6 months'));
   });
@@ -83,7 +83,7 @@ describe('Testing GetExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for TSH', () => {
+  it('returns the correct validity period for TSH', () => {
     result = GetExamValidity(Exam.TSH);
     expect(result).toEqual(expect.stringContaining('6 months'));
   });
@@ -93,7 +93,7 @@ describe('Testing GetExamValidity() with all preop examinations', () => {
 });
 
 describe('Testing ExamValidity() with all preop examinations', () => {
-  it('returns the correct validity period exams for GnS', () => {
+  it('returns the correct validity period for  GnS', () => {
     result = ExamValidity(Exam.GnS);
     expect(result).toEqual(expect.stringContaining('1 month'));
   });
@@ -101,7 +101,7 @@ describe('Testing ExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for ECG', () => {
+  it('returns the correct validity period for ECG', () => {
     result = ExamValidity(Exam.ECG);
     expect(result).toEqual(expect.stringContaining('3 months'));
   });
@@ -109,7 +109,7 @@ describe('Testing ExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for CBC', () => {
+  it('returns the correct validity period for CBC', () => {
     result = ExamValidity(Exam.CBC);
     expect(result).toEqual(expect.stringContaining('3 months'));
   });
@@ -117,7 +117,7 @@ describe('Testing ExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for RenPanel', () => {
+  it('returns the correct validity period for RenPanel', () => {
     result = ExamValidity(Exam.RenPanel);
     expect(result).toEqual(expect.stringContaining('3 months'));
   });
@@ -125,7 +125,7 @@ describe('Testing ExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for PTTINR', () => {
+  it('returns the correct validity period for PTTINR', () => {
     result = ExamValidity(Exam.PTTINR);
     expect(result).toEqual(expect.stringContaining('3 months'));
   });
@@ -133,7 +133,7 @@ describe('Testing ExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for LFT', () => {
+  it('returns the correct validity period for LFT', () => {
     result = ExamValidity(Exam.LFT);
     expect(result).toEqual(expect.stringContaining('3 months'));
   });
@@ -141,7 +141,7 @@ describe('Testing ExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for Gluc', () => {
+  it('returns the correct validity period for Gluc', () => {
     result = ExamValidity(Exam.Gluc);
     expect(result).toEqual(expect.stringContaining('3 months'));
   });
@@ -149,7 +149,7 @@ describe('Testing ExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for HbA1C', () => {
+  it('returns the correct validity period for HbA1C', () => {
     result = ExamValidity(Exam.HbA1C);
     expect(result).toEqual(expect.stringContaining('3 months'));
   });
@@ -157,7 +157,7 @@ describe('Testing ExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for CXR', () => {
+  it('returns the correct validity period for CXR', () => {
     result = ExamValidity(Exam.CXR);
     expect(result).toEqual(expect.stringContaining('6 months'));
   });
@@ -165,7 +165,7 @@ describe('Testing ExamValidity() with all preop examinations', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('returns the correct conditional exams for TSH', () => {
+  it('returns the correct validity period for TSH', () => {
     result = ExamValidity(Exam.TSH);
     expect(result).toEqual(expect.stringContaining('6 months'));
   });
