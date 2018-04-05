@@ -116,7 +116,8 @@ describe('App.spec.js', () => {
       it('updateDescription() displays the correct glossary for AF for mobile devices', () => {
         wrapper.vm.windowWidth = 1000;
         wrapper.vm.getWindowWidth();
-        expect(wrapper.vm.$refs.MobileResultModalComponent.windowWidth).toEqual(wrapper.vm.windowWidth);
+        expect(wrapper.vm.$refs.MobileResultModalComponent.windowWidth)
+          .toEqual(wrapper.vm.windowWidth);
       });
     });
   });

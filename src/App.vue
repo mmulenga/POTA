@@ -2,24 +2,24 @@
   <div id="app">
     <DisclaimerModalComponent></DisclaimerModalComponent>
     <h1 class="my-4"> Pre-Op Testing App </h1>
-      <div v-if="!isMobile() || (windowWidth > 767)" class="row">
+      <div v-if="!isMobile() || (windowWidth > 1024)" class="row">
         <!-- hide the status component when screen is smaller than md-->
         <div class="col-md-3 d-block">
             <StatusComponent
             :resultArray="resultArray"
-            v-if="(windowWidth > 767)"/>
+            v-if="(windowWidth > 1024)"/>
              <!-- This is the the bind to the child component-->
         </div>
         <!-- hide desktop como list when screen is smaller than md-->
         <div class="col-md-6 d-block">
             <ComoListComponent
             ref="ComoListComponent"
-            v-if="(windowWidth > 767)"
+            v-if="(windowWidth > 1024)"
             v-on:clickEvent="updateArray"
             v-on:hoverEvent="updateDescription"/>
             <ResultModalComponent
             ref="ResultModalComponent"
-            v-if="(windowWidth > 767)"
+            v-if="(windowWidth > 1024)"
             :resultArray="resultArray"
             v-on:reset-toggle="resetComoList"
             v-on:clear-results="clearResults"/>
@@ -28,14 +28,14 @@
         <div class="col-md-3 d-block">
             <GlossaryComponent
             :glossaryEntry="glossaryEntry"
-            v-if="(windowWidth > 767)"/>
+            v-if="(windowWidth > 1024)"/>
         </div>
     </div>
     <!-- visible-sm and down  (or hidden-md and up) -->
-    <div v-if="isMobile() || (windowWidth <= 767)">
+    <div v-if="isMobile() || (windowWidth <= 1024)">
       <div>
       <!-- side drawer that contains the list of comos selected -->
-        <drawer v-if="isMobile() || (windowWidth <= 767)"
+        <drawer v-if="isMobile() || (windowWidth <= 1024)"
         :show="drawerShow "
         v-on:on-hide="drawerToggle(), buttonsToggle(), resetScrollPosition()"
         v-on:submit-exams="submitExams">
@@ -60,7 +60,7 @@
           </drawer>
       </div>
       <ResultModalComponent
-      v-if="isMobile() || (windowWidth <= 767)"
+      v-if="isMobile() || (windowWidth <= 1024)"
       ref="MobileResultModalComponent"
       class="navbar navbar-expand-lg navbar-light bg-light results"
       :hiddenButtons="buttonsHidden"
