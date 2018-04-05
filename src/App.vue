@@ -2,24 +2,24 @@
   <div id="app">
     <DisclaimerModalComponent></DisclaimerModalComponent>
     <h1 class="my-4"> Pre-Op Testing App </h1>
-      <div class="row">
+      <div v-if="!isMobile() || (windowWidth > 767)" class="row">
         <!-- hide the status component when screen is smaller than md-->
         <div class="col-md-3 d-block">
             <StatusComponent
-            v-if="!isMobile()"
-            :resultArray="resultArray"/>
+            :resultArray="resultArray"
+            v-if="(windowWidth > 767)"/>
              <!-- This is the the bind to the child component-->
         </div>
         <!-- hide desktop como list when screen is smaller than md-->
         <div class="col-md-6 d-block">
             <ComoListComponent
-            v-if="!isMobile()"
             ref="ComoListComponent"
+            v-if="(windowWidth > 767)"
             v-on:clickEvent="updateArray"
             v-on:hoverEvent="updateDescription"/>
             <ResultModalComponent
-            v-if="!isMobile()"
             ref="ResultModalComponent"
+            v-if="(windowWidth > 767)"
             :resultArray="resultArray"
             v-on:reset-toggle="resetComoList"
             v-on:clear-results="clearResults"/>
@@ -27,15 +27,15 @@
         <!-- hide desktop glossary when screen is smaller than md-->
         <div class="col-md-3 d-block">
             <GlossaryComponent
-            v-if="!isMobile()"
-            :glossaryEntry="glossaryEntry"/>
+            :glossaryEntry="glossaryEntry"
+            v-if="(windowWidth > 767)"/>
         </div>
     </div>
     <!-- visible-sm and down  (or hidden-md and up) -->
-    <div v-if="isMobile">
+    <div v-if="isMobile() || (windowWidth <= 767)">
       <div>
       <!-- side drawer that contains the list of comos selected -->
-        <drawer v-if="isMobile()"
+        <drawer v-if="isMobile() || (windowWidth <= 767)"
         :show="drawerShow "
         v-on:on-hide="drawerToggle(), buttonsToggle(), resetScrollPosition()"
         v-on:submit-exams="submitExams">
@@ -60,8 +60,8 @@
           </drawer>
       </div>
       <ResultModalComponent
-      v-if="isMobile()"
-      ref="ResultModalComponent"
+      v-if="isMobile() || (windowWidth <= 767)"
+      ref="MobileResultModalComponent"
       class="navbar navbar-expand-lg navbar-light bg-light results"
       :hiddenButtons="buttonsHidden"
       :resultArray="resultArray"
@@ -100,9 +100,30 @@ export default {
       glossaryEntry: '',
       drawerShow: false,
       buttonsHidden: false,
+      windowWidth: 0,
     };
   },
+  mounted() {
+    this.getWindowWidth();
+    // eslint-disable-next-line
+    this.$nextTick(function () {
+      window.addEventListener('resize', this.getWindowWidth);
+      this.getWindowWidth();
+    });
+  },
   methods: {
+    /**
+     *
+     */
+    // eslint-disable-next-line
+    getWindowWidth: function getWindowWidth(event) {
+      this.windowWidth = document.documentElement.clientWidth;
+      if (this.$refs.ResultModalComponent !== undefined) {
+        this.$refs.ResultModalComponent.windowWidth = document.documentElement.clientWidth;
+      } else {
+        this.$refs.MobileResultModalComponent.windowWidth = document.documentElement.clientWidth;
+      }
+    },
     /**
     * Updates the resultArray used by the Patient Status window with data
     * recieved from child ComoListComponent.
@@ -183,8 +204,13 @@ export default {
     submitExams: function submitExams() {
       this.drawerToggle();
       this.buttonsToggle();
-      this.$refs.ResultModalComponent.getExams();
-      this.$refs.ResultModalComponent.showModal();
+      if (this.$refs.ResultModalComponent !== undefined) {
+        this.$refs.ResultModalComponent.getExams();
+        this.$refs.ResultModalComponent.showModal();
+      } else {
+        this.$refs.MobileResultModalComponent.getExams();
+        this.$refs.MobileResultModalComponent.showModal();
+      }
     },
     /**
      * Clears the resultArray when the reset button is pressed.

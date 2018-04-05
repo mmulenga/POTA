@@ -65,9 +65,11 @@ describe('App.spec.js', () => {
   });
   describe('Testing $ref methods', () => {
     it('resetComoList() should call resetData', () => {
-      wrapper.vm.$refs.ComoListComponent.cardioDiseases[0].check = true;
-      wrapper.vm.resetComoList();
-      expect(wrapper.vm.$refs.ComoListComponent.cardioDiseases[0].check).toBe(false);
+      wrapper.vm.windowWidth = 1000;
+      wrapper.vm.$forceUpdate();
+      wrapper.vm.$refs.MobileComoListComponent.cardioDiseases[0].check = true;
+      wrapper.vm.resetMobileComoList();
+      expect(wrapper.vm.$refs.MobileComoListComponent.cardioDiseases[0].check).toBe(false);
     });
     it('resetMobileComoList() should call resetData', () => {
       Object.defineProperty(window.navigator, 'userAgent', {
@@ -80,13 +82,13 @@ describe('App.spec.js', () => {
       expect(wrapper.vm.$refs.MobileComoListComponent.cardioDiseases[0].check).toBe(false);
     });
     it('submitExams() should call getExams() and showModal() from $refs.ResultModalComponent', () => {
-      wrapper.vm.$refs.ResultModalComponent.resultArray = ['Valvular heart disease / Valve Replacement'];
+      wrapper.vm.$refs.MobileResultModalComponent.resultArray = ['Valvular heart disease / Valve Replacement'];
       wrapper.vm.submitExams();
       expect(wrapper.vm.drawerShow).toBe(true);
       expect(wrapper.vm.buttonsHidden).toBe(true);
-      expect(wrapper.vm.$refs.ResultModalComponent.exams).toEqual(['ECG']);
-      expect(wrapper.vm.$refs.ResultModalComponent.conditionalExams[0].conditionPhrase).toBe('Is valve mechanical?');
-      expect(wrapper.vm.$refs.ResultModalComponent.conditionalExams[0].exams).toEqual(['CBC']);
+      expect(wrapper.vm.$refs.MobileResultModalComponent.exams).toEqual(['ECG']);
+      expect(wrapper.vm.$refs.MobileResultModalComponent.conditionalExams[0].conditionPhrase).toBe('Is valve mechanical?');
+      expect(wrapper.vm.$refs.MobileResultModalComponent.conditionalExams[0].exams).toEqual(['CBC']);
     });
   });
   describe('Updating mobileComoListComponent glossary', () => {
@@ -100,6 +102,22 @@ describe('App.spec.js', () => {
     it('updateDescription() displays the correct glossary for AF for mobile devices', () => {
       wrapper.vm.updateDescription({ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' });
       expect(wrapper.vm.$refs.MobileComoListComponent.currentComorbidityDescription).toEqual('Atrial fibrillation / History of irregular heart beat');
+    });
+    describe('Testing getWindowWidth', () => {
+
+      // beforeEach(() => {
+      //   Object.defineProperty(window.navigator, 'userAgent', {
+      //     value: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Mobile Safari/537.36',
+      //     writable: true,
+      //   });
+      //   wrapper = mount(App);
+      // });
+
+      it('updateDescription() displays the correct glossary for AF for mobile devices', () => {
+        wrapper.vm.windowWidth = 1000;
+        wrapper.vm.getWindowWidth();
+        expect(wrapper.vm.$refs.MobileResultModalComponent.windowWidth).toEqual(wrapper.vm.windowWidth);
+      });
     });
   });
 });

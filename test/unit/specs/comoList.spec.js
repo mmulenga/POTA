@@ -90,4 +90,13 @@ describe('ComoList.spec.js', () => {
       expect(wrapper.vm.hasEntry(wrapper.vm.pulmoDiseases[0])).toBe(true);
     });
   });
+  describe('Testing out resetData()', () => {
+    it('Should not be equal after reseting data', () => {
+      list.at(1).trigger('click');
+      expect(wrapper.emitted().clickEvent).toBeTruthy();
+      const old = wrapper.vm.$data.cardioDiseases[0].check;
+      wrapper.vm.resetData();
+      expect(wrapper.vm.$data.cardioDiseases[0].check).not.toEqual(old);
+    });
+  });
 });
