@@ -35,7 +35,7 @@ Tag(Condition.Anemia, [Exam.CBC]);
 Tag(Condition.ActiveBleeding, [Exam.CBC]);
 Tag(Condition.KidneyDisease, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
 Tag(Condition.Diabetes, [Exam.ECG, Exam.RenPanel, Exam.Gluc],
-  { 'Has patient gone at least 3 months since an Hb1AC?': [Exam.HbA1C] });
+  { 'Is patient diabetic?': [Exam.HbA1C] });
 Tag(Condition.Malignancy, [Exam.CBC, Exam.CXR],
   { 'Is patient on chemo?': [Exam.ECG, Exam.RenPanel, Exam.PTTINR] });
 Tag(Condition.Hepatic, [Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.LFT]);
