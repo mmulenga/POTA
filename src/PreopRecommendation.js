@@ -40,6 +40,15 @@ export function PatientExamsNeeded(patientConditions) {
       );
       // Only aggregate this conditionalExam if it is not entirely preconsidered
       if (ce.exams.length > 0) {
+        // if (conditionalExamAggregation.length === 0) {
+        //   conditionalExamAggregation.push(ce);
+        // } else {
+        //   for (let k = 0; k < conditionalExamAggregation.length; k += 1) {
+        //     if (conditionalExamAggregation[k].conditionPhrase !== ce.conditionPhrase) {
+        //       conditionalExamAggregation.push(ce);
+        //     }
+        //   }
+        // }
         conditionalExamAggregation.push(ce);
       }
     }
