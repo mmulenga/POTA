@@ -1,6 +1,6 @@
 /* eslint-disable */
 module.exports = {
-  'Demo test Google': function (browser) {
+  'Demo preopt app test': function (browser) {
     console.log('test');
     browser
       .url(browser.globals.devServerURL)

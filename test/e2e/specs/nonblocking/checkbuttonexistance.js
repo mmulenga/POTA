@@ -1,12 +1,12 @@
 /* eslint-disable */
 
 module.exports = {
-  'Demo test Google' : function (browser) {
+  'Demo preopt app test (desktop)' : function (browser) {
     browser
       .url(browser.globals.devServerURL)
       .waitForElementVisible('body', 1000)
       
-      .waitForElementPresent('#modal_submit', 1000)
+      .waitForElementPresent('#submit_button', 1000)
 
       .waitForElementPresent('#cv_AtrialFib', 500)
       .waitForElementPresent('#cv_Defib', 500)

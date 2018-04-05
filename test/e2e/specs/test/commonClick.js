@@ -326,20 +326,19 @@ module.exports = {
         'Testing if element <#mobile_other_checkbox_KidneyDisease> is unchecked')
       .assert.visible('#mobile_other_checkbox_Diabetes:not(:checked)', 
         'Testing if element <#mobile_other_checkbox_Diabetes> is unchecked')
-
+      // Clicking conditions and checking whether they are checked
       .click('#mobile_other_KidneyDisease')
       .click('#mobile_other_Diabetes')
-
       .assert.visible('#mobile_other_checkbox_KidneyDisease:checked', 
         'Testing if element <#mobile_other_checkbox_KidneyDisease> is checked')
       .assert.visible('#mobile_other_checkbox_Diabetes:checked',
         'Testing if element <#mobile_other_checkbox_Diabetes> is checked') 
-
+      // Clicking on patient status and checking drawer
       .click('#mobile_status_button')
       .assert.visible('#drawer-panel')
       .assert.containsText('#list', 'kidney')
       .assert.containsText('#list', 'Diabetes')
-      
+      // Hitting submit
       .click('#drawer_submit')
       // .assert.containsText('div.modal-body', 'ECG')
       // .assert.containsText('p:nth-of-type(2)', 'CBC')
@@ -347,12 +346,12 @@ module.exports = {
       // .assert.containsText('p:nth-of-type(4)', 'Gluc')
       // .assert.containsText('#conditional-exams', 'HbA1C')
       .click('#modal_okay')
-
+      // Reset the Patient Status and checking empty drawer
       .click('#reset_button')
       .click('#mobile_status_button')
       .assert.visible('#drawer-panel')
       .assert.containsText('#list', '')      
-        
+      // Closing drawer
       .click('#drawer_submit')
       .click('#drawer_close.close')
       .closeWindow()

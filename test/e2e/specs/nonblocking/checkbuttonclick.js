@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 module.exports = {
-  'Demo test Google': function (browser) {
+  'Demo preopt app test (desktop)': function (browser) {
     browser
       .url(browser.globals.devServerURL)
       .waitForElementVisible('body', 1000)
@@ -10,7 +10,7 @@ module.exports = {
       .click('#understanding')
       .waitForElementNotVisible('#understanding', 500)
 
-      .waitForElementPresent('#modal_submit', 1000)
+      .waitForElementPresent('#submit_button', 1000)
 
       .waitForElementPresent('#cv_AtrialFib', 500)
       .click('#cv_AtrialFib')
@@ -55,8 +55,11 @@ module.exports = {
 
       .assert.hidden('#modal_okay', 'modal_okay was hidden')
 
-      .waitForElementPresent('#modal_submit', 1000)
-      .click('#modal_submit')
+      .waitForElementPresent('#reset_button', 1000)
+      .click('#reset_button')
+
+      .waitForElementPresent('#submit_button', 1000)
+      .click('#submit_button')
 
       .waitForElementVisible('#modal_okay', 1000)
       .click('#modal_okay')
