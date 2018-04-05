@@ -6,7 +6,7 @@ module.exports = {
       .url(browser.globals.devServerURL)
       .waitForElementVisible('body', 1000)
       
-      .resizeWindow(414, 736)
+      // .resizeWindow(414, 736)
 
       .waitForElementPresent('#understanding', 1000)
       .click('#understanding')
