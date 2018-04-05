@@ -123,10 +123,8 @@ module.exports = {
       .assert.containsText('p:nth-of-type(5)', 'CXR')
       .assert.containsText('#conditional-exams', 'HbA1C')
       .assert.containsText('div[id=conditional-exams]:nth-of-type(2)', 'PTT/INR')
-      // Checking if modal is hidden after pressing okay button
+      // Clicking okay button on modal
       .click('#modal_okay')
-      .assert.hidden('#modal_okay')
-      .assert.hidden('#exams')
       // Click Reset button and checking if the conditions are unchecked
       // and checking if Patient Status is empty
       .click('#reset_button')
@@ -160,10 +158,8 @@ module.exports = {
       .assert.containsText('#exams', 'ECG')
       .assert.containsText('p:nth-of-type(2)', 'CBC')
       .assert.containsText('p:nth-of-type(3)', 'Renal Panel')
-      // Clicking okay and checking if modal is hidden
+      // Clicking okay
       .click('#modal_okay')
-      .assert.hidden('#modal_okay')
-      .assert.hidden('#exams')
       // Clicking reset button and checking Patient Status and 
       // conditions being unchecked
       .click('#reset_button')
@@ -199,8 +195,6 @@ module.exports = {
       .assert.containsText('#conditional-exams', 'PTT/INR')
       // Clicking okay button
       .click('#modal_okay')
-      .assert.hidden('#modal_okay')
-      .assert.hidden('#exams')
       
       // Test Case 3 (Anticoagulant + Valvular Heart Disease)
       // Checking if condition are checked or unchecked
@@ -335,12 +329,13 @@ module.exports = {
         'Testing if element <#mobile_other_checkbox_Diabetes> is checked') 
       // Clicking on patient status and checking drawer
       .click('#mobile_status_button')
-      .assert.visible('#drawer-panel')
+      .waitForElementVisible('#drawer-panel', 1000)
       .assert.containsText('#list', 'kidney')
       .assert.containsText('#list', 'Diabetes')
       // Hitting submit
       .click('#drawer_submit')
-      // .assert.containsText('div.modal-body', 'ECG')
+      // .assert.visible('#exams')
+      // .assert.containsText('#exams', 'ECG')
       // .assert.containsText('p:nth-of-type(2)', 'CBC')
       // .assert.containsText('p:nth-of-type(3)', 'Renal')
       // .assert.containsText('p:nth-of-type(4)', 'Gluc')
@@ -349,7 +344,7 @@ module.exports = {
       // Reset the Patient Status and checking empty drawer
       .click('#reset_button')
       .click('#mobile_status_button')
-      .assert.visible('#drawer-panel')
+      .waitForElementVisible('#drawer-panel', 1000)
       .assert.containsText('#list', '')      
       // Closing drawer
       .click('#drawer_submit')
