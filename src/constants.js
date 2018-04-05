@@ -22,7 +22,7 @@ export const Condition = {
   PulmDisease: 'Severe COPD, Home Oxygen, Pulmonary HTN',
   /* Other Diseases */
   Age: 'Age > 69 years old',
-  Risk: '>= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40',
+  Risk: '>= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40)',
   Bleeding: 'Bleeding disorders',
   Anemia: 'History of anemia',
   ActiveBleeding: 'History of active bleeding',
