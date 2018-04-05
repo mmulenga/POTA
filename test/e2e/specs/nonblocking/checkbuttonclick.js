@@ -5,6 +5,8 @@ module.exports = {
     browser
       .url(browser.globals.devServerURL)
       .waitForElementVisible('body', 1000)
+
+      .maximizeWindow()
       
       .waitForElementVisible('#understanding', 1000)
       .click('#understanding')

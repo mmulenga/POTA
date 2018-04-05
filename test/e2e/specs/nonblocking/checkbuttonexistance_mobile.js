@@ -8,7 +8,12 @@ module.exports = {
       
       .resizeWindow(414, 736)
 
+      .waitForElementPresent('#understanding', 1000)
+      .click('#understanding')
+      
       .waitForElementPresent('#submit_button', 1000)
+      .waitForElementPresent('#mobile_status_button', 1000)
+      .waitForElementPresent('#reset_button', 1000)
 
       .waitForElementPresent('#mobile_cv_AtrialFib', 500)
       .waitForElementPresent('#mobile_cv_Defib', 500)
