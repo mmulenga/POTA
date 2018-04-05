@@ -1,9 +1,15 @@
 import { Exam } from '@/constants';
 import { ExamValidity } from '@/PreopRecommendation';
-import { GetExamValidity } from '@/tag';
+import { GetExamValidity, Validity } from '@/tag';
 
 let result;
 
+/**
+ * Testing the validity of the exams. Ensuring the both
+ * GetExamValidity() and ExamValidity() contain the correct
+ * validity periods for each preoperative examination.
+ * Called Validity() and tested if it properly creates tag.
+ */
 describe('Testing GetExamValidity() with all preop examinations', () => {
   it('returns the correct validity period exams for GnS', () => {
     result = GetExamValidity(Exam.GnS);
@@ -164,6 +170,26 @@ describe('Testing ExamValidity() with all preop examinations', () => {
     expect(result).toEqual(expect.stringContaining('6 months'));
   });
   it('correct validity period for TSH to match snapshot', () => {
+    expect(result).toMatchSnapshot();
+  });
+});
+
+describe('Testing Validity() with fake DaleDisease', () => {
+  // Made up a validity for testing
+  Validity(Exam.DaleDisease, 'should be done within 99 months of surgery');
+  it('returns the correct validity period for DaleDisease using ExamValidity()', () => {
+    result = ExamValidity(Exam.DaleDisease);
+    expect(result).toEqual(expect.stringContaining('99 months'));
+  });
+  it('correct validity period for DaleDisease to match snapshot', () => {
+    expect(result).toMatchSnapshot();
+  });
+
+  it('returns the correct validity period for DaleDisease using GetExamValidity() ', () => {
+    result = GetExamValidity(Exam.DaleDisease);
+    expect(result).toEqual(expect.stringContaining('99 months'));
+  });
+  it('correct validity period for DaleDisease to match snapshot', () => {
     expect(result).toMatchSnapshot();
   });
 });
