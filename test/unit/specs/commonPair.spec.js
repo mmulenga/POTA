@@ -5,6 +5,11 @@ let requiredExams;
 let conditionalExams;
 let result;
 
+/**
+ * Testing PatientExamsNeeded() with test cases given by the stakeholders
+ * which represent very common sets of comorbidities that a patient may have.
+ * All of the test cases are in the test matrix.
+ */
 describe('Testing PatientExamsNeeded() with common pairs of comorbidities', () => {
   it('returns correct set of preop exams for AtrialFib + Age > 69', () => {
     result = PatientExamsNeeded([Condition.AtrialFib, Condition.Age]);

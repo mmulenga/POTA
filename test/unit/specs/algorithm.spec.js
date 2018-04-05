@@ -1,4 +1,3 @@
-// import Vue from 'vue/dist/vue';
 import { Condition, Exam } from '@/constants';
 import { PatientExamsNeeded } from '@/PreopRecommendation';
 import { GetExams, GetAllExams, GetConditionalExams, Tag } from '@/tag';
@@ -7,7 +6,9 @@ let requiredExams;
 let conditionalExams;
 let result;
 
-
+/**
+ * Testing PatientExamsNeeded(), GetExams(), GetAllExams(), GetConditionalExams() and Tag()
+ */
 describe('Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js', () => {
   it('returns correct set of preop exams for atrial fibrillation / history of irregular heart beat', () => {
     result = PatientExamsNeeded([Condition.AtrialFib]);
