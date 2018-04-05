@@ -19,7 +19,7 @@ Array [
   },
   Object {
     "check": false,
-    "comorbidity": "Cardiac Stent (< 12 months)",
+    "comorbidity": "Cardiac stent (< 12 months)",
     "glossary": "No extra information.",
   },
   Object {
@@ -49,7 +49,7 @@ Array [
   },
   Object {
     "check": false,
-    "comorbidity": "Heart Failure",
+    "comorbidity": "Heart failure",
     "glossary": "No extra information.",
   },
   Object {
@@ -75,17 +75,17 @@ Array [
   Object {
     "check": false,
     "comorbidity": "Diuretics",
-    "glossary": "No extra information.",
+    "glossary": "Furosemide; Hydrochlorothiazide; Acetazolamide; Spironolactone; Chlorthalidone",
   },
   Object {
     "check": false,
     "comorbidity": "ACE-I",
-    "glossary": "No extra information.",
+    "glossary": "Captopril; Enalapril; Ramipril; Trandolapril; Perindopril",
   },
   Object {
     "check": false,
     "comorbidity": "ARB",
-    "glossary": "No extra information.",
+    "glossary": "Valsartan; Candesartan; Irbesartan; Telmisartan; Losartan; Olmesartan",
   },
   Object {
     "check": false,
@@ -95,17 +95,17 @@ Array [
   Object {
     "check": false,
     "comorbidity": "Anticoagulants",
-    "glossary": "No extra information.",
+    "glossary": "Warfarin; Heparins; Dabigatran; Apixaban; Rivaroxaban",
   },
   Object {
     "check": false,
     "comorbidity": "Antiplatelet (ASA excluded)",
-    "glossary": "No extra information.",
+    "glossary": "Clopidogrel; Ticagrelor; Prasugrel; Aspirin/Dipyridamole (Aggrenox)",
   },
   Object {
     "check": false,
     "comorbidity": "Systemic steroid use within 6 months",
-    "glossary": "No extra information.",
+    "glossary": "Prednisone; Prednisolone; Methylprednisolone; Hydrocortisone; Dexamethasone; Oral Budesonide",
   },
 ]
 `;
@@ -119,7 +119,7 @@ Array [
   },
   Object {
     "check": false,
-    "comorbidity": ">= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40",
+    "comorbidity": ">= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40)",
     "glossary": "No extra information.",
   },
   Object {
@@ -182,7 +182,7 @@ Array [
   Object {
     "check": false,
     "comorbidity": "History of major systemic endocrine disease",
-    "glossary": "(Excluding Diabeties) 
+    "glossary": "(Excluding Diabetes) 
 • Parathyroid disease 
 • Addison’s disease 
 • Cushing’s syndrome 

@@ -10,19 +10,19 @@ export const Condition = {
   AtrialFib: 'Atrial fibrillation / History of irregular heart beat',
   Defib: 'Defibrillator / Pacemaker',
   CAD: 'Coronary artery disease',
-  CardiacStent: 'Cardiac Stent (< 12 months)',
+  CardiacStent: 'Cardiac stent (< 12 months)',
   CerebralDisease: 'History of cerebral disease',
   PulmonaryVascular: 'History of pulmonary vascular disease',
   TIA: 'Transient Ischemic Attack (TIA)',
   Stroke: 'Stroke',
   VHD: 'Valvular heart disease / Valve Replacement',
-  HeartFail: 'Heart Failure',
+  HeartFail: 'Heart failure',
   PVD: 'Peripheral Vascular disease (PVD)',
   /* Pulmonary Diseases */
   PulmDisease: 'Severe COPD, Home Oxygen, Pulmonary HTN',
   /* Other Diseases */
   Age: 'Age > 69 years old',
-  Risk: '>= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40',
+  Risk: '>= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40)',
   Bleeding: 'Bleeding disorders',
   Anemia: 'History of anemia',
   ActiveBleeding: 'History of active bleeding',
@@ -106,7 +106,7 @@ export const Glossary = {
              '• Sheehan syndrome. \n' +
              '• Growth hormone deficiency. \n' +
              '• Hyper/hypo pituitarism. \n',
-  Endocrine: '(Excluding Diabeties) \n' +
+  Endocrine: '(Excluding Diabetes) \n' +
              '• Parathyroid disease \n' +
              '• Addison’s disease \n' +
              '• Cushing’s syndrome \n' +
@@ -115,11 +115,11 @@ export const Glossary = {
   /* Medications */
   Digoxin: 'No extra information.',
   Lithium: 'No extra information.',
-  Diuretics: 'No extra information.',
-  ACEI: 'No extra information.',
-  ARB: 'No extra information.',
+  Diuretics: 'Furosemide; Hydrochlorothiazide; Acetazolamide; Spironolactone; Chlorthalidone',
+  ACEI: 'Captopril; Enalapril; Ramipril; Trandolapril; Perindopril',
+  ARB: 'Valsartan; Candesartan; Irbesartan; Telmisartan; Losartan; Olmesartan',
   NSAIDS: 'No extra information.',
-  Anticoagulant: 'No extra information.',
-  Antiplatelet: 'No extra information.',
-  Steroid: 'No extra information.',
+  Anticoagulant: 'Warfarin; Heparins; Dabigatran; Apixaban; Rivaroxaban',
+  Antiplatelet: 'Clopidogrel; Ticagrelor; Prasugrel; Aspirin/Dipyridamole (Aggrenox)',
+  Steroid: 'Prednisone; Prednisolone; Methylprednisolone; Hydrocortisone; Dexamethasone; Oral Budesonide',
 };

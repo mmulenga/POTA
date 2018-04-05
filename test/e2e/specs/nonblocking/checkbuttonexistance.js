@@ -1,14 +1,20 @@
 /* eslint-disable */
 
 module.exports = {
-  'Demo test Google' : function (browser) {
+  'Demo preopt app test (desktop)' : function (browser) {
     browser
       .url(browser.globals.devServerURL)
       .waitForElementVisible('body', 1000)
 
-      .waitForElementPresent('#modal_submit', 1000)
+      .maximizeWindow()
 
-      .waitForElementPresent('#cv_AtrialFib', 500)
+      .waitForElementPresent('#understanding', 1000)
+      .click('#understanding')
+      
+      .waitForElementPresent('#submit_button', 1000)
+      .waitForElementPresent('#reset_button', 1000)
+
+      .waitForElementPresent('#cv_AtrialFib', 1000)
       .waitForElementPresent('#cv_Defib', 500)
       .waitForElementPresent('#cv_CAD', 500)
       .waitForElementPresent('#cv_CardiacStent', 500)
@@ -45,7 +51,7 @@ module.exports = {
       .waitForElementPresent('#med_Anticoagulant', 500)
       .waitForElementPresent('#med_Antiplatelet', 500)
       .waitForElementPresent('#med_Steroid', 500)
-
+    
       .end();
   }
 };

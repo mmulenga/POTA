@@ -5,6 +5,11 @@ let requiredExams;
 let conditionalExams;
 let result;
 
+/**
+ * Testing PatientExamsNeeded() with a set of concrete test cases
+ * that covers all of the branching of the function.
+ * The testing flow diagram is located in the testing documentation.
+ */
 describe('Testing branching for PatientExamsNeeded()', () => {
   it('returns correct set of preop exams for AtrialFib', () => {
     result = PatientExamsNeeded([Condition.AtrialFib]);

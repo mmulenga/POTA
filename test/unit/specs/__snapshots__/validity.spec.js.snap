@@ -39,3 +39,7 @@ exports[`Testing GetExamValidity() with all preop examinations correct validity 
 exports[`Testing GetExamValidity() with all preop examinations correct validity period for RenPanel to match snapshot 1`] = `"should be done within 3 months of surgery"`;
 
 exports[`Testing GetExamValidity() with all preop examinations correct validity period for TSH to match snapshot 1`] = `"should be done within 6 months of surgery"`;
+
+exports[`Testing Validity() with fake DaleDisease correct validity period for DaleDisease to match snapshot 1`] = `"should be done within 99 months of surgery"`;
+
+exports[`Testing Validity() with fake DaleDisease correct validity period for DaleDisease to match snapshot 2`] = `"should be done within 99 months of surgery"`;
