@@ -2,25 +2,26 @@
   <div id="app">
     <DisclaimerModalComponent></DisclaimerModalComponent>
     <h1 class="my-4"> Pre-Op Testing App </h1>
-      <div v-if="!isMobile() || (windowWidth > 1024)" class="row">
+      <div v-if="!isMobile() && (windowWidth > 1024)" class="row">
         <!-- hide the status component when screen is smaller than md-->
         <div class="col-md-3 d-block">
             <StatusComponent
             :resultArray="resultArray"
-            v-if="(windowWidth > 1024)"/>
+            v-if="(( !isMobile() && windowWidth > 1024))"/>
              <!-- This is the the bind to the child component-->
         </div>
         <!-- hide desktop como list when screen is smaller than md-->
         <div class="col-md-6 d-block">
             <ComoListComponent
             ref="ComoListComponent"
-            v-if="(windowWidth > 1024)"
+            v-if="(( !isMobile() && windowWidth > 1024))"
             v-on:clickEvent="updateArray"
             v-on:hoverEvent="updateDescription"/>
             <ResultModalComponent
             ref="ResultModalComponent"
-            v-if="(windowWidth > 1024)"
+            v-if="(( !isMobile() && windowWidth >= 1024))"
             :resultArray="resultArray"
+            :mobile="false"
             v-on:reset-toggle="resetComoList"
             v-on:clear-results="clearResults"/>
         </div>
@@ -28,7 +29,7 @@
         <div class="col-md-3 d-block">
             <GlossaryComponent
             :glossaryEntry="glossaryEntry"
-            v-if="(windowWidth > 1024)"/>
+            v-if="(( !isMobile() && windowWidth > 1024))"/>
         </div>
     </div>
     <!-- visible-sm and down  (or hidden-md and up) -->
@@ -60,11 +61,13 @@
           </drawer>
       </div>
       <ResultModalComponent
-      v-if="isMobile() || (windowWidth <= 1024)"
+      v-if="isMobile() || ( !isMobile() && windowWidth <= 1024)"
       ref="MobileResultModalComponent"
       class="navbar navbar-expand-lg navbar-light bg-light results"
       :hiddenButtons="buttonsHidden"
       :resultArray="resultArray"
+      :mobile="true"
+      :windowWidth="windowWidth"
       v-on:drawer-toggle="drawerToggle"
       v-on:hide-buttons="buttonsToggle"
       v-on:reset-toggle="resetMobileComoList"
@@ -104,7 +107,7 @@ export default {
     };
   },
   mounted() {
-    this.getWindowWidth();
+    // this.getWindowWidth();
     // eslint-disable-next-line
     this.$nextTick(function () {
       window.addEventListener('resize', this.getWindowWidth);
@@ -118,11 +121,6 @@ export default {
     // eslint-disable-next-line
     getWindowWidth: function getWindowWidth(event) {
       this.windowWidth = document.documentElement.clientWidth;
-      if (this.$refs.ResultModalComponent !== undefined) {
-        this.$refs.ResultModalComponent.windowWidth = document.documentElement.clientWidth;
-      } else {
-        this.$refs.MobileResultModalComponent.windowWidth = document.documentElement.clientWidth;
-      }
     },
     /**
     * Updates the resultArray used by the Patient Status window with data

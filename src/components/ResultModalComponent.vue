@@ -3,7 +3,7 @@
     <button :id="generateSubmitID()" type="button" class="btn btn-success"
      v-on:click="getExams(); showModal();"> Submit </button>
      <!-- For Mobile -->
-     <div v-if="isMobile() || (this.windowWidth < 1024)">
+     <div v-if="this.mobile">
       <button id="mobile_status_button" type="button" class="btn btn-primary"
         v-on:click="drawerToggle(), hideButtons()">
         Patient Status
@@ -63,6 +63,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    mobile: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -72,6 +76,7 @@ export default {
       windowWidth: 0,
     };
   },
+
   methods: {
     /**
      * Displays or hides the modal depending on whether or not it is

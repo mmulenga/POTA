@@ -119,7 +119,7 @@ Array [
   },
   Object {
     "check": false,
-    "comorbidity": ">= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40",
+    "comorbidity": ">= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40)",
     "glossary": "No extra information.",
   },
   Object {
