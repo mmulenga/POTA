@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 /**
- * 
+ * Testing the common scenerios for both desktop and mobile
  */
 module.exports = {
   'Common scenerio test': function (browser) {
