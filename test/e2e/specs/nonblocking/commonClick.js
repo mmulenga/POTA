@@ -64,7 +64,7 @@ module.exports = {
        })
       .getElementSize('#med_Steroid > div.row >div.col-1', function (result) {
         browser.moveToElement('#med_Steroid > div.row > div.col-1', result.width/2, result.hight/2);
-        browser.assert.containsText('pre.pt-0', 'Clopidogrel');
+        browser.assert.containsText('pre.pt-0', 'Prednisone');
        })
       
       // Test Case 1 (Atrial Fib + Age > 69)
