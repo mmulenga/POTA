@@ -19,13 +19,13 @@ module.exports = {
       .assert.hidden('#understanding')
       .assert.hidden('#modal_box')
       // Checking if hover glossary for all comorbidity with glossary
-      .moveToElement('#pd_PulmDisease > div.row > div.col-1', 40, 0)
+      .moveToElement('#pd_PulmDisease > div.row > div.col-1', 10, 10)
       .assert.containsText('pre.pt-0', 'Spirometric',
         'Checking if hover glossary works for <#pd_PulmDisease>')
-      .moveToElement('#other_Bleeding > div.row > div.col-1', 40, 0)
+      .moveToElement('#other_Bleeding > div.row > div.col-1', 10, 10)
       .assert.containsText('pre.pt-0', 'bleeding',
         'Checking if hover glossary works for <#other_Bleeding>')
-      .moveToElement('#other_Hepatic > div.row > div.col-1', 40, 0)
+      .moveToElement('#other_Hepatic > div.row > div.col-1', 10, 10)
       .assert.containsText('pre.pt-0', 'Alcohol',
         'Checking if hover glossary works for <#other_Hepatic>')
       .moveToElement('#other_Pituitary > div.row > div.col-1', 40, 0)
