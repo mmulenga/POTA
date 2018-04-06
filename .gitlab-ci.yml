@@ -64,7 +64,7 @@ mobile_ui_testing:
   script:
     - cd ~/nightwatch
     - nightwatch --env ios,android $CI_PROJECT_DIR/test/e2e/specs/mobile
-  allow_failure: true
+  allow_failure: false
   only:
     - develop
     - release

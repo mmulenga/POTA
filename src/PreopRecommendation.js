@@ -30,8 +30,18 @@ export function PatientExamsNeeded(patientConditions) {
       examAggregation.add(exams[j]);
     }
   }
+
+  // conditionPhrasesUsed is used to dedupe conditional phrases that are equivalent
+  // It may come up anytime that a single row of the grid is broken up into Tags
+  const conditionPhrasesUsed = [];
+
   for (let i = 0; i < patientConditions.length; i += 1) {
-    const conditionalExams = GetConditionalExams(patientConditions[i]);
+    // Filter out any previously used condition phrases
+    const conditionalExams = GetConditionalExams(patientConditions[i])
+      .filter(c => !(conditionPhrasesUsed.includes(c.conditionPhrase)));
+    // Add remaining phrases to conditionPhrasesUsed
+    conditionPhrasesUsed.push(...conditionalExams.map(c => c.conditionPhrase));
+
     for (let j = 0; j < conditionalExams.length; j += 1) {
       // Make a new copy of the ConditionalExam with any preconsidered exams filtered out
       const ce = new ConditionalExam(

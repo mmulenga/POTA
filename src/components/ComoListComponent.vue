@@ -49,7 +49,7 @@
               </div>
             </div>
           </li>
-          <li class="list-group-item list-group-item-dark"> Other Diseases</li>
+          <li class="list-group-item list-group-item-dark"> Other Conditions/Diseases</li>
           <li :id="generateID('li', 'other', index)"
           class="list-group-item list-group-item-action lg-item"
           v-for="(item, index) in otherDiseases"
