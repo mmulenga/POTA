@@ -7,57 +7,66 @@ module.exports = {
   'Common scenerio test': function (browser) {
     browser
       .url(browser.globals.devServerURL)
+
       // Checking for body of the website
       .waitForElementVisible('body', 1000)
       .maximizeWindow()
+ 
       // Checking for initial page
       .assert.visible('#modal_box')
       .assert.visible('#understanding')
       .assert.containsText('h5.modal-title', 'Disclaimer')
+      
       // Checking if disclaimer hidden after clicking understand button
       .click('#understanding')
       .assert.hidden('#understanding')
       .assert.hidden('#modal_box')
+      // Checking if hover glossary for all comorbidity with glossary
       .getElementSize('#pd_PulmDisease > div.row >div.col-1', function (result) {
         browser.moveToElement('#pd_PulmDisease > div.row > div.col-1', result.width/2, result.hight/2);
         browser.assert.containsText('pre.pt-0', 'Spirometric');
        })
-        
-      // Checking if hover glossary for all comorbidity with glossary
-      .moveToElement('#pd_PulmDisease > div.row > div.col-1', 10, 10)
-      .assert.containsText('pre.pt-0', 'Spirometric',
-        'Checking if hover glossary works for <#pd_PulmDisease>')
-      .moveToElement('#other_Bleeding > div.row > div.col-1', 10, 10)
-      .assert.containsText('pre.pt-0', 'bleeding',
-        'Checking if hover glossary works for <#other_Bleeding>')
-      .moveToElement('#other_Hepatic > div.row > div.col-1', 10, 10)
-      .assert.containsText('pre.pt-0', 'Alcohol',
-        'Checking if hover glossary works for <#other_Hepatic>')
-      .moveToElement('#other_Pituitary > div.row > div.col-1', 40, 0)
-      .assert.containsText('pre.pt-0', 'Acromegaly',
-        'Checking if hover glossary works for <#other_Pituitary>')
-      .moveToElement('#other_Endocrine > div.row > div.col-1', 40, 0)
-      .assert.containsText('pre.pt-0', 'Parathyroid',
-        'Checking if hover glossary works for <#other_Endocrine>')
-      .moveToElement('#med_Diuretics > div.row > div.col-1', 40, 0)
-      .assert.containsText('pre.pt-0', 'Furosemide',
-        'Checking if hover glossary works for <#med_Diuretics>')
-      .moveToElement('#med_ACEI > div.row > div.col-1', 40, 0)
-      .assert.containsText('pre.pt-0', 'Captopril',
-        'Checking if hover glossary works for <#med_ACEI>')
-      .moveToElement('#med_ARB > div.row > div.col-1', 40, 0)
-      .assert.containsText('pre.pt-0', 'Valsartan',
-        'Checking if hover glossary works for <#med_ARB>')
-      .moveToElement('#med_Anticoagulant > div.row > div.col-1', 40, 0)
-      .assert.containsText('pre.pt-0', 'Warfarin',
-        'Checking if hover glossary works for <#med_Anticoagulant>')
-      .moveToElement('#med_Antiplatelet > div.row > div.col-1', 40, 0)
-      .assert.containsText('pre.pt-0', 'Clopidogrel',
-        'Checking if hover glossary works for <#med_Antiplatelet>')
-      .moveToElement('#med_Steroid > div.row > div.col-1', 40, 0)
-      .assert.containsText('pre.pt-0', 'Prednisone',
-        'Checking if hover glossary works for <#med_Steroid>')
-
+      .getElementSize('#other_Bleeding > div.row > div.col-1', function (result) {
+        browser.moveToElement('#other_Bleeding > div.row > div.col-1', result.width/2, result.hight/2);
+        browser.assert.containsText('pre.pt-0', 'bleeding');
+       })
+      .getElementSize('#other_Hepatic > div.row >div.col-1', function (result) {
+        browser.moveToElement('#other_Hepatic > div.row > div.col-1', result.width/2, result.hight/2);
+        browser.assert.containsText('pre.pt-0', 'Alcohol');
+       })
+      .getElementSize('#other_Pituitary > div.row >div.col-1', function (result) {
+        browser.moveToElement('#other_Pituitary > div.row > div.col-1', result.width/2, result.hight/2);
+        browser.assert.containsText('pre.pt-0', 'Acromegaly');
+       })
+      .getElementSize('#other_Endocrine > div.row >div.col-1', function (result) {
+        browser.moveToElement('#other_Endocrine > div.row > div.col-1', result.width/2, result.hight/2);
+        browser.assert.containsText('pre.pt-0', 'Parathyroid');
+       })
+      .getElementSize('#med_Diuretics > div.row >div.col-1', function (result) {
+        browser.moveToElement('#med_Diuretics > div.row > div.col-1', result.width/2, result.hight/2);
+        browser.assert.containsText('pre.pt-0', 'Furosemide');
+       })
+      .getElementSize('#med_ACEI > div.row >div.col-1', function (result) {
+        browser.moveToElement('#med_ACEI > div.row > div.col-1', result.width/2, result.hight/2);
+        browser.assert.containsText('pre.pt-0', 'Captopril');
+       })
+      .getElementSize('#med_ARB > div.row >div.col-1', function (result) {
+        browser.moveToElement('#med_ARB > div.row > div.col-1', result.width/2, result.hight/2);
+        browser.assert.containsText('pre.pt-0', 'Valsartan');
+       })
+      .getElementSize('#med_Anticoagulant > div.row >div.col-1', function (result) {
+        browser.moveToElement('#med_Anticoagulant > div.row > div.col-1', result.width/2, result.hight/2);
+        browser.assert.containsText('pre.pt-0', 'Warfarin');
+       })
+      .getElementSize('#med_Antiplatelet > div.row >div.col-1', function (result) {
+        browser.moveToElement('#med_Antiplatelet > div.row > div.col-1', result.width/2, result.hight/2);
+        browser.assert.containsText('pre.pt-0', 'Clopidogrel');
+       })
+      .getElementSize('#med_Steroid > div.row >div.col-1', function (result) {
+        browser.moveToElement('#med_Steroid > div.row > div.col-1', result.width/2, result.hight/2);
+        browser.assert.containsText('pre.pt-0', 'Clopidogrel');
+       })
+      
       // Test Case 1 (Atrial Fib + Age > 69)
       // Checking if submit and reset button are visible
       .assert.visible('#submit_button')
