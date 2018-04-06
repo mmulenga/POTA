@@ -1,16 +1,18 @@
 /* eslint-disable */
 
 module.exports = {
-  'Demo test Google' : function (browser) {
+  'Demo preopt app test (desktop)': function (browser) {
     browser
       .url(browser.globals.devServerURL)
       .waitForElementVisible('body', 1000)
 
+      .maximizeWindow()
+      
       .waitForElementVisible('#understanding', 1000)
       .click('#understanding')
-      .waitForElementNotVisible('#understanding',500)
-      
-      .waitForElementPresent('#modal_submit', 1000)
+      .waitForElementNotVisible('#understanding', 500)
+
+      .waitForElementPresent('#submit_button', 1000)
 
       .waitForElementPresent('#cv_AtrialFib', 500)
       .click('#cv_AtrialFib')
@@ -27,6 +29,7 @@ module.exports = {
 
       .waitForElementPresent('#pd_PulmDisease', 500)
       .click('#pd_PulmDisease')
+
       .waitForElementPresent('#other_Age', 500)
       .waitForElementPresent('#other_Risk', 500)
       .waitForElementPresent('#other_Bleeding', 500)
@@ -54,12 +57,15 @@ module.exports = {
 
       .assert.hidden('#modal_okay', 'modal_okay was hidden')
 
-      .waitForElementPresent('#modal_submit', 1000)
-      .click('#modal_submit')
+      .waitForElementPresent('#reset_button', 1000)
+      .click('#reset_button')
 
-      .waitForElementVisible('#modal_okay',1000)
+      .waitForElementPresent('#submit_button', 1000)
+      .click('#submit_button')
+
+      .waitForElementVisible('#modal_okay', 1000)
       .click('#modal_okay')
-
+      
       .end();
-  }
+  },
 };

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="mb-0">Glossary</h1>
+    <h1 class="mb-0">Glossary:</h1>
       <pre class="pt-0">
       <p>{{ glossaryEntry }}</p>
       </pre>

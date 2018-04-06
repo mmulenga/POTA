@@ -2,6 +2,12 @@ import { Exam, Condition } from '@/constants';
 import { ExamSummary } from '@/PreopRecommendation';
 import { ConditionalExam, GetConditionalExams } from '@/tag';
 
+/**
+ * Mocking both GetExams() and GetConditionalExams() as they are both called in
+ * PatientExamsNeeded(). The outputs of the mock functions are been randomly hardcoded
+ * and do not reflect the actual grid. This is only to test that PatientExamsNeeded()
+ * functions as expected regardless of the outputs in the functions it uses.
+ */
 const mockGetExams = jest
   .fn()
   // Last test
@@ -57,13 +63,13 @@ function PatientExamsNeeded(patientConditions) {
   const examAggregation = new Set();
   const conditionalExamAggregation = [];
   for (let i = 0; i < patientConditions.length; i += 1) {
-    const exams = mockGetExams();
+    const exams = mockGetExams(); // Mock function replacement
     for (let j = 0; j < exams.length; j += 1) {
       examAggregation.add(exams[j]);
     }
   }
   for (let i = 0; i < patientConditions.length; i += 1) {
-    const conditionalExams = mockGetConditionalExams();
+    const conditionalExams = mockGetConditionalExams(); // Mock function replacement
     for (let j = 0; j < conditionalExams.length; j += 1) {
       // Make a new copy of the ConditionalExam with any preconsidered exams filtered out
       const ce = new ConditionalExam(

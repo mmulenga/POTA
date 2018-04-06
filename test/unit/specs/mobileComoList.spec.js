@@ -1,12 +1,12 @@
 import { mount } from 'vue-test-utils';
-import ComoListComponent from '@/components/ComoListComponent';
+import MobileComoListComponent from '@/components/MobileComoListComponent';
 
 describe('ComoList.spec.js', () => {
   let wrapper;
   let list;
 
   beforeEach(() => {
-    wrapper = mount(ComoListComponent);
+    wrapper = mount(MobileComoListComponent);
     list = wrapper.findAll('li');
   });
 
@@ -26,58 +26,60 @@ describe('ComoList.spec.js', () => {
       expect(wrapper.vm.cardioDiseases[0].check).toBe(false);
     });
 
-    it('MouseEnter and MouseLeave event on Severe COPD emitted', () => {
+    it('passComorbidityOnHover() on Severe COPD emitted', () => {
+      const stub = jest.fn();
+      wrapper.vm.$on(['update-glossary', 'toggle-buttons'], stub);
       wrapper.vm.passComorbidityOnHover(wrapper.vm.pulmoDiseases, 0);
-      expect(wrapper.emitted().hoverEvent[0]).toEqual([{ currentComorbiditySelection: '• Spirometric values AND symptomatic assessment should be sought. \n' +
-      '• Post Bronchodilator FEV1: 30 - 50% of predicted; FEV1/FVC < 0.70 \n' +
-      '• History of exacerbations (including prior hospitalizations) should be recorded.\n' +
-      '• Worsening air flow limitation, greater SOB, reduced exercise capacity, having an ' +
-      'impact on quality of life, and ability to complete activities of daily living should be present. \n',
-      }]);
+      expect(stub).toHaveBeenCalled();
+    });
+
+    it('clearComorbidityOnHover() on Severe COPD emitted', () => {
+      const stub = jest.fn();
+      wrapper.vm.$on(['clear-glossary', 'toggle-buttons'], stub);
       wrapper.vm.clearComorbidityOnHover();
-      expect(wrapper.emitted().hoverEvent[1]).toEqual([{ currentComorbiditySelection: '' }]);
+      expect(stub).toHaveBeenCalled();
     });
   });
 
   describe('Testing out generating IDs', () => {
     it('Generate ID for list item for CV Atrial Fibrillation', () => {
       const liCV = wrapper.vm.generateID('li', 'cv', 0);
-      expect(liCV).toBe('cv_AtrialFib');
+      expect(liCV).toBe('mobile_cv_AtrialFib');
     });
 
     it('Generate ID for checkbox for CV Atrial Fibrillation', () => {
       const cbCV = wrapper.vm.generateID('cb', 'cv', 0);
-      expect(cbCV).toBe('cv_checkbox_AtrialFib');
+      expect(cbCV).toBe('mobile_cv_checkbox_AtrialFib');
     });
 
     it('Generate ID for list item for PD Severe COPD', () => {
       const liPD = wrapper.vm.generateID('li', 'pd', 0);
-      expect(liPD).toBe('pd_PulmDisease');
+      expect(liPD).toBe('mobile_pd_PulmDisease');
     });
 
     it('Generate ID for checkbox for PD Severe COPD', () => {
       const cbPD = wrapper.vm.generateID('cb', 'pd', 0);
-      expect(cbPD).toBe('pd_checkbox_PulmDisease');
+      expect(cbPD).toBe('mobile_pd_checkbox_PulmDisease');
     });
 
     it('Generate ID for list item for Other Age > 69', () => {
       const liOther = wrapper.vm.generateID('li', 'other', 0);
-      expect(liOther).toBe('other_Age');
+      expect(liOther).toBe('mobile_other_Age');
     });
 
     it('Generate ID for checkbox for Other Age > 69', () => {
       const cbOther = wrapper.vm.generateID('cb', 'other', 0);
-      expect(cbOther).toBe('other_checkbox_Age');
+      expect(cbOther).toBe('mobile_other_checkbox_Age');
     });
 
     it('Generate ID for list item for Other Age > 69', () => {
       const liMed = wrapper.vm.generateID('li', 'med', 0);
-      expect(liMed).toBe('med_Digoxin');
+      expect(liMed).toBe('mobile_med_Digoxin');
     });
 
     it('Generate ID for checkbox for Other Age > 69', () => {
       const cbMed = wrapper.vm.generateID('cb', 'med', 0);
-      expect(cbMed).toBe('med_checkbox_Digoxin');
+      expect(cbMed).toBe('mobile_med_checkbox_Digoxin');
     });
   });
 
@@ -99,4 +101,19 @@ describe('ComoList.spec.js', () => {
       expect(wrapper.vm.$data.cardioDiseases[0].check).not.toEqual(old);
     });
   });
+  describe('Testing out resetScrollPosition()', () => {
+    it('Should emit an "reset-scroll-position" event', () => {
+      const stub = jest.fn();
+      wrapper.vm.$on('reset-scroll-position', stub);
+      wrapper.vm.resetScrollPosition();
+      expect(stub).toHaveBeenCalled();
+    });
+  });
+  describe('Testing out showModal()', () => {
+    it('Should set isVisible to be the opposite', () => {
+      wrapper.vm.showModal();
+      expect(wrapper.vm.isVisible).toBe(true);
+    });
+  });
 });
+

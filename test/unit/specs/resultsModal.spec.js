@@ -57,5 +57,37 @@ describe('resultsModal.test.js', () => {
       expect(cmp.vm.conditionalExams[0].exams).toEqual(['CBC']);
     });
   });
+  describe('Testing emit methods', () => {
+    let wrapper;
+
+    beforeEach(() => {
+      wrapper = mount(ResultModalComponent);
+    });
+
+    it('clearResultArray() should emit an "clear-results" event', () => {
+      const stub = jest.fn();
+      wrapper.vm.$on('clear-results', stub);
+      wrapper.vm.clearResultArray();
+      expect(stub).toHaveBeenCalled();
+    });
+    it('drawerToggle() should emit an "drawer-toggle" event', () => {
+      const stub = jest.fn();
+      wrapper.vm.$on('drawer-toggle', stub);
+      wrapper.vm.drawerToggle();
+      expect(stub).toHaveBeenCalled();
+    });
+    it('toggleReset() should emit an "reset-toggle" event', () => {
+      const stub = jest.fn();
+      wrapper.vm.$on('reset-toggle', stub);
+      wrapper.vm.toggleReset();
+      expect(stub).toHaveBeenCalled();
+    });
+    it('hideButtons() should emit an "hide-buttons" event', () => {
+      const stub = jest.fn();
+      wrapper.vm.$on('hide-buttons', stub);
+      wrapper.vm.hideButtons();
+      expect(stub).toHaveBeenCalled();
+    });
+  });
 });
 
