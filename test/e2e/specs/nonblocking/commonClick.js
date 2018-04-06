@@ -18,6 +18,11 @@ module.exports = {
       .click('#understanding')
       .assert.hidden('#understanding')
       .assert.hidden('#modal_box')
+      .getElementSize('#pd_PulmDisease > div.row >div.col-1', function (result) {
+        browser.moveToElement('#pd_PulmDisease > div.row > div.col-1', result.width/2, result.hight/2);
+        browser.assert.containsText('pre.pt-0', 'Spirometric');
+       })
+        
       // Checking if hover glossary for all comorbidity with glossary
       .moveToElement('#pd_PulmDisease > div.row > div.col-1', 10, 10)
       .assert.containsText('pre.pt-0', 'Spirometric',
