@@ -130,7 +130,7 @@ export default {
      */
     // eslint-disable-next-line
     getWindowWidth: function getWindowWidth(event) {
-      this.windowWidth = global.innerWidth;
+      this.windowWidth = document.documentElement.clientWidth;
     },
     /**
     * Updates the resultArray used by the Patient Status window with data
