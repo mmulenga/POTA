@@ -115,10 +115,24 @@ describe('App.spec.js', () => {
   });
   describe('Updating mobileComoListComponent glossary', () => {
     describe('Testing getWindowWidth', () => {
-      it('getWindowWidth() should reset to 0', () => {
-        wrapper.vm.windowWidth = 1000;
+      beforeEach(() => {
+        global.innerWidth = 720;
+        global.dispatchEvent(new Event('resize'));
+      });
+
+      it('getWindowWidth() should reset to 1023 and data should be reset', () => {
+        expect(wrapper.vm.windowWidth).toEqual(0);
+        global.innerWidth = 1023;
+        global.dispatchEvent(new Event('resize'));
         wrapper.vm.getWindowWidth();
-        expect(wrapper.vm.windowWidth).not.toEqual(1000);
+        expect(wrapper.vm.windowWidth).toEqual(1023);
+      });
+      it('getWindowWidth() should reset to 2000', () => {
+        expect(wrapper.vm.windowWidth).toEqual(720);
+        global.innerWidth = 2000;
+        global.dispatchEvent(new Event('resize'));
+        wrapper.vm.getWindowWidth();
+        expect(wrapper.vm.windowWidth).toEqual(2000);
       });
     });
   });
