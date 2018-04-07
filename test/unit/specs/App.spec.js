@@ -115,7 +115,6 @@ describe('App.spec.js', () => {
   });
   describe('Updating mobileComoListComponent glossary', () => {
     describe('Testing getWindowWidth', () => {
-<<<<<<< HEAD
       beforeEach(() => {
         Object.defineProperty(document.documentElement, 'clientWidth', {
           value: 1024,
@@ -138,10 +137,6 @@ describe('App.spec.js', () => {
         expect(wrapper.vm.windowWidth).toEqual(1024);
         document.documentElement.clientWidth = 2000;
         global.dispatchEvent(new Event('resize'));
-=======
-      it('getWindowWidth() should reset to 0', () => {
-        wrapper.vm.windowWidth = 1000;
->>>>>>> origin/develop
         wrapper.vm.getWindowWidth();
         expect(wrapper.vm.windowWidth).not.toEqual(1000);
       });
