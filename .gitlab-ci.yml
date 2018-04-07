@@ -40,7 +40,7 @@ building:
 blocking_ui_testing:
   stage: ui_test
   script:
-    - cd ~/nightwatch
+    - cd ~/nightwatch/desktop
     - nightwatch --env chrome,safari,ie,firefox $CI_PROJECT_DIR/test/e2e/specs/blocking
   allow_failure: false
   only:
@@ -51,7 +51,7 @@ blocking_ui_testing:
 non_blocking_ui_testing:
   stage: ui_test
   script:
-    - cd ~/nightwatch
+    - cd ~/nightwatch/desktop
     - nightwatch --env chrome,safari,ie,firefox $CI_PROJECT_DIR/test/e2e/specs/nonblocking
   allow_failure: true
   only:
@@ -62,9 +62,9 @@ non_blocking_ui_testing:
 mobile_ui_testing:
   stage: ui_test
   script:
-    - cd ~/nightwatch
+    - cd ~/nightwatch/mobile
     - nightwatch --env ios,android $CI_PROJECT_DIR/test/e2e/specs/mobile
-  allow_failure: true
+  allow_failure: false
   only:
     - develop
     - release

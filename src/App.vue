@@ -112,6 +112,16 @@ export default {
     this.$nextTick(function () {
       window.addEventListener('resize', this.getWindowWidth);
       this.getWindowWidth();
+
+      // Reset application data when resized from mobile to main view
+      let prevWidth = this.windowWidth;
+      window.addEventListener('resize', () => {
+        if ((prevWidth < 1024 && this.windowWidth >= 1024)
+          || (prevWidth >= 1024 && this.windowWidth < 1024)) {
+          prevWidth = this.windowWidth;
+          Object.assign(this.$data, this.$options.data());
+        }
+      });
     });
   },
   methods: {
