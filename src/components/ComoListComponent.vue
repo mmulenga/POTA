@@ -266,6 +266,15 @@ export default {
     resetData: function resetData() {
       Object.assign(this.$data, this.$options.data.call(this));
     },
+    updateData: function updateData(data) {
+      this.$data.cardioDiseases = data.cardioDiseases;
+      this.$data.medications = data.medications;
+      this.$data.otherDiseases = data.otherDiseases;
+      this.$data.pulmoDiseases = data.pulmoDiseases;
+    },
+  },
+  deactivated() {
+    this.$emit('comoList-deactivated', this.$data);
   },
 };
 </script>
