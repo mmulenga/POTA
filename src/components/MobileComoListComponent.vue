@@ -320,6 +320,15 @@ export default {
     resetScrollPosition: function resetScrollPosition() {
       this.$emit('reset-scroll-position');
     },
+    updateData: function updateData(data) {
+      this.$data.cardioDiseases = data.cardioDiseases;
+      this.$data.medications = data.medications;
+      this.$data.otherDiseases = data.otherDiseases;
+      this.$data.pulmoDiseases = data.pulmoDiseases;
+    },
+  },
+  deactivated() {
+    this.$emit('mobileComoList-deactivated', this.$data);
   },
 };
 </script>

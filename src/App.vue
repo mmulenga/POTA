@@ -2,41 +2,46 @@
   <div id="app">
     <DisclaimerModalComponent></DisclaimerModalComponent>
     <h1 class="my-4"> Pre-Op Testing App </h1>
-      <div v-if="!isMobile() && (windowWidth > 1024)" class="row">
+      <div class="row">
         <!-- hide the status component when screen is smaller than md-->
         <div class="col-md-3 d-block">
             <StatusComponent
             :resultArray="resultArray"
-            v-if="(( !isMobile() && windowWidth > 1024))"/>
+            v-if="(( !isMobile() && windowWidth > 912))"/>
              <!-- This is the the bind to the child component-->
         </div>
         <!-- hide desktop como list when screen is smaller than md-->
         <div class="col-md-6 d-block">
+          <keep-alive>
             <ComoListComponent
             ref="ComoListComponent"
-            v-if="(( !isMobile() && windowWidth > 1024))"
+            v-if="(( !isMobile() && windowWidth > 912))"
             v-on:clickEvent="updateArray"
-            v-on:hoverEvent="updateDescription"/>
-            <ResultModalComponent
-            ref="ResultModalComponent"
-            v-if="(( !isMobile() && windowWidth >= 1024))"
-            :resultArray="resultArray"
-            :mobile="false"
-            v-on:reset-toggle="resetComoList"
-            v-on:clear-results="clearResults"/>
+            v-on:hoverEvent="updateDescription"
+            v-on:comoList-deactivated="mobileUpdate"
+            />
+          </keep-alive>
+          <ResultModalComponent
+          ref="ResultModalComponent"
+          v-if="(( !isMobile() && windowWidth >= 912))"
+          :resultArray="resultArray"
+          :mobile="false"
+          v-on:reset-toggle="resetComoList"
+          v-on:clear-results="clearResults"/>
         </div>
         <!-- hide desktop glossary when screen is smaller than md-->
         <div class="col-md-3 d-block">
             <GlossaryComponent
             :glossaryEntry="glossaryEntry"
-            v-if="(( !isMobile() && windowWidth > 1024))"/>
+            v-if="(( !isMobile() && windowWidth > 912))"/>
         </div>
     </div>
     <!-- visible-sm and down  (or hidden-md and up) -->
-    <div v-if="isMobile() || (windowWidth <= 1024)">
+    <div>
       <div>
       <!-- side drawer that contains the list of comos selected -->
-        <drawer v-if="isMobile() || (windowWidth <= 1024)"
+        <keep-alive>
+        <drawer v-if="isMobile() || (windowWidth <= 912)"
         :show="drawerShow "
         v-on:on-hide="drawerToggle(), buttonsToggle(), resetScrollPosition()"
         v-on:submit-exams="submitExams">
@@ -51,17 +56,21 @@
           </div>
           <h1 class="my-4 bg-light" style="width: 100%"> Pre-Op Testing App </h1>
           <div class="col-md-12" style="overflow: auto">
-            <MobileComoListComponent ref="MobileComoListComponent"
+            <MobileComoListComponent
+            ref="MobileComoListComponent"
             v-on:clickEvent="updateArray"
             v-on:update-glossary="updateDescription"
             v-on:clear-glossary="clearDescription"
             v-on:toggle-buttons="buttonsToggle"
-            v-on:reset-scroll-position="resetScrollPosition"/>
+            v-on:reset-scroll-position="resetScrollPosition"
+            v-on:mobileComoList-deactivated="desktopUpdate"
+            />
           </div>
           </drawer>
-      </div>
+        </keep-alive>
+        </div>
       <ResultModalComponent
-      v-if="isMobile() || ( !isMobile() && windowWidth <= 1024)"
+      v-if="isMobile() || ( !isMobile() && windowWidth <= 912)"
       ref="MobileResultModalComponent"
       class="navbar navbar-expand-lg navbar-light bg-light results"
       :hiddenButtons="buttonsHidden"
@@ -72,8 +81,8 @@
       v-on:hide-buttons="buttonsToggle"
       v-on:reset-toggle="resetMobileComoList"
       v-on:clear-results="clearResults"/>
-  </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -112,16 +121,6 @@ export default {
     this.$nextTick(function () {
       window.addEventListener('resize', this.getWindowWidth);
       this.getWindowWidth();
-
-      // Reset application data when resized from mobile to main view
-      let prevWidth = this.windowWidth;
-      window.addEventListener('resize', () => {
-        if ((prevWidth < 1024 && this.windowWidth >= 1024)
-          || (prevWidth >= 1024 && this.windowWidth < 1024)) {
-          prevWidth = this.windowWidth;
-          Object.assign(this.$data, this.$options.data());
-        }
-      });
     });
   },
   methods: {
@@ -153,7 +152,8 @@ export default {
      */
     updateDescription: function updateDescription(comorbidity) {
       this.glossaryEntry = comorbidity.currentComorbiditySelection;
-      if (this.$refs.MobileComoListComponent !== undefined) {
+      // eslint-disable-next-line
+      if (this.$refs.MobileComoListComponent._inactive === false) {
         this.$refs.MobileComoListComponent.currentComorbidityDescription
        = comorbidity.currentComorbiditySelection;
       }
@@ -231,6 +231,12 @@ export default {
      */
     isMobile: function isMobile() {
       return (navigator.userAgent.indexOf('Mobile') !== -1);
+    },
+    desktopUpdate: function desktopUpdate(data) {
+      this.$refs.ComoListComponent.updateData(data);
+    },
+    mobileUpdate: function mobileUpdate(data) {
+      this.$refs.MobileComoListComponent.updateData(data);
     },
   },
 };
