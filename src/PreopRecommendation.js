@@ -26,9 +26,6 @@ export function PatientExamsNeeded(patientConditions) {
   const examAggregation = new Set();
   const conditionalExamAggregation = [];
 
-  // Unconditionally perform a Group and Screen
-  examAggregation.add(Exam.GnS);
-
   for (let i = 0; i < patientConditions.length; i += 1) {
     const exams = GetExams(patientConditions[i]);
     for (let j = 0; j < exams.length; j += 1) {
@@ -59,7 +56,9 @@ export function PatientExamsNeeded(patientConditions) {
       }
     }
   }
-  return new ExamSummary([...examAggregation], conditionalExamAggregation);
+
+  // Unconditionally perform a Group and Screen
+  return new ExamSummary([Exam.GnS, ...examAggregation], conditionalExamAggregation);
 }
 
 /**
