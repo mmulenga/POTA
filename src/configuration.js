@@ -17,10 +17,10 @@ Tag(Condition.AtrialFib, [Exam.ECG]);
 Tag(Condition.Defib, [Exam.ECG]);
 Tag(Condition.CAD, [Exam.ECG]);
 Tag(Condition.CerebralDisease, [Exam.ECG]);
-Tag(Condition.PulmonaryVascular, [Exam.ECG]);
 Tag(Condition.HeartFail, [Exam.ECG, Exam.RenPanel]);
 Tag(Condition.PVD, [Exam.ECG, Exam.RenPanel]);
 /* Pulmonary Diseases */
+Tag(Condition.PulmonaryVascular, [Exam.ECG]);
 Tag(Condition.PulmDisease, [Exam.ECG, Exam.CBC, Exam.CXR]);
 /* Other Diseases */
 Tag(Condition.Risk, [Exam.ECG]);
