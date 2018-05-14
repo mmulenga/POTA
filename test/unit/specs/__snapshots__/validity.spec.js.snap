@@ -8,7 +8,7 @@ exports[`Testing ExamValidity() with all preop examinations correct validity per
 
 exports[`Testing ExamValidity() with all preop examinations correct validity period for Gluc to match snapshot 1`] = `"should be done within 3 months of surgery"`;
 
-exports[`Testing ExamValidity() with all preop examinations correct validity period for GnS to match snapshot 1`] = `"should be done within 1 month of surgery (or by local lab/surgical policy)"`;
+exports[`Testing ExamValidity() with all preop examinations correct validity period for GnS to match snapshot 1`] = `"as per local policy"`;
 
 exports[`Testing ExamValidity() with all preop examinations correct validity period for HbA1C to match snapshot 1`] = `"should be done within 3 months of surgery"`;
 
@@ -28,7 +28,7 @@ exports[`Testing GetExamValidity() with all preop examinations correct validity 
 
 exports[`Testing GetExamValidity() with all preop examinations correct validity period for Gluc to match snapshot 1`] = `"should be done within 3 months of surgery"`;
 
-exports[`Testing GetExamValidity() with all preop examinations correct validity period for GnS to match snapshot 1`] = `"should be done within 1 month of surgery (or by local lab/surgical policy)"`;
+exports[`Testing GetExamValidity() with all preop examinations correct validity period for GnS to match snapshot 1`] = `"as per local policy"`;
 
 exports[`Testing GetExamValidity() with all preop examinations correct validity period for HbA1C to match snapshot 1`] = `"should be done within 3 months of surgery"`;
 

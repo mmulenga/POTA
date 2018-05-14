@@ -60,22 +60,22 @@ describe('ComoList.spec.js', () => {
       expect(cbPD).toBe('pd_checkbox_PulmDisease');
     });
 
-    it('Generate ID for list item for Other Age > 69', () => {
+    it('Generate ID for list item for Age >= 69 years old OR >= 2 risk factors (HTN, DM, OSA, CKD, BMI > 35)', () => {
       const liOther = wrapper.vm.generateID('li', 'other', 0);
-      expect(liOther).toBe('other_Age');
+      expect(liOther).toBe('other_Risk');
     });
 
-    it('Generate ID for checkbox for Other Age > 69', () => {
+    it('Generate ID for checkbox for Age >= 69 years old OR >= 2 risk factors (HTN, DM, OSA, CKD, BMI > 35)', () => {
       const cbOther = wrapper.vm.generateID('cb', 'other', 0);
-      expect(cbOther).toBe('other_checkbox_Age');
+      expect(cbOther).toBe('other_checkbox_Risk');
     });
 
-    it('Generate ID for list item for Other Age > 69', () => {
+    it('Generate ID for list item for Age >= 69 years old OR >= 2 risk factors (HTN, DM, OSA, CKD, BMI > 35)', () => {
       const liMed = wrapper.vm.generateID('li', 'med', 0);
       expect(liMed).toBe('med_Digoxin');
     });
 
-    it('Generate ID for checkbox for Other Age > 69', () => {
+    it('Generate ID for checkbox for Digoxin)', () => {
       const cbMed = wrapper.vm.generateID('cb', 'med', 0);
       expect(cbMed).toBe('med_checkbox_Digoxin');
     });

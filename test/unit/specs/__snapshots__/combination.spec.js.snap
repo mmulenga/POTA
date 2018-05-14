@@ -2,20 +2,16 @@
 
 exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for Diabetes + Anticoagulant to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "Renal Panel (Creat + Lytes)",
   "Gluc",
+  "HbA1C",
   "CBC",
 ]
 `;
 
 exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for Diabetes + Anticoagulant to match snapshot 2`] = `
-Array [
-  "HbA1C",
-]
-`;
-
-exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for Diabetes + Anticoagulant to match snapshot 3`] = `
 Array [
   "PTT/INR",
 ]
@@ -23,9 +19,11 @@ Array [
 
 exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for Diabetes + Malignancy to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "Renal Panel (Creat + Lytes)",
   "Gluc",
+  "HbA1C",
   "CBC",
   "CXR",
 ]
@@ -33,32 +31,22 @@ Array [
 
 exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for Diabetes + Malignancy to match snapshot 2`] = `
 Array [
-  "HbA1C",
-]
-`;
-
-exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for Diabetes + Malignancy to match snapshot 3`] = `
-Array [
   "PTT/INR",
 ]
 `;
 
 exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for VHD + Diabetes + Antiplatelet to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "Renal Panel (Creat + Lytes)",
   "Gluc",
+  "HbA1C",
   "CBC",
 ]
 `;
 
 exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for VHD + Diabetes + Antiplatelet to match snapshot 2`] = `
-Array [
-  "HbA1C",
-]
-`;
-
-exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for VHD + Diabetes + Antiplatelet to match snapshot 3`] = `
 Array [
   "PTT/INR",
 ]
@@ -66,34 +54,25 @@ Array [
 
 exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for VHD + Diabetes to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "Renal Panel (Creat + Lytes)",
   "Gluc",
+  "HbA1C",
 ]
 `;
 
 exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for VHD + Diabetes to match snapshot 2`] = `
 Array [
-  "CBC",
-]
-`;
-
-exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for VHD + Diabetes to match snapshot 3`] = `
-Array [
-  "HbA1C",
-]
-`;
-
-exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for VHD + Diabetes to match snapshot 4`] = `
-Array [
-  "ECG",
+  "Group and Screen",
   "CBC",
   "CXR",
 ]
 `;
 
-exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for VHD + Diabetes to match snapshot 5`] = `
+exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for VHD + Diabetes to match snapshot 3`] = `
 Array [
+  "ECG",
   "Renal Panel (Creat + Lytes)",
   "PTT/INR",
 ]
@@ -101,6 +80,7 @@ Array [
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for AtrialFib + Defib to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
 ]
 `;
@@ -109,7 +89,7 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for Bleeding + Digoxin + ACEI 1`] = `
 Array [
-  "G&S",
+  "Group and Screen",
   "CBC",
   "PTT/INR",
   "ECG",
@@ -121,8 +101,8 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for CAD + Bleeding to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
-  "G&S",
   "CBC",
   "PTT/INR",
 ]
@@ -132,7 +112,7 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for CardiacStent + Adrenal to match snapshot 1`] = `
 Array [
-  "ECG",
+  "Group and Screen",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
@@ -141,7 +121,7 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for CardiacStent + Adrenal to match snapshot 3`] = `
 Array [
-  "ECG",
+  "Group and Screen",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
@@ -150,6 +130,7 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for CerebralDiseaese + Lithium to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "Renal Panel (Creat + Lytes)",
 ]
@@ -159,9 +140,10 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for HeartFail + Hepatic to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
-  "CBC",
   "Renal Panel (Creat + Lytes)",
+  "CBC",
   "PTT/INR",
   "LFT",
 ]
@@ -171,6 +153,7 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for PVD + Anemia to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "Renal Panel (Creat + Lytes)",
   "CBC",
@@ -181,6 +164,7 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for PulmDisease + KidneyDisease + Steroid to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "CBC",
   "CXR",
@@ -193,6 +177,7 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for PulmonaryVascular + Pituitary + Steroid to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "Renal Panel (Creat + Lytes)",
   "Gluc",
@@ -203,10 +188,10 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for Risk + Bleeding + Digoxin + ACEI 1`] = `
 Array [
-  "ECG",
-  "G&S",
+  "Group and Screen",
   "CBC",
   "PTT/INR",
+  "ECG",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
@@ -215,6 +200,7 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for Risk + Endocrine + Thyroid + NSAIDS 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "Renal Panel (Creat + Lytes)",
   "TSH",
@@ -225,6 +211,7 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for Stroke + Digoxin to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "Renal Panel (Creat + Lytes)",
 ]
@@ -234,7 +221,7 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 
 exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbidities set of preop exams for TIA + Hepatic + Steroid to match snapshot 1`] = `
 Array [
-  "ECG",
+  "Group and Screen",
   "CBC",
   "Renal Panel (Creat + Lytes)",
   "PTT/INR",
@@ -247,8 +234,8 @@ exports[`Testing PatientExamsNeeded() with multiple non-conditional comorbiditie
 
 exports[`Testing PatientExamsNeeded() with multiple random comorbidities set of preop exams for Age + Risk + Bleeding + Malignancy to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
-  "G&S",
   "CBC",
   "PTT/INR",
   "CXR",
@@ -263,8 +250,8 @@ Array [
 
 exports[`Testing PatientExamsNeeded() with multiple random comorbidities set of preop exams for AtrialFib + PulmonaryVascular + Bleeding + Digoxin to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
-  "G&S",
   "CBC",
   "PTT/INR",
   "Renal Panel (Creat + Lytes)",
@@ -275,6 +262,7 @@ exports[`Testing PatientExamsNeeded() with multiple random comorbidities set of 
 
 exports[`Testing PatientExamsNeeded() with multiple random comorbidities set of preop exams for CAD + VHD + Hepatic + Thyroid to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "CBC",
   "Renal Panel (Creat + Lytes)",
@@ -288,6 +276,7 @@ exports[`Testing PatientExamsNeeded() with multiple random comorbidities set of 
 
 exports[`Testing PatientExamsNeeded() with multiple random comorbidities set of preop exams for Defib + CardiacStent + Hepatic + Anticoagulants to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "CBC",
   "Renal Panel (Creat + Lytes)",
@@ -300,6 +289,7 @@ exports[`Testing PatientExamsNeeded() with multiple random comorbidities set of 
 
 exports[`Testing PatientExamsNeeded() with multiple random comorbidities set of preop exams for Defib + Stroke + PulmDisease + Anemia to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "CBC",
   "CXR",
@@ -310,7 +300,7 @@ exports[`Testing PatientExamsNeeded() with multiple random comorbidities set of 
 
 exports[`Testing PatientExamsNeeded() with multiple random comorbidities set of preop exams for VHD + Malignancy + Adrenal + Endocrine to match snapshot 1`] = `
 Array [
-  "ECG",
+  "Group and Screen",
   "CBC",
   "CXR",
   "Renal Panel (Creat + Lytes)",
@@ -319,6 +309,7 @@ Array [
 
 exports[`Testing PatientExamsNeeded() with multiple random comorbidities set of preop exams for VHD + Malignancy + Adrenal + Endocrine to match snapshot 2`] = `
 Array [
+  "ECG",
   "PTT/INR",
 ]
 `;
