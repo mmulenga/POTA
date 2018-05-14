@@ -77,9 +77,7 @@ describe('App.spec.js', () => {
       wrapper.vm.submitExams();
       expect(wrapper.vm.drawerShow).toBe(true);
       expect(wrapper.vm.buttonsHidden).toBe(true);
-      expect(wrapper.vm.$refs.ResultModalComponent.exams).toEqual(['ECG']);
-      expect(wrapper.vm.$refs.ResultModalComponent.conditionalExams[0].conditionPhrase).toBe('Is valve mechanical?');
-      expect(wrapper.vm.$refs.ResultModalComponent.conditionalExams[0].exams).toEqual(['CBC']);
+      expect(wrapper.vm.$refs.ResultModalComponent.exams).toEqual(['Group and Screen']);
     });
     it('updateDescription() should not display the correct glossary for AF for desktop', () => {
       wrapper = mount(App);
@@ -104,9 +102,7 @@ describe('App.spec.js', () => {
       wrapper.vm.submitExams();
       expect(wrapper.vm.drawerShow).toBe(true);
       expect(wrapper.vm.buttonsHidden).toBe(true);
-      expect(wrapper.vm.$refs.MobileResultModalComponent.exams).toEqual(['ECG']);
-      expect(wrapper.vm.$refs.MobileResultModalComponent.conditionalExams[0].conditionPhrase).toBe('Is valve mechanical?');
-      expect(wrapper.vm.$refs.MobileResultModalComponent.conditionalExams[0].exams).toEqual(['CBC']);
+      expect(wrapper.vm.$refs.MobileResultModalComponent.exams).toEqual(['Group and Screen']);
     });
     it('updateDescription() displays the correct glossary for AF for mobile devices', () => {
       wrapper.vm.updateDescription({ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' });

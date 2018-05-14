@@ -62,14 +62,14 @@ describe('ComoList.spec.js', () => {
       expect(cbPD).toBe('mobile_pd_checkbox_PulmDisease');
     });
 
-    it('Generate ID for list item for Other Age > 69', () => {
+    it('Generate ID for list item for Age >= 69 years old OR >= 2 risk factors (HTN, DM, OSA, CKD, BMI > 35)', () => {
       const liOther = wrapper.vm.generateID('li', 'other', 0);
-      expect(liOther).toBe('mobile_other_Age');
+      expect(liOther).toBe('mobile_other_Risk');
     });
 
-    it('Generate ID for checkbox for Other Age > 69', () => {
+    it('Generate ID for checkbox for Age >= 69 years old OR >= 2 risk factors (HTN, DM, OSA, CKD, BMI > 35)', () => {
       const cbOther = wrapper.vm.generateID('cb', 'other', 0);
-      expect(cbOther).toBe('mobile_other_checkbox_Age');
+      expect(cbOther).toBe('mobile_other_checkbox_Risk');
     });
 
     it('Generate ID for list item for Other Age > 69', () => {
