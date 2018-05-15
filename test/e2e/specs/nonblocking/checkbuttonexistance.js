@@ -17,7 +17,7 @@ module.exports = {
       .waitForElementPresent('#cv_AtrialFib', 1000)
       .waitForElementPresent('#cv_Defib', 500)
       .waitForElementPresent('#cv_CAD', 500)
-      .waitForElementPresent('#cv_CardiacStent', 500)
+      .waitForElementNotPresent('#cv_CardiacStent', 500)
       .waitForElementPresent('#cv_CerebralDisease', 500)
       .waitForElementPresent('#cv_PulmonaryVascular', 500)
       .waitForElementPresent('#cv_TIA', 500)

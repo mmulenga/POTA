@@ -18,7 +18,6 @@ module.exports = {
       .click('#mobile_cv_AtrialFib')
       .waitForElementPresent('#mobile_cv_Defib', 500)
       .waitForElementPresent('#mobile_cv_CAD', 500)
-      .waitForElementPresent('#mobile_cv_CardiacStent', 500)
       .waitForElementPresent('#mobile_cv_CerebralDisease', 500)
       .waitForElementPresent('#mobile_cv_PulmonaryVascular', 500)
       .waitForElementPresent('#mobile_cv_TIA', 500)
