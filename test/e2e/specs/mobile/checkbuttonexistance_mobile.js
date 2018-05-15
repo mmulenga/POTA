@@ -25,7 +25,6 @@ module.exports = {
 
       .waitForElementPresent('#mobile_pd_PulmDisease', 500)
 
-      .waitForElementPresent('#mobile_other_Age', 500)
       .waitForElementPresent('#mobile_other_Risk', 500)
       .waitForElementPresent('#mobile_other_Bleeding', 500)
       .waitForElementPresent('#mobile_other_Anemia', 500)

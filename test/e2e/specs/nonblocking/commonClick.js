@@ -74,18 +74,18 @@ module.exports = {
       // Checking if the conditions are unchecked
       .assert.visible('#cv_checkbox_AtrialFib:not(:checked)', 
         'Testing if element <#cv_checkbox_AtrialFib> is unchecked')
-      .assert.visible('#other_checkbox_Age:not(:checked)',
-        'Testing if element <#other_checkbox_Age> is unchecked')
+      .assert.visible('#other_checkbox_Risk:not(:checked)',
+        'Testing if element <#other_checkbox_Risk> is unchecked')
       // Checking if the checkboxes are checked after clicking
       .click('#cv_checkbox_AtrialFib')
       .assert.visible('#cv_checkbox_AtrialFib:checked', 
         'Testing if element <#cv_checkbox_AtrialFib> is checked')
-      .click('#other_checkbox_Age')
-      .assert.visible('#other_checkbox_Age:checked',
-        'Testing if element <#other_checkbox_Age> is checked')
+      .click('#other_checkbox_Risk')
+      .assert.visible('#other_checkbox_Risk:checked',
+        'Testing if element <#other_checkbox_Risk> is checked')
       // Checking if Patient Status is updated
       .assert.containsText('div.list', 'Atrial fibrillation')
-      .assert.containsText('div.list', 'Age')  
+      .assert.containsText('div.list', 'Risk')  
       // Checking if result modal is visible after clicking
       .click('#submit_button')
       .assert.visible('#modal_okay')
@@ -98,15 +98,15 @@ module.exports = {
       // Checking if checkboxes are still checked
       .assert.visible('#cv_checkbox_AtrialFib:checked', 
         'Testing if element <#cv_checkbox_AtrialFib> is checked')
-      .assert.visible('#other_checkbox_Age:checked',
-        'Testing if element <#other_checkbox_Age> is checked')
+      .assert.visible('#other_checkbox_Risk:checked',
+        'Testing if element <#other_checkbox_Risk> is checked')
       // Unchecking them and then confirming that they are unchecked
       .click('#cv_checkbox_AtrialFib')
       .assert.visible('#cv_checkbox_AtrialFib:not(:checked)', 
         'Testing if element <#cv_checkbox_AtrialFib> is unchecked')
-      .click('#other_checkbox_Age')
-      .assert.visible('#other_checkbox_Age:not(:checked)',
-        'Testing if element <#other_checkbox_Age> is unchecked')
+      .click('#other_checkbox_Risk')
+      .assert.visible('#other_checkbox_Risk:not(:checked)',
+        'Testing if element <#other_checkbox_Risk> is unchecked')
        // Checking if PatientStatus is updated
        .assert.containsText('div.list', '')
 
