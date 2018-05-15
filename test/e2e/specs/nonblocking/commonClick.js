@@ -85,7 +85,7 @@ module.exports = {
         'Testing if element <#other_checkbox_Risk> is checked')
       // Checking if Patient Status is updated
       .assert.containsText('div.list', 'Atrial fibrillation')
-      .assert.containsText('div.list', 'Risk')  
+      .assert.containsText('div.list', 'Atrial fibrillation / History of irregular heart beat')  
       // Checking if result modal is visible after clicking
       .click('#submit_button')
       .assert.visible('#modal_okay')
