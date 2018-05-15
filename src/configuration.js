@@ -17,16 +17,17 @@ Tag(Condition.AtrialFib, [Exam.ECG]);
 Tag(Condition.Defib, [Exam.ECG]);
 Tag(Condition.CAD, [Exam.ECG]);
 Tag(Condition.CerebralDisease, [Exam.ECG]);
+Tag(Condition.PVD, [Exam.ECG]);
+Tag(Condition.VHD, [Exam.ECG]);
 Tag(Condition.HeartFail, [Exam.ECG, Exam.RenPanel]);
-Tag(Condition.PVD, [Exam.ECG, Exam.RenPanel]);
 /* Pulmonary Diseases */
 Tag(Condition.PulmonaryVascular, [Exam.ECG]);
 Tag(Condition.PulmDisease, [Exam.ECG, Exam.CBC, Exam.CXR]);
 /* Other Diseases */
 Tag(Condition.Risk, [Exam.ECG]);
-Tag(Condition.Bleeding, [Exam.CBC, Exam.PTTINR]);
 Tag(Condition.Anemia, [Exam.CBC]);
-Tag(Condition.ActiveBleeding, [Exam.CBC]);
+Tag(Condition.Bleeding, [Exam.CBC, Exam.PTTINR]);
+// Tag(Condition.ActiveBleeding, [Exam.CBC]);
 Tag(Condition.KidneyDisease, [Exam.CBC, Exam.RenPanel]);
 Tag(Condition.Diabetes, [Exam.ECG, Exam.RenPanel, Exam.Gluc, Exam.HbA1C]);
 Tag(Condition.Malignancy, [Exam.CBC, Exam.CXR],

@@ -2,7 +2,6 @@ import { Condition, Exam } from '@/constants';
 import { PatientExamsNeeded } from '@/PreopRecommendation';
 
 let requiredExams;
-let conditionalExams;
 let result;
 
 /**

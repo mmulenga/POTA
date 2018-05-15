@@ -469,7 +469,6 @@ describe('Testing GetExams() for all pulmonary diseases in tag.js', () => {
 });
 
 describe('Testing GetExams() for all other diseases in tag.js', () => {
-
   it('returns the correct array of preop exams for >= 2 risk factors', () => {
     result = GetExams(Condition.Risk);
     requiredExams = ['ECG'];
@@ -662,7 +661,6 @@ describe('Testing GetExams() for all medication use in tag.js', () => {
 });
 
 describe('Testing GetAllExams() in tag.js', () => {
-
   it('returns correct tag creation when accessing invalid name parameter', () => {
     expect(GetAllExams().exams.DaleDisease).toEqual(undefined);
   });

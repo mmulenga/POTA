@@ -18,10 +18,9 @@ export const Condition = {
   PulmonaryVascular: 'History of pulmonary vascular disease',
   PulmDisease: 'Severe COPD, Home Oxygen, Pulmonary HTN',
   /* Other Diseases */
-  Risk: 'Age >= 69 years old OR >= 2 risk factors (HTN, DM, OSA, CKD, BMI > 35)',
+  Risk: 'Age ≥ 69 years old OR ≥ 2 risk factors (HTN, DM, OSA, CKD, BMI > 35)',
   Bleeding: 'Bleeding disorders',
   Anemia: 'History of anemia in past 12 months or ongoing blood loss',
-  ActiveBleeding: 'History of active bleeding',
   KidneyDisease: 'Chronic kidney disease / on dialysis',
   Diabetes: 'Diabetes',
   Malignancy: 'Present malignancy / surgery for malignancy',
