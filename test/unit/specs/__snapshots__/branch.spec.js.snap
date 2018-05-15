@@ -25,7 +25,6 @@ exports[`Testing branching for PatientExamsNeeded() set of preop exams for PVD t
 Array [
   "Group and Screen",
   "ECG",
-  "Renal Panel (Creat + Lytes)",
 ]
 `;
 
@@ -34,6 +33,7 @@ exports[`Testing branching for PatientExamsNeeded() set of preop exams for PVD t
 exports[`Testing branching for PatientExamsNeeded() set of preop exams for PVD to match snapshot 3`] = `
 Array [
   "Group and Screen",
+  "ECG",
 ]
 `;
 

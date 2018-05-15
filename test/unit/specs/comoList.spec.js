@@ -27,7 +27,7 @@ describe('ComoList.spec.js', () => {
     });
 
     it('MouseEnter and MouseLeave event on Severe COPD emitted', () => {
-      wrapper.vm.passComorbidityOnHover(wrapper.vm.pulmoDiseases, 0);
+      wrapper.vm.passComorbidityOnHover(wrapper.vm.pulmoDiseases, 1);
       expect(wrapper.emitted().hoverEvent[0]).toEqual([{ currentComorbiditySelection: '• Spirometric values AND symptomatic assessment should be sought. \n' +
       '• Post Bronchodilator FEV1: 30 - 50% of predicted; FEV1/FVC < 0.70 \n' +
       '• History of exacerbations (including prior hospitalizations) should be recorded.\n' +
@@ -51,12 +51,12 @@ describe('ComoList.spec.js', () => {
     });
 
     it('Generate ID for list item for PD Severe COPD', () => {
-      const liPD = wrapper.vm.generateID('li', 'pd', 0);
+      const liPD = wrapper.vm.generateID('li', 'pd', 1);
       expect(liPD).toBe('pd_PulmDisease');
     });
 
     it('Generate ID for checkbox for PD Severe COPD', () => {
-      const cbPD = wrapper.vm.generateID('cb', 'pd', 0);
+      const cbPD = wrapper.vm.generateID('cb', 'pd', 1);
       expect(cbPD).toBe('pd_checkbox_PulmDisease');
     });
 
@@ -87,7 +87,7 @@ describe('ComoList.spec.js', () => {
     });
 
     it('Severe COPD should have glossary and return true', () => {
-      expect(wrapper.vm.hasEntry(wrapper.vm.pulmoDiseases[0])).toBe(true);
+      expect(wrapper.vm.hasEntry(wrapper.vm.pulmoDiseases[1])).toBe(true);
     });
   });
   describe('Testing out resetData()', () => {

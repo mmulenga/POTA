@@ -77,7 +77,7 @@ describe('App.spec.js', () => {
       wrapper.vm.submitExams();
       expect(wrapper.vm.drawerShow).toBe(true);
       expect(wrapper.vm.buttonsHidden).toBe(true);
-      expect(wrapper.vm.$refs.ResultModalComponent.exams).toEqual(['Group and Screen']);
+      expect(wrapper.vm.$refs.ResultModalComponent.exams).toEqual(['Group and Screen', 'ECG']);
     });
     it('updateDescription() should not display the correct glossary for AF for desktop', () => {
       wrapper = mount(App);
@@ -102,7 +102,7 @@ describe('App.spec.js', () => {
       wrapper.vm.submitExams();
       expect(wrapper.vm.drawerShow).toBe(true);
       expect(wrapper.vm.buttonsHidden).toBe(true);
-      expect(wrapper.vm.$refs.MobileResultModalComponent.exams).toEqual(['Group and Screen']);
+      expect(wrapper.vm.$refs.MobileResultModalComponent.exams).toEqual(['Group and Screen', 'ECG']);
     });
     it('updateDescription() displays the correct glossary for AF for mobile devices', () => {
       wrapper.vm.updateDescription({ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' });

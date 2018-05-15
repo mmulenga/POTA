@@ -59,11 +59,14 @@ Array [
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for peripheral vascular disease (PVD) to match snapshot 1`] = `
 Array [
   "ECG",
-  "Renal Panel (Creat + Lytes)",
 ]
 `;
 
-exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for valvular heart disease / valve replacement to match snapshot 1`] = `Array []`;
+exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for valvular heart disease / valve replacement to match snapshot 1`] = `
+Array [
+  "ECG",
+]
+`;
 
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for valvular heart failure to match snapshot 1`] = `
 Array [
@@ -161,11 +164,7 @@ Array [
 ]
 `;
 
-exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for history of active bleeding to match snapshot 1`] = `
-Array [
-  "CBC",
-]
-`;
+exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for history of active bleeding to match snapshot 1`] = `Array []`;
 
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for history of adrenal disease to match snapshot 1`] = `
 Array [
@@ -278,7 +277,6 @@ exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecomm
 Array [
   "Group and Screen",
   "ECG",
-  "Renal Panel (Creat + Lytes)",
 ]
 `;
 
@@ -287,6 +285,7 @@ exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecomm
 exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Valvular heart disease / valve replacement pre op exams to match snapshot 1`] = `
 Array [
   "Group and Screen",
+  "ECG",
 ]
 `;
 
@@ -449,7 +448,6 @@ exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for history of active bleeding to match snapshot 1`] = `
 Array [
   "Group and Screen",
-  "CBC",
 ]
 `;
 

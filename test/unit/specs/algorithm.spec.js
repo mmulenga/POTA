@@ -70,7 +70,7 @@ describe('Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecom
   });
   it('returns correct set of preop exams for valvular heart disease / valve replacement', () => {
     result = PatientExamsNeeded([Condition.VHD]);
-    requiredExams = [Exam.GnS];
+    requiredExams = [Exam.GnS, Exam.ECG];
     conditionalExams = [Exam.CBC];
     expect(result.exams).toEqual(requiredExams);
   });
@@ -92,7 +92,7 @@ describe('Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecom
 
   it('returns correct set of preop exams for peripheral vasculara disease (PVD)', () => {
     result = PatientExamsNeeded([Condition.PVD]);
-    requiredExams = [Exam.GnS, Exam.ECG, Exam.RenPanel];
+    requiredExams = [Exam.GnS, Exam.ECG];
     conditionalExams = [];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual(conditionalExams);
@@ -156,7 +156,7 @@ describe('Testing PatientExamsNeeded() for other diseases in PreopRecommendation
 
   it('returns correct set of preop exams for history of active bleeding', () => {
     result = PatientExamsNeeded([Condition.ActiveBleeding]);
-    requiredExams = [Exam.GnS, Exam.CBC];
+    requiredExams = [Exam.GnS];
     conditionalExams = [];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual(conditionalExams);
@@ -431,7 +431,7 @@ describe('Testing GetExams() for all cardiovascular diseases in tag.js', () => {
   });
   it('returns the correct array of examinations for valvular heart disease / valve replacement', () => {
     result = GetExams(Condition.VHD);
-    requiredExams = [];
+    requiredExams = ['ECG'];
     expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for valvular heart disease / valve replacement to match snapshot', () => {
@@ -449,7 +449,7 @@ describe('Testing GetExams() for all cardiovascular diseases in tag.js', () => {
 
   it('returns the correct array of examinations for peripheral vascular disease (PVD)', () => {
     result = GetExams(Condition.PVD);
-    requiredExams = ['ECG', 'Renal Panel (Creat + Lytes)'];
+    requiredExams = ['ECG'];
     expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for peripheral vascular disease (PVD) to match snapshot', () => {
@@ -498,7 +498,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
 
   it('returns the correct array of preop exams for history of active bleeding', () => {
     result = GetExams(Condition.ActiveBleeding);
-    requiredExams = ['CBC'];
+    requiredExams = [];
     expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for history of active bleeding to match snapshot', () => {

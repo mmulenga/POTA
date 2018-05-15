@@ -24,7 +24,7 @@ Array [
   },
   Object {
     "check": false,
-    "comorbidity": "History of pulmonary vascular disease",
+    "comorbidity": "Peripheral Vascular disease (PVD)",
     "glossary": "No extra information.",
   },
   Object {
@@ -35,11 +35,6 @@ Array [
   Object {
     "check": false,
     "comorbidity": "Heart failure",
-    "glossary": "No extra information.",
-  },
-  Object {
-    "check": false,
-    "comorbidity": "Peripheral Vascular disease (PVD)",
     "glossary": "No extra information.",
   },
 ]
@@ -99,7 +94,7 @@ exports[`Testing all comorbidities in ComoListComponent.vue List of other diseas
 Array [
   Object {
     "check": false,
-    "comorbidity": "Age >= 69 years old OR >= 2 risk factors (HTN, DM, OSA, CKD, BMI > 35)",
+    "comorbidity": "Age ≥ 69 years old OR ≥ 2 risk factors (HTN, DM, OSA, CKD, BMI > 35)",
     "glossary": "No extra information.",
   },
   Object {
@@ -114,11 +109,6 @@ Array [
   Object {
     "check": false,
     "comorbidity": "History of anemia in past 12 months or ongoing blood loss",
-    "glossary": "No extra information.",
-  },
-  Object {
-    "check": false,
-    "comorbidity": "History of active bleeding",
     "glossary": "No extra information.",
   },
   Object {
@@ -180,6 +170,11 @@ Array [
 
 exports[`Testing all comorbidities in ComoListComponent.vue List of pulmonary diseases matches snapshot 1`] = `
 Array [
+  Object {
+    "check": false,
+    "comorbidity": "History of pulmonary vascular disease",
+    "glossary": "No extra information.",
+  },
   Object {
     "check": false,
     "comorbidity": "Severe COPD, Home Oxygen, Pulmonary HTN",

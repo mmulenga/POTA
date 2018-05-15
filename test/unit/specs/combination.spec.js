@@ -37,7 +37,7 @@ describe('Testing PatientExamsNeeded() with multiple non-conditional comorbiditi
 
   it('returns correct set of preop exams for PVD + Anemia', () => {
     result = PatientExamsNeeded([Condition.PVD, Condition.Anemia]);
-    requiredExams = [Exam.GnS, Exam.ECG, Exam.RenPanel, Exam.CBC];
+    requiredExams = [Exam.GnS, Exam.ECG, Exam.CBC];
     conditionalExams = [];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual(conditionalExams);
@@ -196,9 +196,9 @@ describe('Testing PatientExamsNeeded() with multiple conditional comorbidities',
 
   it('returns correct set of preop exams for VHD + Malignancy', () => {
     result = PatientExamsNeeded([Condition.VHD, Condition.Malignancy]);
-    requiredExams = [Exam.GnS, Exam.CBC, Exam.CXR];
+    requiredExams = [Exam.GnS, Exam.ECG, Exam.CBC, Exam.CXR];
     expect(result.exams).toEqual(requiredExams);
-    expect(result.conditionalExams[0].exams).toEqual([Exam.ECG, Exam.RenPanel, Exam.PTTINR]);
+    expect(result.conditionalExams[0].exams).toEqual([Exam.RenPanel, Exam.PTTINR]);
   });
   it('set of preop exams for VHD + Diabetes to match snapshot', () => {
     expect(result.exams).toMatchSnapshot();
@@ -279,9 +279,9 @@ describe('Testing PatientExamsNeeded() with multiple random comorbidities', () =
   it('returns correct set of preop exams for VHD + Malignancy + Adrenal + Endocrine', () => {
     result = PatientExamsNeeded([Condition.VHD, Condition.Malignancy,
       Condition.Adrenal, Condition.Endocrine]);
-    requiredExams = [Exam.GnS, Exam.CBC, Exam.CXR, Exam.RenPanel];
+    requiredExams = [Exam.GnS, Exam.ECG, Exam.CBC, Exam.CXR, Exam.RenPanel];
     expect(result.exams).toEqual(requiredExams);
-    expect(result.conditionalExams[0].exams).toEqual([Exam.ECG, Exam.PTTINR]);
+    expect(result.conditionalExams[0].exams).toEqual([Exam.PTTINR]);
   });
   it('set of preop exams for VHD + Malignancy + Adrenal + Endocrine to match snapshot', () => {
     expect(result.exams).toMatchSnapshot();
