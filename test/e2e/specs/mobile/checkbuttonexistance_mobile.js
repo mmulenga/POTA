@@ -19,7 +19,6 @@ module.exports = {
       .waitForElementPresent('#mobile_cv_Defib', 500)
       .waitForElementPresent('#mobile_cv_CAD', 500)
       .waitForElementPresent('#mobile_cv_CerebralDisease', 500)
-      .waitForElementPresent('#mobile_cv_Stroke', 500)
       .waitForElementPresent('#mobile_cv_VHD', 500)
       .waitForElementPresent('#mobile_cv_HeartFail', 500)
       .waitForElementPresent('#mobile_cv_PVD', 500)
