@@ -28,7 +28,6 @@ module.exports = {
       .waitForElementPresent('#mobile_other_Risk', 500)
       .waitForElementPresent('#mobile_other_Bleeding', 500)
       .waitForElementPresent('#mobile_other_Anemia', 500)
-      .waitForElementPresent('#mobile_other_ActiveBleeding', 500)
       .waitForElementPresent('#mobile_other_KidneyDisease', 500)
       .waitForElementPresent('#mobile_other_Diabetes', 500)
       .waitForElementPresent('#mobile_other_Malignancy', 500)
