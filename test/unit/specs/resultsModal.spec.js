@@ -52,7 +52,7 @@ describe('resultsModal.test.js', () => {
       // Clicking button should run getExams() method.
       button.trigger('click');
       // After getExams() is called, exam array should be filled
-      expect(cmp.vm.exams).toEqual(['Group and Screen']);
+      expect(cmp.vm.exams).toEqual(['Group and Screen', 'ECG']);
     });
   });
   describe('Testing emit methods', () => {

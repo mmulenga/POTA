@@ -33,7 +33,7 @@ describe('Testing branching for PatientExamsNeeded()', () => {
 
   it('returns correct set of preop exams for PVD', () => {
     result = PatientExamsNeeded([Condition.PVD]);
-    requiredExams = [Exam.GnS, Exam.ECG, Exam.RenPanel];
+    requiredExams = [Exam.GnS, Exam.ECG];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams).toEqual([]);
   });
@@ -44,7 +44,7 @@ describe('Testing branching for PatientExamsNeeded()', () => {
 
   it('returns correct set of preop exams for VHD', () => {
     result = PatientExamsNeeded([Condition.VHD]);
-    requiredExams = [Exam.GnS];
+    requiredExams = [Exam.GnS, Exam.ECG];
     expect(result.exams).toEqual(requiredExams);
   });
   it('set of preop exams for PVD to match snapshot', () => {
