@@ -13,7 +13,7 @@ let result;
 describe('Testing GetExamValidity() with all preop examinations', () => {
   it('returns the correct validity period for GnS', () => {
     result = GetExamValidity(Exam.GnS);
-    expect(result).toEqual(expect.stringContaining('1 month'));
+    expect(result).toEqual(expect.stringContaining('as per local policy'));
   });
   it('correct validity period for GnS to match snapshot', () => {
     expect(result).toMatchSnapshot();
@@ -95,7 +95,7 @@ describe('Testing GetExamValidity() with all preop examinations', () => {
 describe('Testing ExamValidity() with all preop examinations', () => {
   it('returns the correct validity period for  GnS', () => {
     result = ExamValidity(Exam.GnS);
-    expect(result).toEqual(expect.stringContaining('1 month'));
+    expect(result).toEqual(expect.stringContaining('as per local policy'));
   });
   it('correct validity period for GnS to match snapshot', () => {
     expect(result).toMatchSnapshot();

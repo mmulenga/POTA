@@ -7,13 +7,18 @@
         <h5 class="modal-title"> Disclaimer </h5>
       </div>
       <div class="modal-body">
-        <p>* For patients having ultra-low risk surgery (i.e., GI endoscopy and cataracts
-          under local/topical anesthesia), available evidence states there is no need
-          for testing.
-          <br>
-          * For patients with complex or uncommon surgical or medical conditions,
-          tests beyond what is suggested in this grid may be appropriate based on the
-          clinical judgement of the health care provider.</p>
+        <p>* For patients having surgical
+        procedures under local/topical
+        anesthesia, and no new/worsened
+        symptoms, evidence suggests there is
+        no need for testing.
+        <br>
+        * For patients with
+        complex or uncommon surgical or
+        medical conditions, tests beyond these
+        guidelines may be appropriate based on
+        the clinical judgement of the health
+        care provider</p>
         <button type="button" class="btn btn-primary" id="understanding" v-on:click="hideModal()">
           I Understand
         </button>

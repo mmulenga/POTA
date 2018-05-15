@@ -2,12 +2,6 @@
 
 exports[`Testing GetAllExams() in tag.js correct tag creation when accessing invalid name parameter to match snapshot 1`] = `undefined`;
 
-exports[`Testing GetAllExams() in tag.js correct tag creation when accessing valid name parameter to match snapshot 1`] = `
-Array [
-  "ECG",
-]
-`;
-
 exports[`Testing GetConditionalExams() with all conditional comorbidities correct array of conditional exams for Anticoagulant to match snapshot 1`] = `
 Array [
   "PTT/INR",
@@ -20,12 +14,6 @@ Array [
 ]
 `;
 
-exports[`Testing GetConditionalExams() with all conditional comorbidities correct array of conditional exams for Diabetes to match snapshot 1`] = `
-Array [
-  "HbA1C",
-]
-`;
-
 exports[`Testing GetConditionalExams() with all conditional comorbidities correct array of conditional exams for Malignanc to match snapshot 1`] = `
 Array [
   "ECG",
@@ -34,23 +22,11 @@ Array [
 ]
 `;
 
-exports[`Testing GetConditionalExams() with all conditional comorbidities correct array of conditional exams for VHD to match snapshot 1`] = `
-Array [
-  "CBC",
-]
-`;
-
 exports[`Testing GetExams() and GetConditionalExams() with invalid parameters correct array of examinations for invalid condition to match snapshot 1`] = `Array []`;
 
 exports[`Testing GetExams() and GetConditionalExams() with invalid parameters correct array of examinations for invalid condition to match snapshot 2`] = `Array []`;
 
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for atrial fibrillation to match snapshot 1`] = `
-Array [
-  "ECG",
-]
-`;
-
-exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for cardiac stent (<12 months) to match snapshot 1`] = `
 Array [
   "ECG",
 ]
@@ -83,19 +59,6 @@ Array [
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for peripheral vascular disease (PVD) to match snapshot 1`] = `
 Array [
   "ECG",
-  "Renal Panel (Creat + Lytes)",
-]
-`;
-
-exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for transient heart disease (TIA) to match snapshot 1`] = `
-Array [
-  "ECG",
-]
-`;
-
-exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for transient heart disease to match snapshot 1`] = `
-Array [
-  "ECG",
 ]
 `;
 
@@ -108,7 +71,6 @@ Array [
 exports[`Testing GetExams() for all cardiovascular diseases in tag.js correct array of examinations for valvular heart failure to match snapshot 1`] = `
 Array [
   "ECG",
-  "CBC",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
@@ -177,15 +139,8 @@ Array [
 ]
 `;
 
-exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for Age > 69 years old to match snapshot 1`] = `
-Array [
-  "ECG",
-]
-`;
-
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for bleeding disorders (hemophiliac | DVT) to match snapshot 1`] = `
 Array [
-  "G&S",
   "CBC",
   "PTT/INR",
 ]
@@ -196,6 +151,7 @@ Array [
   "ECG",
   "Renal Panel (Creat + Lytes)",
   "Gluc",
+  "HbA1C",
 ]
 `;
 
@@ -208,11 +164,7 @@ Array [
 ]
 `;
 
-exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for history of active bleeding to match snapshot 1`] = `
-Array [
-  "CBC",
-]
-`;
+exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for history of active bleeding to match snapshot 1`] = `Array []`;
 
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for history of adrenal disease to match snapshot 1`] = `
 Array [
@@ -240,7 +192,6 @@ Array [
 
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for kidney disease (on dialysis or at risk of Acute Kidney Injury [AKI]) to match snapshot 1`] = `
 Array [
-  "ECG",
   "CBC",
   "Renal Panel (Creat + Lytes)",
 ]
@@ -269,22 +220,16 @@ Array [
 
 exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Atrial fibrillation pre op exams to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
 ]
 `;
 
 exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Atrial fibrillation pre op exams to match snapshot 2`] = `Array []`;
 
-exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Cardiac stent (< 12 months) pre op exams to match snapshot 1`] = `
-Array [
-  "ECG",
-]
-`;
-
-exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Cardiac stent (< 12 months) pre op exams to match snapshot 2`] = `Array []`;
-
 exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Coronary Artery Disease pre op exams to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
 ]
 `;
@@ -293,6 +238,7 @@ exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecomm
 
 exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Defibriallator pre op exams to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
 ]
 `;
@@ -301,8 +247,8 @@ exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecomm
 
 exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Heart failure pre op exams to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
-  "CBC",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
@@ -311,6 +257,7 @@ exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecomm
 
 exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js History of cerebral disease pre op exams to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
 ]
 `;
@@ -319,6 +266,7 @@ exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecomm
 
 exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js History of pulmonary vascular disease pre op exams to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
 ]
 `;
@@ -327,43 +275,23 @@ exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecomm
 
 exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Peripheral vasculara disease (PVD) pre op exams to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
-  "Renal Panel (Creat + Lytes)",
 ]
 `;
 
 exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Peripheral vasculara disease (PVD) pre op exams to match snapshot 2`] = `Array []`;
 
-exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Stroke pre op exams to match snapshot 1`] = `
-Array [
-  "ECG",
-]
-`;
-
-exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Stroke pre op exams to match snapshot 2`] = `Array []`;
-
-exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Transient ischemic attack (TIA) pre op exams to match snapshot 1`] = `
-Array [
-  "ECG",
-]
-`;
-
-exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Transient ischemic attack (TIA) pre op exams to match snapshot 2`] = `Array []`;
-
 exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Valvular heart disease / valve replacement pre op exams to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
-]
-`;
-
-exports[`Testing PatientExamsNeeded() for cardiovascular diseases in PreopRecommendation.js Valvular heart disease / valve replacement pre op exams to match snapshot 2`] = `
-Array [
-  "CBC",
 ]
 `;
 
 exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of ACE-I to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
@@ -372,6 +300,7 @@ exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of ARB to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
@@ -380,6 +309,7 @@ exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of Anticoagulant to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "CBC",
   "Renal Panel (Creat + Lytes)",
 ]
@@ -393,6 +323,7 @@ Array [
 
 exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of Antiplatelet (ASA excluded) to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "CBC",
   "Renal Panel (Creat + Lytes)",
 ]
@@ -406,6 +337,7 @@ Array [
 
 exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of Digoxin to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "Renal Panel (Creat + Lytes)",
 ]
@@ -415,6 +347,7 @@ exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of Diuretics to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
@@ -423,6 +356,7 @@ exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of Lithium to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
@@ -431,6 +365,7 @@ exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of NSAIDS to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
@@ -439,6 +374,7 @@ exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of systemic steroid used within 6 months to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "Renal Panel (Creat + Lytes)",
   "Gluc",
 ]
@@ -446,12 +382,17 @@ Array [
 
 exports[`Testing PatientExamsNeeded() for medication use in PreopRecommendation.js set of preop exams for use of systemic steroid used within 6 months to match snapshot 2`] = `Array []`;
 
-exports[`Testing PatientExamsNeeded() for no inputs in PreopRecommendation.js set of preop exams for no diseases or medication to match snapshot 1`] = `Array []`;
+exports[`Testing PatientExamsNeeded() for no inputs in PreopRecommendation.js set of preop exams for no diseases or medication to match snapshot 1`] = `
+Array [
+  "Group and Screen",
+]
+`;
 
 exports[`Testing PatientExamsNeeded() for no inputs in PreopRecommendation.js set of preop exams for no diseases or medication to match snapshot 2`] = `Array []`;
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for >= 2 risk factors to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
 ]
 `;
@@ -460,7 +401,7 @@ exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for Age > 69 years old to match snapshot 1`] = `
 Array [
-  "ECG",
+  "Group and Screen",
 ]
 `;
 
@@ -468,26 +409,23 @@ exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for diabetes (on Insulin or 2 oral agents) to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "Renal Panel (Creat + Lytes)",
   "Gluc",
+  "HbA1C",
 ]
 `;
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for diabetes (on Insulin or 2 oral agents) to match snapshot 2`] = `
 Array [
-  "HbA1C",
-]
-`;
-
-exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for diabetes (on Insulin or 2 oral agents) to match snapshot 3`] = `
-Array [
+  "Group and Screen",
   "CBC",
   "CXR",
 ]
 `;
 
-exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for diabetes (on Insulin or 2 oral agents) to match snapshot 4`] = `
+exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for diabetes (on Insulin or 2 oral agents) to match snapshot 3`] = `
 Array [
   "ECG",
   "Renal Panel (Creat + Lytes)",
@@ -497,6 +435,7 @@ Array [
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for hepatic disease to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "CBC",
   "Renal Panel (Creat + Lytes)",
   "PTT/INR",
@@ -508,7 +447,7 @@ exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for history of active bleeding to match snapshot 1`] = `
 Array [
-  "CBC",
+  "Group and Screen",
 ]
 `;
 
@@ -516,6 +455,7 @@ exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for history of adrebal disease to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
@@ -524,6 +464,7 @@ exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for history of anemia to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "CBC",
 ]
 `;
@@ -532,6 +473,7 @@ exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for history of pituitary disease to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
@@ -540,6 +482,7 @@ exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for history of systemic endocrine disease to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
@@ -548,7 +491,7 @@ exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for kidney disease (on dialysis or at risk for Acute Kidney Injury [AKI] to match snapshot 1`] = `
 Array [
-  "ECG",
+  "Group and Screen",
   "CBC",
   "Renal Panel (Creat + Lytes)",
 ]
@@ -558,6 +501,7 @@ exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for thyroid disease or on thyroid supplementation to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "TSH",
 ]
 `;
@@ -566,6 +510,7 @@ exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.
 
 exports[`Testing PatientExamsNeeded() for pulmonary diseases in PreopRecommendation.js set of preop exams for severe COPD, home oxygen, pulmonary HTN to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
   "CBC",
   "CXR",

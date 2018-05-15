@@ -14,32 +14,17 @@ Array [
   },
   Object {
     "check": false,
-    "comorbidity": "Coronary artery disease",
+    "comorbidity": "Coronary artery disease / Cardiac stent",
     "glossary": "No extra information.",
   },
   Object {
     "check": false,
-    "comorbidity": "Cardiac stent (< 12 months)",
+    "comorbidity": "History of cerebral vascular disease / TIA / Stroke",
     "glossary": "No extra information.",
   },
   Object {
     "check": false,
-    "comorbidity": "History of cerebral disease",
-    "glossary": "No extra information.",
-  },
-  Object {
-    "check": false,
-    "comorbidity": "History of pulmonary vascular disease",
-    "glossary": "No extra information.",
-  },
-  Object {
-    "check": false,
-    "comorbidity": "Transient Ischemic Attack (TIA)",
-    "glossary": "No extra information.",
-  },
-  Object {
-    "check": false,
-    "comorbidity": "Stroke",
+    "comorbidity": "Peripheral Vascular disease (PVD)",
     "glossary": "No extra information.",
   },
   Object {
@@ -50,11 +35,6 @@ Array [
   Object {
     "check": false,
     "comorbidity": "Heart failure",
-    "glossary": "No extra information.",
-  },
-  Object {
-    "check": false,
-    "comorbidity": "Peripheral Vascular disease (PVD)",
     "glossary": "No extra information.",
   },
 ]
@@ -114,40 +94,31 @@ exports[`Testing all comorbidities in ComoListComponent.vue List of other diseas
 Array [
   Object {
     "check": false,
-    "comorbidity": "Age > 69 years old",
-    "glossary": "No extra information.",
-  },
-  Object {
-    "check": false,
-    "comorbidity": ">= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40)",
+    "comorbidity": "Age ≥ 69 years old OR ≥ 2 risk factors (HTN, DM, OSA, CKD, BMI > 35)",
     "glossary": "No extra information.",
   },
   Object {
     "check": false,
     "comorbidity": "Bleeding disorders",
-    "glossary": "• History of extensive investigation due to a bleeding episode. 
+    "glossary": "• Hemophiliac. 
+• History of extensive investigation due to a bleeding episode. 
 • History of extensive bleeding needing transfusion in previous surgeries. 
 • Bruising easily more than usual. 
 ",
   },
   Object {
     "check": false,
-    "comorbidity": "History of anemia",
+    "comorbidity": "History of anemia in past 12 months or ongoing blood loss",
     "glossary": "No extra information.",
   },
   Object {
     "check": false,
-    "comorbidity": "History of active bleeding",
+    "comorbidity": "Chronic kidney disease / on dialysis",
     "glossary": "No extra information.",
   },
   Object {
     "check": false,
-    "comorbidity": "Chronic kidney disease (eGFR < 60ml/min/1.73m^2)",
-    "glossary": "No extra information.",
-  },
-  Object {
-    "check": false,
-    "comorbidity": "Diabetes (on Insulin or 2 oral agents)",
+    "comorbidity": "Diabetes",
     "glossary": "No extra information.",
   },
   Object {
@@ -191,7 +162,7 @@ Array [
   },
   Object {
     "check": false,
-    "comorbidity": "Thyroid disease or on thyroid supplementation",
+    "comorbidity": "Known thyroid disease or on thyroid supplementation",
     "glossary": "No extra information.",
   },
 ]
@@ -199,6 +170,11 @@ Array [
 
 exports[`Testing all comorbidities in ComoListComponent.vue List of pulmonary diseases matches snapshot 1`] = `
 Array [
+  Object {
+    "check": false,
+    "comorbidity": "History of pulmonary vascular disease",
+    "glossary": "No extra information.",
+  },
   Object {
     "check": false,
     "comorbidity": "Severe COPD, Home Oxygen, Pulmonary HTN",
