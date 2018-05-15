@@ -155,15 +155,15 @@ export default {
         { comorbidity: Condition.CerebralDisease,
           glossary: Glossary.CerebralDisease,
           check: false },
-        { comorbidity: Condition.PulmonaryVascular,
-          glossary: Glossary.PulmonaryVascular,
-          check: false },
+        { comorbidity: Condition.PVD, glossary: Glossary.PVD, check: false },
         { comorbidity: Condition.VHD, glossary: Glossary.VHD, check: false },
         { comorbidity: Condition.HeartFail, glossary: Glossary.HeartFail, check: false },
-        { comorbidity: Condition.PVD, glossary: Glossary.PVD, check: false },
       ],
       pulmoDiseases: [
         /* Pulmonary Diseases */
+        { comorbidity: Condition.PulmonaryVascular,
+          glossary: Glossary.PulmonaryVascular,
+          check: false },
         { comorbidity: Condition.PulmDisease, glossary: Glossary.PulmDisease, check: false },
       ],
       otherDiseases: [
@@ -171,7 +171,6 @@ export default {
         { comorbidity: Condition.Risk, glossary: Glossary.Risk, check: false },
         { comorbidity: Condition.Bleeding, glossary: Glossary.Bleeding, check: false },
         { comorbidity: Condition.Anemia, glossary: Glossary.Anemia, check: false },
-        { comorbidity: Condition.ActiveBleeding, glossary: Glossary.ActiveBleeding, check: false },
         { comorbidity: Condition.KidneyDisease, glossary: Glossary.KidneyDisease, check: false },
         { comorbidity: Condition.Diabetes, glossary: Glossary.Diabetes, check: false },
         { comorbidity: Condition.Malignancy, glossary: Glossary.Malignancy, check: false },

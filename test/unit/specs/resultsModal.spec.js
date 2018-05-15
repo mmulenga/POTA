@@ -38,7 +38,7 @@ describe('resultsModal.test.js', () => {
       // Clicking button should run getExams() method.
       button.trigger('click');
       // After getExams() is called, exam array should be filled
-      expect(cmp.vm.exams).toEqual(['Group and Screen','ECG']);
+      expect(cmp.vm.exams).toEqual(['Group and Screen', 'ECG']);
     });
     it('ConditionalExams array to be filled in', () => {
       // Mocking data to be used for getExam() method
