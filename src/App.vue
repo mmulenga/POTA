@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <DisclaimerModalComponent></DisclaimerModalComponent>
-    <h3 class="my-4"
+      <h3 class="my-4"
         style="padding: 20px;"
         v-if="(( !isMobile() && windowWidth > 1024))">
         Saskatchewan Preoperative Lab Test Guidelines
