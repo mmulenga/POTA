@@ -155,9 +155,9 @@ export default {
         { comorbidity: Condition.CerebralDisease,
           glossary: Glossary.CerebralDisease,
           check: false },
-        { comorbidity: Condition.PVD, glossary: Glossary.PVD, check: false },
         { comorbidity: Condition.VHD, glossary: Glossary.VHD, check: false },
         { comorbidity: Condition.HeartFail, glossary: Glossary.HeartFail, check: false },
+        { comorbidity: Condition.PVD, glossary: Glossary.PVD, check: false },
       ],
       pulmoDiseases: [
         /* Pulmonary Diseases */
