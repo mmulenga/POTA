@@ -164,8 +164,8 @@ module.exports = {
       .assert.visible('#cv_checkbox_HeartFail:checked',
         'Testing if element <#cv_checkbox_HeartFail> is checked')
       // Checking if Patient Status are updated
-      .assert.containsText('div.list', 'Peripheral Vascular disease (PVD)')
-      .assert.containsText('div.list'. 'Valvular heart disease / Valve Replacement')  
+      .assert.containsText('div.list', 'Peripheral Vascular disease (PVD')
+      .assert.containsText('div.list', 'Valvular heart disease / Valve Replacement')  
       // Clicking submit button and checking results 
       .click('#submit_button')
       .assert.visible('#modal_okay')
