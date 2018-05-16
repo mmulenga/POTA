@@ -210,27 +210,28 @@ module.exports = {
       .assert.containsText('#conditional-exams', 'PTT/INR')
       // Clicking okay button
       .click('#modal_okay')
-      
+      .click('#reset_button')
       // Test Case 3 (Anticoagulant + Valvular Heart Disease)
       // Checking if condition are checked or unchecked
-      .assert.visible('#med_checkbox_Anticoagulant:checked',
-        'Testing if element <#med_checkbox_Anticoagulant> is checked')   
-      .click('#med_checkbox_Anticoagulant')
       .assert.visible('#med_checkbox_Anticoagulant:not(:checked)',
-        'Testing if element <#med_checkbox_Anticoagulant> is unchecked')
+        'Testing if element <#med_checkbox_Anticoagulant> is unchecked')   
+      .click('#med_checkbox_Anticoagulant')
+      .assert.visible('#med_checkbox_Anticoagulant:checked',
+        'Testing if element <#med_checkbox_Anticoagulant> is checked')
       .assert.visible('#cv_checkbox_VHD:not(:checked)', 
         'Testing if element <#cv_checkbox_VHD> is unchecked')
       .click('#cv_checkbox_VHD')      
       .assert.visible('#cv_checkbox_VHD:checked',
         'Testing if element <#cv_checkbox_VHD> is checked')   
       // Checking if Patient Status is updated correctly
-      .assert.containsText('div.list', 'Atrial')  
+      .assert.containsText('div.list', 'Anticoagulants') 
       .assert.containsText('div.list', 'Valvular')  
       // Clicking submit button and checking results
       .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
       .assert.containsText('#exams', 'Group and Screen as per local policy')
+      .assert.containsText('p:nth-of-type(2)', 'ECG should be done within 3 months of surgery')
       .assert.containsText('#conditional-exams', 'CBC')
       // Clicking okay button 
       .click('#modal_okay')
