@@ -133,7 +133,7 @@ module.exports = {
       .assert.containsText('#exams', 'Group and Screen as per local policy')
       .assert.containsText('p:nth-of-type(2)', 'ECG should be done within 3 months of surgery')
       .assert.containsText('p:nth-of-type(3)', 'Renal Panel (Creat + Lytes) should be done within 3 months of surgery')
-      .assert.containsText('p:nth-of-type(4)', 'Gluc')
+      .assert.containsText('p:nth-of-type(4)', 'HbA1C should be done within 3 months of surgery')
       .assert.containsText('p:nth-of-type(5)', 'CBC')
       .assert.containsText('p:nth-of-type(6)', 'CXR')
       .assert.containsText('#conditional-exams', 'HbA1C')
