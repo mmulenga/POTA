@@ -130,7 +130,7 @@ module.exports = {
       .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
-      .assert.containsText('#exams', 'ECG')
+      .assert.containsText('#exams', 'Group and Screen as per local policy')
       .assert.containsText('p:nth-of-type(2)', 'Renal')
       .assert.containsText('p:nth-of-type(3)', 'Gluc')
       .assert.containsText('p:nth-of-type(4)', 'CBC')
