@@ -272,7 +272,6 @@ module.exports = {
       .assert.visible('#mobile_other_Risk')
       .assert.visible('#mobile_other_Bleeding')
       .assert.visible('#mobile_other_Anemia')
-      .assert.visible('#mobile_other_ActiveBleeding')
       .assert.visible('#mobile_other_KidneyDisease')
       .assert.visible('#mobile_other_Diabetes')
       .assert.visible('#mobile_other_Malignancy')
