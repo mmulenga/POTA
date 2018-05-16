@@ -262,10 +262,8 @@ module.exports = {
       .assert.visible('#mobile_cv_AtrialFib')
       .assert.visible('#mobile_cv_Defib')
       .assert.visible('#mobile_cv_CAD')
-      .assert.visible('#mobile_cv_CardiacStent')
       .assert.visible('#mobile_cv_CerebralDisease')
       .assert.visible('#mobile_cv_PulmonaryVascular')
-      .assert.visible('#mobile_cv_TIA')
       .assert.visible('#mobile_cv_Stroke')
       .assert.visible('#mobile_cv_VHD')
       .assert.visible('#mobile_cv_HeartFail')
@@ -273,7 +271,6 @@ module.exports = {
       // Checking for pulmonary diseases 
       .assert.visible('#mobile_pd_PulmDisease')
       // Checking for other diseases
-      .assert.visible('#mobile_other_Age')
       .assert.visible('#mobile_other_Risk')
       .assert.visible('#mobile_other_Bleeding')
       .assert.visible('#mobile_other_Anemia')
