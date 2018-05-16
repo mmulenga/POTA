@@ -137,7 +137,7 @@ module.exports = {
       .assert.containsText('p:nth-of-type(5)', 'HbA1C should be done within 3 months of surgery')
       .assert.containsText('p:nth-of-type(6)', 'CBC should be done within 3 months of surgery')
       .assert.containsText('p:nth-of-type(7)', 'CXR')
-      .assert.containsText('div[id=conditional-exams]:nth-of-type(2)', 'PTT/INR')
+      .assert.containsText('div[id=conditional-exams]:nth-of-type(1)', 'PTT/INR')
       // Clicking okay button on modal
       .click('#modal_okay')
       // Click Reset button and checking if the conditions are unchecked
