@@ -135,8 +135,8 @@ module.exports = {
       .assert.containsText('p:nth-of-type(3)', 'Renal Panel (Creat + Lytes) should be done within 3 months of surgery')
       .assert.containsText('p:nth-of-type(4)', 'Gluc should be done within 3 months of surgery')
       .assert.containsText('p:nth-of-type(5)', 'HbA1C should be done within 3 months of surgery')
-      .assert.containsText('p:nth-of-type(6)', 'CXR')
-      .assert.containsText('#conditional-exams', 'HbA1C')
+      .assert.containsText('p:nth-of-type(6)', 'CBC should be done within 3 months of surgery')
+      .assert.containsText('p:nth-of-type(7)', 'CXR')
       .assert.containsText('div[id=conditional-exams]:nth-of-type(2)', 'PTT/INR')
       // Clicking okay button on modal
       .click('#modal_okay')
