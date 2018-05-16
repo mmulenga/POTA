@@ -90,7 +90,7 @@ module.exports = {
       .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
-      .assert.containsText('#exams', 'ECG')
+      .assert.containsText('#exams', 'Group and Screen as per local policy')
       // Checking if modal is hidden after clicking
       .click('#modal_okay')
       .assert.hidden('#modal_okay')
