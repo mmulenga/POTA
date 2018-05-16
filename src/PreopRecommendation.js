@@ -1,6 +1,7 @@
 // Singleton data, not a class
 import '@/configuration';
 import { GetExams, GetConditionalExams, ConditionalExam, GetExamValidity } from '@/tag';
+import { Exam } from '@/constants';
 
 /**
  * ExamSummary is a simple data struct with two properties:
@@ -24,6 +25,7 @@ export class ExamSummary {
 export function PatientExamsNeeded(patientConditions) {
   const examAggregation = new Set();
   const conditionalExamAggregation = [];
+
   for (let i = 0; i < patientConditions.length; i += 1) {
     const exams = GetExams(patientConditions[i]);
     for (let j = 0; j < exams.length; j += 1) {
@@ -54,7 +56,9 @@ export function PatientExamsNeeded(patientConditions) {
       }
     }
   }
-  return new ExamSummary([...examAggregation], conditionalExamAggregation);
+
+  // Unconditionally perform a Group and Screen
+  return new ExamSummary([Exam.GnS, ...examAggregation], conditionalExamAggregation);
 }
 
 /**

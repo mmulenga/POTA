@@ -74,23 +74,23 @@ module.exports = {
       // Checking if the conditions are unchecked
       .assert.visible('#cv_checkbox_AtrialFib:not(:checked)', 
         'Testing if element <#cv_checkbox_AtrialFib> is unchecked')
-      .assert.visible('#other_checkbox_Age:not(:checked)',
-        'Testing if element <#other_checkbox_Age> is unchecked')
+      .assert.visible('#other_checkbox_Risk:not(:checked)',
+        'Testing if element <#other_checkbox_Risk> is unchecked')
       // Checking if the checkboxes are checked after clicking
       .click('#cv_checkbox_AtrialFib')
       .assert.visible('#cv_checkbox_AtrialFib:checked', 
         'Testing if element <#cv_checkbox_AtrialFib> is checked')
-      .click('#other_checkbox_Age')
-      .assert.visible('#other_checkbox_Age:checked',
-        'Testing if element <#other_checkbox_Age> is checked')
+      .click('#other_checkbox_Risk')
+      .assert.visible('#other_checkbox_Risk:checked',
+        'Testing if element <#other_checkbox_Risk> is checked')
       // Checking if Patient Status is updated
       .assert.containsText('div.list', 'Atrial fibrillation')
-      .assert.containsText('div.list', 'Age')  
+      .assert.containsText('div.list', 'Atrial fibrillation / History of irregular heart beat')  
       // Checking if result modal is visible after clicking
       .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
-      .assert.containsText('#exams', 'ECG')
+      .assert.containsText('#exams', 'Group and Screen as per local policy')
       // Checking if modal is hidden after clicking
       .click('#modal_okay')
       .assert.hidden('#modal_okay')
@@ -98,15 +98,15 @@ module.exports = {
       // Checking if checkboxes are still checked
       .assert.visible('#cv_checkbox_AtrialFib:checked', 
         'Testing if element <#cv_checkbox_AtrialFib> is checked')
-      .assert.visible('#other_checkbox_Age:checked',
-        'Testing if element <#other_checkbox_Age> is checked')
+      .assert.visible('#other_checkbox_Risk:checked',
+        'Testing if element <#other_checkbox_Risk> is checked')
       // Unchecking them and then confirming that they are unchecked
       .click('#cv_checkbox_AtrialFib')
       .assert.visible('#cv_checkbox_AtrialFib:not(:checked)', 
         'Testing if element <#cv_checkbox_AtrialFib> is unchecked')
-      .click('#other_checkbox_Age')
-      .assert.visible('#other_checkbox_Age:not(:checked)',
-        'Testing if element <#other_checkbox_Age> is unchecked')
+      .click('#other_checkbox_Risk')
+      .assert.visible('#other_checkbox_Risk:not(:checked)',
+        'Testing if element <#other_checkbox_Risk> is unchecked')
        // Checking if PatientStatus is updated
        .assert.containsText('div.list', '')
 
@@ -130,13 +130,14 @@ module.exports = {
       .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
-      .assert.containsText('#exams', 'ECG')
-      .assert.containsText('p:nth-of-type(2)', 'Renal')
-      .assert.containsText('p:nth-of-type(3)', 'Gluc')
-      .assert.containsText('p:nth-of-type(4)', 'CBC')
-      .assert.containsText('p:nth-of-type(5)', 'CXR')
-      .assert.containsText('#conditional-exams', 'HbA1C')
-      .assert.containsText('div[id=conditional-exams]:nth-of-type(2)', 'PTT/INR')
+      .assert.containsText('#exams', 'Group and Screen as per local policy')
+      .assert.containsText('p:nth-of-type(2)', 'ECG should be done within 3 months of surgery')
+      .assert.containsText('p:nth-of-type(3)', 'Renal Panel (Creat + Lytes) should be done within 3 months of surgery')
+      .assert.containsText('p:nth-of-type(4)', 'Gluc should be done within 3 months of surgery')
+      .assert.containsText('p:nth-of-type(5)', 'HbA1C should be done within 3 months of surgery')
+      .assert.containsText('p:nth-of-type(6)', 'CBC should be done within 3 months of surgery')
+      .assert.containsText('p:nth-of-type(7)', 'CXR')
+      .assert.containsText('div[id=conditional-exams]:nth-of-type(1)', 'PTT/INR')
       // Clicking okay button on modal
       .click('#modal_okay')
       // Click Reset button and checking if the conditions are unchecked
@@ -163,15 +164,14 @@ module.exports = {
       .assert.visible('#cv_checkbox_HeartFail:checked',
         'Testing if element <#cv_checkbox_HeartFail> is checked')
       // Checking if Patient Status are updated
-      .assert.containsText('div.list', 'Valvular heart disease')
+      .assert.containsText('div.list', 'Valvular heart disease / Valve Replacement')
       .assert.containsText('div.list', 'Heart failure')  
       // Clicking submit button and checking results 
       .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
-      .assert.containsText('#exams', 'ECG')
-      .assert.containsText('p:nth-of-type(2)', 'CBC')
-      .assert.containsText('p:nth-of-type(3)', 'Renal Panel')
+      .assert.containsText('#exams', 'Group and Screen as per local policy')
+      .assert.containsText('p:nth-of-type(2)', 'ECG should be done within 3 months of surgery')
       // Clicking okay
       .click('#modal_okay')
       // Clicking reset button and checking Patient Status and 
@@ -203,34 +203,39 @@ module.exports = {
       .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
-      .assert.containsText('#exams', 'ECG')
-      .assert.containsText('p:nth-of-type(2)', 'CBC')
-      .assert.containsText('p:nth-of-type(3)', 'Renal Panel')
+      .assert.containsText('#exams', 'Group and Screen as per local policy')
+      .assert.containsText('p:nth-of-type(2)', 'ECG should be done within 3 months of surgery')
+      .assert.containsText('p:nth-of-type(3)', 'CBC should be done within 3 months of surgery')
+      .assert.containsText('p:nth-of-type(4)', 'Renal Panel')
       .assert.containsText('#conditional-exams', 'PTT/INR')
       // Clicking okay button
       .click('#modal_okay')
-      
+      .click('#reset_button')
+      .assert.visible('#cv_checkbox_PVD:not(:checked)','Testing if element #cv_checkbox_PVD is unchecked')
       // Test Case 3 (Anticoagulant + Valvular Heart Disease)
       // Checking if condition are checked or unchecked
-      .assert.visible('#med_checkbox_Anticoagulant:checked',
-        'Testing if element <#med_checkbox_Anticoagulant> is checked')   
-      .click('#med_checkbox_Anticoagulant')
       .assert.visible('#med_checkbox_Anticoagulant:not(:checked)',
-        'Testing if element <#med_checkbox_Anticoagulant> is unchecked')
+        'Testing if element <#med_checkbox_Anticoagulant> is unchecked')   
+      .click('#med_checkbox_Anticoagulant')
+      .assert.visible('#med_checkbox_Anticoagulant:checked',
+        'Testing if element <#med_checkbox_Anticoagulant> is checked')
       .assert.visible('#cv_checkbox_VHD:not(:checked)', 
         'Testing if element <#cv_checkbox_VHD> is unchecked')
       .click('#cv_checkbox_VHD')      
       .assert.visible('#cv_checkbox_VHD:checked',
         'Testing if element <#cv_checkbox_VHD> is checked')   
       // Checking if Patient Status is updated correctly
-      .assert.containsText('div.list', 'Atrial')  
+      .assert.containsText('div.list', 'Anticoagulants') 
       .assert.containsText('div.list', 'Valvular')  
       // Clicking submit button and checking results
       .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
-      .assert.containsText('#exams', 'ECG')
-      .assert.containsText('#conditional-exams', 'CBC')
+      .assert.containsText('#exams', 'Group and Screen as per local policy')
+      .assert.containsText('p:nth-of-type(2)', 'CBC')
+      .assert.containsText('p:nth-of-type(3)', 'Renal Panel')
+      .assert.containsText('p:nth-of-type(4)', 'ECG should be done within 3 months of surgery')
+      .assert.containsText('#conditional-exams', 'PTT/INR')
       // Clicking okay button 
       .click('#modal_okay')
       // Clicking the reset button and checking Patient Status
@@ -257,22 +262,16 @@ module.exports = {
       .assert.visible('#mobile_cv_AtrialFib')
       .assert.visible('#mobile_cv_Defib')
       .assert.visible('#mobile_cv_CAD')
-      .assert.visible('#mobile_cv_CardiacStent')
       .assert.visible('#mobile_cv_CerebralDisease')
-      .assert.visible('#mobile_cv_PulmonaryVascular')
-      .assert.visible('#mobile_cv_TIA')
-      .assert.visible('#mobile_cv_Stroke')
       .assert.visible('#mobile_cv_VHD')
       .assert.visible('#mobile_cv_HeartFail')
       .assert.visible('#mobile_cv_PVD')
       // Checking for pulmonary diseases 
       .assert.visible('#mobile_pd_PulmDisease')
       // Checking for other diseases
-      .assert.visible('#mobile_other_Age')
       .assert.visible('#mobile_other_Risk')
       .assert.visible('#mobile_other_Bleeding')
       .assert.visible('#mobile_other_Anemia')
-      .assert.visible('#mobile_other_ActiveBleeding')
       .assert.visible('#mobile_other_KidneyDisease')
       .assert.visible('#mobile_other_Diabetes')
       .assert.visible('#mobile_other_Malignancy')

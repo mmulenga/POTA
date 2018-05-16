@@ -1,8 +1,13 @@
 <template>
   <div id="app">
     <DisclaimerModalComponent></DisclaimerModalComponent>
-    <h1 class="my-4"> Pre-Op Testing App </h1>
-      <div class="row">
+      <h3 class="my-4"
+        style="padding: 20px;"
+        v-if="(( !isMobile() && windowWidth > 912))">
+        Saskatchewan Preoperative Lab Test Guidelines
+        For Adult Patients Undergoing Elective Non-Cardiac Surgeries (Draft)
+      </h3>
+      <div v-if="!isMobile() && (windowWidth > 912)" class="row">
         <!-- hide the status component when screen is smaller than md-->
         <div class="col-md-3 d-block">
             <StatusComponent
@@ -54,7 +59,10 @@
             <StatusComponent
               :resultArray="resultArray"/>
           </div>
-          <h1 class="my-4 bg-light" style="width: 100%"> Pre-Op Testing App </h1>
+          <h4 class="my-4 bg-light" style="width: 100%; padding: 20px;">
+            Saskatchewan Preoperative Lab Test Guidelines
+            For Adult Patients Undergoing Elective Non-Cardiac Surgeries (Draft)
+            </h4>
           <div class="col-md-12" style="overflow: auto">
             <MobileComoListComponent
             ref="MobileComoListComponent"
