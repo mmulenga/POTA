@@ -211,6 +211,7 @@ module.exports = {
       // Clicking okay button
       .click('#modal_okay')
       .click('#reset_button')
+      .assert.visible('#cv_checkbox_PVD:not(:checked)','Testing if element #cv_checkbox_PVD:not(:checked) is unchecked')
       // Test Case 3 (Anticoagulant + Valvular Heart Disease)
       // Checking if condition are checked or unchecked
       .assert.visible('#med_checkbox_Anticoagulant:not(:checked)',
@@ -232,7 +233,9 @@ module.exports = {
       .assert.visible('#exams')
       .assert.containsText('#exams', 'Group and Screen as per local policy')
       .assert.containsText('p:nth-of-type(2)', 'ECG should be done within 3 months of surgery')
-      .assert.containsText('#conditional-exams', 'CBC')
+      .assert.containsText('p:nth-of-type(3)', 'CBC')
+      .assert.containsText('p:nth-of-type(4)', 'Renal Panel')
+      .assert.containsText('#conditional-exams', 'PTT/INR')
       // Clicking okay button 
       .click('#modal_okay')
       // Clicking the reset button and checking Patient Status
