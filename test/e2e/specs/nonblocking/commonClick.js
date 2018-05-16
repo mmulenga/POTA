@@ -172,8 +172,6 @@ module.exports = {
       .assert.visible('#exams')
       .assert.containsText('#exams', 'Group and Screen as per local policy')
       .assert.containsText('p:nth-of-type(2)', 'ECG should be done within 3 months of surgery')
-      .assert.containsText('p:nth-of-type(3)', 'CBC')
-      .assert.containsText('p:nth-of-type(4)', 'Renal Panel')
       // Clicking okay
       .click('#modal_okay')
       // Clicking reset button and checking Patient Status and 
