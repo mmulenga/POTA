@@ -24,17 +24,17 @@ Array [
   },
   Object {
     "check": false,
-    "comorbidity": "Peripheral Vascular disease (PVD)",
-    "glossary": "No extra information.",
-  },
-  Object {
-    "check": false,
     "comorbidity": "Valvular heart disease / Valve Replacement",
     "glossary": "No extra information.",
   },
   Object {
     "check": false,
     "comorbidity": "Heart failure",
+    "glossary": "No extra information.",
+  },
+  Object {
+    "check": false,
+    "comorbidity": "Peripheral Vascular disease (PVD)",
     "glossary": "No extra information.",
   },
 ]
