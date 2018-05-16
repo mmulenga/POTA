@@ -205,7 +205,8 @@ module.exports = {
       .assert.visible('#exams')
       .assert.containsText('#exams', 'Group and Screen as per local policy')
       .assert.containsText('p:nth-of-type(2)', 'ECG should be done within 3 months of surgery')
-      .assert.containsText('p:nth-of-type(3)', 'Renal Panel')
+      .assert.containsText('p:nth-of-type(3)', 'CBC should be done within 3 months of surgery')
+      .assert.containsText('p:nth-of-type(4)', 'Renal Panel')
       .assert.containsText('#conditional-exams', 'PTT/INR')
       // Clicking okay button
       .click('#modal_okay')
