@@ -170,7 +170,7 @@ module.exports = {
       .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
-      .assert.containsText('#exams', 'ECG')
+      .assert.containsText('#exams', 'Group and Screen as per local policy')
       .assert.containsText('p:nth-of-type(2)', 'CBC')
       .assert.containsText('p:nth-of-type(3)', 'Renal Panel')
       // Clicking okay
@@ -204,7 +204,7 @@ module.exports = {
       .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
-      .assert.containsText('#exams', 'ECG')
+      .assert.containsText('#exams', 'Group and Screen as per local policy')
       .assert.containsText('p:nth-of-type(2)', 'CBC')
       .assert.containsText('p:nth-of-type(3)', 'Renal Panel')
       .assert.containsText('#conditional-exams', 'PTT/INR')
@@ -230,7 +230,7 @@ module.exports = {
       .click('#submit_button')
       .assert.visible('#modal_okay')
       .assert.visible('#exams')
-      .assert.containsText('#exams', 'ECG')
+      .assert.containsText('#exams', 'Group and Screen as per local policy')
       .assert.containsText('#conditional-exams', 'CBC')
       // Clicking okay button 
       .click('#modal_okay')
