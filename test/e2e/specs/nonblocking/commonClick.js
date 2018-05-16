@@ -263,7 +263,6 @@ module.exports = {
       .assert.visible('#mobile_cv_Defib')
       .assert.visible('#mobile_cv_CAD')
       .assert.visible('#mobile_cv_CerebralDisease')
-      .assert.visible('#mobile_cv_PulmonaryVascular')
       .assert.visible('#mobile_cv_Stroke')
       .assert.visible('#mobile_cv_VHD')
       .assert.visible('#mobile_cv_HeartFail')
