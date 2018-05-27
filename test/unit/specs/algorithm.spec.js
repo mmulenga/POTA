@@ -178,13 +178,14 @@ describe('Testing PatientExamsNeeded() for other diseases in PreopRecommendation
     expect(result.conditionalExams).toMatchSnapshot();
   });
 
-  it('returns correct set of preop exams for diabetes (on Insulin or 2 oral agents)', () => {
+  it('returns correct set of preop exams for diabetes', () => {
     result = PatientExamsNeeded([Condition.Diabetes]);
-    requiredExams = [Exam.GnS, Exam.ECG, Exam.RenPanel, Exam.Gluc, Exam.HbA1C];
-    conditionalExams = [Exam.HbA1C];
+    requiredExams = [Exam.GnS, Exam.ECG_diabetes, Exam.RenPanel, Exam.Gluc, Exam.HbA1C];
+    conditionalExams = [];
     expect(result.exams).toEqual(requiredExams);
+    expect(result.conditionalExams).toEqual(conditionalExams);
   });
-  it('set of preop exams for diabetes (on Insulin or 2 oral agents) to match snapshot', () => {
+  it('set of preop exams for diabetes to match snapshot', () => {
     expect(result.exams).toMatchSnapshot();
   });
 
@@ -460,7 +461,7 @@ describe('Testing GetExams() for all cardiovascular diseases in tag.js', () => {
 describe('Testing GetExams() for all pulmonary diseases in tag.js', () => {
   it('returns the correct array of preop exams for severe COPD, home oxygen, pulmonary HTN', () => {
     result = GetExams(Condition.PulmDisease);
-    requiredExams = ['ECG', 'CBC', 'CXR'];
+    requiredExams = ['ECG', 'CBC', Exam.CXR];
     expect(result).toEqual(requiredExams);
   });
   it('correct array of examinations for severe COPD, home oxygen, pulmonary HTN to match snapshot', () => {
@@ -516,7 +517,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
 
   it('returns the correct array of preop exams for diabetes', () => {
     result = GetExams(Condition.Diabetes);
-    requiredExams = ['ECG', 'Renal Panel (Creat + Lytes)', 'Gluc', 'HbA1C'];
+    requiredExams = ['ECG ', 'Renal Panel (Creat + Lytes)', 'Gluc', 'HbA1C'];
     expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for diabetes to match snapshot', () => {
@@ -525,7 +526,7 @@ describe('Testing GetExams() for all other diseases in tag.js', () => {
 
   it('returns the correct array of preop exams for present malignancy / surgery for malignancy', () => {
     result = GetExams(Condition.Malignancy);
-    requiredExams = ['CBC', 'CXR'];
+    requiredExams = ['CBC', Exam.CXR];
     expect(result).toEqual(requiredExams);
   });
   it('correct array of pre op exams for present malignancy to match snapshot', () => {

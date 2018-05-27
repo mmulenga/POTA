@@ -32,8 +32,8 @@ export const Condition = {
   Digoxin: 'Digoxin',
   Lithium: 'Lithium',
   Diuretics: 'Diuretics',
-  ACEI: 'ACE-I',
-  ARB: 'ARB',
+  ACEI: 'Angiotensin-Converting Enzyme Inhibitor',
+  ARB: 'Angiotensin II Receptor Blocker',
   NSAIDS: 'NSAIDS',
   Anticoagulant: 'Anticoagulants',
   Antiplatelet: 'Antiplatelet (ASA excluded)',
@@ -44,13 +44,14 @@ export const Condition = {
 export const Exam = {
   GnS: 'Group and Screen',
   ECG: 'ECG',
+  ECG_diabetes: 'ECG ', // This is a hack to allow diabetes to have its own ECG validity
   CBC: 'CBC',
   RenPanel: 'Renal Panel (Creat + Lytes)',
   PTTINR: 'PTT/INR',
   LFT: 'LFT',
   Gluc: 'Gluc',
   HbA1C: 'HbA1C',
-  CXR: 'CXR',
+  CXR: 'CXR (for surgical / anesthetic planning / new or worsened symptoms)',
   TSH: 'TSH',
 };
 

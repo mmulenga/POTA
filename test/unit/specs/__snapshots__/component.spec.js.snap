@@ -59,12 +59,12 @@ Array [
   },
   Object {
     "check": false,
-    "comorbidity": "ACE-I",
+    "comorbidity": "Angiotensin-Converting Enzyme Inhibitor",
     "glossary": "Captopril; Enalapril; Ramipril; Trandolapril; Perindopril",
   },
   Object {
     "check": false,
-    "comorbidity": "ARB",
+    "comorbidity": "Angiotensin II Receptor Blocker",
     "glossary": "Valsartan; Candesartan; Irbesartan; Telmisartan; Losartan; Olmesartan",
   },
   Object {

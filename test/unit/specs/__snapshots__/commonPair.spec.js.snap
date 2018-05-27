@@ -103,17 +103,18 @@ exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of 
 exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Diabetes + Malignancy to match snapshot 1`] = `
 Array [
   "Group and Screen",
-  "ECG",
+  "ECG ",
   "Renal Panel (Creat + Lytes)",
   "Gluc",
   "HbA1C",
   "CBC",
-  "CXR",
+  "CXR (for surgical / anesthetic planning / new or worsened symptoms)",
 ]
 `;
 
 exports[`Testing PatientExamsNeeded() with common pairs of comorbidities set of preop exams for Diabetes + Malignancy to match snapshot 2`] = `
 Array [
+  "ECG",
   "PTT/INR",
 ]
 `;
@@ -133,7 +134,7 @@ Array [
   "Group and Screen",
   "CBC",
   "Renal Panel (Creat + Lytes)",
-  "ECG",
+  "ECG ",
   "Gluc",
   "HbA1C",
 ]
