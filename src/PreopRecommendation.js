@@ -57,6 +57,11 @@ export function PatientExamsNeeded(patientConditions) {
     }
   }
 
+  // Check if ECG_diabetes and ECG are both present, as ECG takes priority
+  if (examAggregation.has(Exam.ECG) && examAggregation.has(Exam.ECG_diabetes)) {
+    examAggregation.delete(Exam.ECG_diabetes);
+  }
+
   // Unconditionally perform a Group and Screen
   return new ExamSummary([Exam.GnS, ...examAggregation], conditionalExamAggregation);
 }

@@ -148,7 +148,7 @@ Array [
 
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for diabetes to match snapshot 1`] = `
 Array [
-  "ECG",
+  "ECG ",
   "Renal Panel (Creat + Lytes)",
   "Gluc",
   "HbA1C",
@@ -200,7 +200,7 @@ Array [
 exports[`Testing GetExams() for all other diseases in tag.js correct array of pre op exams for present malignancy to match snapshot 1`] = `
 Array [
   "CBC",
-  "CXR",
+  "CXR (for surgical / anesthetic planning / new or worsened symptoms)",
 ]
 `;
 
@@ -214,7 +214,7 @@ exports[`Testing GetExams() for all pulmonary diseases in tag.js correct array o
 Array [
   "ECG",
   "CBC",
-  "CXR",
+  "CXR (for surgical / anesthetic planning / new or worsened symptoms)",
 ]
 `;
 
@@ -410,26 +410,26 @@ exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for diabetes (on Insulin or 2 oral agents) to match snapshot 1`] = `
 Array [
   "Group and Screen",
-  "ECG",
-  "Renal Panel (Creat + Lytes)",
-  "Gluc",
-  "HbA1C",
+  "CBC",
+  "CXR (for surgical / anesthetic planning / new or worsened symptoms)",
 ]
 `;
 
 exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for diabetes (on Insulin or 2 oral agents) to match snapshot 2`] = `
 Array [
-  "Group and Screen",
-  "CBC",
-  "CXR",
-]
-`;
-
-exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for diabetes (on Insulin or 2 oral agents) to match snapshot 3`] = `
-Array [
   "ECG",
   "Renal Panel (Creat + Lytes)",
   "PTT/INR",
+]
+`;
+
+exports[`Testing PatientExamsNeeded() for other diseases in PreopRecommendation.js set of preop exams for diabetes to match snapshot 1`] = `
+Array [
+  "Group and Screen",
+  "ECG ",
+  "Renal Panel (Creat + Lytes)",
+  "Gluc",
+  "HbA1C",
 ]
 `;
 
@@ -513,7 +513,7 @@ Array [
   "Group and Screen",
   "ECG",
   "CBC",
-  "CXR",
+  "CXR (for surgical / anesthetic planning / new or worsened symptoms)",
 ]
 `;
 

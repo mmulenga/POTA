@@ -71,8 +71,10 @@ describe('Testing PatientExamsNeeded() with common pairs of comorbidities', () =
 
   it('returns correct set of preop exams for Diabetes + Malignancy', () => {
     result = PatientExamsNeeded([Condition.Diabetes, Condition.Malignancy]);
-    requiredExams = [Exam.ECG, Exam.RenPanel, Exam.Gluc, Exam.CBC, Exam.CXR];
-    expect(result.conditionalExams[0].exams).toEqual([Exam.PTTINR]);
+    requiredExams = [Exam.GnS, Exam.ECG_diabetes,
+      Exam.RenPanel, Exam.Gluc, Exam.HbA1C, Exam.CBC, Exam.CXR];
+    expect(result.exams).toEqual(requiredExams);
+    expect(result.conditionalExams[0].exams).toEqual([Exam.ECG, Exam.PTTINR]);
   });
   it('set of preop exams for Diabetes + Malignancy to match snapshot', () => {
     expect(result.exams).toMatchSnapshot();
@@ -153,7 +155,7 @@ describe('Testing PatientExamsNeeded() with common pairs of comorbidities', () =
 
   it('returns correct set of preop exams for KidneyDisease + Diabetes', () => {
     result = PatientExamsNeeded([Condition.KidneyDisease, Condition.Diabetes]);
-    requiredExams = [Exam.GnS, Exam.CBC, Exam.RenPanel, Exam.ECG, Exam.Gluc, Exam.HbA1C];
+    requiredExams = [Exam.GnS, Exam.CBC, Exam.RenPanel, Exam.ECG_diabetes, Exam.Gluc, Exam.HbA1C];
     conditionalExams = [Exam.HbA1C];
     expect(result.exams).toEqual(requiredExams);
   });

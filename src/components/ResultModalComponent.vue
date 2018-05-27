@@ -17,7 +17,10 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title"> Required Tests </h5>
+            <h5 class="modal-title">
+              If the patient has existing co-morbidities and will be
+              having anesthesia, the following tests are recommended:
+            </h5>
           </div>
           <div class="modal-body">
             <p id="exams"
@@ -32,7 +35,6 @@
               <br/>
               <p>
               <b>{{ item.conditionPhrase }}</b>
-              <b>If so:</b>
               </p>
               <p v-for="examName in item.exams" :key=examName>
                 <b>{{ examName }}</b>
