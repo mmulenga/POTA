@@ -64,7 +64,8 @@ describe('Testing branching for PatientExamsNeeded()', () => {
 
   it('returns correct set of preop exams for Diabetes + Malignancy', () => {
     result = PatientExamsNeeded([Condition.Diabetes, Condition.Malignancy]);
-    requiredExams = [Exam.GnS, Exam.ECG_diabetes, Exam.RenPanel, Exam.Gluc, Exam.HbA1C, Exam.CBC, Exam.CXR];
+    requiredExams = [Exam.GnS, Exam.ECG_diabetes,
+      Exam.RenPanel, Exam.Gluc, Exam.HbA1C, Exam.CBC, Exam.CXR];
     expect(result.exams).toEqual(requiredExams);
     expect(result.conditionalExams[0].exams).toEqual([Exam.ECG, Exam.PTTINR]);
   });

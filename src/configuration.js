@@ -31,7 +31,7 @@ Tag(Condition.Bleeding, [Exam.CBC, Exam.PTTINR]);
 Tag(Condition.KidneyDisease, [Exam.CBC, Exam.RenPanel]);
 Tag(Condition.Diabetes, [Exam.ECG_diabetes, Exam.RenPanel, Exam.Gluc, Exam.HbA1C]);
 Tag(Condition.Malignancy, [Exam.CBC, Exam.CXR],
-  { 'If patient is on chemo, add the following tests': [Exam.ECG, Exam.RenPanel, Exam.PTTINR] });
+  { 'If patient is on chemo, add the following tests:': [Exam.ECG, Exam.RenPanel, Exam.PTTINR] });
 Tag(Condition.Hepatic, [Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.LFT]);
 Tag(Condition.Adrenal, [Exam.RenPanel]);
 Tag(Condition.Pituitary, [Exam.RenPanel]);
@@ -45,9 +45,9 @@ Tag(Condition.ACEI, [Exam.RenPanel]);
 Tag(Condition.ARB, [Exam.RenPanel]);
 Tag(Condition.NSAIDS, [Exam.RenPanel]);
 Tag(Condition.Anticoagulant, [Exam.CBC, Exam.RenPanel],
-  { 'If patient is on Warfarin/Heparins, add the following test': [Exam.PTTINR] });
+  { 'If patient is on Warfarin/Heparins, add the following test:': [Exam.PTTINR] });
 Tag(Condition.Antiplatelet, [Exam.CBC, Exam.RenPanel],
-  { 'If patient is on Warfarin/Heparins, add the following test': [Exam.PTTINR] });
+  { 'If patient is on Warfarin/Heparins, add the following test:': [Exam.PTTINR] });
 Tag(Condition.Steroid, [Exam.RenPanel, Exam.Gluc]);
 
 
