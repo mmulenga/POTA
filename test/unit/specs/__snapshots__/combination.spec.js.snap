@@ -3,7 +3,7 @@
 exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for Diabetes + Anticoagulant to match snapshot 1`] = `
 Array [
   "Group and Screen",
-  "ECG",
+  "ECG ",
   "Renal Panel (Creat + Lytes)",
   "Gluc",
   "HbA1C",
@@ -20,17 +20,18 @@ Array [
 exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for Diabetes + Malignancy to match snapshot 1`] = `
 Array [
   "Group and Screen",
-  "ECG",
+  "ECG ",
   "Renal Panel (Creat + Lytes)",
   "Gluc",
   "HbA1C",
   "CBC",
-  "CXR",
+  "CXR (for surgical / anesthetic planning / new or worsened symptoms)",
 ]
 `;
 
 exports[`Testing PatientExamsNeeded() with multiple conditional comorbidities set of preop exams for Diabetes + Malignancy to match snapshot 2`] = `
 Array [
+  "ECG",
   "PTT/INR",
 ]
 `;
@@ -67,7 +68,7 @@ Array [
   "Group and Screen",
   "ECG",
   "CBC",
-  "CXR",
+  "CXR (for surgical / anesthetic planning / new or worsened symptoms)",
 ]
 `;
 
@@ -166,7 +167,7 @@ Array [
   "Group and Screen",
   "ECG",
   "CBC",
-  "CXR",
+  "CXR (for surgical / anesthetic planning / new or worsened symptoms)",
   "Renal Panel (Creat + Lytes)",
   "Gluc",
 ]
@@ -237,7 +238,7 @@ Array [
   "ECG",
   "CBC",
   "PTT/INR",
-  "CXR",
+  "CXR (for surgical / anesthetic planning / new or worsened symptoms)",
 ]
 `;
 
@@ -291,7 +292,7 @@ Array [
   "Group and Screen",
   "ECG",
   "CBC",
-  "CXR",
+  "CXR (for surgical / anesthetic planning / new or worsened symptoms)",
 ]
 `;
 
@@ -302,7 +303,7 @@ Array [
   "Group and Screen",
   "ECG",
   "CBC",
-  "CXR",
+  "CXR (for surgical / anesthetic planning / new or worsened symptoms)",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
