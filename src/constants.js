@@ -9,36 +9,31 @@ export const Condition = {
   /* Cardiovascular Diseases */
   AtrialFib: 'Atrial fibrillation / History of irregular heart beat',
   Defib: 'Defibrillator / Pacemaker',
-  CAD: 'Coronary artery disease',
-  CardiacStent: 'Cardiac stent (< 12 months)',
-  CerebralDisease: 'History of cerebral disease',
-  PulmonaryVascular: 'History of pulmonary vascular disease',
-  TIA: 'Transient Ischemic Attack (TIA)',
-  Stroke: 'Stroke',
+  CAD: 'Coronary artery disease / Cardiac stent',
+  CerebralDisease: 'History of cerebral vascular disease / TIA / Stroke',
   VHD: 'Valvular heart disease / Valve Replacement',
   HeartFail: 'Heart failure',
   PVD: 'Peripheral Vascular disease (PVD)',
   /* Pulmonary Diseases */
+  PulmonaryVascular: 'History of pulmonary vascular disease',
   PulmDisease: 'Severe COPD, Home Oxygen, Pulmonary HTN',
   /* Other Diseases */
-  Age: 'Age > 69 years old',
-  Risk: '>= 2 risk factors (HTN, Proven OSA, or STOP-BANG >= 5, BMI >= 40)',
+  Risk: 'Age ≥ 69 years old OR ≥ 2 risk factors (HTN, DM, OSA, CKD, BMI > 35)',
   Bleeding: 'Bleeding disorders',
-  Anemia: 'History of anemia',
-  ActiveBleeding: 'History of active bleeding',
-  KidneyDisease: 'Chronic kidney disease (eGFR < 60ml/min/1.73m^2)',
-  Diabetes: 'Diabetes (on Insulin or 2 oral agents)',
+  Anemia: 'History of anemia in past 12 months or ongoing blood loss',
+  KidneyDisease: 'Chronic kidney disease / on dialysis',
+  Diabetes: 'Diabetes',
   Malignancy: 'Present malignancy / surgery for malignancy',
   Hepatic: 'Hepatic disease',
   Adrenal: 'History of adrenal disease',
   Pituitary: 'History of pituitary disease',
   Endocrine: 'History of major systemic endocrine disease',
-  Thyroid: 'Thyroid disease or on thyroid supplementation',
+  Thyroid: 'Known thyroid disease or on thyroid supplementation',
   Digoxin: 'Digoxin',
   Lithium: 'Lithium',
   Diuretics: 'Diuretics',
-  ACEI: 'ACE-I',
-  ARB: 'ARB',
+  ACEI: 'Angiotensin-Converting Enzyme Inhibitor',
+  ARB: 'Angiotensin II Receptor Blocker',
   NSAIDS: 'NSAIDS',
   Anticoagulant: 'Anticoagulants',
   Antiplatelet: 'Antiplatelet (ASA excluded)',
@@ -47,15 +42,16 @@ export const Condition = {
 
 /* Medical Examinations */
 export const Exam = {
-  GnS: 'G&S',
+  GnS: 'Group and Screen',
   ECG: 'ECG',
+  ECG_diabetes: 'ECG ', // This is a hack to allow diabetes to have its own ECG validity
   CBC: 'CBC',
   RenPanel: 'Renal Panel (Creat + Lytes)',
   PTTINR: 'PTT/INR',
   LFT: 'LFT',
   Gluc: 'Gluc',
   HbA1C: 'HbA1C',
-  CXR: 'CXR',
+  CXR: 'CXR (for surgical / anesthetic planning / new or worsened symptoms)',
   TSH: 'TSH',
 };
 
@@ -67,8 +63,6 @@ export const Glossary = {
   CardiacStent: 'No extra information.',
   CerebralDisease: 'No extra information.',
   PulmonaryVascular: 'No extra information.',
-  TIA: 'No extra information.',
-  Stroke: 'No extra information.',
   VHD: 'No extra information.',
   HeartFail: 'No extra information.',
   PVD: 'No extra information.',
@@ -79,16 +73,16 @@ export const Glossary = {
                '• Worsening air flow limitation, greater SOB, reduced exercise capacity, having an ' +
                'impact on quality of life, and ability to complete activities of daily living should be present. \n',
   /* Other Diseases */
-  Age: 'No extra information.',
   Risk: 'No extra information.',
-  Bleeding: '• History of extensive investigation due to a bleeding episode. \n' +
+  Bleeding: '• Hemophiliac. \n' +
+            '• History of extensive investigation due to a bleeding episode. \n' +
             '• History of extensive bleeding needing transfusion in previous surgeries. \n' +
             '• Bruising easily more than usual. \n',
   Anemia: 'No extra information.',
   ActiveBleeding: 'No extra information.',
   KidneyDisease: 'No extra information.',
   Renal: '(AKI). \n' +
-         '• Chronic kidney disease (eGFR < 60ml/min/1.73m2. \n' +
+         '• Chronic kidney disease / on dialysis. \n' +
          '• Diabetes. \n' +
          '• Heart failure. \n' +
          '• Age ≥ 65. \n' +

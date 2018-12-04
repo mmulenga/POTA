@@ -38,7 +38,7 @@ describe('resultsModal.test.js', () => {
       // Clicking button should run getExams() method.
       button.trigger('click');
       // After getExams() is called, exam array should be filled
-      expect(cmp.vm.exams).toEqual(['ECG']);
+      expect(cmp.vm.exams).toEqual(['Group and Screen', 'ECG']);
     });
     it('ConditionalExams array to be filled in', () => {
       // Mocking data to be used for getExam() method
@@ -52,9 +52,7 @@ describe('resultsModal.test.js', () => {
       // Clicking button should run getExams() method.
       button.trigger('click');
       // After getExams() is called, exam array should be filled
-      expect(cmp.vm.exams).toEqual(['ECG']);
-      expect(cmp.vm.conditionalExams[0].conditionPhrase).toBe('Is valve mechanical?');
-      expect(cmp.vm.conditionalExams[0].exams).toEqual(['CBC']);
+      expect(cmp.vm.exams).toEqual(['Group and Screen', 'ECG']);
     });
   });
   describe('Testing emit methods', () => {

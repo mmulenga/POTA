@@ -2,6 +2,7 @@
 
 exports[`Testing branching for PatientExamsNeeded() set of preop exams for AtrialFib to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
 ]
 `;
@@ -10,30 +11,20 @@ exports[`Testing branching for PatientExamsNeeded() set of preop exams for Atria
 
 exports[`Testing branching for PatientExamsNeeded() set of preop exams for Diabetes + Malignancy to match snapshot 1`] = `
 Array [
-  "ECG",
+  "Group and Screen",
+  "ECG ",
   "Renal Panel (Creat + Lytes)",
   "Gluc",
-  "CBC",
-  "CXR",
-]
-`;
-
-exports[`Testing branching for PatientExamsNeeded() set of preop exams for Diabetes + Malignancy to match snapshot 2`] = `
-Array [
   "HbA1C",
-]
-`;
-
-exports[`Testing branching for PatientExamsNeeded() set of preop exams for Diabetes + Malignancy to match snapshot 3`] = `
-Array [
-  "PTT/INR",
+  "CBC",
+  "CXR (for surgical / anesthetic planning / new or worsened symptoms)",
 ]
 `;
 
 exports[`Testing branching for PatientExamsNeeded() set of preop exams for PVD to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
-  "Renal Panel (Creat + Lytes)",
 ]
 `;
 
@@ -41,26 +32,25 @@ exports[`Testing branching for PatientExamsNeeded() set of preop exams for PVD t
 
 exports[`Testing branching for PatientExamsNeeded() set of preop exams for PVD to match snapshot 3`] = `
 Array [
+  "Group and Screen",
   "ECG",
-]
-`;
-
-exports[`Testing branching for PatientExamsNeeded() set of preop exams for PVD to match snapshot 4`] = `
-Array [
-  "CBC",
 ]
 `;
 
 exports[`Testing branching for PatientExamsNeeded() set of preop exams for VHD + HeartFail to match snapshot 1`] = `
 Array [
+  "Group and Screen",
   "ECG",
-  "CBC",
   "Renal Panel (Creat + Lytes)",
 ]
 `;
 
 exports[`Testing branching for PatientExamsNeeded() set of preop exams for VHD + HeartFail to match snapshot 2`] = `Array []`;
 
-exports[`Testing branching for PatientExamsNeeded() set of preop exams for no conditions to match snapshot 1`] = `Array []`;
+exports[`Testing branching for PatientExamsNeeded() set of preop exams for no conditions to match snapshot 1`] = `
+Array [
+  "Group and Screen",
+]
+`;
 
 exports[`Testing branching for PatientExamsNeeded() set of preop exams for no conditions to match snapshot 2`] = `Array []`;

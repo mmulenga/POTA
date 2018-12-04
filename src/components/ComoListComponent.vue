@@ -117,31 +117,25 @@ export default {
         { comorbidity: Condition.AtrialFib, glossary: Glossary.AtrialFib, check: false },
         { comorbidity: Condition.Defib, glossary: Glossary.Defib, check: false },
         { comorbidity: Condition.CAD, glossary: Glossary.CAD, check: false },
-        { comorbidity: Condition.CardiacStent, glossary: Glossary.CardiacStent, check: false },
         { comorbidity: Condition.CerebralDisease,
           glossary: Glossary.CerebralDisease,
           check: false },
-        { comorbidity: Condition.PulmonaryVascular,
-          glossary: Glossary.PulmonaryVascular,
-          check: false },
-        { comorbidity: Condition.TIA, glossary: Glossary.TIA, check: false },
-        { comorbidity: Condition.Stroke, glossary: Glossary.Stroke, check: false },
         { comorbidity: Condition.VHD, glossary: Glossary.VHD, check: false },
         { comorbidity: Condition.HeartFail, glossary: Glossary.HeartFail, check: false },
         { comorbidity: Condition.PVD, glossary: Glossary.PVD, check: false },
       ],
       pulmoDiseases: [
         /* Pulmonary Diseases */
+        { comorbidity: Condition.PulmonaryVascular,
+          glossary: Glossary.PulmonaryVascular,
+          check: false },
         { comorbidity: Condition.PulmDisease, glossary: Glossary.PulmDisease, check: false },
       ],
       otherDiseases: [
         /* Other Diseases */
-        { comorbidity: Condition.Age, glossary: Glossary.Age, check: false },
         { comorbidity: Condition.Risk, glossary: Glossary.Risk, check: false },
         { comorbidity: Condition.Bleeding, glossary: Glossary.Bleeding, check: false },
         { comorbidity: Condition.Anemia, glossary: Glossary.Anemia, check: false },
-        { comorbidity: Condition.ActiveBleeding, glossary: Glossary.ActiveBleeding, check: false },
-        // { comorbidity: Condition.Renal, glossary: Glossary.Renal, check: false },
         { comorbidity: Condition.KidneyDisease, glossary: Glossary.KidneyDisease, check: false },
         { comorbidity: Condition.Diabetes, glossary: Glossary.Diabetes, check: false },
         { comorbidity: Condition.Malignancy, glossary: Glossary.Malignancy, check: false },
@@ -266,6 +260,15 @@ export default {
     resetData: function resetData() {
       Object.assign(this.$data, this.$options.data.call(this));
     },
+    updateData: function updateData(data) {
+      this.$data.cardioDiseases = data.cardioDiseases;
+      this.$data.medications = data.medications;
+      this.$data.otherDiseases = data.otherDiseases;
+      this.$data.pulmoDiseases = data.pulmoDiseases;
+    },
+  },
+  deactivated() {
+    this.$emit('comoList-deactivated', this.$data);
   },
 };
 </script>

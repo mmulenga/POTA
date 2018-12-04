@@ -9,35 +9,29 @@ import { Condition, Exam } from '@/constants';
  *
  * Format:
  * Tag(Condition.NAME, [Exam.NAME],
-  { 'Is this requirement met?': [Exam.NAME] });
+  { 'Is this requirement met? Add these tests': [Exam.NAME] });
  */
 
 /* Cardiovascular Diseases */
 Tag(Condition.AtrialFib, [Exam.ECG]);
 Tag(Condition.Defib, [Exam.ECG]);
 Tag(Condition.CAD, [Exam.ECG]);
-Tag(Condition.CardiacStent, [Exam.ECG]);
 Tag(Condition.CerebralDisease, [Exam.ECG]);
-Tag(Condition.PulmonaryVascular, [Exam.ECG]);
-Tag(Condition.TIA, [Exam.ECG]);
-Tag(Condition.Stroke, [Exam.ECG]);
-Tag(Condition.VHD, [Exam.ECG],
-  { 'Is valve mechanical?': [Exam.CBC] });
-Tag(Condition.HeartFail, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
-Tag(Condition.PVD, [Exam.ECG, Exam.RenPanel]);
+Tag(Condition.PVD, [Exam.ECG]);
+Tag(Condition.VHD, [Exam.ECG]);
+Tag(Condition.HeartFail, [Exam.ECG, Exam.RenPanel]);
 /* Pulmonary Diseases */
+Tag(Condition.PulmonaryVascular, [Exam.ECG]);
 Tag(Condition.PulmDisease, [Exam.ECG, Exam.CBC, Exam.CXR]);
 /* Other Diseases */
-Tag(Condition.Age, [Exam.ECG]);
 Tag(Condition.Risk, [Exam.ECG]);
-Tag(Condition.Bleeding, [Exam.GnS, Exam.CBC, Exam.PTTINR]);
 Tag(Condition.Anemia, [Exam.CBC]);
-Tag(Condition.ActiveBleeding, [Exam.CBC]);
-Tag(Condition.KidneyDisease, [Exam.ECG, Exam.CBC, Exam.RenPanel]);
-Tag(Condition.Diabetes, [Exam.ECG, Exam.RenPanel, Exam.Gluc],
-  { 'Is patient diabetic?': [Exam.HbA1C] });
+Tag(Condition.Bleeding, [Exam.CBC, Exam.PTTINR]);
+// Tag(Condition.ActiveBleeding, [Exam.CBC]);
+Tag(Condition.KidneyDisease, [Exam.CBC, Exam.RenPanel]);
+Tag(Condition.Diabetes, [Exam.ECG_diabetes, Exam.RenPanel, Exam.Gluc, Exam.HbA1C]);
 Tag(Condition.Malignancy, [Exam.CBC, Exam.CXR],
-  { 'Is patient on chemo?': [Exam.ECG, Exam.RenPanel, Exam.PTTINR] });
+  { 'If patient is on chemo, add the following tests:': [Exam.ECG, Exam.RenPanel, Exam.PTTINR] });
 Tag(Condition.Hepatic, [Exam.CBC, Exam.RenPanel, Exam.PTTINR, Exam.LFT]);
 Tag(Condition.Adrenal, [Exam.RenPanel]);
 Tag(Condition.Pituitary, [Exam.RenPanel]);
@@ -51,17 +45,18 @@ Tag(Condition.ACEI, [Exam.RenPanel]);
 Tag(Condition.ARB, [Exam.RenPanel]);
 Tag(Condition.NSAIDS, [Exam.RenPanel]);
 Tag(Condition.Anticoagulant, [Exam.CBC, Exam.RenPanel],
-  { 'Is patient on Wafarin/Heparins?': [Exam.PTTINR] });
+  { 'If patient is on Warfarin/Heparins, add the following test:': [Exam.PTTINR] });
 Tag(Condition.Antiplatelet, [Exam.CBC, Exam.RenPanel],
-  { 'Is patient on Wafarin/Heparins?': [Exam.PTTINR] });
+  { 'If patient is on Warfarin/Heparins, add the following test:': [Exam.PTTINR] });
 Tag(Condition.Steroid, [Exam.RenPanel, Exam.Gluc]);
 
 
 /** Defining the validity periods for exams before surgery
  * The format is Validity(Exam.NAME, 'explanation of validity period');
  */
-Validity(Exam.GnS, 'should be done within 1 month of surgery (or by local lab/surgical policy)');
+Validity(Exam.GnS, 'as per local policy');
 Validity(Exam.ECG, 'should be done within 3 months of surgery');
+Validity(Exam.ECG_diabetes, 'should be done within 1 year of surgery');
 Validity(Exam.CBC, 'should be done within 3 months of surgery');
 Validity(Exam.RenPanel, 'should be done within 3 months of surgery');
 Validity(Exam.PTTINR, 'should be done within 3 months of surgery');

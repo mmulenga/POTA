@@ -54,22 +54,22 @@ describe('ComoList.spec.js', () => {
 
     it('Generate ID for list item for PD Severe COPD', () => {
       const liPD = wrapper.vm.generateID('li', 'pd', 0);
-      expect(liPD).toBe('mobile_pd_PulmDisease');
+      expect(liPD).toBe('mobile_pd_PulmonaryVascular');
     });
 
     it('Generate ID for checkbox for PD Severe COPD', () => {
       const cbPD = wrapper.vm.generateID('cb', 'pd', 0);
-      expect(cbPD).toBe('mobile_pd_checkbox_PulmDisease');
+      expect(cbPD).toBe('mobile_pd_checkbox_PulmonaryVascular');
     });
 
-    it('Generate ID for list item for Other Age > 69', () => {
+    it('Generate ID for list item for Age >= 69 years old OR >= 2 risk factors (HTN, DM, OSA, CKD, BMI > 35)', () => {
       const liOther = wrapper.vm.generateID('li', 'other', 0);
-      expect(liOther).toBe('mobile_other_Age');
+      expect(liOther).toBe('mobile_other_Risk');
     });
 
-    it('Generate ID for checkbox for Other Age > 69', () => {
+    it('Generate ID for checkbox for Age >= 69 years old OR >= 2 risk factors (HTN, DM, OSA, CKD, BMI > 35)', () => {
       const cbOther = wrapper.vm.generateID('cb', 'other', 0);
-      expect(cbOther).toBe('mobile_other_checkbox_Age');
+      expect(cbOther).toBe('mobile_other_checkbox_Risk');
     });
 
     it('Generate ID for list item for Other Age > 69', () => {
@@ -89,7 +89,7 @@ describe('ComoList.spec.js', () => {
     });
 
     it('Severe COPD should have glossary and return true', () => {
-      expect(wrapper.vm.hasEntry(wrapper.vm.pulmoDiseases[0])).toBe(true);
+      expect(wrapper.vm.hasEntry(wrapper.vm.pulmoDiseases[1])).toBe(true);
     });
   });
   describe('Testing out resetData()', () => {

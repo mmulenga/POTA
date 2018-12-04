@@ -35,7 +35,6 @@ describe('App.spec.js', () => {
     wrapper.vm.updateArray({ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' });
     expect(wrapper.vm.resultArray).toEqual([]);
   });
-
   describe('Testing toggles()', () => {
     it('drawerToggle() changes drawerShow correctly', () => {
       expect(wrapper.vm.drawerShow).toBe(false);
@@ -64,11 +63,28 @@ describe('App.spec.js', () => {
     });
   });
   describe('Testing $ref methods for desktop version', () => {
+    beforeEach(() => {
+      Object.defineProperty(document.documentElement, 'clientWidth', {
+        value: 1024,
+        enumerable: true,
+        configurable: true,
+        writable: true,
+      });
+      Object.defineProperty(window.navigator, 'userAgent', {
+        value: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+        writable: true,
+      });
+      wrapper = mount(App);
+      wrapper.vm.getWindowWidth();
+    });
     it('resetComoList() should call resetData', () => {
-      wrapper.setData({ windowWidth: 1200 });
       wrapper.vm.$refs.ComoListComponent.cardioDiseases[0].check = true;
       wrapper.vm.resetComoList();
       expect(wrapper.vm.$refs.ComoListComponent.cardioDiseases[0].check).toBe(false);
+    });
+    it('updateDescription() should not display the correct glossary for AF for desktop', () => {
+      wrapper.vm.updateDescription({ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' });
+      expect(wrapper.vm.$refs.ComoListComponent.currentComorbidityDescription).not.toEqual('Atrial fibrillation / History of irregular heart beat');
     });
     it('submitExams() should call getExams() and showModal() from $refs.ResultModalComponent', () => {
       wrapper.setData({ windowWidth: 1200 });
@@ -77,15 +93,7 @@ describe('App.spec.js', () => {
       wrapper.vm.submitExams();
       expect(wrapper.vm.drawerShow).toBe(true);
       expect(wrapper.vm.buttonsHidden).toBe(true);
-      expect(wrapper.vm.$refs.ResultModalComponent.exams).toEqual(['ECG']);
-      expect(wrapper.vm.$refs.ResultModalComponent.conditionalExams[0].conditionPhrase).toBe('Is valve mechanical?');
-      expect(wrapper.vm.$refs.ResultModalComponent.conditionalExams[0].exams).toEqual(['CBC']);
-    });
-    it('updateDescription() should not display the correct glossary for AF for desktop', () => {
-      wrapper = mount(App);
-      wrapper.setData({ windowWidth: 1200 });
-      wrapper.vm.updateDescription({ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' });
-      expect(wrapper.vm.$refs.ComoListComponent.currentComorbidityDescription).not.toEqual('Atrial fibrillation / History of irregular heart beat');
+      expect(wrapper.vm.$refs.ResultModalComponent.exams).toEqual(['Group and Screen', 'ECG']);
     });
   });
   describe('Testing $ref methods for mobile version', () => {
@@ -104,9 +112,7 @@ describe('App.spec.js', () => {
       wrapper.vm.submitExams();
       expect(wrapper.vm.drawerShow).toBe(true);
       expect(wrapper.vm.buttonsHidden).toBe(true);
-      expect(wrapper.vm.$refs.MobileResultModalComponent.exams).toEqual(['ECG']);
-      expect(wrapper.vm.$refs.MobileResultModalComponent.conditionalExams[0].conditionPhrase).toBe('Is valve mechanical?');
-      expect(wrapper.vm.$refs.MobileResultModalComponent.conditionalExams[0].exams).toEqual(['CBC']);
+      expect(wrapper.vm.$refs.MobileResultModalComponent.exams).toEqual(['Group and Screen', 'ECG']);
     });
     it('updateDescription() displays the correct glossary for AF for mobile devices', () => {
       wrapper.vm.updateDescription({ currentComorbiditySelection: 'Atrial fibrillation / History of irregular heart beat' });
@@ -115,8 +121,28 @@ describe('App.spec.js', () => {
   });
   describe('Updating mobileComoListComponent glossary', () => {
     describe('Testing getWindowWidth', () => {
-      it('getWindowWidth() should reset to 0', () => {
-        wrapper.vm.windowWidth = 1000;
+      beforeEach(() => {
+        Object.defineProperty(document.documentElement, 'clientWidth', {
+          value: 1024,
+          enumerable: true,
+          configurable: true,
+          writable: true,
+        });
+        global.dispatchEvent(new Event('resize'));
+        wrapper.vm.getWindowWidth();
+      });
+
+      it('getWindowWidth() should reset to 1023 and data should be reset', () => {
+        expect(wrapper.vm.windowWidth).toEqual(1024);
+        document.documentElement.clientWidth = 1023;
+        global.dispatchEvent(new Event('resize'));
+        wrapper.vm.getWindowWidth();
+        expect(wrapper.vm.windowWidth).toEqual(1023);
+      });
+      it('getWindowWidth() should reset to 2000', () => {
+        expect(wrapper.vm.windowWidth).toEqual(1024);
+        document.documentElement.clientWidth = 2000;
+        global.dispatchEvent(new Event('resize'));
         wrapper.vm.getWindowWidth();
         expect(wrapper.vm.windowWidth).not.toEqual(1000);
       });
