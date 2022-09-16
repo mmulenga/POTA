@@ -14,7 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.3.1",
     "npm": "^5.7.1",
     "vue": "^2.5.2",
     "yarn": "^1.5.1"
